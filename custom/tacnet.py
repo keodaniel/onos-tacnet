@@ -3,6 +3,11 @@ from mininet.node import Controller
 from mininet.node import Host
 from mininet.topo import Topo
 
+topos = {
+    'base': ( lambda: Base() ), 
+    'DFGW': ( lambda: DFGateway() ) 
+    }
+
 class Base( Topo ):
     "Basic tacnet topology with assigned IPs"
 
@@ -35,7 +40,7 @@ class Base( Topo ):
         self.addLink(s1, s3)
         self.addLink(s2, s3)
 
-class DFRoute( Topo ):
+class DFGateway( Topo ):
     "Adding default routes / default gateway"
 
     def build( self ):
@@ -67,4 +72,4 @@ class DFRoute( Topo ):
         self.addLink(s1, s3)
         self.addLink(s2, s3)
         
-topos = { 'base': ( lambda: Base() ), 'DFRoute': ( lambda: DFRoute() ) }
+

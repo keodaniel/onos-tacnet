@@ -38,3 +38,6 @@ xterm h1
 ip route add default via 10.0.10.2 dev h1-eth0
 ip route
 ip route del default
+
+#### Mininet Link Delay and BW
+sudo mn --switch ovs,protocols=OpenFlow14 --controller=remote,ip=172.17.0.2 --mac --custom ../../media/sf_onos-tacnet/custom/tacnet.py --topo=DFGW --link tc,bw=1,delay=10ms
