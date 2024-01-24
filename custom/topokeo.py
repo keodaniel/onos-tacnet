@@ -3,6 +3,12 @@ from mininet.node import Controller
 
 from mininet.topo import Topo
 
+############################################
+### h2 - swA - swA2 - swB - swC - swE - h1
+###                      \       /
+###                         swD
+############################################
+
 class MyTopo( Topo ):
     "Simple topology example."
 
