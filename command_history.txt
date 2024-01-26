@@ -48,3 +48,5 @@ sudo mn --switch ovs,protocols=OpenFlow14 --controller=remote,ip=172.17.0.2 --ma
 curl -X GET -u onos:rocks --header 'Accept: application/json' 'http://172.17.0.1:8181/onos/v1/network/configuration' | jq
 
 curl -X GET -u onos:rocks --header 'Accept: application/json' 'http://172.17.0.1:8181/onos/v1/flows' | jq
+
+curl -X GET -u onos:rocks --header 'Accept: application/json' 'http://172.17.0.1:8181/onos/v1/hosts' | jq
