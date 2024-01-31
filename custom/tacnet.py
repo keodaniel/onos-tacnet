@@ -12,7 +12,7 @@ topos = {
     }
 
 class Base( Topo ):
-    "Basic tacnet topology with assigned IPs"
+    """Basic tacnet topology with assigned IPs"""
 
     def build( self ):
         "Create custom topo."
@@ -44,7 +44,8 @@ class Base( Topo ):
         self.addLink(s2, s3)
 
 class DFGateway( Topo ):
-    "Adding default routes / default gateway"
+    """Adding default routes / default gateway\n
+    Without default gateways, hosts can only connect within their subnet"""
 
     def build( self ):
         "Create custom topo."
@@ -76,8 +77,10 @@ class DFGateway( Topo ):
         self.addLink(s2, s3)
         
 class Bandwidth( Topo ):
-    ###TODO: Finalize bandwidth TCLinks
-    "Redundant TCLinks between s1 and s2 of 10Mbps and 5Mbps to emulate . . . "
+    """Implemented TC Links between units\n
+    10MBps between s1 and s2 (Interunit link)\n
+    5MBps between s1 and s3 (Battalion A backhaul)\n
+    1MBps between s2 and s3 (Battalion B backhaul)"""
 
     def build( self ):
         "Create custom topo."
@@ -102,8 +105,7 @@ class Bandwidth( Topo ):
         self.addLink(h6, s3)
         
         # Interunit Links
-        self.addLink(s1, s2, cls=TCLink, bw=10) # 10 MBps
-        # self.addLink(s1, s2, cls=TCLink, bw=5) # 5 MBps
+        self.addLink(s1, s2, cls=TCLink, bw=10)
 
         # Backhaul Links
         self.addLink(s1, s3, cls=TCLink, bw=5)
