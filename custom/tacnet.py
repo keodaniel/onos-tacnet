@@ -103,9 +103,9 @@ class Bandwidth( Topo ):
         
         # Interunit Links
         self.addLink(s1, s2, cls=TCLink, bw=10) # 10 MBps
-        self.addLink(s1, s2, cls=TCLink, bw=5) # 5 MBps
+        # self.addLink(s1, s2, cls=TCLink, bw=5) # 5 MBps
 
         # Backhaul Links
-        self.addLink(s1, s3)
-        self.addLink(s2, s3)
+        self.addLink(s1, s3, cls=TCLink, bw=5)
+        self.addLink(s2, s3, cls=TCLink, bw=1)
   
