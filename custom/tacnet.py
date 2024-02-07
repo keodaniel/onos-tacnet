@@ -95,8 +95,8 @@ class Bandwidth( Topo ):
 
         # Add links
         self.addLink(h1, s1)
-        self.addLink(h2, s1)
-        self.addLink(h3, s2)
+        self.addLink(h2, s2)
+        self.addLink(h3, s3)
         
         # Interunit Links
         self.addLink(s1, s2, cls=TCLink, bw=10)
