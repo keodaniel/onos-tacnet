@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Log file path
-timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
-LOG_FILE="script_logs/log_$timestamp.txt"
-
 kill_sessions() {
     if tmux ls | grep -q "session"; then
         tmux ls | grep -q "session"
@@ -19,7 +15,6 @@ kill_sessions() {
 new_session() {
     local session_name="$1"
     local command="$2"
-    echo
     # echo "Starting new tmux session: $session_name"
     tmux new-session -d -s "$session_name" "$command"
     sleep 1
@@ -58,28 +53,33 @@ enable_fwd() {
         exit 1
     fi
 
-    echo "Checking active ONOS applications..."
-    tmux send-keys -t "$session_name" "apps -s -a" Enter
-
-    while ! tmux capture-pane -p -t "$session_name" | tail -n 1 | grep -q "onos@root >"; do
+    tmux send-keys -t "$session_name" "app activate fwd" Enter
+    while ! tmux capture-pane -p -t "$session_name" | grep "Activated org.onosproject.fwd"; do
         sleep 1
     done
 
-    if tmux capture-pane -p -t "$session_name" | grep -q "\* 111 org.onosproject.fwd"; then
-        echo "Reactive Forwarding is Enabled"
-    else
-        echo "Reactive Forwarding is Currently Not Enabled... "
-        tmux send-keys -t "$session_name" "app activate fwd" Enter
-        while ! tmux capture-pane -p -t "$session_name" | grep "Activated org.onosproject.fwd"; do
-            sleep 1
-        done
-    fi
+    # echo "Checking active ONOS applications..."
+    # tmux send-keys -t "$session_name" "apps -s -a" Enter
+
+    # while ! tmux capture-pane -p -t "$session_name" | tail -n 1 | grep -q "onos@root >"; do
+    #     sleep 1
+    # done
+
+    # if tmux capture-pane -p -t "$session_name" | grep -q "\* 111 org.onosproject.fwd"; then
+    #     echo "Reactive Forwarding is Enabled"
+    # else
+    #     echo "Reactive Forwarding is Currently Not Enabled... "
+    #     tmux send-keys -t "$session_name" "app activate fwd" Enter
+    #     while ! tmux capture-pane -p -t "$session_name" | grep "Activated org.onosproject.fwd"; do
+    #         sleep 1
+    #     done
+    # fi
 
     close_session "$session_name"
 }
 
 # Function to start Mininet in a new tmux session with a specified topology
-check_mininet() {
+open_mininet() {
     local topo_cmd="$1"
     local session_name="mininet_session_$topo_cmd"
     new_session "$session_name" "sudo mn --switch ovs,protocols=OpenFlow14 --controller=remote,ip=172.17.0.2 --mac --custom ../../media/sf_onos-tacnet/custom/tacnet.py --topo=$topo_cmd"
@@ -94,22 +94,39 @@ check_mininet() {
     while ! tmux capture-pane -p -t "$session_name" | grep -q "Starting CLI"; do
         sleep 1
     done
+    sleep 1
+}
 
+mininet_ping() {
+    local topo_cmd="$1"
+    local session_name="mininet_session_$topo_cmd"
     tmux send-keys -t "$session_name" "time pingall" Enter
-    while ! tmux capture-pane -p -t "$session_name" | grep "Results"; do
+
+    while ! tmux capture-pane -p -t "$session_name" | grep -q "Elapsed"; do
+        # Capture the output of tmux capture-pane into a variable
         sleep 1
-    done
-    while ! tmux capture-pane -p -t "$session_name" | grep "Elapsed time"; do
-        sleep 1
+        tmux_output=$(tmux capture-pane -p -t mininet_session)
     done
 
+    # Use grep to filter out only the lines containing the pingall command, results, or "->"
+    filtered_output=$(echo "$tmux_output" | grep -E "Ping|Results|Elapsed|->")
+
+    # Print the filtered output
+    echo "$filtered_output"
+    sleep 1
+}
+
+close_mininet() {
+    local topo_cmd="$1"
+    local session_name="mininet_session_$topo_cmd"
+    # sleep 1
+    # tmux attach-session -t "$session_name"
     close_session "$session_name"
 }
 
 # Function to disable forwarding
 disable_fwd() {
     local session_name="disable_fwd_session"
-    # echo "Opening SSH session in a new tmux session..."
     new_session "$session_name" "sshpass -p 'rocks' ssh -p 8101 onos@172.17.0.1"
 
     if ! tmux ls | grep -q "$session_name"; then
@@ -125,14 +142,56 @@ disable_fwd() {
     close_session "$session_name"
 }
 
+test_reactivefwd() {
+    # Log file path
+    logname="reactivefwd_testlog"
+    timestamp=$(date +"%Y-%m-%d_%H-%M")
+    LOG_FILE="script_logs/${logname}_${timestamp}.txt"
+
+    # Main
+    kill_sessions 2>&1 | tee -a "$LOG_FILE"
+    start_onos 2>&1 | tee -a "$LOG_FILE"
+    enable_fwd 2>&1 | tee -a "$LOG_FILE"
+    open_mininet "DFGW" 2>&1 | tee -a "$LOG_FILE"
+    mininet_ping "DFGW" 2>&1 | tee -a "$LOG_FILE"
+    close_mininet "DFGW" 2>&1 | tee -a "$LOG_FILE"
+    # disable_fwd 2>&1 | tee -a "$LOG_FILE"
+    echo "done" 2>&1 | tee -a "$LOG_FILE"
+}
+
+test_reactivefwd
+
+test_host_intents() {
+    # Log file path
+    logname="host_intents_testlog"
+    timestamp=$(date +"%Y-%m-%d_%H-%M")
+    LOG_FILE="script_logs/${logname}_${timestamp}.txt"
+
+    # Main
+    kill_sessions 2>&1 | tee -a "$LOG_FILE"
+    start_onos 2>&1 | tee -a "$LOG_FILE"
+    enable_fwd 2>&1 | tee -a "$LOG_FILE"
+    open_mininet "DFGW" 2>&1 | tee -a "$LOG_FILE"
+    mininet_ping "DFGW" 2>&1 | tee -a "$LOG_FILE"
+    disable_fwd 2>&1 | tee -a "$LOG_FILE"
+    /media/sf_onos-tacnet/intents_add.sh 2>&1 | tee -a "$LOG_FILE"
+    sleep 1
+    mininet_ping "DFGW" 2>&1 | tee -a "$LOG_FILE"
+    close_mininet "DFGW" 2>&1 | tee -a "$LOG_FILE"
+    echo "done" 2>&1 | tee -a "$LOG_FILE"
+}
+
+# test_host_intents
+
 # Main script
-kill_sessions >> "$LOG_FILE" 2>&1
-start_onos >> "$LOG_FILE" 2>&1
-enable_fwd >> "$LOG_FILE" 2>&1
-check_mininet "base" >> "$LOG_FILE" 2>&1
-check_mininet "DFGW" >> "$LOG_FILE" 2>&1
-check_mininet "BW" >> "$LOG_FILE" 2>&1
-disable_fwd >> "$LOG_FILE" 2>&1
+# kill_sessions >> "$LOG_FILE" 2>&1
+# start_onos >> "$LOG_FILE" 2>&1
+# enable_fwd >> "$LOG_FILE" 2>&1
+# check_mininet "base" >> "$LOG_FILE" 2>&1
+# check_mininet "DFGW" >> "$LOG_FILE" 2>&1
+# check_mininet "BW" >> "$LOG_FILE" 2>&1
+# disable_fwd >> "$LOG_FILE" 2>&1
+
 # check_mininet "base" >> "$LOG_FILE" 2>&1
 # check_mininet "DFGW" >> "$LOG_FILE" 2>&1
 # check_mininet "BW" >> "$LOG_FILE" 2>&1
