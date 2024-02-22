@@ -1,0 +1,20 @@
+Clearing tmux sessions
+ONOS Docker container is already running.
+
+Checking active ONOS applications...
+Reactive Forwarding is Currently Not Enabled... 
+Activated org.onosproject.fwd
+
+Starting Mininet with topology: base
+*** Results: 80% dropped (6/30 received)
+*** Elapsed time: 0.232691 secs
+
+Starting Mininet with topology: DFGW
+*** Results: 0% dropped (30/30 received)
+*** Elapsed time: 1.340200 secs
+
+Starting Mininet with topology: BW
+*** Results: 0% dropped (6/6 received)
+*** Elapsed time: 1.113800 secs
+
+Deactivated org.onosproject.fwd
