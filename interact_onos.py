@@ -90,7 +90,97 @@ def create_host_intents():
 
                 # Log the result
                 logging.info(f"Creating intent from {mac_addresses[i]} to {mac_addresses[j]}...")
-                logging.info(response.text)
+
+                if response.text:
+                    logging.info(response.text)
 
     except requests.RequestException as e:
         logging.error(f"Error while creating intents: {e}")
+
+def get_intents():
+    # Define variables
+    ONOS_USER = "onos"
+    ONOS_PASSWORD = "rocks"
+    CONTROLLER_IP = "172.17.0.1"
+    CONTROLLER_PORT = "8181"
+    INTENTS_ENDPOINT = "/onos/v1/intents"
+
+    try:
+        # Construct the URL to retrieve intents
+        url = f"http://{CONTROLLER_IP}:{CONTROLLER_PORT}{INTENTS_ENDPOINT}"
+
+        # Make the request to retrieve intents
+        response = requests.get(url, auth=(ONOS_USER, ONOS_PASSWORD))
+
+        # Check if the request was successful
+        response.raise_for_status()
+
+        # Extract and log the retrieved intents
+        intents = response.json().get("intents", [])
+        if intents:
+            logging.info("List of intents:")
+            for intent in intents:
+                appId = intent.get("appId")
+                key = intent.get("key")
+                logging.info(f"AppId: {appId}, Key: {key}")
+        else:
+            logging.info("No intents found.")
+
+        return intents
+
+    except requests.RequestException as e:
+        logging.error(f"Error while retrieving intents: {e}")
+        return []
+
+def clear_intent(appId, key):
+    # Define variables
+    ONOS_USER = "onos"
+    ONOS_PASSWORD = "rocks"
+    CONTROLLER_IP = "172.17.0.1"
+    CONTROLLER_PORT = "8181"
+    INTENTS_ENDPOINT = f"/onos/v1/intents/{appId}/{key}"
+
+    try:
+        # Construct the URL to clear intents
+        url = f"http://{CONTROLLER_IP}:{CONTROLLER_PORT}{INTENTS_ENDPOINT}"
+
+        # Make the DELETE request to clear intents
+        response = requests.delete(url, auth=(ONOS_USER, ONOS_PASSWORD))
+
+        # Check if the request was successful
+        response.raise_for_status()
+
+        logging.info("Intents cleared successfully.")
+
+    except requests.RequestException as e:
+        logging.error(f"Error while clearing intents: {e}")
+
+def clear_all_intents():
+    logging.info("Starting to clear all intents.")
+    try:
+        while True:
+            # Retrieve all intents
+            intents = get_intents()
+
+            if not intents:
+                logging.info("No intents found. Exiting the loop.")
+                break
+
+            # Log the number of intents found
+            logging.info(f"Found {len(intents)} intents to clear.")
+
+            # Iterate over each intent and clear it
+            for index, intent in enumerate(intents, start=1):
+                appId = intent.get("appId")
+                key = intent.get("key")
+                logging.info(f"Clearing intent {index}/{len(intents)} - AppId: {appId}, Key: {key}")
+                clear_intent(appId, key)
+
+            # Wait for last intent to clear
+            sleep(1)
+        logging.info("All intents cleared successfully.")
+    except Exception as e:
+        logging.error(f"An error occurred while clearing intents: {e}")
+
+
+
