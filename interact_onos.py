@@ -149,8 +149,7 @@ def clear_intent(appId, key):
 
         # Check if the request was successful
         response.raise_for_status()
-
-        logging.info("Intents cleared successfully.")
+        # logging.info("Intents cleared successfully.")
 
     except requests.RequestException as e:
         logging.error(f"Error while clearing intents: {e}")
@@ -163,7 +162,7 @@ def clear_all_intents():
             intents = get_intents()
 
             if not intents:
-                logging.info("No intents found. Exiting the loop.")
+                # logging.info("No intents found. Exiting the loop.")
                 break
 
             # Log the number of intents found

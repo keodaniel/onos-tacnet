@@ -15,7 +15,7 @@ def clear_log_file(log_file_path):
         print(f"Error clearing log file: {e}")
 
 def pingall_test():
-    test_name = "basic pingall"
+    test_name = "Pingall"
     logging.info(f"Starting {test_name} test...")
 
     try:
@@ -26,16 +26,17 @@ def pingall_test():
         mininet_process.start_mininet()
 
         # Test Commands
-        cmd_output = mininet_process.send_command("pingall", "*** Results")
-        for lines in cmd_output.encode().split(b'\n'):
-            if "Results" in lines.decode():
-                print(lines.decode())
+        cmd_output = mininet_process.send_command("time pingall", "*** Results")
 
         # Closing actions
         mininet_process.process.stdin.close()
         remaining_output = mininet_process.read_until("Done")
 
         # Logging success/failure
+        for lines in cmd_output.encode().split(b'\n'):
+            if "Results" in lines.decode():
+                print(lines.decode())
+
         if "0% dropped" in cmd_output:
             print(f"{test_name} Test Success")
         else:
@@ -47,7 +48,7 @@ def pingall_test():
     logging.info(f"{test_name} test done")
 
 def intent_functions_test():
-    test_name = "intent functions"
+    test_name = "Intent Functions"
     logging.info(f"Starting {test_name} test...")
 
     try:
@@ -77,7 +78,7 @@ def intent_functions_test():
     logging.info(f"{test_name} test done")
 
 def basic_link_automation_test():
-    test_name = "basic link automation"
+    test_name = "Basic Link Automation"
     logging.info(f"Starting {test_name} test...")
 
     try:
@@ -101,8 +102,8 @@ def basic_link_automation_test():
 
         logging.info(f"Test Case 2: Link Automation via Installing Host Intents")
         toggle_fwd("deactivate")
+        clear_all_intents()
         create_host_intents()
-        get_intents()
         cmd_output_2 = mininet_process.send_command("pingall", "*** Results")
         for lines in cmd_output_2.encode().split(b'\n'):
             if "Results" in lines.decode():
@@ -133,24 +134,16 @@ def basic_link_automation_test():
 
     logging.info(f"{test_name} test done")
 
-
 def main():
     log_file_path = 'test.log'
     clear_log_file(log_file_path)
     logging.basicConfig(filename=log_file_path, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-    # pingall_test()
-    # basic_link_automation_test()
+    pingall_test()
     intent_functions_test()
-    # clear_intents("/onos/v1/intents")
-    # clear_intents("/onos/v1/intents/org.onosproject.ovsdb/1c0017e")
-    
-    # create_host_intents()
-    # Example usage:
-    # clear_all_intents()
+    basic_link_automation_test()
 
-
-    logging.info("Log End")
+    logging.info("End of Log")
 
 if __name__ == "__main__":
     main()
