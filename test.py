@@ -13,12 +13,18 @@ def clear_log_file(log_file_path):
         print(f"Error clearing log file: {e}")
 
 def pingall_test(mininet_process):
+    logging.info("Starting basic pingall test")
+
     try:
-        cmd1 = mininet_process.send_command("pingall", "*** Results")
+        cmd_output = mininet_process.send_command("pingall", "*** Results")
         mininet_process.process.stdin.close()
         end = mininet_process.read_until("Done")
 
-        if "0% dropped" in cmd1:
+        for lines in cmd_output.encode().split(b'\n'):
+            if "Results" in lines.decode():
+                print(lines.decode())
+
+        if "0% dropped" in cmd_output:
             print("Pingall Test Success")
         else:
             print("Pingall Test Fail")
@@ -26,14 +32,16 @@ def pingall_test(mininet_process):
             print("Done")
 
     except Exception as e:
-        logging.error(f"Error during forwarding test: {e}")
+        logging.error(f"Error during pingall test: {e}")
+
+    logging.info("Done")
 
 def main():
-    log_file_path = 'main.log'
+    log_file_path = 'test.log'
     clear_log_file(log_file_path)
+
     logging.basicConfig(filename=log_file_path, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     logging.info("Starting test")
-    
     start_onos_docker()
     toggle_fwd("activate")
     mininet_process = MininetProcess("DFGW")

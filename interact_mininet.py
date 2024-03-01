@@ -1,10 +1,7 @@
 import subprocess
 # import paramiko
 import logging
-# from time import sleep
-
-# import subprocess
-# import logging
+from time import sleep
 
 class MininetProcess:
     def __init__(self, topology):
@@ -53,7 +50,6 @@ class MininetProcess:
                     output = stderr_str.rstrip('\n')  # Remove the last newline character
                     logging.info(output)
                     return output
-                    # break
 
         except Exception as e:
             logging.error(f"Error reading Mininet display (stderr): {e}")
