@@ -33,14 +33,13 @@ def pingall_test():
         remaining_output = mininet_process.read_until("Done")
 
         # Logging success/failure
-        for lines in cmd_output.encode().split(b'\n'):
-            if "Results" in lines.decode():
-                print(lines.decode())
-
         if "0% dropped" in cmd_output:
             print(f"{test_name} Test Success")
         else:
             print(f"{test_name} Test Fail")
+        for lines in cmd_output.encode().split(b'\n'):
+            if "Results" in lines.decode():
+                print(lines.decode())
 
     except Exception as e:
         logging.error(f"Error during {test_name} test: {e}")
@@ -79,6 +78,10 @@ def intent_functions_test():
 
 def basic_link_automation_test():
     test_name = "Basic Link Automation"
+    testcase_1_success = False
+    testcase_2_success = False
+    testcase_1_name = "Link Automation via Reactive Forwarding"
+    testcase_2_name = "Link Automation via Host Intents"
     logging.info(f"Starting {test_name} test...")
 
     try:
@@ -88,42 +91,41 @@ def basic_link_automation_test():
         mininet_process.start_mininet()
 
         # Test Commands
-        testcase_1_success = False
-        testcase_2_success = False
-
-        logging.info(f"Test Case 1: Link Automation via Reactive Forwarding")
+        logging.info(f"Test Case 1: {testcase_1_name}")
         toggle_fwd("activate")
         cmd_output_1 = mininet_process.send_command("pingall", "*** Results")
-        for lines in cmd_output_1.encode().split(b'\n'):
-            if "Results" in lines.decode():
-                print(lines.decode())
-        if "0% dropped" in cmd_output_1:
-            testcase_1_success = True
 
-        logging.info(f"Test Case 2: Link Automation via Installing Host Intents")
+        logging.info(f"Test Case 2: {testcase_2_name}")
         toggle_fwd("deactivate")
         clear_all_intents()
         create_host_intents()
         cmd_output_2 = mininet_process.send_command("pingall", "*** Results")
-        for lines in cmd_output_2.encode().split(b'\n'):
-            if "Results" in lines.decode():
-                print(lines.decode())
-        if "0% dropped" in cmd_output_2:
-            testcase_2_success = True
 
         # Closing actions
         mininet_process.process.stdin.close()
         remaining_output = mininet_process.read_until("Done")
 
         # Logging success/failure
+        if "0% dropped" in cmd_output_1:
+            testcase_1_success = True
         if testcase_1_success:
-            print("Test Case 1 Success")
+            print(f"Test Case 1: {testcase_1_name} Success")
         else:
-            print("Test Case 1  Fail")
+            print(f"Test Case 1: {testcase_1_name} Fail")
+        for lines in cmd_output_1.encode().split(b'\n'):
+            if "Results" in lines.decode():
+                print(lines.decode())
+
+        if "0% dropped" in cmd_output_2:
+            testcase_2_success = True
         if testcase_2_success:
-            print("Test Case 2 Success")
+            print(f"Test Case 2: {testcase_2_name} Success")
         else:
-            print("Test Case 2  Fail")
+            print(f"Test Case 2: {testcase_2_name} Fail")
+        for lines in cmd_output_2.encode().split(b'\n'):
+            if "Results" in lines.decode():
+                print(lines.decode())
+
         if testcase_1_success and testcase_2_success:
             print(f"{test_name} Test Success")
         else:
