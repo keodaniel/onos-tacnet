@@ -4,6 +4,7 @@ import subprocess
 import paramiko
 import logging
 from time import sleep
+import urllib.parse
 
 # Function to start ONOS Docker container
 def start_onos_docker():
@@ -41,15 +42,13 @@ def toggle_fwd(action):
     except Exception as e:
         logging.error(f"Error while toggling forward: {e}")
 
-def create_host_intents():
+def get_mac_addresses():
     # Define variables
     ONOS_USER = "onos"
     ONOS_PASSWORD = "rocks"
     CONTROLLER_IP = "172.17.0.1"
     CONTROLLER_PORT = "8181"
     HOSTS_ENDPOINT = "/onos/v1/hosts"
-    INTENTS_ENDPOINT = "/onos/v1/intents"
-    PRIORITY = 55
 
     try:
         # Construct the URL to retrieve MAC addresses
@@ -69,6 +68,22 @@ def create_host_intents():
         for mac in mac_addresses:
             logging.info(mac)
 
+        return mac_addresses
+
+    except requests.RequestException as e:
+        logging.error(f"Error while retrieving MAC addresses: {e}")
+        return []
+
+def create_host_intents(mac_addresses):
+    # Define variables
+    ONOS_USER = "onos"
+    ONOS_PASSWORD = "rocks"
+    CONTROLLER_IP = "172.17.0.1"
+    CONTROLLER_PORT = "8181"
+    INTENTS_ENDPOINT = "/onos/v1/intents"
+    PRIORITY = 55
+
+    try:
         # Create intents for unique pairs of hosts
         for i in range(len(mac_addresses)):
             for j in range(i + 1, len(mac_addresses)):
@@ -181,5 +196,96 @@ def clear_all_intents():
     except Exception as e:
         logging.error(f"An error occurred while clearing intents: {e}")
 
+def get_flows():
+    # Define variables
+    ONOS_USER = "onos"
+    ONOS_PASSWORD = "rocks"
+    CONTROLLER_IP = "172.17.0.1"
+    CONTROLLER_PORT = "8181"
+    FLOWS_ENDPOINT = "/onos/v1/flows"
 
+    try:
+        # Construct the URL to retrieve flows
+        url = f"http://{CONTROLLER_IP}:{CONTROLLER_PORT}{FLOWS_ENDPOINT}"
 
+        # Make the request to retrieve flows
+        response = requests.get(url, auth=(ONOS_USER, ONOS_PASSWORD))
+
+        # Check if the request was successful
+        response.raise_for_status()
+
+        # Extract and return the retrieved flows
+        flows = response.json().get("flows", [])
+        return flows
+
+    except requests.RequestException as e:
+        logging.error(f"Error while retrieving flows: {e}")
+        return []
+
+def encode_mac_address(mac_address):
+    # URL encode the MAC address
+    encoded_mac_address = urllib.parse.quote(mac_address+"/None", safe="")
+    # Append "/None" to signify absence of VLAN information
+    encoded_mac_address_with_none = encoded_mac_address
+
+    return encoded_mac_address_with_none
+
+def get_path(source_mac, destination_mac):
+    # Define variables
+    ONOS_USER = "onos"
+    ONOS_PASSWORD = "rocks"
+    CONTROLLER_IP = "172.17.0.1"
+    CONTROLLER_PORT = "8181"
+    PATHS_ENDPOINT = f"/onos/v1/paths/{encode_mac_address(source_mac)}/{encode_mac_address(destination_mac)}"
+
+    try:
+        # Construct the URL
+        url = f"http://{CONTROLLER_IP}:{CONTROLLER_PORT}{PATHS_ENDPOINT}"
+
+        # Make the GET request
+        response = requests.get(url, auth=(ONOS_USER, ONOS_PASSWORD))
+
+        # Check if the request was successful
+        response.raise_for_status()
+
+        # Extract paths from the response
+        path_list = []
+        # formatted_paths = []
+        path_dict = response.json().get("paths", [])
+        for path in path_dict:
+            formatted_path = {
+                "source_mac": source_mac,
+                "switches": [],
+                "destination_mac": destination_mac
+            }
+            
+            for link in path.get("links", []):
+                dst = link.get("dst")
+                if dst.get("device"):
+                    formatted_path["switches"].append(dst["device"])
+
+            # Log the paths
+            path_list.append(formatted_path)
+            logging.info(f"Path between {source_mac} and {destination_mac}: {formatted_path}")
+
+        # Return the paths
+        return path_list
+
+    except requests.RequestException as e:
+        logging.error(f"Error while retrieving paths: {e}")
+        return []
+
+def get_all_paths(mac_addresses):
+    all_paths = []
+
+    for source_mac in mac_addresses:
+        for destination_mac in mac_addresses:
+            if source_mac != destination_mac:
+                path_info = {
+                    "source_mac": source_mac,
+                    "destination_mac": destination_mac,
+                    "path": get_path(source_mac, destination_mac)
+                }
+                all_paths.append(path_info)
+
+    return all_paths

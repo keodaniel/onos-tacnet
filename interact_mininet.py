@@ -20,25 +20,22 @@ class MininetProcess:
             logging.info(f"Starting Mininet topology: {self.topology}")
             self.process = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-            self.read_until("Starting CLI")
+            self.read_stderr("Starting CLI")
             return self.process
             
         except Exception as e:
             logging.error(f"Error starting Mininet: {e}")
 
-    def send_command(self, command, expected_keyword):
+    def send_command(self, command):
         try: 
             logging.info(f"Executing Mininet command: {command}")
             self.process.stdin.write(f"{command}\n".encode())
             self.process.stdin.flush()
 
-            output = self.read_until(expected_keyword)
-            return output
-
         except Exception as e:
             logging.error(f"Error sending Mininet command: {e}")
 
-    def read_until(self, expected_keyword):
+    def read_stderr(self, expected_keyword):
         try: 
             stderr_data = b''  # Initialize as bytes
             while True:
@@ -53,3 +50,27 @@ class MininetProcess:
 
         except Exception as e:
             logging.error(f"Error reading Mininet display (stderr): {e}")
+
+    def read_stdout(self):
+        try: 
+            output = self.process.stdout.read1().decode("utf-8")
+            # output = self.process.stdout.read()
+            # if output:
+            
+            # stdout_data = b''  # Initialize as bytes
+            # while True:
+                # stdout= self.process.stdout.read()
+                # if not stdo:
+                    # break  # Exit the loop if there's no more data
+
+                # stdout_data += stdout_line
+
+            # stdout_str = stdout.decode('utf-8')
+                # if expected_keyword in stdout_str:
+                    # output = stdout_str.rstrip('\n')  # Remove the last newline character
+            logging.info(output)
+            return output
+
+        except Exception as e:
+            logging.error(f"Error reading stdout: {e}")
+
