@@ -172,12 +172,12 @@ def basic_link_auto_test(topo="linear,3,2"):
 
     logging.info(f"{test_name} test done")
 
-def dynamic_link_auto_test(topo="linear,3,2", testcase=1):
-    test_name = "Dynamic Link Automation"
+def dynamic_paths_test(topo="linear,3,2", testcase=1):
+    test_name = "Dynamic Path Automation"
     testcase_1_success = False
     testcase_2_success = False
-    testcase_1_name = "Dynamic Link Automation via Reactive Forwarding"
-    testcase_2_name = "Dynamic Link Automation via Host Intents"
+    testcase_1_name = "Dynamic Paths via Reactive Forwarding"
+    testcase_2_name = "Dynamic Paths via Host Intents"
     logging.info(f"Starting {test_name} test...")
     sleep_time = 3
 
@@ -192,6 +192,9 @@ def dynamic_link_auto_test(topo="linear,3,2", testcase=1):
             toggle_fwd("activate")
         elif testcase == 2:
             logging.info(f"Test Case 2: {testcase_2_name}")
+            toggle_fwd("activate")
+            mininet_process.send_command("pingall")
+            mininet_process.read_stderr("*** Results")
             toggle_fwd("deactivate")
             clear_all_intents()
             create_host_intents(get_mac_addresses())
@@ -301,8 +304,8 @@ def main():
     paths_functions_test(topo_DFGW)
     intent_functions_test(topo_DFGW)
     basic_link_auto_test(topo_DFGW)
-    dynamic_link_auto_test(topo_DFGW, testcase=1)
-    dynamic_link_auto_test(topo_DFGW, testcase=2)
+    dynamic_paths_test(topo_DFGW, testcase=1)
+    dynamic_paths_test(topo_DFGW, testcase=2)
 
     logging.info("End of Log")
 
