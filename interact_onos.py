@@ -231,6 +231,8 @@ def encode_mac_address(mac_address):
     return encoded_mac_address_with_none
 
 def get_path(source_mac, destination_mac):
+    '''Get the path between two MAC addresses using the ONOS REST API.
+    Returns a list of paths, where each path is a list of switches, beginning and ending with the source and destination MAC address.'''
     # Define variables
     ONOS_USER = "onos"
     ONOS_PASSWORD = "rocks"
@@ -250,23 +252,19 @@ def get_path(source_mac, destination_mac):
 
         # Extract paths from the response
         path_list = []
-        # formatted_paths = []
-        path_dict = response.json().get("paths", [])
-        for path in path_dict:
-            formatted_path = {
-                "source_mac": source_mac,
-                "switches": [],
-                "destination_mac": destination_mac
-            }
-            
-            for link in path.get("links", []):
+        path = []
+        for path_dict in response.json().get("paths", []):
+            path.append(source_mac)
+            for link in path_dict.get("links", []):
                 dst = link.get("dst")
                 if dst.get("device"):
-                    formatted_path["switches"].append(dst["device"])
+                    path.append(dst["device"])
+            path.append(destination_mac)
 
             # Log the paths
-            path_list.append(formatted_path)
-            logging.info(f"Path between {source_mac} and {destination_mac}: {formatted_path}")
+            path_list.append(path)
+            logging.info(f"Path between {source_mac} and {destination_mac}: {path}")
+
 
         # Return the paths
         return path_list
@@ -281,11 +279,6 @@ def get_all_paths(mac_addresses):
     for source_mac in mac_addresses:
         for destination_mac in mac_addresses:
             if source_mac != destination_mac:
-                path_info = {
-                    "source_mac": source_mac,
-                    "destination_mac": destination_mac,
-                    "path": get_path(source_mac, destination_mac)
-                }
-                all_paths.append(path_info)
+                all_paths.append(get_path(source_mac, destination_mac))
 
     return all_paths
