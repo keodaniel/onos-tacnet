@@ -1,1 +1,7 @@
 /script_logs
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+json.txt
+*.log
+command_history.txt

@@ -53,3 +53,9 @@ curl -X GET -u onos:rocks --header 'Accept: application/json' 'http://172.17.0.1
 
 sh ovs-vsctl set interface s1-eth1 ingress_policing_rate=10000
 sh ovs-vsctl set interface s1-eth1 ingress_policing_burst=1000
+
+curl -X GET -u onos:rocks --header 'Accept: application/json' 'http://172.17.0.1:8181/onos/v1/flows/application/org.onosproject.fwd' | jq
+
+curl -X GET -u onos:rocks --header 'Accept: application/json' 'http://172.17.0.1:8181/onos/v1/flows/application/org.onosproject.fwd' | grep -E '"deviceId"|"treatment"|"selector"' | jq -c '.flows[] | { deviceId, treatment: [.treatment.instructions[]], selector: [.selector.criteria[]] }'
+
+curl -X GET --header 'Accept: application/json' 'http://172.17.0.1:8181/onos/v1/paths/00%3A00%3A00%3A00%3A00%3A01%2FNone/00%3A00%3A00%3A00%3A00%3A03%2FNone'
