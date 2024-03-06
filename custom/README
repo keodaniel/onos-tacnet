@@ -6,4 +6,4 @@ To start up a mininet with the provided custom topology, do:
   sudo mn --custom custom_example.py --topo mytopo
 
 Example using sf_onos-tacnet/custom shared folder:
-sudo mn --switch ovs,protocols=OpenFlow14 --controller=remote,ip=172.17.0.2 --mac --custom ../../media/sf_onos-tacnet/custom/topokeo.py --topo=topokeo
+sudo mn --switch ovs,protocols=OpenFlow14 --controller=remote,ip=172.17.0.2 --mac --custom ../../media/sf_onos-tacnet/custom/tacnet.py --topo=DFGW
