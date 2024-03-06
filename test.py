@@ -300,12 +300,27 @@ def main():
     logging.basicConfig(filename=log_file_path, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
     topo_DFGW = "DFGW"
-    pingall_test()
-    paths_functions_test(topo_DFGW)
-    intent_functions_test(topo_DFGW)
-    basic_link_auto_test(topo_DFGW)
-    dynamic_paths_test(topo_DFGW, testcase=1)
-    dynamic_paths_test(topo_DFGW, testcase=2)
+    user_input = input("Which test would you like to run? (1-6, None):\n 1) Pingall\n 2) Path Functions\n 3) Intent Functions\n 4) Basic Link Automation\n 5) Dynamic Paths Test\n 6) All Tests\n Selection: ")
+    if user_input == "1":
+        pingall_test()
+    elif user_input == "2":
+        paths_functions_test(topo_DFGW)
+    elif user_input == "3":
+        intent_functions_test(topo_DFGW)
+    elif user_input == "4":
+        basic_link_auto_test(topo_DFGW)
+    elif user_input == "5":
+        dynamic_paths_test(topo_DFGW, testcase=1)
+    elif user_input == "6":
+        pingall_test()
+        paths_functions_test(topo_DFGW)
+        intent_functions_test(topo_DFGW)
+        basic_link_auto_test(topo_DFGW)
+        dynamic_paths_test(topo_DFGW, testcase=1)
+        dynamic_paths_test(topo_DFGW, testcase=2)
+    else:
+        print("No test selected. Exiting...")
+        logging.error("No test selected. Exiting...")
 
     logging.info("End of Log")
 
