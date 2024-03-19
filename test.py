@@ -340,130 +340,95 @@ def fault_tolerance_test(testcase, topo="linear,3,2"):
             logging.error(f"Invalid testcase: {testcase}")
             return
 
-        # pause = input("Press Enter to continue...")
-
-        # Get initial paths
+        # Start iperf
         sleep(sleep_time)
-        mininet_process.send_command("h1 iperf -s &")
-        if "mininet>" in mininet_process.read_stdout():
-            logging.info("h1 iperf -s & command successful")
-        else:
-            logging.error("h1 iperf -s & command failed")
-            return
-
+        mininet_process.send_command("h1 iperf -s &", check_stdout=True)
         sleep(sleep_time)
-        mininet_process.send_command("h6 iperf -c 10.0.10.1 -i 1 > iperf.log &")
-        if "mininet>" in mininet_process.read_stdout():
-            logging.info("h6 iperf -c 10.0.10.1 -i 1 > iperf.log & command successful")
-        else:
-            logging.error("h6 iperf -c 10.0.10.1 -i 1 > iperf.log & command failed")
-        sleep(3)
-        mininet_process.send_command("link s1 s3 down")
-        if "mininet>" in mininet_process.read_stdout():
-            logging.info("link s1 s3 down command successful")
-        else:
-            logging.error("link s1 s3 down command failed")
+        mininet_process.send_command("h6 iperf -c 10.0.10.1 -t 20 -i 1 > iperf_throwaway.log &", check_stdout=True)
+        sleep(25)
+        mininet_process.send_command("h6 iperf -c 10.0.10.1 -t 20 -i 1 > iperf_baseline.log &", check_stdout=True)
+        sleep(25)
+        mininet_process.send_command("h6 iperf -c 10.0.10.1 -t 20 -i 1 > iperf_failover.log &", check_stdout=True)
+
+        # Get paths
         sleep(10)
-        mininet_process.send_command("h6 cat iperf.log")
-        if "mininet>" in mininet_process.read_stdout():
-            logging.info("h6 cat iperf.log command successful")
+        mac_list = get_mac_addresses()
+        paths_1 = get_all_paths(mac_list)
+
+       # Failover and get new paths
+        logging.info("Failover at time 10s")
+        link_failover_cmd = "link s1 s3 down"
+        mininet_process.send_command("link s1 s3 down", check_stdout=True)
+        sleep(1)
+        paths_2 = get_all_paths(get_mac_addresses())
+
+        sleep(15)
+        mininet_process.send_command("h6 cat iperf_throwaway.log", check_stdout=True)
+        logging.info("Throwaway iperf output")
+        sleep(1)
+        mininet_process.read_stderr("0.0000-20")
+        mininet_process.send_command("h6 cat iperf_baseline.log", check_stdout=True)
+        logging.info("Baseline iperf output")
+        sleep(1)
+        mininet_process.read_stderr("0.0000-20")
+        mininet_process.send_command("h6 cat iperf_failover.log", check_stdout=True)
+        logging.info("Failover iperf output")
+        sleep(1)
+        mininet_process.read_stderr("0.0000-20")
+
+        # Compare paths
+        if paths_1 !=  paths_2:
+            logging.info(f"Paths are different after {link_failover_cmd} command")
+            for path_list in paths_2:
+                if path_list not in paths_1:
+                    if path_list:
+                        logging.info("Removed Paths: " + str(path_list))
+            for path_list in paths_1:
+                if path_list not in paths_2:
+                    if path_list:
+                        logging.info("Added Paths: " + str(path_list))
         else:
-            logging.error("h6 cat iperf.log command failed")
+            logging.info("Paths are the same")     
 
-        mininet_process.read_stderr("0.0000-10")
-        sleep(1)     
-        # mininet_process.send_command("h1 pkill iperf")
-        # if "mininet>" in mininet_process.read_stdout():
-        #     logging.info("h1 pkill iperf command successful")
-        # else:
-        #     logging.error("h1 pkill iperf command failed")
-        # mininet_process.send_command("link s1 s3 up")
-        # if "mininet>" in mininet_process.read_stdout():
-        #     logging.info("link s1 s3 up command successful")
-        # else:
-        #     logging.error("link s1 s3 up command failed")
-
-        # pause = input("Press Enter to continue...")
-        # mac_list = get_mac_addresses()
-        # paths_1 = get_all_paths(mac_list)
-
-        # Failover
-        # link_failover_cmd_1 = "link s1 s2 down"
-        # mininet_process.send_command(link_failover_cmd_1)
-
-        # Get new paths
-        # sleep(sleep_time)
-        # mininet_process.send_command("pingall")
-        # cmd_output_2 = mininet_process.read_stderr("*** Results")
-        # paths_2 = get_all_paths(get_mac_addresses())
-
-        # Compare paths
-        # if paths_1 !=  paths_2:
-        #     logging.info(f"Paths are different after {link_failover_cmd_1} command")
-        #     for path_list in paths_1:
-        #         if path_list not in paths_2:
-        #             if path_list:
-        #                 logging.info("Removed Paths: " + str(path_list))
-        #     for path_list in paths_2:
-        #         if path_list not in paths_1:
-        #             if path_list:
-        #                 logging.info("Added Paths: " + str(path_list))
-        # else:
-        #     logging.info("Paths are the same")
-
-        # Fail back
-        # link_failover_cmd_2 = "link s1 s2 up"
-        # mininet_process.send_command(link_failover_cmd_2)
-
-        # Get new paths
-        # sleep(sleep_time)
-        # mininet_process.send_command("pingall")
-        # cmd_output_3 = mininet_process.read_stderr("*** Results")
-        # paths_3 = get_all_paths(get_mac_addresses())
-
-        # Compare paths
-        # if paths_2 !=  paths_3:
-        #     logging.info(f"Paths are different after {link_failover_cmd_2} command")
-        #     for path_list in paths_2:
-        #         if path_list not in paths_3:
-        #             if path_list:
-        #                 logging.info("Removed Paths: " + str(path_list))
-        #     for path_list in paths_3:
-        #         if path_list not in paths_2:
-        #             if path_list:
-        #                 logging.info("Added Paths: " + str(path_list))
-        # else:
-        #     logging.info("Paths are the same")     
+        # Logging success/failure
+        mininet_process.send_command("h6 cat iperf_baseline.log | grep '0.0000-20'", check_stdout=True)
+        baseline_output = mininet_process.read_stderr("0.0000-20")
+        sleep(1)
+        mininet_process.send_command("h6 cat iperf_failover.log | grep '0.0000-20'", check_stdout=True)
+        failover_output = mininet_process.read_stderr("0.0000-20")
 
         # Closing actions
         mininet_process.process.stdin.close()
         remaining_output = mininet_process.read_stderr("Done")
 
-        # Logging success/failure
-        # if "0% dropped" in cmd_output_1 and "0% dropped" in cmd_output_2 and "0% dropped" in cmd_output_3:
-        #     if paths_1 != paths_2 and paths_2 != paths_3:
-        #         if testcase == 1:
-        #             testcase_1_success = True
-        #         elif testcase == 2:
-        #             testcase_2_success = True
+        for lines in baseline_output.split("  "):
+            if "GBytes" in lines:
+                baseline_throughput = lines.split(" ")[0]
+            if "Gbits/sec" in lines:
+                baseline_bitrate = lines.split(" ")[0]
+        for lines in failover_output.split("  "):
+            if "GBytes" in lines:
+                failover_throughput = lines.split(" ")[0]
+            if "Gbits/sec" in lines:
+                failover_bitrate = lines.split(" ")[0]
         
-        # if testcase == 1:
-        #     if testcase_1_success:
-        #         logging.info(f"Test Case 1: {testcase_1_name} Success")
-        #         print(f"Test Case 1: {testcase_1_name} Success")
-        #     else:
-        #         logging.error(f"Test Case 1: {testcase_1_name} Fail")
-        #         print(f"Test Case 1: {testcase_1_name} Fail")
-        # elif testcase == 2:
-        #     if testcase_2_success:
-        #         logging.info(f"Test Case 2: {testcase_2_name} Success")
-        #         print(f"Test Case 2: {testcase_2_name} Success")
-        #     else:
-        #         logging.error(f"Test Case 2: {testcase_2_name} Fail")
-        #         print(f"Test Case 2: {testcase_2_name} Fail")
-        # else:
-        #     logging.error(f"Invalid testcase number: {testcase}")
-        #     return
+        # Log difference between baseline and failover
+        logging.info(f"Baseline Throughput: {baseline_throughput} Gbytes, Baseline Bitrate: {baseline_bitrate} Gbits/sec")
+        logging.info(f"Failover Throughput: {failover_throughput} Gbytes, Failover Bitrate: {failover_bitrate} Gbits/sec")
+        throughput_diff = round(float(baseline_throughput) - float(failover_throughput), 2)
+        bitrate_diff = round(float(baseline_bitrate) - float(failover_bitrate), 2)
+        logging.info(f"Throughput Difference: {throughput_diff} Gbytes, Bitrate Difference: {bitrate_diff} Gbits/sec")
+
+        # Logging success/failure
+        if paths_1 != paths_2:
+            testcase_success = True
+        if testcase_success:
+            logging.info(f"Test Case: {testcase_name} Success")
+            print(f"Test Case: {testcase_name} Success")
+            print(f"Throughput Difference: {throughput_diff} Gbytes, Bitrate Difference: {bitrate_diff} Gbits/sec")
+        else:
+            logging.error(f"Test Case: {testcase_name} Fail")
+            print(f"Test Case: {testcase_name} Fail")
 
     except Exception as e:
         logging.error(f"Error during {test_name} test: {e}")
