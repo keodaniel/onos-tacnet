@@ -26,11 +26,17 @@ class MininetProcess:
         except Exception as e:
             logging.error(f"Error starting Mininet: {e}")
 
-    def send_command(self, command):
+    def send_command(self, command, check_stdout=False):
         try: 
             logging.info(f"Executing Mininet command: {command}")
             self.process.stdin.write(f"{command}\n".encode())
             self.process.stdin.flush()
+
+            if check_stdout:
+                if "mininet>" in self.read_stdout():
+                    logging.info(f"Command {command} successful")
+                else:
+                    logging.error(f"Command {command} failed")
 
         except Exception as e:
             logging.error(f"Error sending Mininet command: {e}")
