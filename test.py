@@ -403,21 +403,21 @@ def fault_tolerance_test(testcase, topo="linear,3,2"):
 
         for lines in baseline_output.split("  "):
             if "GBytes" in lines:
-                baseline_throughput = lines.split(" ")[0]
+                baseline_capacity = lines.split(" ")[0]
             if "Gbits/sec" in lines:
-                baseline_bitrate = lines.split(" ")[0]
+                baseline_throughput = lines.split(" ")[0]
         for lines in failover_output.split("  "):
             if "GBytes" in lines:
-                failover_throughput = lines.split(" ")[0]
+                failover_capacity = lines.split(" ")[0]
             if "Gbits/sec" in lines:
-                failover_bitrate = lines.split(" ")[0]
+                failover_throughput = lines.split(" ")[0]
         
         # Log difference between baseline and failover
-        logging.info(f"Baseline Throughput: {baseline_throughput} Gbytes, Baseline Bitrate: {baseline_bitrate} Gbits/sec")
-        logging.info(f"Failover Throughput: {failover_throughput} Gbytes, Failover Bitrate: {failover_bitrate} Gbits/sec")
+        logging.info(f"Baseline Capacity: {baseline_capacity} Gbytes, Baseline Throughput: {baseline_throughput} Gbits/sec")
+        logging.info(f"Failover Capacity: {failover_capacity} Gbytes, Failover Throughput: {failover_throughput} Gbits/sec")
+        capacity_diff = round(float(baseline_capacity) - float(failover_capacity), 2)
         throughput_diff = round(float(baseline_throughput) - float(failover_throughput), 2)
-        bitrate_diff = round(float(baseline_bitrate) - float(failover_bitrate), 2)
-        logging.info(f"Throughput Difference: {throughput_diff} Gbytes, Bitrate Difference: {bitrate_diff} Gbits/sec")
+        logging.info(f"Capacity Difference: {capacity_diff} Gbytes, Throughput Difference: {throughput_diff} Gbits/sec")
 
         # Logging success/failure
         if paths_1 != paths_2:
@@ -425,7 +425,7 @@ def fault_tolerance_test(testcase, topo="linear,3,2"):
         if testcase_success:
             logging.info(f"Test Case: {testcase_name} Success")
             print(f"Test Case: {testcase_name} Success")
-            print(f"Throughput Difference: {throughput_diff} Gbytes, Bitrate Difference: {bitrate_diff} Gbits/sec")
+            print(f"Capacity Difference: {capacity_diff} Gbytes, Throughput Difference: {throughput_diff} Gbits/sec")
         else:
             logging.error(f"Test Case: {testcase_name} Fail")
             print(f"Test Case: {testcase_name} Fail")
