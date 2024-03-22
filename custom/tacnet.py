@@ -8,6 +8,7 @@ from mininet.link import TCLink
 topos = {
     'base': ( lambda: Base() ), 
     'DFGW': ( lambda: DFGateway() ),
+    'TC': ( lambda: TC() ),
     'BW': ( lambda: Bandwidth() )
     }
 
@@ -75,6 +76,32 @@ class DFGateway( Topo ):
         # Backhaul Links
         self.addLink(s1, s3)
         self.addLink(s2, s3)
+
+class TC( Topo ):
+    """DFGW with 50MBps bandwidth between units"""
+
+    def build( self ):
+        "Create custom topo."
+        
+        # Add hosts and switches
+        h1 = self.addHost('h1', ip='10.0.10.1/24', defaultRoute='via 10.0.10.1')
+        h2 = self.addHost('h2', ip='10.0.20.1/24', defaultRoute='via 10.0.20.1')
+        h3 = self.addHost('h3', ip='10.0.30.1/24', defaultRoute='via 10.0.30.1')
+        s1 = self.addSwitch('s1')
+        s2 = self.addSwitch('s2')
+        s3 = self.addSwitch('s3')
+
+        # Add links
+        self.addLink(h1, s1)
+        self.addLink(h2, s2)
+        self.addLink(h3, s3)
+
+        # Interunit Links
+        self.addLink(s1, s2, cls=TCLink, bw=10)
+
+        # Backhaul Links
+        self.addLink(s1, s3, cls=TCLink, bw=10)
+        self.addLink(s2, s3, cls=TCLink, bw=10)
         
 class Bandwidth( Topo ):
     """Implemented TC Links between units\n
