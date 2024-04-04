@@ -5,4 +5,3 @@ __pycache__/
 json.txt
 *.log
 command_history.txt
-*.png
