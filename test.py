@@ -337,6 +337,14 @@ def fault_tolerance_test(testcase, topo="TC"):
         capacity_diff_data = []
         throughput_diff_data = []
 
+        output = []
+        baseline_capacity_data = []
+        failover_capacity_data = []
+        baseline_throughput_data = []
+        failover_throughput_data = []
+        capacity_diff_data = []
+        throughput_diff_data = []
+
         start_onos_docker()
         mininet_process = MininetProcess(topo)
         mininet_process.start_mininet()
@@ -357,6 +365,8 @@ def fault_tolerance_test(testcase, topo="TC"):
             logging.error(f"Invalid testcase: {testcase}")
             return
 
+        # Start iperf server
+        sleep(sleep_time)
         # Start iperf server
         sleep(10)
         mininet_process.send_command("h1 iperf -s &", check_stdout=True)
