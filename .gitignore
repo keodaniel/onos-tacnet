@@ -5,3 +5,6 @@ __pycache__/
 json.txt
 *.log
 command_history.txt
+*boxplot.png
+boxplot*
+plot.py
