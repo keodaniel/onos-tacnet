@@ -78,7 +78,7 @@ class DFGateway( Topo ):
         self.addLink(s2, s3)
 
 class TC( Topo ):
-    """DFGW with 10MBps bandwidth between units"""
+    """in progress"""
 
     def build( self ):
         "Create custom topo."
@@ -103,11 +103,11 @@ class TC( Topo ):
         self.addLink(h6, s3)
         
         # Interunit Links
-        self.addLink(s1, s2, cls=TCLink, bw=10,)
+        self.addLink(s1, s2, cls=TCLink, bw=50, delay="10ms") # 50Mbps interunit link WPPL-T approx 1ms
 
         # Backhaul Links
-        self.addLink(s1, s3, cls=TCLink, bw=10)
-        self.addLink(s2, s3, cls=TCLink, bw=10)
+        self.addLink(s1, s3, cls=TCLink, bw=10, delay="10ms") # 10Mbps backhaul link VSAT-L approx propagation delay to satellite
+        self.addLink(s2, s3, cls=TCLink, bw=5, delay="10ms") # 5Mbps backhaul link VSAT-E
         
 class Bandwidth( Topo ):
     """Implemented TC Links between units\n
