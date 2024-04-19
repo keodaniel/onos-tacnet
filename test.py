@@ -7,6 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt 
 import datetime
 import os
+import statistics
 
 def clear_log_file(log_file_path):
     try:
@@ -311,11 +312,15 @@ def dynamic_paths_test(testcase, topo="linear,3,2"):
 def fault_tolerance_test(testcase, topo="TC"):
     test_name = "Fault Tolerance"
     testcase_success = False
-    logging.info(f"Starting {test_name} test...")
+    start_time = datetime.datetime.now()
+    start_time_str = start_time.strftime("%Y-%m-%d-%H%M")
+    logging.info(f"Starting {test_name} test at {start_time_str}")
     sleep_time = 3
+    iperf_time = 20 # 20s iperf test
+    trial_runs = 20 # 20 for number of trials
 
     if testcase == "fwd":
-        testcase_name = "Fault Tolerance via Reactive Forwarding"
+        testcase_name = "Fault Tolerance via Reactive Fwd"
     elif testcase == "intent":
         testcase_name = "Fault Tolerance via Host Intents"
     else:
@@ -353,10 +358,10 @@ def fault_tolerance_test(testcase, topo="TC"):
             return
 
         # Start iperf server
-        sleep(sleep_time)
+        sleep(10)
         mininet_process.send_command("h1 iperf -s &", check_stdout=True)
 
-        for i in range(10):
+        for i in range(trial_runs):
             paths_1 = None
             paths_2 = None
             baseline_capacity = None
@@ -367,46 +372,24 @@ def fault_tolerance_test(testcase, topo="TC"):
             throughput_diff = None
 
             sleep(sleep_time)
-            # mininet_process.send_command("h6 iperf -c 10.0.10.1 -t 20 -i 1 > iperf_throwaway.log &", check_stdout=True)
-            # sleep(25)
 
             # Baseline iperf test
-            mininet_process.send_command("h6 iperf -c 10.0.10.1 -t 20 -i 1 > iperf_baseline.log &", check_stdout=True)
-            # wait til complete
-            sleep(25)
-            
-            # Failover iperf test
-            mininet_process.send_command("h6 iperf -c 10.0.10.1 -t 20 -i 1 > iperf_failover.log &", check_stdout=True)
+            mininet_process.send_command(f"h6 iperf -c 10.0.10.1 -t {iperf_time} -i 1 -f mM > iperf/iperf_{testcase}_baseline.log &", check_stdout=True)
+            sleep(iperf_time)
+            logging.info("Baseline iperf output")
+            baseline_output = mininet_process.read_logfile(f"iperf/iperf_{testcase}_baseline.log")
 
-            # Get paths
-            sleep(10)
+            # Failover iperf test
+            mininet_process.send_command(f"h6 iperf -c 10.0.10.1 -t {iperf_time} -i 1 -f mM > iperf/iperf_{testcase}_failover.log &", check_stdout=True)
+            sleep(iperf_time/2)
             mac_list = get_mac_addresses()
             paths_1 = get_all_paths(mac_list)
-
-            # Failover and get new paths
             logging.info("Failover at time 10s")
             link_failover_cmd = "link s1 s3 down"
             mininet_process.send_command(link_failover_cmd, check_stdout=True)
-            sleep(1)
             paths_2 = get_all_paths(mac_list)
-
-            # wait til complete
-            sleep(15)
-            # mininet_process.send_command("h6 cat iperf_throwaway.log", check_stdout=True)
-            # logging.info("Throwaway iperf output")
-            # sleep(1)
-            # mininet_process.read_stderr(" 0.0000-2")
-
-            # Get log for baseline and failover tests
-            mininet_process.send_command("h6 cat iperf_baseline.log", check_stdout=True)
-            logging.info("Baseline iperf output")
-            sleep(1)
-            mininet_process.read_stderr(" 0.0000-2")
-
-            mininet_process.send_command("h6 cat iperf_failover.log", check_stdout=True)
             logging.info("Failover iperf output")
-            sleep(1)
-            mininet_process.read_stderr(" 0.0000-2")
+            failover_output = mininet_process.read_logfile(f"iperf/iperf_{testcase}_failover.log")
 
             # Compare paths
             if paths_1 !=  paths_2:
@@ -421,26 +404,20 @@ def fault_tolerance_test(testcase, topo="TC"):
                             logging.info("Removed Paths: " + str(path_list))
             else:
                 logging.info("Paths are the same")  
-                logging.error(f"Test Case: {testcase_name} Trial {i} Fail")
+                logging.error(f"Test Case: {testcase_name} Trial {i+1} Fail")
                 return False 
 
-            # Logging success/failure
-            mininet_process.send_command("h6 cat iperf_baseline.log | grep ' 0.0000-2'", check_stdout=True)
-            baseline_output = mininet_process.read_stderr(" 0.0000-2")
-            sleep(1)
-            mininet_process.send_command("h6 cat iperf_failover.log | grep ' 0.0000-2'", check_stdout=True)
-            failover_output = mininet_process.read_stderr(" 0.0000-2")
-
+            # Parse iperf output
             for lines in baseline_output.split("  "):
                 if "MBytes" in lines:
-                    baseline_capacity = lines.split(" ")[0]
+                    baseline_capacity = float(lines.split(" ")[0])
                 if "Mbits/sec" in lines:
-                    baseline_throughput = lines.split(" ")[0]
+                    baseline_throughput = float(lines.split(" ")[0])
             for lines in failover_output.split("  "):
                 if "MBytes" in lines:
-                    failover_capacity = lines.split(" ")[0]
+                    failover_capacity = float(lines.split(" ")[0])
                 if "Mbits/sec" in lines:
-                    failover_throughput = lines.split(" ")[0]
+                    failover_throughput = float(lines.split(" ")[0])
             
             # Log difference between baseline and failover
             logging.info(f"Baseline Capacity: {baseline_capacity} Mbytes, Baseline Throughput: {baseline_throughput} Mbits/sec")
@@ -453,9 +430,12 @@ def fault_tolerance_test(testcase, topo="TC"):
             if paths_1 != paths_2:
                 testcase_success = True
             if testcase_success:
-                logging.info(f"Test Case: {testcase_name} Success")
-                print(f"Test Case: {testcase_name} Success")
-                print(f"Capacity Difference: {capacity_diff} Mbytes, Throughput Difference: {throughput_diff} Mbits/sec")
+                logging.info(f"{testcase_name} Test Trial {i+1} Success")
+                timestring = datetime.datetime.now().strftime("%H:%M:%S")
+                print(f"{testcase_name} Test Trial {i+1} Success, time: {timestring}")
+                # print(f"Baseline Capacity: {baseline_capacity} Mbytes, Baseline Throughput: {baseline_throughput} Mbits/sec")
+                # print(f"Failover Capacity: {failover_capacity} Mbytes, Failover Throughput: {failover_throughput} Mbits/sec")
+                # print(f"Capacity Difference: {capacity_diff} Mbytes, Throughput Difference: {throughput_diff} Mbits/sec")
                 baseline_capacity_data.append(baseline_capacity)
                 failover_capacity_data.append(failover_capacity)
                 baseline_throughput_data.append(baseline_throughput)
@@ -463,8 +443,8 @@ def fault_tolerance_test(testcase, topo="TC"):
                 capacity_diff_data.append(capacity_diff)
                 throughput_diff_data.append(throughput_diff)
             else:
-                logging.error(f"Test Case: {testcase_name} Fail")
-                print(f"Test Case: {testcase_name} Fail")
+                logging.error(f"{testcase_name} Test Fail")
+                print(f"{testcase_name} Test Fail")
                 return False
             
             # Reset link
@@ -476,7 +456,7 @@ def fault_tolerance_test(testcase, topo="TC"):
         # Closing actions
         output = (baseline_capacity_data, failover_capacity_data, baseline_throughput_data, failover_throughput_data, capacity_diff_data, throughput_diff_data)
         mininet_process.process.stdin.close()
-        remaining_output = mininet_process.read_stderr("Done")
+        mininet_process.read_stderr("Done")
         logging.info(f"Output: {output}")
 
         baseline_capacity_data = np.array(baseline_capacity_data, dtype=float)
@@ -489,33 +469,45 @@ def fault_tolerance_test(testcase, topo="TC"):
         # boxplot
         fig, ax = plt.subplots(1, 2)
         fig.set_size_inches(10, 5)
-        ax[0].boxplot([baseline_capacity_data, failover_capacity_data], widths=0.4, labels=["No Link Failure", "Single Link Failover"])
-        ax[0].set_title("Capacity of 20s iPerf Test over TCLink")
-        m = min(min(baseline_capacity_data), min(failover_capacity_data))
+        ax[0].boxplot([baseline_capacity_data, failover_capacity_data], widths=0.4, labels=["Baseline", "Single Link Failover"])
+        ax[0].set_title("Capacity of 20s iPerf Test")
+        # ticks = np.arange(0, 32, 2)
         M = max(max(baseline_capacity_data), max(failover_capacity_data))
-        ticks = np.arange(round(m)-1, round(M)+1, 0.5)
+        M = M + 10 - M % 10
+        ticks = np.arange(0, M+2, 2)
         ax[0].set_yticks(ticks)
         ax[0].set_ylabel("MBytes")
-        ax[1].boxplot([baseline_throughput_data, failover_throughput_data], widths=0.4, labels=["No Link Failure", "Single Link Failover"])
-        ax[1].set_title("Throughput of 20s iPerf Test over TCLink")
+        failover_median = statistics.median(failover_capacity_data)
+        baseline_median = statistics.median(baseline_capacity_data)
+        diff_median = (failover_median - baseline_median) / baseline_median * 100
+        ax[0].text(1.6, failover_median, f"{'+' if diff_median >= 0 else '-'}{diff_median:.2f}% ", ha='center', va='center', color='red')
+        ax[0].text(1.5, 0, "Median % Difference from Baseline", ha='center', va='bottom', color='red')
+
+        ax[1].boxplot([baseline_throughput_data, failover_throughput_data], widths=0.4, labels=["Baseline", "Single Link Failover"])
+        ax[1].set_title("Throughput of 20s iPerf Test")
         ax[1].set_ylabel("Mbits/sec")
-        m = min(min(baseline_throughput_data), min(failover_throughput_data))
+        # ticks = np.arange(0, 11, 1)
         M = max(max(baseline_throughput_data), max(failover_throughput_data))
-        ticks = np.arange(round(m)-1, round(M)+1, 0.2)
+        M = M + 10 - M % 10
+        ticks = np.arange(0, M+1, 1)
         ax[1].set_yticks(ticks)
+        failover_median = statistics.median(failover_throughput_data)
+        baseline_median = statistics.median(baseline_throughput_data)
+        diff_median = (failover_median - baseline_median) / baseline_median * 100
+        ax[1].text(1.6, failover_median, f"{'+' if diff_median >= 0 else '-'}{diff_median:.2f}% ", ha='center', va='center', color='red')
+        ax[1].text(1.5, 0, "Median % Difference from Baseline", ha='center', va='bottom', color='red')                      
 
         # plt.show()
-        
-        datestring = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
-        fig.savefig(f"{datestring}_{testcase}_boxplot.png")
+        fig.savefig(f"plots/{start_time_str}_{testcase}_boxplot.png")
         logging.info(f"{testcase} boxplot saved")
 
+        elapsed_time = (datetime.datetime.now() - start_time)
+        logging.info(f"{test_name} test done, elapsed time: {elapsed_time}")
+        print(f"Elapsed time: {elapsed_time}")
         return output
 
     except Exception as e:
         logging.error(f"Error during {test_name} test: {e}")
-
-    logging.info(f"{test_name} test done")
 
 def bandwidth_control_test(testcase, topo="BW"):
     test_name = "Bandwidth Control"
@@ -560,6 +552,30 @@ def bandwidth_control_test(testcase, topo="BW"):
         remaining_output = mininet_process.read_stderr("Done")
 
         # Logging success/failure
+
+    except Exception as e:
+        logging.error(f"Error during {test_name} test: {e}")
+
+    logging.info(f"{test_name} test done")
+
+def prototype(testcase, topo="TC"):
+    test_name = "Fault Tolerance prototype"
+    testcase_success = False
+    logging.info(f"Starting {test_name} test...")
+    
+    try:
+        mininet_process = MininetProcess(topo)
+        mininet_process.start_mininet()
+
+        baseline_throughput = None
+        # logging.info("Baseline iperf output")
+        mininet_process.read_logfile(f"iperf_baseline_{testcase}.log")
+        
+        baseline_output = mininet_process.read_logfile(f"iperf_baseline_{testcase}.log", last_line=True)
+        # mininet_process.read_logfile("iperf_failover.log")
+
+        # baseline_output = mininet_process.read_logfile("iperf_failover.log", last_line=True)
+        print(baseline_output)
 
     except Exception as e:
         logging.error(f"Error during {test_name} test: {e}")
