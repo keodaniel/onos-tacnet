@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import datetime
 import os
 import statistics
+import statistics
 
 def clear_log_file(log_file_path):
     try:
