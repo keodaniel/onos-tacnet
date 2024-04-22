@@ -319,6 +319,7 @@ def fault_tolerance_test(testcase, topo="TC"):
     sleep_time = 3
     iperf_time = 20 # 20s iperf test
     trial_runs = 20 # 20 for number of trials
+    failover_time = iperf_time/2
 
     if testcase == "fwd":
         testcase_name = "Fault Tolerance via Reactive Fwd"
@@ -368,8 +369,6 @@ def fault_tolerance_test(testcase, topo="TC"):
 
         # Start iperf server
         sleep(sleep_time)
-        # Start iperf server
-        sleep(10)
         mininet_process.send_command("h1 iperf -s &", check_stdout=True)
 
         for i in range(trial_runs):
@@ -392,10 +391,10 @@ def fault_tolerance_test(testcase, topo="TC"):
 
             # Failover iperf test
             mininet_process.send_command(f"h6 iperf -c 10.0.10.1 -t {iperf_time} -i 1 -f mM > iperf/iperf_{testcase}_failover.log &", check_stdout=True)
-            sleep(iperf_time/2)
+            sleep(failover_time)
             mac_list = get_mac_addresses()
             paths_1 = get_all_paths(mac_list)
-            logging.info("Failover at time 10s")
+            logging.info(f"Failover at time {failover_time}s")
             link_failover_cmd = "link s1 s3 down"
             mininet_process.send_command(link_failover_cmd, check_stdout=True)
             paths_2 = get_all_paths(mac_list)
@@ -460,8 +459,12 @@ def fault_tolerance_test(testcase, topo="TC"):
             
             # Reset link
             logging.info("Resetting link")
-            link_reset_cmd = "link s1 s3 up"
-            mininet_process.send_command(link_reset_cmd, check_stdout=True)
+            link_reset_cmd1 = "link s1 s3 up"
+            mininet_process.send_command(link_reset_cmd1, check_stdout=True)
+            link_reset_cmd2 = "link s1 s2 down"
+            mininet_process.send_command(link_reset_cmd2, check_stdout=True)
+            link_reset_cmd3 = "link s1 s2 up"
+            mininet_process.send_command(link_reset_cmd3, check_stdout=True)
             sleep(1)
         
         # Closing actions
