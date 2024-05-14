@@ -7,3 +7,5 @@ json.txt
 command_history.txt
 plot.py
 *.png
+*_old.py
+old*
