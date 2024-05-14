@@ -18,8 +18,25 @@ def start_onos_docker():
                 logging.info("Waiting for ONOS")
                 sleep(1)
             sleep(60)
+        return True
+    
     except subprocess.CalledProcessError as e:
         logging.error(f"Error while starting ONOS Docker container: {e}")
+        return False
+
+def restart_onos_docker():
+    try:
+        logging.info("Restarting ONOS Docker container.")
+        subprocess.Popen(['sudo', 'docker', 'restart', 'onos'])
+        while b'onos' not in subprocess.check_output(['sudo', 'docker', 'ps', '--format', '{{.Names}}']):
+            logging.info("Waiting for ONOS")
+            sleep(1)
+        sleep(60)
+        return True
+    
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Error while starting ONOS Docker container: {e}")
+        return False
 
 def toggle_fwd(action):
     try:

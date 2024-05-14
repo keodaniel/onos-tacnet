@@ -25,6 +25,7 @@ class MininetProcess:
             
         except Exception as e:
             logging.error(f"Error starting Mininet: {e}")
+            raise
 
     # def send_command(self, command, check_stdout=False):
     #     try: 
@@ -111,7 +112,7 @@ class MininetProcess:
     #         logging.error(f"Error reading log file: {e}")
 
     def read_logfile(self, logfile):
-        timeout = 100
+        timeout = 10
         sleep_time = 5
         output = []
 
@@ -135,4 +136,42 @@ class MininetProcess:
             for line in output:
                 logging.info(line)
             return output[-1]
+
+    def read_iperf3_logfile(self, logfile):
+        timeout = 20
+        sleep_time = 10
+        result = []
+
+        while timeout > 0:
+            output = []
+            with open(logfile) as f:
+                for line in f:
+                    output.append(line.rstrip('\n'))
+
+            if len(output) > 0 and "iperf Done." in output[-1]:
+                logging.info("Found iperf Done.")
+                break
+            for line in output:
+                if "0.00-20.00" in line:
+                    logging.info("Found 0.00-20.00")
+                    timeout = -1
+                    break
+            else:
+                logging.info(f"Sleeping {sleep_time} seconds before retrying to read {logfile}")
+                sleep(sleep_time)
+                timeout -= 1
+
+        if timeout == 0:
+            logging.error(f"Runtime exceeded for reading log: {logfile}")
+            for line in output:
+                logging.error(line)
+            raise Exception(f"Runtime exceeded for reading log")
+        
+        else:
+            for line in output:
+                if "sender" in line or "receiver" in line:
+                    result.append(line)
+                logging.info(line)
+            return result
+
 
