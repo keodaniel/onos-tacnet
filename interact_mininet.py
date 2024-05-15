@@ -1,5 +1,4 @@
 import subprocess
-# import paramiko
 import logging
 from time import sleep
 
@@ -26,23 +25,6 @@ class MininetProcess:
         except Exception as e:
             logging.error(f"Error starting Mininet: {e}")
             raise
-
-    # def send_command(self, command, check_stdout=False):
-    #     try: 
-    #         logging.info(f"Executing Mininet command: {command}")
-    #         self.process.stdin.write(f"{command}\n".encode())
-    #         self.process.stdin.flush()
-
-    #         if check_stdout:
-    #             if "mininet>" in self.read_stdout():
-    #                 logging.info(f"Command {command} successful")
-    #                 return True
-    #             else:
-    #                 logging.error(f"Command {command} failed")
-    #                 return False
-
-    #     except Exception as e:
-    #         logging.error(f"Error sending Mininet command: {e}")
 
     def send_command(self, command, check_stdout=False):
         timeout = 100
@@ -93,23 +75,6 @@ class MininetProcess:
 
         except Exception as e:
             logging.error(f"Error reading stdout: {e}")
-
-    # def read_logfile(self, logfile, last_line=False):
-    #     try:
-    #         with open(logfile) as f:
-    #             for line in f:
-    #                 if last_line:
-    #                     pass
-    #                 else:
-    #                     logging.info(line.rstrip('\n'))  # Remove the last newline character
-    #             if last_line:
-    #                 if "0.0000" in line:
-    #                     return line.rstrip('\n')
-    #                 else:
-    #                     logging.error("Expected last line to contain '0.0000'")
-    #                     return
-    #     except Exception as e:
-    #         logging.error(f"Error reading log file: {e}")
 
     def read_logfile(self, logfile):
         timeout = 10
