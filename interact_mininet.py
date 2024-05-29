@@ -48,6 +48,7 @@ class MininetProcess:
                 return True
         
         logging.error(f"Command {command} failed after multiple retries")
+        return False
 
 
     def read_stderr(self, expected_keyword):
