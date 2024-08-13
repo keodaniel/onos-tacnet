@@ -9,3 +9,6 @@ plot.py
 *.png
 *_old.py
 old*
+bw_test.txt
+udp_meter.txt
+udp_meter.txt

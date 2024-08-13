@@ -48,6 +48,7 @@ class MininetProcess:
                 return True
         
         logging.error(f"Command {command} failed after multiple retries")
+        return False
 
 
     def read_stderr(self, expected_keyword):
@@ -119,6 +120,10 @@ class MininetProcess:
             for line in output:
                 if "0.00-20.00" in line:
                     logging.info("Found 0.00-20.00")
+                    timeout = -1
+                    break
+                if "0.00-10.00" in line:
+                    logging.info("Found 0.00-10.00")
                     timeout = -1
                     break
             else:

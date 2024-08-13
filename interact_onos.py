@@ -305,7 +305,109 @@ def get_all_paths(mac_addresses):
 
     return all_paths
 
-def post_flow_rules(flow_rules):
+def post_flow_rules(flow_rules, appid):
+    # Define variables
+    ONOS_USER = "onos"
+    ONOS_PASSWORD = "rocks"
+    CONTROLLER_IP = "172.17.0.1"
+    CONTROLLER_PORT = "8181"
+    FLOWS_ENDPOINT = "/onos/v1/flows"
+    if appid:
+        FLOWS_ENDPOINT = f"/onos/v1/flows?appId={appid}"
+
+    # Construct the URL to post flow rules
+    url = f"http://{CONTROLLER_IP}:{CONTROLLER_PORT}{FLOWS_ENDPOINT}"
+
+    # Convert flow rules to JSON format
+    flow_rules_json = json.dumps(flow_rules)
+
+    # Make the POST request to post flow rules
+    response = requests.post(url, auth=(ONOS_USER, ONOS_PASSWORD), data=flow_rules_json, headers={'Content-Type': 'application/json'})
+
+    # Check if the request was successful
+    if response.ok:
+        logging.info(f"Flow rules posted successfully for flow rule {flow_rules}")
+    else:
+        logging.error(f"Error while posting flow rules: {response.status_code}")
+        
+def create_flow_rules(appId, priority, device_id, in_port, out_port, src_ip, dst_ip, ethType = "0x800", ip_proto=None, meter_id=None, push_vlan=None, match_vlan=None):
+    flow_rules = {
+        "flows": [
+            {
+                "priority": priority,
+                "timeout": 0,
+                "isPermanent": "true",
+                "deviceId": device_id,
+                "treatment": {
+                    "instructions": [
+                        {
+                            "type": "OUTPUT",
+                            "port": out_port
+                        }
+                    ]
+                },
+                "selector": {
+                    "criteria": [
+                        {
+                            "type": "IN_PORT",
+                            "port": in_port
+                        },
+                        {
+                            "ethType": ethType,
+                            "type": "ETH_TYPE"
+                        },
+                        {
+                            "type": "IPV4_SRC",
+                            "ip": src_ip
+                        },
+                        {
+                            "type": "IPV4_DST",
+                            "ip": dst_ip
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+    
+    if meter_id is not None:
+        flow_rules["flows"][0]["treatment"]["instructions"].append({
+            "type": "METER",
+            "meterId": meter_id
+        })
+
+    if ip_proto is not None:
+        flow_rules["flows"][0]["selector"]["criteria"].append({
+            "type": "IP_PROTO",
+            "protocol": ip_proto
+        })
+
+    if push_vlan is not None:
+        flow_rules["flows"][0]["treatment"]["instructions"]=[
+        {
+            "type": "L2MODIFICATION",
+            "subtype": "VLAN_PUSH"
+        },
+        {
+            "type": "L2MODIFICATION",
+            "subtype": "VLAN_ID",
+            "vlanId": push_vlan
+        },
+        {
+            "type": "OUTPUT",
+            "port": out_port
+        }]
+
+    if match_vlan is not None:
+        flow_rules["flows"][0]["selector"]["criteria"].append({
+            "type": "VLAN_VID",
+            "vlanId": match_vlan
+        })
+
+    post_flow_rules(flow_rules, appId)
+
+
+def purge_flow_rules(appid):
     # Define variables
     ONOS_USER = "onos"
     ONOS_PASSWORD = "rocks"
@@ -313,24 +415,17 @@ def post_flow_rules(flow_rules):
     CONTROLLER_PORT = "8181"
     FLOWS_ENDPOINT = "/onos/v1/flows"
 
-    try:
-        # Construct the URL to post flow rules
-        url = f"http://{CONTROLLER_IP}:{CONTROLLER_PORT}{FLOWS_ENDPOINT}"
+    # Construct the URL to delete flow rules
+    url = f"http://{CONTROLLER_IP}:{CONTROLLER_PORT}{FLOWS_ENDPOINT}/application/{appid}"
 
-        # Convert flow rules to JSON format
-        flow_rules_json = json.dumps(flow_rules)
+    # Make the DELETE request to delete flow rules
+    response = requests.delete(url, auth=(ONOS_USER, ONOS_PASSWORD))
 
-        # Make the POST request to post flow rules
-        response = requests.post(url, auth=(ONOS_USER, ONOS_PASSWORD), data=flow_rules_json, headers={'Content-Type': 'application/json'})
-
-        # Check if the request was successful
-        response.raise_for_status()
-
-        # Log the response
-        logging.info("Flow rules posted successfully.")
-
-    except requests.RequestException as e:
-        logging.error(f"Error while posting flow rules: {e}")
+    # Check if the request was successful
+    if response.ok:
+        logging.info(f"All flow rules purged successfully for application {appid}.")
+    else:
+        logging.error(f"Error while purging flow rules: {response.status_code}")
 
 def post_meters(device, meters):
     # Define variables
@@ -341,43 +436,65 @@ def post_meters(device, meters):
     METERS_ENDPOINT = "/onos/v1/meters"
     DEVICE_ENDPOINT = encode_device_id(device)
 
-    try:
-        # Construct the URL to post meters
-        url = f"http://{CONTROLLER_IP}:{CONTROLLER_PORT}{METERS_ENDPOINT}/{DEVICE_ENDPOINT}"
 
-        # Convert meters to JSON format
-        meters_json = json.dumps(meters)
+    # Construct the URL to post meters
+    url = f"http://{CONTROLLER_IP}:{CONTROLLER_PORT}{METERS_ENDPOINT}/{DEVICE_ENDPOINT}"
 
-        # Make the POST request to post meters
-        response = requests.post(url, auth=(ONOS_USER, ONOS_PASSWORD), data=meters_json, headers={'Content-Type': 'application/json'})
+    # Convert meters to JSON format
+    meters_json = json.dumps(meters)
 
-        # Check if the request was successful
-        response.raise_for_status()
+    # Make the POST request to post meters
+    response = requests.post(url, auth=(ONOS_USER, ONOS_PASSWORD), data=meters_json, headers={'Content-Type': 'application/json'})
 
-        # Log the response
-        logging.info(f"Meter {meters['meter']} posted successfully on device {device}.")
+    # Check if the request was successful
+    if response.ok:
+        logging.info(f"Meter {meters} posted successfully on device {device}")
+    else:
+        logging.error(f"Error while posting meters: {response.status_code}")
 
-    except requests.RequestException as e:
-        logging.error(f"Error while posting meters: {e}")
+def meter_data(device, rate, burst=None):
+    # return {
+    #     "deviceId": device,
+    #     "unit": "KB_PER_SEC",
+    #     "bands": [
+    #         {
+    #             "type": "DROP",
+    #             "rate": rate,
+    #             "burstSize": "0"
+    #         }
+    #     ]
+    # }
+    
+    if burst is not None:
+        return {
+            "deviceId": device,
+            "unit": "KB_PER_SEC",
+            "burst": True,
+            "bands": [
+                {
+                    "type": "DROP",
+                    "rate": rate,
+                    "burstSize": burst
+                }
+            ]
+        }
+    
+    else:
+        return {
+            "deviceId": device,
+            "unit": "KB_PER_SEC",
+            "bands": [
+                {
+                    "type": "DROP",
+                    "rate": rate,
+                    "burstSize": "0"
+                }
+            ]
+        }
 
+    
 
-
-def meter_data(device, meter_id, rate):
-    return {
-        "deviceId": device,
-        "meter": meter_id,
-        "unit": "KB_PER_SEC",
-        "bands": [
-            {
-                "type": "DROP",
-                "rate": rate,
-                "burstSize": "0"
-            }
-        ]
-    }
-
-
-def get_meters():
+def get_meters(log=False):
     # Define variables
     ONOS_USER = "onos"
     ONOS_PASSWORD = "rocks"
@@ -394,7 +511,11 @@ def get_meters():
         response = requests.get(url, auth=(ONOS_USER, ONOS_PASSWORD))
 
         # Check if the request was successful
-        response.raise_for_status()
+        if response.ok:
+            # logging.info("Meters retrieved successfully.")
+            pass
+        else:
+            logging.error(f"Error while retrieving meters: {response.status_code}")
 
         # Extract meter IDs and device IDs from the response
         meters = response.json().get("meters", [])
@@ -402,8 +523,12 @@ def get_meters():
             meter_id = meter.get("id")
             device_id = meter.get("deviceId")
             state = meter.get("state")
-            meter_list.append((meter_id, device_id, state))
-            logging.info(f"Meter ID: {meter_id}, Device ID: {device_id}, State: {state}")
+            rate = meter.get("bands")[0].get("rate")
+            meter_list.append((meter_id, device_id, state, rate))
+            if log:
+                logging.info(meter)
+            # logging.info(f"Meter ID: {meter_id}, Device ID: {device_id}, State: {state}")
+            # print(f"Meter ID: {meter_id}, Device ID: {device_id}, State: {state}")
 
         # Return the meter IDs and device IDs
         return meter_list
@@ -422,18 +547,31 @@ def delete_meter(meter_id, device):
     DEVICE_ENDPOINT = encode_device_id(device)
     METER_ENDPOINT = f"{METERS_ENDPOINT}/{DEVICE_ENDPOINT}/{meter_id}"
 
-    try:
-        # Construct the URL to delete the meter
-        url = f"http://{CONTROLLER_IP}:{CONTROLLER_PORT}{METER_ENDPOINT}"
+    # Construct the URL to delete the meter
+    url = f"http://{CONTROLLER_IP}:{CONTROLLER_PORT}{METER_ENDPOINT}"
 
-        # Make the DELETE request to delete the meter
-        response = requests.delete(url, auth=(ONOS_USER, ONOS_PASSWORD))
+    # Make the DELETE request to delete the meter
+    response = requests.delete(url, auth=(ONOS_USER, ONOS_PASSWORD))
 
-        # Check if the request was successful
-        response.raise_for_status()
-
-        # Log the response
+    # Check if the request was successful
+    if response.ok:
         logging.info(f"Meter {meter_id} on device {device} deleted successfully.")
+    else:
+        logging.error(f"Error while deleting meter: {response.status_code}")
 
-    except requests.RequestException as e:
-        logging.error(f"Error while deleting meter: {e}")
+def purge_meters():
+    count = 10
+    for meter in get_meters():
+        delete_meter(meter[0], meter[1])
+
+    while count > 0:
+        if len(get_meters()) != 0:
+            count -= 1
+            sleep(5)
+
+        elif len(get_meters()) == 0:
+            logging.info("All meters purged successfully.")
+            return
+
+    logging.error("Error purging meters.")
+    
