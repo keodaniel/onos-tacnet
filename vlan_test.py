@@ -36,62 +36,62 @@ def post_vlan_flows(appId):
 
     # Host VLAN Flows
     # h1 to h4
-    create_flow_rules(appId, priority, "of:0000000000000001", 1, 4, h1, h4, ethType = "0x800", ip_proto=None, match_vlan=host_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000001", 4, 1, h4, h1, ethType = "0x800", ip_proto=None, match_vlan=host_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000002", 1, 4, h4, h1, ethType = "0x800", ip_proto=None, match_vlan=host_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000002", 4, 1, h1, h4, ethType = "0x800", ip_proto=None, match_vlan=host_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000001", 1, 4, h1, h4, ethType = "0x800", match_vlan=host_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000001", 4, 1, h4, h1, ethType = "0x800", match_vlan=host_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000002", 1, 4, h4, h1, ethType = "0x800", match_vlan=host_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000002", 4, 1, h1, h4, ethType = "0x800", match_vlan=host_vlan)
 
     # h1 to h7
-    create_flow_rules(appId, priority, "of:0000000000000001", 1, 5, h1, h7, ethType = "0x800", ip_proto=None, match_vlan=host_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000001", 5, 1, h7, h1, ethType = "0x800", ip_proto=None, match_vlan=host_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000003", 1, 4, h7, h1, ethType = "0x800", ip_proto=None, match_vlan=host_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000003", 4, 1, h1, h7, ethType = "0x800", ip_proto=None, match_vlan=host_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000001", 1, 5, h1, h7, ethType = "0x800", match_vlan=host_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000001", 5, 1, h7, h1, ethType = "0x800", match_vlan=host_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000003", 1, 4, h7, h1, ethType = "0x800", match_vlan=host_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000003", 4, 1, h1, h7, ethType = "0x800", match_vlan=host_vlan)
 
     # h4 to h7
-    create_flow_rules(appId, priority, "of:0000000000000002", 1, 5, h4, h7, ethType = "0x800", ip_proto=None, match_vlan=host_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000002", 5, 1, h7, h4, ethType = "0x800", ip_proto=None, match_vlan=host_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000003", 5, 1, h7, h4, ethType = "0x800", ip_proto=None, match_vlan=host_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000003", 1, 5, h4, h7, ethType = "0x800", ip_proto=None, match_vlan=host_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000002", 1, 5, h4, h7, ethType = "0x800", match_vlan=host_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000002", 5, 1, h7, h4, ethType = "0x800", match_vlan=host_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000003", 1, 5, h7, h4, ethType = "0x800", match_vlan=host_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000003", 5, 1, h4, h7, ethType = "0x800", match_vlan=host_vlan)
 
-    # VoIP VLAN Flows
-    # h2 to h5
-    create_flow_rules(appId, priority, "of:0000000000000001", 2, 4, h2, h5, ethType = "0x800", ip_proto=None, match_vlan=voip_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000001", 4, 2, h5, h2, ethType = "0x800", ip_proto=None, match_vlan=voip_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000002", 4, 2, h5, h2, ethType = "0x800", ip_proto=None, match_vlan=voip_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000002", 2, 4, h2, h5, ethType = "0x800", ip_proto=None, match_vlan=voip_vlan)
+    # # VoIP VLAN Flows
+    # # h2 to h5
+    create_flow_rules(appId, priority, "of:0000000000000001", 2, 4, h2, h5, ethType = "0x800", match_vlan=voip_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000001", 4, 2, h5, h2, ethType = "0x800", match_vlan=voip_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000002", 2, 4, h5, h2, ethType = "0x800", match_vlan=voip_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000002", 4, 2, h2, h5, ethType = "0x800", match_vlan=voip_vlan)
 
     # h2 to h8
-    create_flow_rules(appId, priority, "of:0000000000000001", 2, 5, h2, h8, ethType = "0x800", ip_proto=None, match_vlan=voip_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000001", 5, 2, h8, h2, ethType = "0x800", ip_proto=None, match_vlan=voip_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000003", 4, 2, h8, h2, ethType = "0x800", ip_proto=None, match_vlan=voip_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000003", 2, 4, h2, h8, ethType = "0x800", ip_proto=None, match_vlan=voip_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000001", 2, 5, h2, h8, ethType = "0x800", match_vlan=voip_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000001", 5, 2, h8, h2, ethType = "0x800", match_vlan=voip_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000003", 2, 4, h8, h2, ethType = "0x800", match_vlan=voip_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000003", 4, 2, h2, h8, ethType = "0x800", match_vlan=voip_vlan)
 
-    # h5 to h8
-    create_flow_rules(appId, priority, "of:0000000000000002", 2, 5, h5, h8, ethType = "0x800", ip_proto=None, match_vlan=voip_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000002", 5, 2, h8, h5, ethType = "0x800", ip_proto=None, match_vlan=voip_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000003", 5, 2, h8, h5, ethType = "0x800", ip_proto=None, match_vlan=voip_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000003", 2, 5, h5, h8, ethType = "0x800", ip_proto=None, match_vlan=voip_vlan)
+    # # h5 to h8
+    create_flow_rules(appId, priority, "of:0000000000000002", 2, 5, h5, h8, ethType = "0x800", match_vlan=voip_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000002", 5, 2, h8, h5, ethType = "0x800", match_vlan=voip_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000003", 2, 5, h8, h5, ethType = "0x800", match_vlan=voip_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000003", 5, 2, h5, h8, ethType = "0x800", match_vlan=voip_vlan)
 
-    # VTC VLAN Flows
-    # h3 to h6
-    create_flow_rules(appId, priority, "of:0000000000000001", 3, 4, h3, h6, ethType = "0x800", ip_proto=None, match_vlan=vtc_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000001", 4, 3, h6, h3, ethType = "0x800", ip_proto=None, match_vlan=vtc_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000002", 4, 3, h6, h3, ethType = "0x800", ip_proto=None, match_vlan=vtc_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000002", 3, 4, h3, h6, ethType = "0x800", ip_proto=None, match_vlan=vtc_vlan)
+    # # VTC VLAN Flows
+    # # h3 to h6
+    create_flow_rules(appId, priority, "of:0000000000000001", 3, 4, h3, h6, ethType = "0x800", match_vlan=vtc_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000001", 4, 3, h6, h3, ethType = "0x800", match_vlan=vtc_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000002", 3, 4, h6, h3, ethType = "0x800", match_vlan=vtc_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000002", 4, 3, h3, h6, ethType = "0x800", match_vlan=vtc_vlan)
 
-    # h3 to h9
-    create_flow_rules(appId, priority, "of:0000000000000001", 3, 5, h3, h9, ethType = "0x800", ip_proto=None, match_vlan=vtc_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000001", 5, 3, h9, h3, ethType = "0x800", ip_proto=None, match_vlan=vtc_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000003", 4, 3, h9, h3, ethType = "0x800", ip_proto=None, match_vlan=vtc_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000003", 3, 4, h3, h9, ethType = "0x800", ip_proto=None, match_vlan=vtc_vlan)
+    # # h3 to h9
+    create_flow_rules(appId, priority, "of:0000000000000001", 3, 5, h3, h9, ethType = "0x800", match_vlan=vtc_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000001", 5, 3, h9, h3, ethType = "0x800", match_vlan=vtc_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000003", 3, 4, h9, h3, ethType = "0x800", match_vlan=vtc_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000003", 4, 3, h3, h9, ethType = "0x800", match_vlan=vtc_vlan)
 
-    # h6 to h9
-    create_flow_rules(appId, priority, "of:0000000000000002", 3, 5, h6, h9, ethType = "0x800", ip_proto=None, match_vlan=vtc_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000002", 5, 3, h9, h6, ethType = "0x800", ip_proto=None, match_vlan=vtc_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000003", 5, 3, h9, h6, ethType = "0x800", ip_proto=None, match_vlan=vtc_vlan)
-    create_flow_rules(appId, priority, "of:0000000000000003", 3, 5, h6, h9, ethType = "0x800", ip_proto=None, match_vlan=vtc_vlan)
+    # # h6 to h9
+    create_flow_rules(appId, priority, "of:0000000000000002", 3, 5, h6, h9, ethType = "0x800", match_vlan=vtc_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000002", 5, 3, h9, h6, ethType = "0x800", match_vlan=vtc_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000003", 3, 5, h9, h6, ethType = "0x800", match_vlan=vtc_vlan)
+    create_flow_rules(appId, priority, "of:0000000000000003", 5, 3, h6, h9, ethType = "0x800", match_vlan=vtc_vlan)
 
-def bw_control_test():
+def vlan_flows_test():
     test_name = "VLAN"
     start_time = datetime.datetime.now()
     start_time_str = start_time.strftime("%Y-%m-%d-%H%M")
@@ -113,9 +113,9 @@ def bw_control_test():
     try:
         mininet_process = MininetProcess(topo)
         mininet_process.start_mininet()
+        toggle_fwd("deactivate")
 
         purge_flow_rules(appId)
-
         post_vlan_flows(appId)
 
         # Start pingall
@@ -174,7 +174,7 @@ def main():
     datestring = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
     filename = f"{datestring} vlan_test"
     logging.basicConfig(filename=f'logs/{filename}.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-    bw_control_test()
+    vlan_flows_test()
 if __name__ == "__main__":
     main()
 

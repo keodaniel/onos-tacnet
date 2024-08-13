@@ -6,13 +6,13 @@ sh ovs-ofctl -O OpenFlow14 del-meter s1
 sh ovs-ofctl -O OpenFlow14 del-meter s2
 sh ovs-ofctl -O OpenFlow14 del-meter s3
 
-sh ovs-ofctl -O OpenFlow14 add-meter s1 "meter=1000,kbps,bands=type=drop,rate=1000"
-sh ovs-ofctl -O OpenFlow14 add-meter s1 "meter=3000,kbps,bands=type=drop,rate=3000"
-sh ovs-ofctl -O OpenFlow14 add-meter s2 "meter=1000,kbps,bands=type=drop,rate=1000"
-sh ovs-ofctl -O OpenFlow14 add-meter s2 "meter=2000,kbps,bands=type=drop,rate=2000"
-sh ovs-ofctl -O OpenFlow14 add-meter s3 "meter=1000,kbps,bands=type=drop,rate=1000"
-sh ovs-ofctl -O OpenFlow14 add-meter s3 "meter=2000,kbps,bands=type=drop,rate=2000"
-sh ovs-ofctl -O OpenFlow14 add-meter s3 "meter=3000,kbps,bands=type=drop,rate=3000"
+sh ovs-ofctl -O OpenFlow14 add-meter s1 "meter=1,kbps,bands=type=drop,rate=1000"
+sh ovs-ofctl -O OpenFlow14 add-meter s1 "meter=3,kbps,bands=type=drop,rate=3000"
+sh ovs-ofctl -O OpenFlow14 add-meter s2 "meter=1,kbps,bands=type=drop,rate=1000"
+sh ovs-ofctl -O OpenFlow14 add-meter s2 "meter=2,kbps,bands=type=drop,rate=2000"
+sh ovs-ofctl -O OpenFlow14 add-meter s3 "meter=1,kbps,bands=type=drop,rate=1000"
+sh ovs-ofctl -O OpenFlow14 add-meter s3 "meter=2,kbps,bands=type=drop,rate=2000"
+sh ovs-ofctl -O OpenFlow14 add-meter s3 "meter=3,kbps,bands=type=drop,rate=3000"
 
 sh ovs-ofctl -O OpenFlow14 add-flow s1 "dl_type=0x806,nw_src=10.0.10.1,actions=normal"
 sh ovs-ofctl -O OpenFlow14 add-flow s2 "dl_type=0x806,nw_src=10.0.20.1,actions=normal"
@@ -21,26 +21,26 @@ sh ovs-ofctl -O OpenFlow14 add-flow s1 "dl_type=0x806,nw_dst=10.0.10.1,actions=n
 sh ovs-ofctl -O OpenFlow14 add-flow s2 "dl_type=0x806,nw_dst=10.0.20.1,actions=normal"
 sh ovs-ofctl -O OpenFlow14 add-flow s3 "dl_type=0x806,nw_dst=10.0.30.2,actions=normal"
 
-sh ovs-ofctl -O OpenFlow14 add-flow s3 "in_port=2,udp,nw_src=10.0.30.2,nw_dst=10.0.20.1,actions=meter:2000,output:4"
-sh ovs-ofctl -O OpenFlow14 add-flow s3 "in_port=4,udp,nw_src=10.0.20.1,nw_dst=10.0.30.2,actions=meter:2000,output:2"
+sh ovs-ofctl -O OpenFlow14 add-flow s3 "in_port=2,udp,nw_src=10.0.30.2,nw_dst=10.0.20.1,actions=meter:2,output:4"
+sh ovs-ofctl -O OpenFlow14 add-flow s3 "in_port=4,udp,nw_src=10.0.20.1,nw_dst=10.0.30.2,actions=meter:2,output:2"
 
-sh ovs-ofctl -O OpenFlow14 add-flow s2 "in_port=4,udp,nw_src=10.0.30.2,nw_dst=10.0.20.1,actions=meter:2000,output:1"
-sh ovs-ofctl -O OpenFlow14 add-flow s2 "in_port=1,udp,nw_src=10.0.20.1,nw_dst=10.0.30.2,actions=meter:2000,output:4"
+sh ovs-ofctl -O OpenFlow14 add-flow s2 "in_port=4,udp,nw_src=10.0.30.2,nw_dst=10.0.20.1,actions=meter:2,output:1"
+sh ovs-ofctl -O OpenFlow14 add-flow s2 "in_port=1,udp,nw_src=10.0.20.1,nw_dst=10.0.30.2,actions=meter:2,output:4"
 
-sh ovs-ofctl -O OpenFlow14 add-flow s3 "in_port=2,ip,nw_src=10.0.30.2,nw_dst=10.0.20.1,actions=meter:1000,output:3"
-sh ovs-ofctl -O OpenFlow14 add-flow s3 "in_port=3,ip,nw_src=10.0.20.1,nw_dst=10.0.30.2,actions=meter:1000,output:2"
+sh ovs-ofctl -O OpenFlow14 add-flow s3 "in_port=2,ip,nw_src=10.0.30.2,nw_dst=10.0.20.1,actions=meter:1,output:3"
+sh ovs-ofctl -O OpenFlow14 add-flow s3 "in_port=3,ip,nw_src=10.0.20.1,nw_dst=10.0.30.2,actions=meter:1,output:2"
 
-sh ovs-ofctl -O OpenFlow14 add-flow s1 "in_port=4,ip,nw_src=10.0.30.2,nw_dst=10.0.20.1,actions=meter:1000,output:3"
-sh ovs-ofctl -O OpenFlow14 add-flow s1 "in_port=3,ip,nw_src=10.0.20.1,nw_dst=10.0.30.2,actions=meter:1000,output:4"
+sh ovs-ofctl -O OpenFlow14 add-flow s1 "in_port=4,ip,nw_src=10.0.30.2,nw_dst=10.0.20.1,actions=meter:1,output:3"
+sh ovs-ofctl -O OpenFlow14 add-flow s1 "in_port=3,ip,nw_src=10.0.20.1,nw_dst=10.0.30.2,actions=meter:1,output:4"
 
-sh ovs-ofctl -O OpenFlow14 add-flow s2 "in_port=3,ip,nw_src=10.0.30.2,nw_dst=10.0.20.1,actions=meter:1000,output:1"
-sh ovs-ofctl -O OpenFlow14 add-flow s2 "in_port=1,ip,nw_src=10.0.20.1,nw_dst=10.0.30.2,actions=meter:1000,output:3"
+sh ovs-ofctl -O OpenFlow14 add-flow s2 "in_port=3,ip,nw_src=10.0.30.2,nw_dst=10.0.20.1,actions=meter:1,output:1"
+sh ovs-ofctl -O OpenFlow14 add-flow s2 "in_port=1,ip,nw_src=10.0.20.1,nw_dst=10.0.30.2,actions=meter:1,output:3"
 
-sh ovs-ofctl -O OpenFlow14 add-flow s3 "in_port=2,ip,nw_src=10.0.30.2,nw_dst=10.0.10.1,actions=meter:3000,output:3"
-sh ovs-ofctl -O OpenFlow14 add-flow s3 "in_port=3,ip,nw_src=10.0.10.1,nw_dst=10.0.30.2,actions=meter:3000,output:2"
+sh ovs-ofctl -O OpenFlow14 add-flow s3 "in_port=2,ip,nw_src=10.0.30.2,nw_dst=10.0.10.1,actions=meter:3,output:3"
+sh ovs-ofctl -O OpenFlow14 add-flow s3 "in_port=3,ip,nw_src=10.0.10.1,nw_dst=10.0.30.2,actions=meter:3,output:2"
 
-sh ovs-ofctl -O OpenFlow14 add-flow s1 "in_port=4,ip,nw_src=10.0.30.2,nw_dst=10.0.10.1,actions=meter:3000,output:1"
-sh ovs-ofctl -O OpenFlow14 add-flow s1 "in_port=1,ip,nw_src=10.0.10.1,nw_dst=10.0.30.2,actions=meter:3000,output:4"
+sh ovs-ofctl -O OpenFlow14 add-flow s1 "in_port=4,ip,nw_src=10.0.30.2,nw_dst=10.0.10.1,actions=meter:3,output:1"
+sh ovs-ofctl -O OpenFlow14 add-flow s1 "in_port=1,ip,nw_src=10.0.10.1,nw_dst=10.0.30.2,actions=meter:3,output:4"
 
 sh echo "Dump-flows s1" > udp_meter.log
 sh ovs-ofctl -O OpenFlow14 dump-flows s1 >> udp_meter.log

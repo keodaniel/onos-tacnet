@@ -207,7 +207,7 @@ def plot(input, title, filename="plot"):
 # file_path = r"old logs\2024-05-05-0307 fwd-TC-t20-P1-20runs_output SUCCESS.log" # SCENARIO 1 FWD
 # file_path = r"logs\2024-05-06-2031 fwd-TC-t20-P1-20runs_output SUCCESS.log" # SCENARIO 1 FWD
 # file_path = r"old logs\2024-05-05-0356 intent-TC-t20-P1-20runs_output SUCCESS.log" # SCENARIO 1 INTENT
-# file_path = r"logs\2024-05-06-2108 intent-TC-t20-P1-20runs_output SUCCESS.log" # SCENARIO 1 INTENT
+file_path = r"logs\2024-05-06-2108 intent-TC-t20-P1-20runs_output SUCCESS.log" # SCENARIO 1 INTENT
 
 # file_path = r"logs\2024-05-08-2024 fwd-TC-t20-P1-20runs_output.log" # SCENARIO 1 FWD v3 not that different
 # file_path = r"logs\2024-05-08-2100 intent-TC-t20-P1-20runs_output.log" # SCENARIO 1 INTENT v3 not that difference

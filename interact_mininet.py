@@ -122,6 +122,10 @@ class MininetProcess:
                     logging.info("Found 0.00-20.00")
                     timeout = -1
                     break
+                if "0.00-10.00" in line:
+                    logging.info("Found 0.00-10.00")
+                    timeout = -1
+                    break
             else:
                 logging.info(f"Sleeping {sleep_time} seconds before retrying to read {logfile}")
                 sleep(sleep_time)

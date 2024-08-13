@@ -452,18 +452,47 @@ def post_meters(device, meters):
     else:
         logging.error(f"Error while posting meters: {response.status_code}")
 
-def meter_data(device, rate):
-    return {
-        "deviceId": device,
-        "unit": "KB_PER_SEC",
-        "bands": [
-            {
-                "type": "DROP",
-                "rate": rate,
-                "burstSize": "0"
-            }
-        ]
-    }
+def meter_data(device, rate, burst=None):
+    # return {
+    #     "deviceId": device,
+    #     "unit": "KB_PER_SEC",
+    #     "bands": [
+    #         {
+    #             "type": "DROP",
+    #             "rate": rate,
+    #             "burstSize": "0"
+    #         }
+    #     ]
+    # }
+    
+    if burst is not None:
+        return {
+            "deviceId": device,
+            "unit": "KB_PER_SEC",
+            "burst": True,
+            "bands": [
+                {
+                    "type": "DROP",
+                    "rate": rate,
+                    "burstSize": burst
+                }
+            ]
+        }
+    
+    else:
+        return {
+            "deviceId": device,
+            "unit": "KB_PER_SEC",
+            "bands": [
+                {
+                    "type": "DROP",
+                    "rate": rate,
+                    "burstSize": "0"
+                }
+            ]
+        }
+
+    
 
 def get_meters(log=False):
     # Define variables
@@ -494,7 +523,8 @@ def get_meters(log=False):
             meter_id = meter.get("id")
             device_id = meter.get("deviceId")
             state = meter.get("state")
-            meter_list.append((meter_id, device_id, state))
+            rate = meter.get("bands")[0].get("rate")
+            meter_list.append((meter_id, device_id, state, rate))
             if log:
                 logging.info(meter)
             # logging.info(f"Meter ID: {meter_id}, Device ID: {device_id}, State: {state}")
@@ -544,3 +574,4 @@ def purge_meters():
             return
 
     logging.error("Error purging meters.")
+    
