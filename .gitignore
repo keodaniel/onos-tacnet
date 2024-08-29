@@ -1,14 +1,3 @@
-/script_logs
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-json.txt
-*.log
-command_history.txt
-plot.py
-*.png
-*_old.py
 old*
-bw_test.txt
-udp_meter.txt
-udp_meter.txt
+for_these*
+plots*

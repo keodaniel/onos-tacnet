@@ -1,5 +1,6 @@
 import logging
 from logging import *
+import os
 from interact_onos import *
 from interact_mininet import *
 from time import sleep
@@ -261,10 +262,21 @@ def qos_test(filename, trials, burst_size):
     return True
     
 def main():
-    trials = 20
     burst_size = None
+    while True:
+        try:
+            trials = int(input("Enter number of trials (1-20): "))
+            if 1 <= trials <= 20:
+                break
+            else:
+                print("Invalid input. Please enter a number between 1 and 20.")
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 20.")
+            continue
 
     datestring = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
+    if not os.path.exists('logs'):
+        os.makedirs('logs')
     filename = f"{datestring} qos_test {burst_size} Burst Size {trials} trials"
     logging.basicConfig(filename=f'logs/{filename}.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     qos_test(filename, trials, burst_size)

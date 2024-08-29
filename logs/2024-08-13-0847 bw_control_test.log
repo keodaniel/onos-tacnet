@@ -1,0 +1,20 @@
+2024-08-13 08:47:23,323 - INFO - Meter 1 on device of:0000000000000001 deleted successfully.
+2024-08-13 08:47:23,342 - INFO - Meter 3 on device of:0000000000000001 deleted successfully.
+2024-08-13 08:47:23,378 - INFO - Meter 2 on device of:0000000000000001 deleted successfully.
+2024-08-13 08:47:23,399 - INFO - Meter 3 on device of:0000000000000002 deleted successfully.
+2024-08-13 08:47:23,427 - INFO - Meter 1 on device of:0000000000000002 deleted successfully.
+2024-08-13 08:47:23,455 - INFO - Meter 2 on device of:0000000000000002 deleted successfully.
+2024-08-13 08:47:23,501 - INFO - All meters purged successfully.
+2024-08-13 08:47:23,551 - ERROR - Error while posting meters: 400
+2024-08-13 08:47:23,567 - ERROR - Error while posting meters: 400
+2024-08-13 08:47:23,583 - ERROR - Error while posting meters: 400
+2024-08-13 08:47:23,596 - INFO - All flow rules purged successfully for application keo.
+2024-08-13 08:47:23,652 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 4}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 2}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.20.1/32'}]}}]}
+2024-08-13 08:47:23,671 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 2}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 4}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.20.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}]}}]}
+2024-08-13 08:47:42,968 - INFO - All meters purged successfully.
+2024-08-13 08:47:42,983 - ERROR - Error while posting meters: 400
+2024-08-13 08:47:43,000 - ERROR - Error while posting meters: 400
+2024-08-13 08:47:43,020 - ERROR - Error while posting meters: 400
+2024-08-13 08:47:43,032 - INFO - All flow rules purged successfully for application keo.
+2024-08-13 08:47:43,076 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 4}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 2}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.20.1/32'}]}}]}
+2024-08-13 08:47:43,086 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 2}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 4}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.20.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}]}}]}

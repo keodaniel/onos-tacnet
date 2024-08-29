@@ -1,0 +1,188 @@
+2024-05-06 12:53:05,552 - INFO - Starting iPerf3 test at 2024-05-06-1253
+2024-05-06 12:53:05,553 - INFO - UDP iperf_time: 20s, trial_runs: 20, parallel_connections: 1, bitrate: 2
+2024-05-06 12:53:05,915 - INFO - ONOS Docker container is already running.
+2024-05-06 12:53:05,917 - INFO - Test Case: Fault Tolerance via Host Intents
+2024-05-06 12:53:07,389 - INFO - Starting Mininet topology: TC
+2024-05-06 12:53:09,366 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(s1, s2) (10.00Mbit 10ms delay) (10.00Mbit 10ms delay) (s1, s3) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(10.00Mbit 10ms delay) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (10.00Mbit 10ms delay) (5.00Mbit 10ms delay) 
+*** Starting CLI:
+2024-05-06 12:53:09,398 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2024-05-06 12:53:12,124 - INFO - Authentication (password) successful!
+2024-05-06 12:53:16,613 - INFO - Activated org.onosproject.fwd
+2024-05-06 12:53:26,795 - INFO - Executing Mininet command: pingall
+2024-05-06 12:53:32,704 - INFO - *** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+2024-05-06 12:53:32,788 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2024-05-06 12:53:33,430 - INFO - Authentication (password) successful!
+2024-05-06 12:53:40,203 - INFO - Deactivated org.onosproject.fwd
+2024-05-06 12:53:40,406 - INFO - Starting to clear all intents.
+2024-05-06 12:53:42,011 - INFO - No intents found.
+2024-05-06 12:53:42,014 - INFO - All intents cleared successfully.
+2024-05-06 12:53:43,096 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2024-05-06 12:53:43,098 - INFO - 00:00:00:00:00:01
+2024-05-06 12:53:43,123 - INFO - 00:00:00:00:00:02
+2024-05-06 12:53:43,390 - INFO - 00:00:00:00:00:03
+2024-05-06 12:53:43,398 - INFO - 00:00:00:00:00:04
+2024-05-06 12:53:43,399 - INFO - 00:00:00:00:00:05
+2024-05-06 12:53:43,405 - INFO - 00:00:00:00:00:06
+2024-05-06 12:53:44,362 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:02...
+2024-05-06 12:53:44,801 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:03...
+2024-05-06 12:53:44,862 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:04...
+2024-05-06 12:53:45,372 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:05...
+2024-05-06 12:53:45,507 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:06...
+2024-05-06 12:53:46,268 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:03...
+2024-05-06 12:53:46,519 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:04...
+2024-05-06 12:53:46,749 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:05...
+2024-05-06 12:53:47,139 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:06...
+2024-05-06 12:53:47,519 - INFO - Creating intent from 00:00:00:00:00:03 to 00:00:00:00:00:04...
+2024-05-06 12:53:47,656 - INFO - Creating intent from 00:00:00:00:00:03 to 00:00:00:00:00:05...
+2024-05-06 12:53:47,879 - INFO - Creating intent from 00:00:00:00:00:03 to 00:00:00:00:00:06...
+2024-05-06 12:53:48,497 - INFO - Creating intent from 00:00:00:00:00:04 to 00:00:00:00:00:05...
+2024-05-06 12:53:49,036 - INFO - Creating intent from 00:00:00:00:00:04 to 00:00:00:00:00:06...
+2024-05-06 12:53:49,213 - INFO - Creating intent from 00:00:00:00:00:05 to 00:00:00:00:00:06...
+2024-05-06 12:53:54,229 - INFO - Executing Mininet command: h1 iperf3 -s &
+2024-05-06 12:53:54,290 - INFO - Command h1 iperf3 -s & successful
+2024-05-06 12:54:04,315 - INFO - Executing Mininet command: h6 iperf3 -c 10.0.10.1 -u -b 2M -t 20 -i 1 -f mM -P 1 > iperf/baseline.log &
+2024-05-06 12:54:04,316 - INFO - Command h6 iperf3 -c 10.0.10.1 -u -b 2M -t 20 -i 1 -f mM -P 1 > iperf/baseline.log & successful
+2024-05-06 12:54:29,351 - INFO - Baseline iperf output
+2024-05-06 12:54:29,415 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:54:39,433 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:54:49,450 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:54:59,466 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:55:09,480 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:55:19,493 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:55:29,508 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:55:39,521 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:55:49,547 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:55:59,561 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:56:09,581 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:56:19,587 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:56:29,599 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:56:39,657 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:56:49,672 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:56:59,699 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:57:09,733 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:57:19,782 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:57:29,812 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:57:39,824 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-06 12:57:49,829 - ERROR - Runtime exceeded for reading log: iperf/baseline.log
+2024-05-06 12:57:49,830 - ERROR - Fail 1 during trial 1: Runtime exceeded for reading log, retrying...
+2024-05-06 12:57:51,611 - INFO - [1] 8317
+
+*** Stopping 1 controllers
+c0 
+*** Stopping 9 links
+.........
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 6 hosts
+h1 h2 h3 h4 h5 h6 
+*** Done
+2024-05-06 12:57:53,338 - INFO - Starting Mininet topology: TC
+2024-05-06 12:57:57,318 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(s1, s2) (10.00Mbit 10ms delay) (10.00Mbit 10ms delay) (s1, s3) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(10.00Mbit 10ms delay) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (10.00Mbit 10ms delay) (5.00Mbit 10ms delay) 
+*** Starting CLI:
+2024-05-06 12:57:57,327 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2024-05-06 12:57:57,611 - INFO - Authentication (password) successful!
+2024-05-06 12:58:00,449 - INFO - Activated org.onosproject.fwd
+2024-05-06 12:58:10,458 - INFO - Executing Mininet command: pingall
+2024-05-06 12:58:14,185 - INFO - *** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+2024-05-06 12:58:14,188 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2024-05-06 12:58:14,316 - INFO - Authentication (password) successful!
+2024-05-06 12:58:17,956 - INFO - Deactivated org.onosproject.fwd
+2024-05-06 12:58:18,010 - INFO - Starting to clear all intents.
+2024-05-06 12:58:18,067 - INFO - List of intents:
+2024-05-06 12:58:18,083 - INFO - AppId: org.onosproject.ovsdb, Key: 0x500007
+2024-05-06 12:58:18,090 - INFO - AppId: org.onosproject.ovsdb, Key: 0x500028
+2024-05-06 12:58:18,091 - INFO - AppId: org.onosproject.ovsdb, Key: 0x500037
+2024-05-06 12:58:18,092 - INFO - AppId: org.onosproject.ovsdb, Key: 0x500023
+2024-05-06 12:58:18,111 - INFO - AppId: org.onosproject.ovsdb, Key: 0x500001
+2024-05-06 12:58:18,122 - INFO - AppId: org.onosproject.ovsdb, Key: 0x500000
+2024-05-06 12:58:18,122 - INFO - AppId: org.onosproject.ovsdb, Key: 0x500013
+2024-05-06 12:58:18,124 - INFO - AppId: org.onosproject.ovsdb, Key: 0x500041
+2024-05-06 12:58:18,127 - INFO - AppId: org.onosproject.ovsdb, Key: 0x500008
+2024-05-06 12:58:18,128 - INFO - AppId: org.onosproject.ovsdb, Key: 0x50003c
+2024-05-06 12:58:18,128 - INFO - AppId: org.onosproject.ovsdb, Key: 0x50001e
+2024-05-06 12:58:18,128 - INFO - AppId: org.onosproject.ovsdb, Key: 0x500046
+2024-05-06 12:58:18,129 - INFO - AppId: org.onosproject.ovsdb, Key: 0x500032
+2024-05-06 12:58:18,131 - INFO - AppId: org.onosproject.ovsdb, Key: 0x500004
+2024-05-06 12:58:18,134 - INFO - AppId: org.onosproject.ovsdb, Key: 0x50002d
+2024-05-06 12:58:18,138 - INFO - Found 15 intents to clear.
+2024-05-06 12:58:18,138 - INFO - Clearing intent 1/15 - AppId: org.onosproject.ovsdb, Key: 0x500007
+2024-05-06 12:58:18,258 - INFO - Clearing intent 2/15 - AppId: org.onosproject.ovsdb, Key: 0x500028
+2024-05-06 12:58:18,328 - INFO - Clearing intent 3/15 - AppId: org.onosproject.ovsdb, Key: 0x500037
+2024-05-06 12:58:18,405 - INFO - Clearing intent 4/15 - AppId: org.onosproject.ovsdb, Key: 0x500023
+2024-05-06 12:58:18,717 - INFO - Clearing intent 5/15 - AppId: org.onosproject.ovsdb, Key: 0x500001
+2024-05-06 12:58:18,942 - INFO - Clearing intent 6/15 - AppId: org.onosproject.ovsdb, Key: 0x500000
+2024-05-06 12:58:19,111 - INFO - Clearing intent 7/15 - AppId: org.onosproject.ovsdb, Key: 0x500013
+2024-05-06 12:58:19,446 - INFO - Clearing intent 8/15 - AppId: org.onosproject.ovsdb, Key: 0x500041
+2024-05-06 12:58:19,621 - INFO - Clearing intent 9/15 - AppId: org.onosproject.ovsdb, Key: 0x500008
+2024-05-06 12:58:19,998 - INFO - Clearing intent 10/15 - AppId: org.onosproject.ovsdb, Key: 0x50003c
+2024-05-06 12:58:20,267 - INFO - Clearing intent 11/15 - AppId: org.onosproject.ovsdb, Key: 0x50001e
+2024-05-06 12:58:20,412 - INFO - Clearing intent 12/15 - AppId: org.onosproject.ovsdb, Key: 0x500046
+2024-05-06 12:58:20,546 - INFO - Clearing intent 13/15 - AppId: org.onosproject.ovsdb, Key: 0x500032
+2024-05-06 12:58:20,827 - INFO - Clearing intent 14/15 - AppId: org.onosproject.ovsdb, Key: 0x500004
+2024-05-06 12:58:21,054 - INFO - Clearing intent 15/15 - AppId: org.onosproject.ovsdb, Key: 0x50002d
+2024-05-06 12:58:22,351 - INFO - No intents found.
+2024-05-06 12:58:22,352 - INFO - All intents cleared successfully.
+2024-05-06 12:58:22,509 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2024-05-06 12:58:22,519 - INFO - 00:00:00:00:00:01
+2024-05-06 12:58:22,521 - INFO - 00:00:00:00:00:02
+2024-05-06 12:58:22,526 - INFO - 00:00:00:00:00:03
+2024-05-06 12:58:22,539 - INFO - 00:00:00:00:00:04
+2024-05-06 12:58:22,540 - INFO - 00:00:00:00:00:05
+2024-05-06 12:58:22,540 - INFO - 00:00:00:00:00:06
+2024-05-06 12:58:22,571 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:02...
+2024-05-06 12:58:22,679 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:03...
+2024-05-06 12:58:22,796 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:04...
+2024-05-06 12:58:22,822 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:05...
+2024-05-06 12:58:22,834 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:06...
+2024-05-06 12:58:22,952 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:03...
+2024-05-06 12:58:23,051 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:04...

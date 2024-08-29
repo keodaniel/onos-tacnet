@@ -1,5 +1,6 @@
 import logging
 from logging import *
+import os
 from interact_onos import *
 from interact_mininet import *
 from time import sleep
@@ -257,6 +258,8 @@ def main():
             video_2(testcase)
 
     datestring = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
+    if not os.path.exists('logs'):
+        os.makedirs('logs')
     filename = f"{datestring} {test}-{connections}-{testcase}"
     logging.basicConfig(filename=f'logs/{filename}.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
