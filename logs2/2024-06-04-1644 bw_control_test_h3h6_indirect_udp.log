@@ -1,6 +1,0 @@
-[  5]   0.00-10.00  sec  11.9 MBytes  10.0 Mbits/sec  0.000 ms  0/8633 (0%)  sender
-[  5]   0.00-10.08  sec  1.75 MBytes  1.45 Mbits/sec  1.734 ms  7363/8629 (85%)  receiver
-[  5]   0.00-10.00  sec  11.9 MBytes  9.97 Mbits/sec  0.000 ms  0/8613 (0%)  sender
-[  5]   0.00-10.07  sec  1.74 MBytes  1.45 Mbits/sec  2.263 ms  7346/8609 (85%)  receiver
-[  5]   0.00-10.00  sec  11.9 MBytes  10.0 Mbits/sec  0.000 ms  0/8632 (0%)  sender
-[  5]   0.00-10.07  sec  1.75 MBytes  1.46 Mbits/sec  6.441 ms  7364/8630 (85%)  receiver

@@ -1,3 +1,0 @@
-2024-05-14 09:52:29,863 - INFO - Starting iPerf3 test at 2024-05-14-0952
-2024-05-14 09:52:29,864 - INFO - UDP iperf_time: 20s, trial_runs: 20, parallel_connections: 1, bitrate: 0.1
-2024-05-14 09:52:29,865 - INFO - Restarting ONOS Docker container.
