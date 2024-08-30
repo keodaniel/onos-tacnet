@@ -2,14 +2,21 @@
 Implementation of ONOS as an SDN Controller with Mininet emulating networks in tactical deployed scenarios
 
 ### Running Tests
-Start ONOS Docker Container
-```sudo docker start onos```
+1. Start ONOS Docker Container
+```
+sudo docker start onos
+```
 
-Test Basic Working Functionality
-```python3 functions_test.py```
+2. Test Basic Working Functionality
+```
+python3 functions_test.py
+```
 
-Other Tests
-```python3 fault_tolerance_test.py```
+3. Other Tests
+```
+python3 fault_tolerance_test.py
+```
+Implementing Bandwidth Meters with Flowrules
 ```python3 bandwidth_control_test.py```
 
 Implementing VLANs
