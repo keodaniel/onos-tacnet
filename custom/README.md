@@ -4,7 +4,7 @@ See custom_example.py, which loads the default minimal topology.  The advantage 
 
 To start up a mininet with the provided custom topology, do:
 ```
-sudo mn --custom custom_example.py --topo mytopo
+sudo mn --custom topokeo.py --topo topokeo
 ```
 
 Example using sf_onos-tacnet/custom shared folder:
