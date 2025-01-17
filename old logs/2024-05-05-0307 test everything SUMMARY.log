@@ -1,0 +1,27 @@
+fwd TCP iperf_time: 20s, trial_runs: 20, parallel_connections: 1, bitrate: Default
+Elapsed time: 0:48:47.896290, 1 Fail
+
+intent TCP iperf_time: 20s, trial_runs: 20, parallel_connections: 1, bitrate: Default
+Elapsed time: 0:58:00.097575, 2 Fails
+
+    fwd TCP iperf_time: 20s, trial_runs: 20, parallel_connections: 3, bitrate: Default
+    Elapsed time: 1:35:49.158844, 19 Success 21 Fails
+
+    intent TCP iperf_time: 20s, trial_runs: 20, parallel_connections: 3, bitrate: Default
+    Elapsed time: 1:38:30.191904, 8 Success 21 Fails
+
+fwd UDP iperf_time: 20s, trial_runs: 20, parallel_connections: 1, bitrate: 0.1
+Elapsed time: 0:52:25.288108, 2 Fails
+
+    intent UDP iperf_time: 20s, trial_runs: 20, parallel_connections: 1, bitrate: 0.1
+    Elapsed time: 1:12:18.356821, 1 Success 21 Fails
+
+fwd UDP iperf_time: 20s, trial_runs: 20, parallel_connections: 3, bitrate: 0.1
+Elapsed time: 0:55:16.796403, 8 Fails
+
+    intent UDP iperf_time: 20s, trial_runs: 20, parallel_connections: 3, bitrate: 0.1
+    Elapsed time: 1:22:41.150863, 0 Success, 21 Fails
+
+    fwd UDP iperf_time: 20s, trial_runs: 20, parallel_connections: 1, bitrate: 2
+    2 Fails
+

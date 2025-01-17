@@ -1,0 +1,253 @@
+2024-04-30 21:42:19,547 - INFO - Starting iPerf3 test at 2024-04-30-2142
+2024-04-30 21:42:19,549 - INFO - iperf_time: 10s, trial_runs: 2, parallel_connections: 1
+2024-04-30 21:42:19,625 - INFO - ONOS Docker container is already running.
+2024-04-30 21:42:19,626 - INFO - Test Case: Fault Tolerance via Reactive Fwd
+2024-04-30 21:42:20,836 - INFO - Starting Mininet topology: TC
+2024-04-30 21:42:22,005 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(s1, s2) (10.00Mbit 10ms delay) (10.00Mbit 10ms delay) (s1, s3) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(10.00Mbit 10ms delay) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (10.00Mbit 10ms delay) (5.00Mbit 10ms delay) 
+*** Starting CLI:
+2024-04-30 21:42:22,010 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2024-04-30 21:42:22,064 - INFO - Authentication (password) successful!
+2024-04-30 21:42:22,196 - INFO - Activated org.onosproject.fwd
+2024-04-30 21:42:25,198 - INFO - Executing Mininet command: h1 iperf3 -s &
+2024-04-30 21:42:25,199 - INFO - Command h1 iperf3 -s & successful
+2024-04-30 21:42:33,202 - INFO - Executing Mininet command: h6 iperf3 -c 10.0.10.1 -t 10 -i 1 -f mM -P 1 > iperf/baseline.log &
+2024-04-30 21:42:33,203 - INFO - Command h6 iperf3 -c 10.0.10.1 -t 10 -i 1 -f mM -P 1 > iperf/baseline.log & successful
+2024-04-30 21:42:48,217 - INFO - Baseline iperf output
+2024-04-30 21:42:48,221 - INFO - found iperf done
+2024-04-30 21:42:48,221 - INFO - Connecting to host 10.0.10.1, port 5201
+2024-04-30 21:42:48,222 - INFO - [  5] local 10.0.30.2 port 44230 connected to 10.0.10.1 port 5201
+2024-04-30 21:42:48,222 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-04-30 21:42:48,223 - INFO - [  5]   0.00-1.00   sec  1.68 MBytes  14.1 Mbits/sec    0    157 KBytes       
+2024-04-30 21:42:48,223 - INFO - [  5]   1.00-2.00   sec  1.49 MBytes  12.5 Mbits/sec    0    214 KBytes       
+2024-04-30 21:42:48,224 - INFO - [  5]   2.00-3.01   sec  1.49 MBytes  12.4 Mbits/sec    0    269 KBytes       
+2024-04-30 21:42:48,224 - INFO - [  5]   3.01-4.00   sec  1.18 MBytes  9.99 Mbits/sec    0    325 KBytes       
+2024-04-30 21:42:48,224 - INFO - [  5]   4.00-5.00   sec  1.43 MBytes  12.0 Mbits/sec    0    382 KBytes       
+2024-04-30 21:42:48,226 - INFO - [  5]   5.00-6.00   sec  1.68 MBytes  14.1 Mbits/sec    0    438 KBytes       
+2024-04-30 21:42:48,226 - INFO - [  5]   6.00-7.00   sec   954 KBytes  7.82 Mbits/sec    0    496 KBytes       
+2024-04-30 21:42:48,226 - INFO - [  5]   7.00-8.00   sec  1018 KBytes  8.33 Mbits/sec    0    551 KBytes       
+2024-04-30 21:42:48,227 - INFO - [  5]   8.00-9.00   sec  2.30 MBytes  19.3 Mbits/sec    0    608 KBytes       
+2024-04-30 21:42:48,227 - INFO - [  5]   9.00-10.00  sec  1.25 MBytes  10.5 Mbits/sec    0    663 KBytes       
+2024-04-30 21:42:48,227 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 21:42:48,227 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-04-30 21:42:48,228 - INFO - [  5]   0.00-10.00  sec  14.4 MBytes  12.1 Mbits/sec    0             sender
+2024-04-30 21:42:48,228 - INFO - [  5]   0.00-10.60  sec  11.6 MBytes  9.20 Mbits/sec                  receiver
+2024-04-30 21:42:48,228 - INFO - 
+2024-04-30 21:42:48,228 - INFO - iperf Done.
+2024-04-30 21:42:51,229 - INFO - Executing Mininet command: h6 iperf3 -c 10.0.10.1 -t 10 -i 1 -f mM -P 1 > iperf/failover.log &
+2024-04-30 21:42:51,230 - INFO - Command h6 iperf3 -c 10.0.10.1 -t 10 -i 1 -f mM -P 1 > iperf/failover.log & successful
+2024-04-30 21:42:56,242 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2024-04-30 21:42:56,243 - INFO - 00:00:00:00:00:01
+2024-04-30 21:42:56,244 - INFO - 00:00:00:00:00:06
+2024-04-30 21:42:56,253 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2024-04-30 21:42:56,260 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2024-04-30 21:43:01,264 - INFO - Failover at time 5.0s
+2024-04-30 21:43:01,265 - INFO - Executing Mininet command: link s1 s3 down
+2024-04-30 21:43:01,266 - INFO - Command link s1 s3 down successful
+2024-04-30 21:43:09,280 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2024-04-30 21:43:09,289 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2024-04-30 21:43:14,290 - INFO - Failover iperf output
+2024-04-30 21:43:14,294 - INFO - found iperf done
+2024-04-30 21:43:14,295 - INFO - Connecting to host 10.0.10.1, port 5201
+2024-04-30 21:43:14,295 - INFO - [  5] local 10.0.30.2 port 58078 connected to 10.0.10.1 port 5201
+2024-04-30 21:43:14,296 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-04-30 21:43:14,296 - INFO - [  5]   0.00-1.00   sec  1.67 MBytes  14.0 Mbits/sec    0    158 KBytes       
+2024-04-30 21:43:14,296 - INFO - [  5]   1.00-2.00   sec  1.49 MBytes  12.5 Mbits/sec    0    216 KBytes       
+2024-04-30 21:43:14,296 - INFO - [  5]   2.00-3.00   sec  1.55 MBytes  13.0 Mbits/sec    0    274 KBytes       
+2024-04-30 21:43:14,297 - INFO - [  5]   3.00-4.00   sec  1.24 MBytes  10.4 Mbits/sec    0    331 KBytes       
+2024-04-30 21:43:14,297 - INFO - [  5]   4.00-5.00   sec  1.43 MBytes  12.0 Mbits/sec    0    389 KBytes       
+2024-04-30 21:43:14,297 - INFO - [  5]   5.00-6.00   sec  1.68 MBytes  14.1 Mbits/sec    0    445 KBytes       
+2024-04-30 21:43:14,297 - INFO - [  5]   6.00-7.00   sec  1018 KBytes  8.31 Mbits/sec    0    505 KBytes       
+2024-04-30 21:43:14,298 - INFO - [  5]   7.00-8.00   sec  1.06 MBytes  8.89 Mbits/sec    0    563 KBytes       
+2024-04-30 21:43:14,298 - INFO - [  5]   8.00-9.00   sec  2.36 MBytes  19.8 Mbits/sec    0    619 KBytes       
+2024-04-30 21:43:14,298 - INFO - [  5]   9.00-10.00  sec  0.00 Bytes  0.00 Mbits/sec    0    666 KBytes       
+2024-04-30 21:43:14,298 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 21:43:14,299 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-04-30 21:43:14,299 - INFO - [  5]   0.00-10.00  sec  13.5 MBytes  11.3 Mbits/sec    0             sender
+2024-04-30 21:43:14,299 - INFO - [  5]   0.00-10.06  sec  11.0 MBytes  9.18 Mbits/sec                  receiver
+2024-04-30 21:43:14,299 - INFO - 
+2024-04-30 21:43:14,300 - INFO - iperf Done.
+2024-04-30 21:43:14,300 - INFO - Paths are different after link s1 s3 down command
+2024-04-30 21:43:14,300 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']]
+2024-04-30 21:43:14,300 - INFO - Added Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2024-04-30 21:43:14,301 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']]
+2024-04-30 21:43:14,301 - INFO - Removed Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2024-04-30 21:43:14,903 - INFO - 
+*** Stopping 1 controllers
+c0 
+*** Stopping 9 links
+.........
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 6 hosts
+h1 h2 h3 h4 h5 h6 
+*** Done
+2024-04-30 21:43:14,908 - INFO - Fault Tolerance via Reactive Fwd Test Trial 1 Success
+2024-04-30 21:43:16,148 - INFO - Starting Mininet topology: TC
+2024-04-30 21:43:17,200 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(s1, s2) (10.00Mbit 10ms delay) (10.00Mbit 10ms delay) (s1, s3) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(10.00Mbit 10ms delay) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (10.00Mbit 10ms delay) (5.00Mbit 10ms delay) 
+*** Starting CLI:
+2024-04-30 21:43:17,203 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2024-04-30 21:43:17,259 - INFO - Authentication (password) successful!
+2024-04-30 21:43:17,351 - INFO - Activated org.onosproject.fwd
+2024-04-30 21:43:20,355 - INFO - Executing Mininet command: h1 iperf3 -s &
+2024-04-30 21:43:20,360 - INFO - Command h1 iperf3 -s & successful
+2024-04-30 21:43:28,367 - INFO - Executing Mininet command: h6 iperf3 -c 10.0.10.1 -t 10 -i 1 -f mM -P 1 > iperf/baseline.log &
+2024-04-30 21:43:28,367 - INFO - Command h6 iperf3 -c 10.0.10.1 -t 10 -i 1 -f mM -P 1 > iperf/baseline.log & successful
+2024-04-30 21:43:43,380 - INFO - Baseline iperf output
+2024-04-30 21:43:43,383 - ERROR - Error during trial 1: list index out of range, retrying . . .
+2024-04-30 21:44:03,340 - INFO - [1] 38400
+
+*** Stopping 1 controllers
+c0 
+*** Stopping 9 links
+.........
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 6 hosts
+h1 h2 h3 h4 h5 h6 
+*** Done
+2024-04-30 21:44:04,628 - INFO - Starting Mininet topology: TC
+2024-04-30 21:44:06,076 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(s1, s2) (10.00Mbit 10ms delay) (10.00Mbit 10ms delay) (s1, s3) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(10.00Mbit 10ms delay) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (10.00Mbit 10ms delay) (5.00Mbit 10ms delay) 
+*** Starting CLI:
+2024-04-30 21:44:06,089 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2024-04-30 21:44:06,161 - INFO - Authentication (password) successful!
+2024-04-30 21:44:06,351 - INFO - Activated org.onosproject.fwd
+2024-04-30 21:44:09,355 - INFO - Executing Mininet command: h1 iperf3 -s &
+2024-04-30 21:44:09,356 - INFO - Command h1 iperf3 -s & successful
+2024-04-30 21:44:17,362 - INFO - Executing Mininet command: h6 iperf3 -c 10.0.10.1 -t 10 -i 1 -f mM -P 1 > iperf/baseline.log &
+2024-04-30 21:44:17,363 - INFO - Command h6 iperf3 -c 10.0.10.1 -t 10 -i 1 -f mM -P 1 > iperf/baseline.log & successful
+2024-04-30 21:44:32,377 - INFO - Baseline iperf output
+2024-04-30 21:44:32,382 - INFO - found iperf done
+2024-04-30 21:44:32,382 - INFO - Connecting to host 10.0.10.1, port 5201
+2024-04-30 21:44:32,382 - INFO - [  5] local 10.0.30.2 port 50696 connected to 10.0.10.1 port 5201
+2024-04-30 21:44:32,383 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-04-30 21:44:32,383 - INFO - [  5]   0.00-1.00   sec  1.06 MBytes  8.86 Mbits/sec    0    127 KBytes       
+2024-04-30 21:44:32,383 - INFO - [  5]   1.00-2.00   sec   636 KBytes  5.22 Mbits/sec    0    156 KBytes       
+2024-04-30 21:44:32,383 - INFO - [  5]   2.00-3.00   sec   700 KBytes  5.73 Mbits/sec    0    184 KBytes       
+2024-04-30 21:44:32,384 - INFO - [  5]   3.00-4.00   sec   827 KBytes  6.77 Mbits/sec    0    214 KBytes       
+2024-04-30 21:44:32,386 - INFO - [  5]   4.00-5.00   sec   954 KBytes  7.83 Mbits/sec    0    242 KBytes       
+2024-04-30 21:44:32,386 - INFO - [  5]   5.00-6.00   sec   573 KBytes  4.69 Mbits/sec    0    272 KBytes       
+2024-04-30 21:44:32,386 - INFO - [  5]   6.00-7.00   sec   573 KBytes  4.69 Mbits/sec    0    300 KBytes       
+2024-04-30 21:44:32,386 - INFO - [  5]   7.00-8.00   sec   636 KBytes  5.21 Mbits/sec    0    337 KBytes       
+2024-04-30 21:44:32,386 - INFO - [  5]   8.00-9.00   sec   764 KBytes  6.26 Mbits/sec    0    423 KBytes       
+2024-04-30 21:44:32,386 - INFO - [  5]   9.00-10.00  sec  1.93 MBytes  16.2 Mbits/sec    0    536 KBytes       
+2024-04-30 21:44:32,386 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 21:44:32,386 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-04-30 21:44:32,387 - INFO - [  5]   0.00-10.00  sec  8.51 MBytes  7.14 Mbits/sec    0             sender
+2024-04-30 21:44:32,387 - INFO - [  5]   0.00-10.92  sec  6.12 MBytes  4.70 Mbits/sec                  receiver
+2024-04-30 21:44:32,387 - INFO - 
+2024-04-30 21:44:32,387 - INFO - iperf Done.
+2024-04-30 21:44:35,389 - INFO - Executing Mininet command: h6 iperf3 -c 10.0.10.1 -t 10 -i 1 -f mM -P 1 > iperf/failover.log &
+2024-04-30 21:44:35,389 - INFO - Command h6 iperf3 -c 10.0.10.1 -t 10 -i 1 -f mM -P 1 > iperf/failover.log & successful
+2024-04-30 21:44:40,406 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2024-04-30 21:44:40,406 - INFO - 00:00:00:00:00:01
+2024-04-30 21:44:40,406 - INFO - 00:00:00:00:00:06
+2024-04-30 21:44:40,413 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2024-04-30 21:44:40,419 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2024-04-30 21:44:45,425 - INFO - Failover at time 5.0s
+2024-04-30 21:44:45,426 - INFO - Executing Mininet command: link s1 s3 down
+2024-04-30 21:44:45,426 - INFO - Command link s1 s3 down successful
+2024-04-30 21:44:53,440 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2024-04-30 21:44:53,447 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2024-04-30 21:44:58,453 - INFO - Failover iperf output
+2024-04-30 21:44:58,460 - INFO - found iperf done
+2024-04-30 21:44:58,461 - INFO - Connecting to host 10.0.10.1, port 5201
+2024-04-30 21:44:58,461 - INFO - [  5] local 10.0.30.2 port 60342 connected to 10.0.10.1 port 5201
+2024-04-30 21:44:58,466 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-04-30 21:44:58,467 - INFO - [  5]   0.00-1.00   sec   918 KBytes  7.52 Mbits/sec    0   87.7 KBytes       
+2024-04-30 21:44:58,467 - INFO - [  5]   1.00-2.00   sec   700 KBytes  5.73 Mbits/sec    0    117 KBytes       
+2024-04-30 21:44:58,468 - INFO - [  5]   2.00-3.00   sec   891 KBytes  7.30 Mbits/sec    0    146 KBytes       
+2024-04-30 21:44:58,468 - INFO - [  5]   3.00-4.00   sec   700 KBytes  5.73 Mbits/sec    0    175 KBytes       
+2024-04-30 21:44:58,468 - INFO - [  5]   4.00-5.00   sec   827 KBytes  6.78 Mbits/sec    0    205 KBytes       
+2024-04-30 21:44:58,468 - INFO - [  5]   5.00-6.00   sec   445 KBytes  3.65 Mbits/sec    0    233 KBytes       
+2024-04-30 21:44:58,470 - INFO - [  5]   6.00-7.00   sec   509 KBytes  4.17 Mbits/sec    0    263 KBytes       
+2024-04-30 21:44:58,470 - INFO - [  5]   7.00-8.00   sec  1.18 MBytes  9.91 Mbits/sec    0    304 KBytes       
+2024-04-30 21:44:58,470 - INFO - [  5]   8.00-9.00   sec   700 KBytes  5.73 Mbits/sec    0    393 KBytes       
+2024-04-30 21:44:58,470 - INFO - [  5]   9.00-10.00  sec   891 KBytes  7.30 Mbits/sec    0    509 KBytes       
+2024-04-30 21:44:58,470 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 21:44:58,470 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-04-30 21:44:58,471 - INFO - [  5]   0.00-10.00  sec  7.61 MBytes  6.38 Mbits/sec    0             sender
+2024-04-30 21:44:58,471 - INFO - [  5]   0.00-13.26  sec  6.13 MBytes  3.88 Mbits/sec                  receiver
+2024-04-30 21:44:58,471 - INFO - 
+2024-04-30 21:44:58,471 - INFO - iperf Done.
+2024-04-30 21:44:58,472 - INFO - Paths are different after link s1 s3 down command
+2024-04-30 21:44:58,472 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']]
+2024-04-30 21:44:58,472 - INFO - Added Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2024-04-30 21:44:58,472 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']]
+2024-04-30 21:44:58,473 - INFO - Removed Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2024-04-30 21:44:59,094 - INFO - 
+*** Stopping 1 controllers
+c0 
+*** Stopping 9 links
+.........
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 6 hosts
+h1 h2 h3 h4 h5 h6 
+*** Done
+2024-04-30 21:44:59,094 - INFO - Fault Tolerance via Reactive Fwd Test Trial 2 Success
+2024-04-30 21:44:59,098 - INFO - Baseline Output:
+2024-04-30 21:44:59,099 - INFO - [  5]   0.00-10.00  sec  14.4 MBytes  12.1 Mbits/sec    0             sender
+2024-04-30 21:44:59,100 - INFO - [  5]   0.00-10.60  sec  11.6 MBytes  9.20 Mbits/sec                  receiver
+2024-04-30 21:44:59,100 - INFO - [  5]   0.00-10.00  sec  8.51 MBytes  7.14 Mbits/sec    0             sender
+2024-04-30 21:44:59,101 - INFO - [  5]   0.00-10.92  sec  6.12 MBytes  4.70 Mbits/sec                  receiver
+2024-04-30 21:44:59,102 - INFO - Failover Output:
+2024-04-30 21:44:59,102 - INFO - [  5]   0.00-10.00  sec  13.5 MBytes  11.3 Mbits/sec    0             sender
+2024-04-30 21:44:59,103 - INFO - [  5]   0.00-10.06  sec  11.0 MBytes  9.18 Mbits/sec                  receiver
+2024-04-30 21:44:59,103 - INFO - [  5]   0.00-10.00  sec  7.61 MBytes  6.38 Mbits/sec    0             sender
+2024-04-30 21:44:59,103 - INFO - [  5]   0.00-13.26  sec  6.13 MBytes  3.88 Mbits/sec                  receiver
+2024-04-30 21:44:59,104 - INFO - iPerf3 test done, elapsed time: 0:02:39.557053
+2024-04-30 21:44:59,107 - INFO - End of Log

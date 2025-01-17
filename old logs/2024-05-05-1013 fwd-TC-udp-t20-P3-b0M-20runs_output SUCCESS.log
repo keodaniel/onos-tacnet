@@ -1,0 +1,322 @@
+Baseline Output:
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  41.291 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  41.433 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  41.449 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.02  sec   734 KBytes   300 Kbits/sec  41.391 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.563 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.562 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.643 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   734 KBytes   300 Kbits/sec  0.589 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.649 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.648 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.743 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   734 KBytes   300 Kbits/sec  0.680 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.360 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.361 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.502 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.02  sec   734 KBytes   300 Kbits/sec  0.407 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  1.016 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  1.095 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  1.358 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   734 KBytes   300 Kbits/sec  1.156 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.264 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.232 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.364 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.02  sec   734 KBytes   300 Kbits/sec  0.287 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.185 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.187 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.310 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.02  sec   734 KBytes   300 Kbits/sec  0.227 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.430 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.417 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  1.306 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.02  sec   734 KBytes   300 Kbits/sec  0.718 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.609 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.607 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.597 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   734 KBytes   300 Kbits/sec  0.604 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.41  sec   245 KBytes  98.2 Kbits/sec  0.443 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.41  sec   245 KBytes  98.2 Kbits/sec  0.447 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.41  sec   245 KBytes  98.2 Kbits/sec  0.552 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.41  sec   734 KBytes   295 Kbits/sec  0.481 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.842 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.832 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.883 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.02  sec   734 KBytes   300 Kbits/sec  0.853 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-21.01  sec   245 KBytes  95.4 Kbits/sec  0.227 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-21.01  sec   245 KBytes  95.4 Kbits/sec  0.226 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-21.01  sec   245 KBytes  95.4 Kbits/sec  0.335 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-21.01  sec   734 KBytes   286 Kbits/sec  0.262 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.210 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.216 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.451 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   734 KBytes   300 Kbits/sec  0.292 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.246 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.224 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.377 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.02  sec   734 KBytes   300 Kbits/sec  0.282 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.567 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.564 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.580 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   734 KBytes   300 Kbits/sec  0.571 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.375 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.373 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.494 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.02  sec   734 KBytes   300 Kbits/sec  0.414 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.474 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.473 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.339 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   734 KBytes   300 Kbits/sec  0.429 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.337 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.337 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.02  sec   245 KBytes   100 Kbits/sec  0.465 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.02  sec   734 KBytes   300 Kbits/sec  0.380 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.16  sec   245 KBytes  99.4 Kbits/sec  0.299 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.16  sec   245 KBytes  99.4 Kbits/sec  0.306 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.16  sec   245 KBytes  99.4 Kbits/sec  0.352 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.16  sec   734 KBytes   298 Kbits/sec  0.319 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.05  sec   245 KBytes  99.9 Kbits/sec  0.243 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.05  sec   245 KBytes  99.9 Kbits/sec  0.245 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.05  sec   245 KBytes  99.9 Kbits/sec  0.433 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.05  sec   734 KBytes   300 Kbits/sec  0.307 ms  0/519 (0%)  receiver
+Failover Output:
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.89  sec   243 KBytes  95.4 Kbits/sec  0.667 ms  1/173 (0.58%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.89  sec   243 KBytes  95.4 Kbits/sec  0.712 ms  1/173 (0.58%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.89  sec   243 KBytes  95.4 Kbits/sec  0.751 ms  1/173 (0.58%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.89  sec   730 KBytes   286 Kbits/sec  0.710 ms  3/519 (0.58%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.754 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.735 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.445 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   734 KBytes   300 Kbits/sec  0.645 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.568 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.565 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.528 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   734 KBytes   300 Kbits/sec  0.554 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.420 ms  1/173 (0.58%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.444 ms  1/173 (0.58%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.640 ms  1/173 (0.58%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   730 KBytes   298 Kbits/sec  0.501 ms  3/519 (0.58%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.04  sec   245 KBytes   100 Kbits/sec  0.697 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.04  sec   245 KBytes   100 Kbits/sec  0.713 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.04  sec   245 KBytes   100 Kbits/sec  0.862 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.04  sec   734 KBytes   300 Kbits/sec  0.757 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.661 ms  1/173 (0.58%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.669 ms  1/173 (0.58%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.809 ms  1/173 (0.58%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   730 KBytes   298 Kbits/sec  0.713 ms  3/519 (0.58%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.555 ms  1/173 (0.58%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.561 ms  1/173 (0.58%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.667 ms  1/173 (0.58%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   730 KBytes   298 Kbits/sec  0.594 ms  3/519 (0.58%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.04  sec   243 KBytes  99.4 Kbits/sec  0.340 ms  1/173 (0.58%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.04  sec   243 KBytes  99.4 Kbits/sec  0.341 ms  1/173 (0.58%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.04  sec   243 KBytes  99.4 Kbits/sec  0.527 ms  1/173 (0.58%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.04  sec   730 KBytes   298 Kbits/sec  0.403 ms  3/519 (0.58%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.465 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.464 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.444 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   734 KBytes   300 Kbits/sec  0.457 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.34  sec   245 KBytes  98.5 Kbits/sec  0.311 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.34  sec   245 KBytes  98.5 Kbits/sec  0.312 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.34  sec   245 KBytes  98.5 Kbits/sec  0.455 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.34  sec   734 KBytes   296 Kbits/sec  0.359 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.436 ms  1/173 (0.58%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.435 ms  1/173 (0.58%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.710 ms  1/173 (0.58%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   730 KBytes   298 Kbits/sec  0.527 ms  3/519 (0.58%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.04  sec   243 KBytes  99.4 Kbits/sec  0.539 ms  1/173 (0.58%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.04  sec   243 KBytes  99.4 Kbits/sec  0.555 ms  1/173 (0.58%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.04  sec   243 KBytes  99.4 Kbits/sec  0.541 ms  1/173 (0.58%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.04  sec   730 KBytes   298 Kbits/sec  0.545 ms  3/519 (0.58%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.05  sec   243 KBytes  99.4 Kbits/sec  0.542 ms  1/173 (0.58%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.05  sec   243 KBytes  99.4 Kbits/sec  0.537 ms  1/173 (0.58%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.05  sec   243 KBytes  99.4 Kbits/sec  0.549 ms  1/173 (0.58%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.05  sec   730 KBytes   298 Kbits/sec  0.543 ms  3/519 (0.58%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.73  sec   243 KBytes  96.1 Kbits/sec  0.532 ms  1/173 (0.58%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.73  sec   243 KBytes  96.1 Kbits/sec  0.533 ms  1/173 (0.58%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.73  sec   243 KBytes  96.1 Kbits/sec  0.564 ms  1/173 (0.58%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.73  sec   730 KBytes   288 Kbits/sec  0.543 ms  3/519 (0.58%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.409 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.444 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   245 KBytes   100 Kbits/sec  0.583 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   734 KBytes   300 Kbits/sec  0.479 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.435 ms  1/173 (0.58%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.427 ms  1/173 (0.58%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   243 KBytes  99.5 Kbits/sec  0.673 ms  1/173 (0.58%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   730 KBytes   298 Kbits/sec  0.512 ms  3/519 (0.58%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.60  sec   245 KBytes  97.3 Kbits/sec  0.621 ms  0/173 (0%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.60  sec   245 KBytes  97.3 Kbits/sec  0.656 ms  0/173 (0%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.60  sec   245 KBytes  97.3 Kbits/sec  0.537 ms  0/173 (0%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.60  sec   734 KBytes   292 Kbits/sec  0.605 ms  0/519 (0%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.03  sec   243 KBytes  99.4 Kbits/sec  0.590 ms  1/173 (0.58%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.03  sec   243 KBytes  99.4 Kbits/sec  0.626 ms  1/173 (0.58%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.03  sec   243 KBytes  99.4 Kbits/sec  0.707 ms  1/173 (0.58%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.03  sec   730 KBytes   298 Kbits/sec  0.641 ms  3/519 (0.58%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.04  sec   243 KBytes  99.4 Kbits/sec  0.621 ms  1/173 (0.58%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.04  sec   243 KBytes  99.4 Kbits/sec  0.622 ms  1/173 (0.58%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.04  sec   243 KBytes  99.4 Kbits/sec  0.633 ms  1/173 (0.58%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.04  sec   730 KBytes   298 Kbits/sec  0.625 ms  3/519 (0.58%)  receiver
+[  5]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  5]   0.00-20.04  sec   243 KBytes  99.4 Kbits/sec  0.598 ms  1/173 (0.58%)  receiver
+[  7]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  7]   0.00-20.04  sec   243 KBytes  99.4 Kbits/sec  0.618 ms  1/173 (0.58%)  receiver
+[  9]   0.00-20.00  sec   245 KBytes   100 Kbits/sec  0.000 ms  0/173 (0%)  sender
+[  9]   0.00-20.04  sec   243 KBytes  99.4 Kbits/sec  0.645 ms  1/173 (0.58%)  receiver
+[SUM]   0.00-20.00  sec   734 KBytes   301 Kbits/sec  0.000 ms  0/519 (0%)  sender
+[SUM]   0.00-20.04  sec   730 KBytes   298 Kbits/sec  0.620 ms  3/519 (0.58%)  receiver

@@ -1,0 +1,280 @@
+2024-06-04 16:44:22,536 - INFO - Starting Bandwidth Control test at 2024-06-04-1644
+2024-06-04 16:44:22,729 - INFO - ONOS Docker container is already running.
+2024-06-04 16:44:24,383 - INFO - Starting Mininet topology: TC
+2024-06-04 16:44:26,292 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(s1, s2) (10.00Mbit 10ms delay) (10.00Mbit 10ms delay) (s1, s3) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(10.00Mbit 10ms delay) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (10.00Mbit 10ms delay) (5.00Mbit 10ms delay) 
+*** Starting CLI:
+2024-06-04 16:44:26,313 - INFO - Meter 2 on device of:0000000000000001 deleted successfully.
+2024-06-04 16:44:26,326 - INFO - Meter 3 on device of:0000000000000002 deleted successfully.
+2024-06-04 16:44:26,338 - INFO - Meter 4 on device of:0000000000000002 deleted successfully.
+2024-06-04 16:44:26,360 - INFO - All meters purged successfully.
+2024-06-04 16:44:26,369 - INFO - All flow rules purged successfully for application keo.
+2024-06-04 16:44:26,390 - INFO - Meter {'deviceId': 'of:0000000000000001', 'unit': 'KB_PER_SEC', 'burst': True, 'bands': [{'type': 'DROP', 'rate': 3000, 'burstSize': 100}]} posted successfully on device of:0000000000000001
+2024-06-04 16:44:26,410 - INFO - Meter {'deviceId': 'of:0000000000000002', 'unit': 'KB_PER_SEC', 'burst': True, 'bands': [{'type': 'DROP', 'rate': 1500, 'burstSize': 100}]} posted successfully on device of:0000000000000002
+2024-06-04 16:44:26,425 - INFO - Meter {'deviceId': 'of:0000000000000002', 'unit': 'KB_PER_SEC', 'burst': True, 'bands': [{'type': 'DROP', 'rate': 1500, 'burstSize': 100}]} posted successfully on device of:0000000000000002
+2024-06-04 16:44:26,452 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 4}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 2}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.20.1/32'}]}}]}
+2024-06-04 16:44:26,462 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 2}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 4}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.20.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}]}}]}
+2024-06-04 16:44:26,472 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000002', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 1}, {'type': 'METER', 'meterId': '3'}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 4}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.20.1/32'}]}}]}
+2024-06-04 16:44:26,480 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000002', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 4}, {'type': 'METER', 'meterId': '3'}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 1}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.20.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}]}}]}
+2024-06-04 16:44:26,490 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 3}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 2}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.20.1/32'}, {'type': 'IP_PROTO', 'protocol': 17}]}}]}
+2024-06-04 16:44:26,502 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 2}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 3}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.20.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}, {'type': 'IP_PROTO', 'protocol': 17}]}}]}
+2024-06-04 16:44:26,557 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000001', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 3}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 4}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.20.1/32'}, {'type': 'IP_PROTO', 'protocol': 17}]}}]}
+2024-06-04 16:44:26,586 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000001', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 4}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 3}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.20.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}, {'type': 'IP_PROTO', 'protocol': 17}]}}]}
+2024-06-04 16:44:26,603 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000002', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 1}, {'type': 'METER', 'meterId': '4'}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 3}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.20.1/32'}, {'type': 'IP_PROTO', 'protocol': 17}]}}]}
+2024-06-04 16:44:26,635 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000002', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 3}, {'type': 'METER', 'meterId': '4'}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 1}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.20.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}, {'type': 'IP_PROTO', 'protocol': 17}]}}]}
+2024-06-04 16:44:26,695 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 3}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 2}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.10.1/32'}]}}]}
+2024-06-04 16:44:26,708 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 2}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 3}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.10.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}]}}]}
+2024-06-04 16:44:26,721 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000001', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 1}, {'type': 'METER', 'meterId': '2'}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 4}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.10.1/32'}]}}]}
+2024-06-04 16:44:26,733 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000001', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 4}, {'type': 'METER', 'meterId': '2'}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 1}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.10.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}]}}]}
+2024-06-04 16:44:31,749 - INFO - Executing Mininet command: h6 iperf3 -s &
+2024-06-04 16:44:31,751 - INFO - Command h6 iperf3 -s & successful
+2024-06-04 16:44:41,761 - INFO - Executing Mininet command: h3 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw1.log &
+2024-06-04 16:44:41,763 - INFO - Command h3 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw1.log & successful
+2024-06-04 16:44:46,780 - INFO - h3 to h6 direct iperf output
+2024-06-04 16:44:46,799 - INFO - Sleeping 10 seconds before retrying to read iperf/bw1.log
+2024-06-04 16:44:56,886 - INFO - Found iperf Done.
+2024-06-04 16:44:56,887 - INFO - Connecting to host 10.0.30.2, port 5201
+2024-06-04 16:44:56,892 - INFO - [  5] local 10.0.20.1 port 43506 connected to 10.0.30.2 port 5201
+2024-06-04 16:44:56,922 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-06-04 16:44:56,923 - INFO - [  5]   0.00-1.00   sec   337 KBytes  2.75 Mbits/sec   37   4.24 KBytes       
+2024-06-04 16:44:56,923 - INFO - [  5]   1.00-2.00   sec   158 KBytes  1.30 Mbits/sec   14   7.07 KBytes       
+2024-06-04 16:44:56,925 - INFO - [  5]   2.00-3.01   sec   158 KBytes  1.28 Mbits/sec   10   9.90 KBytes       
+2024-06-04 16:44:56,926 - INFO - [  5]   3.01-4.01   sec   158 KBytes  1.31 Mbits/sec   11   5.66 KBytes       
+2024-06-04 16:44:56,928 - INFO - [  5]   4.01-5.00   sec   158 KBytes  1.31 Mbits/sec   15   2.83 KBytes       
+2024-06-04 16:44:56,929 - INFO - [  5]   5.00-6.00   sec   158 KBytes  1.30 Mbits/sec    6   7.07 KBytes       
+2024-06-04 16:44:56,930 - INFO - [  5]   6.00-7.00   sec   158 KBytes  1.30 Mbits/sec   13   7.07 KBytes       
+2024-06-04 16:44:56,932 - INFO - [  5]   7.00-8.01   sec   158 KBytes  1.29 Mbits/sec   11   4.24 KBytes       
+2024-06-04 16:44:56,933 - INFO - [  5]   8.01-9.01   sec   167 KBytes  1.37 Mbits/sec    9   4.24 KBytes       
+2024-06-04 16:44:56,934 - INFO - [  5]   9.01-10.00  sec   170 KBytes  1.40 Mbits/sec   11   7.07 KBytes       
+2024-06-04 16:44:56,947 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-06-04 16:44:56,965 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-06-04 16:44:56,966 - INFO - [  5]   0.00-10.00  sec  1.74 MBytes  1.46 Mbits/sec  137             sender
+2024-06-04 16:44:56,967 - INFO - [  5]   0.00-10.06  sec  1.61 MBytes  1.34 Mbits/sec                  receiver
+2024-06-04 16:44:56,968 - INFO - 
+2024-06-04 16:44:56,972 - INFO - iperf Done.
+2024-06-04 16:44:56,973 - INFO - Executing Mininet command: h3 iperf3 -c 10.0.30.2 -u -b 10Mbps > iperf/bw2.log &
+2024-06-04 16:44:56,973 - INFO - Command h3 iperf3 -c 10.0.30.2 -u -b 10Mbps > iperf/bw2.log & successful
+2024-06-04 16:45:01,975 - INFO - h3 to h6 indirect UDP iperf output
+2024-06-04 16:45:01,980 - INFO - Sleeping 10 seconds before retrying to read iperf/bw2.log
+2024-06-04 16:45:11,994 - INFO - Found iperf Done.
+2024-06-04 16:45:11,995 - INFO - Connecting to host 10.0.30.2, port 5201
+2024-06-04 16:45:11,996 - INFO - [  5] local 10.0.20.1 port 58004 connected to 10.0.30.2 port 5201
+2024-06-04 16:45:11,996 - INFO - [ ID] Interval           Transfer     Bitrate         Total Datagrams
+2024-06-04 16:45:11,997 - INFO - [  5]   0.00-1.00   sec  1.19 MBytes  9.98 Mbits/sec  863  
+2024-06-04 16:45:11,997 - INFO - [  5]   1.00-2.03   sec  1.18 MBytes  9.59 Mbits/sec  855  
+2024-06-04 16:45:11,998 - INFO - [  5]   2.03-3.00   sec  1.20 MBytes  10.3 Mbits/sec  866  
+2024-06-04 16:45:11,998 - INFO - [  5]   3.00-4.00   sec  1.20 MBytes  10.1 Mbits/sec  869  
+2024-06-04 16:45:12,000 - INFO - [  5]   4.00-5.00   sec  1.19 MBytes  9.99 Mbits/sec  863  
+2024-06-04 16:45:12,000 - INFO - [  5]   5.00-6.00   sec  1.19 MBytes  10.0 Mbits/sec  864  
+2024-06-04 16:45:12,001 - INFO - [  5]   6.00-7.00   sec  1.19 MBytes  10.0 Mbits/sec  863  
+2024-06-04 16:45:12,002 - INFO - [  5]   7.00-8.00   sec  1.17 MBytes  9.83 Mbits/sec  849  
+2024-06-04 16:45:12,002 - INFO - [  5]   8.00-9.00   sec  1.21 MBytes  10.2 Mbits/sec  878  
+2024-06-04 16:45:12,002 - INFO - [  5]   9.00-10.00  sec  1.19 MBytes  10.0 Mbits/sec  863  
+2024-06-04 16:45:12,003 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-06-04 16:45:12,004 - INFO - [ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+2024-06-04 16:45:12,005 - INFO - [  5]   0.00-10.00  sec  11.9 MBytes  10.0 Mbits/sec  0.000 ms  0/8633 (0%)  sender
+2024-06-04 16:45:12,005 - INFO - [  5]   0.00-10.08  sec  1.75 MBytes  1.45 Mbits/sec  1.734 ms  7363/8629 (85%)  receiver
+2024-06-04 16:45:12,006 - INFO - 
+2024-06-04 16:45:12,006 - INFO - iperf Done.
+2024-06-04 16:45:12,007 - INFO - Executing Mininet command: h1 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw3.log &
+2024-06-04 16:45:12,009 - INFO - Command h1 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw3.log & successful
+2024-06-04 16:45:17,014 - INFO - h1 to h6 direct iperf output
+2024-06-04 16:45:17,020 - INFO - Sleeping 10 seconds before retrying to read iperf/bw3.log
+2024-06-04 16:45:27,045 - INFO - Found iperf Done.
+2024-06-04 16:45:27,046 - INFO - Connecting to host 10.0.30.2, port 5201
+2024-06-04 16:45:27,047 - INFO - [  5] local 10.0.10.1 port 54850 connected to 10.0.30.2 port 5201
+2024-06-04 16:45:27,049 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-06-04 16:45:27,050 - INFO - [  5]   0.00-1.00   sec   478 KBytes  3.91 Mbits/sec   28   8.48 KBytes       
+2024-06-04 16:45:27,050 - INFO - [  5]   1.00-2.00   sec   313 KBytes  2.56 Mbits/sec    8   12.7 KBytes       
+2024-06-04 16:45:27,051 - INFO - [  5]   2.00-3.00   sec   305 KBytes  2.50 Mbits/sec   12   11.3 KBytes       
+2024-06-04 16:45:27,052 - INFO - [  5]   3.00-4.02   sec   305 KBytes  2.46 Mbits/sec   11   9.90 KBytes       
+2024-06-04 16:45:27,052 - INFO - [  5]   4.02-5.00   sec   204 KBytes  1.70 Mbits/sec    7   8.48 KBytes       
+2024-06-04 16:45:27,053 - INFO - [  5]   5.00-6.00   sec   356 KBytes  2.92 Mbits/sec    9   8.48 KBytes       
+2024-06-04 16:45:27,054 - INFO - [  5]   6.00-7.00   sec   305 KBytes  2.50 Mbits/sec    9   9.90 KBytes       
+2024-06-04 16:45:27,056 - INFO - [  5]   7.00-8.00   sec   255 KBytes  2.09 Mbits/sec    9   7.07 KBytes       
+2024-06-04 16:45:27,057 - INFO - [  5]   8.00-9.00   sec   356 KBytes  2.92 Mbits/sec   10   9.90 KBytes       
+2024-06-04 16:45:27,057 - INFO - [  5]   9.00-10.00  sec   255 KBytes  2.09 Mbits/sec    8   9.90 KBytes       
+2024-06-04 16:45:27,058 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-06-04 16:45:27,059 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-06-04 16:45:27,060 - INFO - [  5]   0.00-10.00  sec  3.06 MBytes  2.57 Mbits/sec  111             sender
+2024-06-04 16:45:27,061 - INFO - [  5]   0.00-10.05  sec  2.92 MBytes  2.44 Mbits/sec                  receiver
+2024-06-04 16:45:27,062 - INFO - 
+2024-06-04 16:45:27,062 - INFO - iperf Done.
+2024-06-04 16:45:27,063 - INFO - Bandwidth Control Test Trial 1 Success
+2024-06-04 16:45:32,073 - INFO - Executing Mininet command: h3 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw1.log &
+2024-06-04 16:45:32,075 - INFO - Command h3 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw1.log & successful
+2024-06-04 16:45:37,085 - INFO - h3 to h6 direct iperf output
+2024-06-04 16:45:37,091 - INFO - Sleeping 10 seconds before retrying to read iperf/bw1.log
+2024-06-04 16:45:47,116 - INFO - Found iperf Done.
+2024-06-04 16:45:47,117 - INFO - Connecting to host 10.0.30.2, port 5201
+2024-06-04 16:45:47,118 - INFO - [  5] local 10.0.20.1 port 34542 connected to 10.0.30.2 port 5201
+2024-06-04 16:45:47,119 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-06-04 16:45:47,120 - INFO - [  5]   0.00-1.00   sec   332 KBytes  2.72 Mbits/sec   37   4.24 KBytes       
+2024-06-04 16:45:47,121 - INFO - [  5]   1.00-2.01   sec  96.2 KBytes   784 Kbits/sec    5   5.66 KBytes       
+2024-06-04 16:45:47,122 - INFO - [  5]   2.01-3.00   sec   192 KBytes  1.58 Mbits/sec   11   7.07 KBytes       
+2024-06-04 16:45:47,122 - INFO - [  5]   3.00-4.00   sec  96.2 KBytes   785 Kbits/sec   14   5.66 KBytes       
+2024-06-04 16:45:47,123 - INFO - [  5]   4.00-5.00   sec   192 KBytes  1.58 Mbits/sec   11   7.07 KBytes       
+2024-06-04 16:45:47,124 - INFO - [  5]   5.00-6.00   sec   192 KBytes  1.58 Mbits/sec   11   7.07 KBytes       
+2024-06-04 16:45:47,124 - INFO - [  5]   6.00-7.00   sec   192 KBytes  1.58 Mbits/sec   13   7.07 KBytes       
+2024-06-04 16:45:47,124 - INFO - [  5]   7.00-8.01   sec  96.2 KBytes   780 Kbits/sec   14   4.24 KBytes       
+2024-06-04 16:45:47,125 - INFO - [  5]   8.01-9.00   sec   192 KBytes  1.59 Mbits/sec   12   5.66 KBytes       
+2024-06-04 16:45:47,126 - INFO - [  5]   9.00-10.00  sec   192 KBytes  1.57 Mbits/sec   12   5.66 KBytes       
+2024-06-04 16:45:47,127 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-06-04 16:45:47,128 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-06-04 16:45:47,129 - INFO - [  5]   0.00-10.00  sec  1.73 MBytes  1.45 Mbits/sec  140             sender
+2024-06-04 16:45:47,129 - INFO - [  5]   0.00-10.07  sec  1.60 MBytes  1.33 Mbits/sec                  receiver
+2024-06-04 16:45:47,130 - INFO - 
+2024-06-04 16:45:47,131 - INFO - iperf Done.
+2024-06-04 16:45:47,133 - INFO - Executing Mininet command: h3 iperf3 -c 10.0.30.2 -u -b 10Mbps > iperf/bw2.log &
+2024-06-04 16:45:47,133 - INFO - Command h3 iperf3 -c 10.0.30.2 -u -b 10Mbps > iperf/bw2.log & successful
+2024-06-04 16:45:52,139 - INFO - h3 to h6 indirect UDP iperf output
+2024-06-04 16:45:52,166 - INFO - Sleeping 10 seconds before retrying to read iperf/bw2.log
+2024-06-04 16:46:02,176 - INFO - Found iperf Done.
+2024-06-04 16:46:02,176 - INFO - Connecting to host 10.0.30.2, port 5201
+2024-06-04 16:46:02,178 - INFO - [  5] local 10.0.20.1 port 57639 connected to 10.0.30.2 port 5201
+2024-06-04 16:46:02,180 - INFO - [ ID] Interval           Transfer     Bitrate         Total Datagrams
+2024-06-04 16:46:02,180 - INFO - [  5]   0.00-1.04   sec  1.18 MBytes  9.58 Mbits/sec  857  
+2024-06-04 16:46:02,181 - INFO - [  5]   1.04-2.00   sec  1.20 MBytes  10.4 Mbits/sec  870  
+2024-06-04 16:46:02,182 - INFO - [  5]   2.00-3.00   sec  1.19 MBytes  9.99 Mbits/sec  863  
+2024-06-04 16:46:02,183 - INFO - [  5]   3.00-4.00   sec  1.19 MBytes  9.96 Mbits/sec  862  
+2024-06-04 16:46:02,184 - INFO - [  5]   4.00-5.00   sec  1.18 MBytes  9.96 Mbits/sec  857  
+2024-06-04 16:46:02,186 - INFO - [  5]   5.00-6.00   sec  1.19 MBytes  10.0 Mbits/sec  864  
+2024-06-04 16:46:02,203 - INFO - [  5]   6.00-7.01   sec  1.18 MBytes  9.79 Mbits/sec  855  
+2024-06-04 16:46:02,204 - INFO - [  5]   7.01-8.00   sec  1.20 MBytes  10.1 Mbits/sec  867  
+2024-06-04 16:46:02,205 - INFO - [  5]   8.00-9.00   sec  1.21 MBytes  10.2 Mbits/sec  875  
+2024-06-04 16:46:02,206 - INFO - [  5]   9.00-10.00  sec  1.16 MBytes  9.74 Mbits/sec  843  
+2024-06-04 16:46:02,206 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-06-04 16:46:02,207 - INFO - [ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+2024-06-04 16:46:02,208 - INFO - [  5]   0.00-10.00  sec  11.9 MBytes  9.97 Mbits/sec  0.000 ms  0/8613 (0%)  sender
+2024-06-04 16:46:02,209 - INFO - [  5]   0.00-10.07  sec  1.74 MBytes  1.45 Mbits/sec  2.263 ms  7346/8609 (85%)  receiver
+2024-06-04 16:46:02,210 - INFO - 
+2024-06-04 16:46:02,210 - INFO - iperf Done.
+2024-06-04 16:46:02,211 - INFO - Executing Mininet command: h1 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw3.log &
+2024-06-04 16:46:02,212 - INFO - Command h1 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw3.log & successful
+2024-06-04 16:46:07,218 - INFO - h1 to h6 direct iperf output
+2024-06-04 16:46:07,260 - INFO - Sleeping 10 seconds before retrying to read iperf/bw3.log
+2024-06-04 16:46:17,285 - INFO - Found iperf Done.
+2024-06-04 16:46:17,286 - INFO - Connecting to host 10.0.30.2, port 5201
+2024-06-04 16:46:17,287 - INFO - [  5] local 10.0.10.1 port 35446 connected to 10.0.30.2 port 5201
+2024-06-04 16:46:17,287 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-06-04 16:46:17,288 - INFO - [  5]   0.00-1.00   sec   451 KBytes  3.69 Mbits/sec   21   12.7 KBytes       
+2024-06-04 16:46:17,289 - INFO - [  5]   1.00-2.00   sec   290 KBytes  2.37 Mbits/sec   16   11.3 KBytes       
+2024-06-04 16:46:17,289 - INFO - [  5]   2.00-3.01   sec   290 KBytes  2.36 Mbits/sec   10   9.90 KBytes       
+2024-06-04 16:46:17,289 - INFO - [  5]   3.01-4.00   sec   348 KBytes  2.87 Mbits/sec   13   7.07 KBytes       
+2024-06-04 16:46:17,289 - INFO - [  5]   4.00-5.00   sec   290 KBytes  2.37 Mbits/sec    5   11.3 KBytes       
+2024-06-04 16:46:17,290 - INFO - [  5]   5.00-6.00   sec   348 KBytes  2.85 Mbits/sec   13   9.90 KBytes       
+2024-06-04 16:46:17,290 - INFO - [  5]   6.00-7.01   sec   290 KBytes  2.36 Mbits/sec   11   8.48 KBytes       
+2024-06-04 16:46:17,290 - INFO - [  5]   7.01-8.01   sec   348 KBytes  2.85 Mbits/sec   11   9.90 KBytes       
+2024-06-04 16:46:17,290 - INFO - [  5]   8.01-9.00   sec   290 KBytes  2.39 Mbits/sec   13   7.07 KBytes       
+2024-06-04 16:46:17,290 - INFO - [  5]   9.00-10.00  sec   301 KBytes  2.46 Mbits/sec   12   9.90 KBytes       
+2024-06-04 16:46:17,290 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-06-04 16:46:17,291 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-06-04 16:46:17,291 - INFO - [  5]   0.00-10.00  sec  3.17 MBytes  2.66 Mbits/sec  125             sender
+2024-06-04 16:46:17,292 - INFO - [  5]   0.00-10.05  sec  3.05 MBytes  2.55 Mbits/sec                  receiver
+2024-06-04 16:46:17,292 - INFO - 
+2024-06-04 16:46:17,292 - INFO - iperf Done.
+2024-06-04 16:46:17,293 - INFO - Bandwidth Control Test Trial 2 Success
+2024-06-04 16:46:22,305 - INFO - Executing Mininet command: h3 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw1.log &
+2024-06-04 16:46:22,307 - INFO - Command h3 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw1.log & successful
+2024-06-04 16:46:27,311 - INFO - h3 to h6 direct iperf output
+2024-06-04 16:46:27,320 - INFO - Sleeping 10 seconds before retrying to read iperf/bw1.log
+2024-06-04 16:46:37,338 - INFO - Found iperf Done.
+2024-06-04 16:46:37,339 - INFO - Connecting to host 10.0.30.2, port 5201
+2024-06-04 16:46:37,341 - INFO - [  5] local 10.0.20.1 port 56958 connected to 10.0.30.2 port 5201
+2024-06-04 16:46:37,342 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-06-04 16:46:37,345 - INFO - [  5]   0.00-1.00   sec   297 KBytes  2.43 Mbits/sec   39   5.66 KBytes       
+2024-06-04 16:46:37,345 - INFO - [  5]   1.00-2.03   sec   187 KBytes  1.49 Mbits/sec    7   9.90 KBytes       
+2024-06-04 16:46:37,345 - INFO - [  5]   2.03-3.00   sec   124 KBytes  1.05 Mbits/sec   16   4.24 KBytes       
+2024-06-04 16:46:37,349 - INFO - [  5]   3.00-4.00   sec   139 KBytes  1.14 Mbits/sec    7   4.24 KBytes       
+2024-06-04 16:46:37,355 - INFO - [  5]   4.00-5.00   sec   214 KBytes  1.75 Mbits/sec   13   5.66 KBytes       
+2024-06-04 16:46:37,356 - INFO - [  5]   5.00-6.00   sec   141 KBytes  1.16 Mbits/sec   14   5.66 KBytes       
+2024-06-04 16:46:37,357 - INFO - [  5]   6.00-7.00   sec   141 KBytes  1.15 Mbits/sec   12   5.66 KBytes       
+2024-06-04 16:46:37,358 - INFO - [  5]   7.00-8.00   sec   212 KBytes  1.75 Mbits/sec   11   5.66 KBytes       
+2024-06-04 16:46:37,360 - INFO - [  5]   8.00-9.00   sec   141 KBytes  1.16 Mbits/sec   11   8.48 KBytes       
+2024-06-04 16:46:37,362 - INFO - [  5]   9.00-10.00  sec   212 KBytes  1.74 Mbits/sec   14   5.66 KBytes       
+2024-06-04 16:46:37,364 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-06-04 16:46:37,366 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-06-04 16:46:37,368 - INFO - [  5]   0.00-10.00  sec  1.77 MBytes  1.48 Mbits/sec  144             sender
+2024-06-04 16:46:37,370 - INFO - [  5]   0.00-10.05  sec  1.61 MBytes  1.35 Mbits/sec                  receiver
+2024-06-04 16:46:37,371 - INFO - 
+2024-06-04 16:46:37,373 - INFO - iperf Done.
+2024-06-04 16:46:37,374 - INFO - Executing Mininet command: h3 iperf3 -c 10.0.30.2 -u -b 10Mbps > iperf/bw2.log &
+2024-06-04 16:46:37,384 - INFO - Command h3 iperf3 -c 10.0.30.2 -u -b 10Mbps > iperf/bw2.log & successful
+2024-06-04 16:46:42,424 - INFO - h3 to h6 indirect UDP iperf output
+2024-06-04 16:46:42,432 - INFO - Sleeping 10 seconds before retrying to read iperf/bw2.log
+2024-06-04 16:46:52,466 - INFO - Found iperf Done.
+2024-06-04 16:46:52,482 - INFO - Connecting to host 10.0.30.2, port 5201
+2024-06-04 16:46:52,483 - INFO - [  5] local 10.0.20.1 port 37907 connected to 10.0.30.2 port 5201
+2024-06-04 16:46:52,495 - INFO - [ ID] Interval           Transfer     Bitrate         Total Datagrams
+2024-06-04 16:46:52,496 - INFO - [  5]   0.00-1.00   sec  1.18 MBytes  9.91 Mbits/sec  856  
+2024-06-04 16:46:52,497 - INFO - [  5]   1.00-2.01   sec  1.19 MBytes  9.94 Mbits/sec  864  
+2024-06-04 16:46:52,500 - INFO - [  5]   2.01-3.00   sec  1.20 MBytes  10.1 Mbits/sec  870  
+2024-06-04 16:46:52,501 - INFO - [  5]   3.00-4.03   sec  1.19 MBytes  9.72 Mbits/sec  861  
+2024-06-04 16:46:52,505 - INFO - [  5]   4.03-5.01   sec  1.17 MBytes  9.93 Mbits/sec  844  
+2024-06-04 16:46:52,507 - INFO - [  5]   5.01-6.01   sec  1.22 MBytes  10.3 Mbits/sec  885  
+2024-06-04 16:46:52,509 - INFO - [  5]   6.01-7.01   sec  1.19 MBytes  10.0 Mbits/sec  862  
+2024-06-04 16:46:52,510 - INFO - [  5]   7.01-8.02   sec  1.19 MBytes  9.81 Mbits/sec  861  
+2024-06-04 16:46:52,511 - INFO - [  5]   8.02-9.00   sec  1.19 MBytes  10.3 Mbits/sec  865  
+2024-06-04 16:46:52,514 - INFO - [  5]   9.00-10.00  sec  1.19 MBytes  10.0 Mbits/sec  864  
+2024-06-04 16:46:52,515 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-06-04 16:46:52,516 - INFO - [ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+2024-06-04 16:46:52,517 - INFO - [  5]   0.00-10.00  sec  11.9 MBytes  10.0 Mbits/sec  0.000 ms  0/8632 (0%)  sender
+2024-06-04 16:46:52,518 - INFO - [  5]   0.00-10.07  sec  1.75 MBytes  1.46 Mbits/sec  6.441 ms  7364/8630 (85%)  receiver
+2024-06-04 16:46:52,520 - INFO - 
+2024-06-04 16:46:52,521 - INFO - iperf Done.
+2024-06-04 16:46:52,522 - INFO - Executing Mininet command: h1 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw3.log &
+2024-06-04 16:46:52,544 - INFO - Command h1 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw3.log & successful
+2024-06-04 16:46:57,562 - INFO - h1 to h6 direct iperf output
+2024-06-04 16:46:57,571 - INFO - Sleeping 10 seconds before retrying to read iperf/bw3.log
+2024-06-04 16:47:07,605 - INFO - Found iperf Done.
+2024-06-04 16:47:07,607 - INFO - Connecting to host 10.0.30.2, port 5201
+2024-06-04 16:47:07,608 - INFO - [  5] local 10.0.10.1 port 39246 connected to 10.0.30.2 port 5201
+2024-06-04 16:47:07,616 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-06-04 16:47:07,618 - INFO - [  5]   0.00-1.00   sec   468 KBytes  3.83 Mbits/sec   32   9.90 KBytes       
+2024-06-04 16:47:07,620 - INFO - [  5]   1.00-2.01   sec   255 KBytes  2.07 Mbits/sec    7   11.3 KBytes       
+2024-06-04 16:47:07,636 - INFO - [  5]   2.01-3.00   sec   318 KBytes  2.62 Mbits/sec    8   11.3 KBytes       
+2024-06-04 16:47:07,662 - INFO - [  5]   3.00-4.00   sec   318 KBytes  2.61 Mbits/sec    9   7.07 KBytes       
+2024-06-04 16:47:07,681 - INFO - [  5]   4.00-5.00   sec   318 KBytes  2.61 Mbits/sec    9   9.90 KBytes       
+2024-06-04 16:47:07,682 - INFO - [  5]   5.00-6.00   sec   255 KBytes  2.09 Mbits/sec   12   11.3 KBytes       
+2024-06-04 16:47:07,698 - INFO - [  5]   6.00-7.01   sec   255 KBytes  2.06 Mbits/sec    8   12.7 KBytes       
+2024-06-04 16:47:07,699 - INFO - [  5]   7.01-8.00   sec   318 KBytes  2.64 Mbits/sec   14   11.3 KBytes       
+2024-06-04 16:47:07,701 - INFO - [  5]   8.00-9.01   sec   318 KBytes  2.59 Mbits/sec   14   9.90 KBytes       
+2024-06-04 16:47:07,704 - INFO - [  5]   9.01-10.01  sec   318 KBytes  2.60 Mbits/sec   14   7.07 KBytes       
+2024-06-04 16:47:07,705 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-06-04 16:47:07,706 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-06-04 16:47:07,706 - INFO - [  5]   0.00-10.01  sec  3.07 MBytes  2.57 Mbits/sec  127             sender
+2024-06-04 16:47:07,708 - INFO - [  5]   0.00-10.06  sec  2.96 MBytes  2.46 Mbits/sec                  receiver
+2024-06-04 16:47:07,709 - INFO - 
+2024-06-04 16:47:07,710 - INFO - iperf Done.
+2024-06-04 16:47:07,712 - INFO - Bandwidth Control Test Trial 3 Success
+2024-06-04 16:47:12,742 - INFO - {'id': '2', 'life': 162, 'packets': 7084, 'bytes': 10398567, 'referenceCount': 2, 'unit': 'KB_PER_SEC', 'burst': True, 'deviceId': 'of:0000000000000001', 'appId': 'org.onosproject.rest', 'state': 'ADDED', 'bands': [{'type': 'DROP', 'rate': 3000, 'packets': 0, 'bytes': 0, 'burstSize': 100}]}
+2024-06-04 16:47:12,744 - INFO - {'id': '3', 'life': 162, 'packets': 30307, 'bytes': 44551678, 'referenceCount': 2, 'unit': 'KB_PER_SEC', 'burst': True, 'deviceId': 'of:0000000000000002', 'appId': 'org.onosproject.rest', 'state': 'ADDED', 'bands': [{'type': 'DROP', 'rate': 1500, 'packets': 0, 'bytes': 0, 'burstSize': 100}]}
+2024-06-04 16:47:12,745 - INFO - {'id': '4', 'life': 162, 'packets': 0, 'bytes': 0, 'referenceCount': 2, 'unit': 'KB_PER_SEC', 'burst': True, 'deviceId': 'of:0000000000000002', 'appId': 'org.onosproject.rest', 'state': 'ADDED', 'bands': [{'type': 'DROP', 'rate': 1500, 'packets': 0, 'bytes': 0, 'burstSize': 100}]}
+2024-06-04 16:47:15,830 - INFO - 
+*** Stopping 1 controllers
+c0 
+*** Stopping 9 links
+.........
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 6 hosts
+h1 h2 h3 h4 h5 h6 
+*** Done
+2024-06-04 16:47:15,861 - INFO - Bandwidth Control test done, elapsed time: 0:02:53.324912

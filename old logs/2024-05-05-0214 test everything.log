@@ -1,0 +1,158 @@
+2024-05-05 02:14:49,728 - INFO - Starting iPerf3 test at 2024-05-05-0214
+2024-05-05 02:14:49,730 - INFO - TCP iperf_time: 20s, trial_runs: 20, parallel_connections: 1, bitrate: Default
+2024-05-05 02:14:49,844 - INFO - ONOS Docker container is already running.
+2024-05-05 02:14:49,845 - INFO - Test Case: Fault Tolerance via Reactive Fwd
+2024-05-05 02:14:51,333 - INFO - Starting Mininet topology: TC
+2024-05-05 02:14:53,439 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(s1, s2) (10.00Mbit 10ms delay) (10.00Mbit 10ms delay) (s1, s3) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(10.00Mbit 10ms delay) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (10.00Mbit 10ms delay) (5.00Mbit 10ms delay) 
+*** Starting CLI:
+2024-05-05 02:14:53,443 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2024-05-05 02:14:53,498 - INFO - Authentication (password) successful!
+2024-05-05 02:14:53,672 - INFO - Activated org.onosproject.fwd
+2024-05-05 02:14:58,679 - INFO - Executing Mininet command: h1 iperf3 -s &
+2024-05-05 02:14:58,679 - INFO - Command h1 iperf3 -s & successful
+2024-05-05 02:15:08,687 - INFO - Executing Mininet command: h6 iperf3 -c 10.0.10.1 -t 20 -i 1 -f mM -P 1 > iperf/baseline.log &
+2024-05-05 02:15:08,688 - INFO - Command h6 iperf3 -c 10.0.10.1 -t 20 -i 1 -f mM -P 1 > iperf/baseline.log & successful
+2024-05-05 02:15:33,795 - INFO - Baseline iperf output
+2024-05-05 02:15:33,826 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 02:15:44,799 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 02:15:55,809 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 02:16:06,798 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 02:16:16,812 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 02:16:26,823 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 02:16:36,844 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 02:16:46,858 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 02:16:56,869 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 02:17:06,881 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 02:17:16,891 - ERROR - Runtime exceeded for reading log: iperf/baseline.log
+2024-05-05 02:17:16,891 - ERROR - Connecting to host 10.0.10.1, port 5201
+2024-05-05 02:17:16,891 - ERROR - [  5] local 10.0.30.2 port 43252 connected to 10.0.10.1 port 5201
+2024-05-05 02:17:16,892 - ERROR - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-05-05 02:17:16,892 - ERROR - [  5]   0.00-1.00   sec  1.69 MBytes  14.2 Mbits/sec    0    157 KBytes       
+2024-05-05 02:17:16,892 - ERROR - [  5]   1.00-2.00   sec  1.49 MBytes  12.5 Mbits/sec    0    215 KBytes       
+2024-05-05 02:17:16,893 - ERROR - [  5]   2.00-3.00   sec  1.49 MBytes  12.5 Mbits/sec    0    273 KBytes       
+2024-05-05 02:17:16,894 - ERROR - [  5]   3.00-4.00   sec  1.24 MBytes  10.4 Mbits/sec    0    331 KBytes       
+2024-05-05 02:17:16,894 - ERROR - [  5]   4.00-5.00   sec  1.43 MBytes  12.0 Mbits/sec    0    389 KBytes       
+2024-05-05 02:17:16,894 - ERROR - [  5]   5.00-6.00   sec  1.68 MBytes  14.1 Mbits/sec    0    447 KBytes       
+2024-05-05 02:17:16,895 - ERROR - [  5]   6.00-7.00   sec   954 KBytes  7.82 Mbits/sec    0    505 KBytes       
+2024-05-05 02:17:16,896 - ERROR - [  5]   7.00-8.00   sec  2.17 MBytes  18.2 Mbits/sec    0    563 KBytes       
+2024-05-05 02:17:16,896 - ERROR - [  5]   8.00-9.00   sec  1.18 MBytes  9.90 Mbits/sec    0    621 KBytes       
+2024-05-05 02:17:16,896 - ERROR - [  5]   9.00-10.00  sec  1.25 MBytes  10.5 Mbits/sec    0    679 KBytes       
+2024-05-05 02:17:16,896 - ERROR - [  5]  10.00-11.00  sec  1.25 MBytes  10.5 Mbits/sec    0    759 KBytes       
+2024-05-05 02:17:16,897 - ERROR - [  5]  11.00-12.00  sec  1.25 MBytes  10.5 Mbits/sec    0    926 KBytes       
+2024-05-05 02:17:16,897 - ERROR - [  5]  12.00-13.00  sec  2.50 MBytes  21.0 Mbits/sec    0   1.11 MBytes       
+2024-05-05 02:17:16,898 - ERROR - [  5]  13.00-14.00  sec  1.25 MBytes  10.5 Mbits/sec    0   1.33 MBytes       
+2024-05-05 02:17:16,899 - ERROR - [  5]  14.00-15.00  sec  2.50 MBytes  21.0 Mbits/sec    0   1.60 MBytes       
+2024-05-05 02:17:16,900 - ERROR - [  5]  15.00-16.00  sec  2.50 MBytes  21.0 Mbits/sec    0   1.88 MBytes       
+2024-05-05 02:17:16,900 - ERROR - [  5]  16.00-17.00  sec  2.50 MBytes  21.0 Mbits/sec    0   2.22 MBytes       
+2024-05-05 02:17:16,901 - ERROR - [  5]  17.00-18.00  sec  2.50 MBytes  21.0 Mbits/sec    0   2.60 MBytes       
+2024-05-05 02:17:16,901 - ERROR - [  5]  18.00-19.00  sec  1.25 MBytes  10.5 Mbits/sec    0   2.97 MBytes       
+2024-05-05 02:17:16,901 - ERROR - [  5]  19.00-20.00  sec  0.00 Bytes  0.00 Mbits/sec    0   3.35 MBytes       
+2024-05-05 02:17:16,901 - ERROR - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-05-05 02:17:16,902 - ERROR - [ ID] Interval           Transfer     Bitrate         Retr
+2024-05-05 02:17:16,902 - ERROR - [  5]   0.00-20.00  sec  32.1 MBytes  13.4 Mbits/sec    0             sender
+2024-05-05 02:17:16,902 - ERROR - [  5]   0.00-20.00  sec  0.00 Bytes  0.00 Mbits/sec                  receiver
+2024-05-05 02:17:16,903 - ERROR - Fail 1 during trial 1: Runtime exceeded for reading log, retrying...
+2024-05-05 02:17:17,782 - INFO - 
+*** Stopping 1 controllers
+c0 
+*** Stopping 9 links
+.........
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 6 hosts
+h1 h2 h3 h4 h5 h6 
+*** Done
+2024-05-05 02:17:19,129 - INFO - Starting Mininet topology: TC
+2024-05-05 02:17:20,702 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(s1, s2) (10.00Mbit 10ms delay) (10.00Mbit 10ms delay) (s1, s3) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(10.00Mbit 10ms delay) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (10.00Mbit 10ms delay) (5.00Mbit 10ms delay) 
+*** Starting CLI:
+2024-05-05 02:17:20,706 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2024-05-05 02:17:20,765 - INFO - Authentication (password) successful!
+2024-05-05 02:17:20,928 - INFO - Activated org.onosproject.fwd
+2024-05-05 02:17:25,935 - INFO - Executing Mininet command: h1 iperf3 -s &
+2024-05-05 02:17:25,935 - INFO - Command h1 iperf3 -s & successful
+2024-05-05 02:17:35,942 - INFO - Executing Mininet command: h6 iperf3 -c 10.0.10.1 -t 20 -i 1 -f mM -P 1 > iperf/baseline.log &
+2024-05-05 02:17:35,943 - INFO - Command h6 iperf3 -c 10.0.10.1 -t 20 -i 1 -f mM -P 1 > iperf/baseline.log & successful
+2024-05-05 02:18:00,967 - INFO - Baseline iperf output
+2024-05-05 02:18:00,971 - INFO - Found iperf Done.
+2024-05-05 02:18:00,971 - INFO - Connecting to host 10.0.10.1, port 5201
+2024-05-05 02:18:00,972 - INFO - [  5] local 10.0.30.2 port 34668 connected to 10.0.10.1 port 5201
+2024-05-05 02:18:00,973 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-05-05 02:18:00,973 - INFO - [  5]   0.00-1.00   sec  1.70 MBytes  14.2 Mbits/sec    0    157 KBytes       
+2024-05-05 02:18:00,974 - INFO - [  5]   1.00-2.00   sec  1.49 MBytes  12.5 Mbits/sec    0    215 KBytes       
+2024-05-05 02:18:00,975 - INFO - [  5]   2.00-3.00   sec  1.49 MBytes  12.5 Mbits/sec    0    273 KBytes       
+2024-05-05 02:18:00,975 - INFO - [  5]   3.00-4.00   sec  1.24 MBytes  10.4 Mbits/sec    0    331 KBytes       
+2024-05-05 02:18:00,976 - INFO - [  5]   4.00-5.00   sec  1.43 MBytes  12.0 Mbits/sec    0    389 KBytes       
+2024-05-05 02:18:00,977 - INFO - [  5]   5.00-6.00   sec  1.68 MBytes  14.1 Mbits/sec    0    447 KBytes       
+2024-05-05 02:18:00,977 - INFO - [  5]   6.00-7.00   sec   954 KBytes  7.81 Mbits/sec    0    505 KBytes       
+2024-05-05 02:18:00,978 - INFO - [  5]   7.00-8.00   sec  1.06 MBytes  8.86 Mbits/sec    0    561 KBytes       
+2024-05-05 02:18:00,978 - INFO - [  5]   8.00-9.00   sec  2.30 MBytes  19.3 Mbits/sec    0    618 KBytes       
+2024-05-05 02:18:00,979 - INFO - [  5]   9.00-10.00  sec  1.25 MBytes  10.5 Mbits/sec    0    676 KBytes       
+2024-05-05 02:18:00,979 - INFO - [  5]  10.00-11.00  sec  1.25 MBytes  10.5 Mbits/sec    0    755 KBytes       
+2024-05-05 02:18:00,980 - INFO - [  5]  11.00-12.00  sec  1.25 MBytes  10.5 Mbits/sec    0    925 KBytes       
+2024-05-05 02:18:00,980 - INFO - [  5]  12.00-13.00  sec  2.50 MBytes  21.0 Mbits/sec    0   1.10 MBytes       
+2024-05-05 02:18:00,981 - INFO - [  5]  13.00-14.00  sec  1.25 MBytes  10.5 Mbits/sec    0   1.33 MBytes       
+2024-05-05 02:18:00,981 - INFO - [  5]  14.00-15.00  sec  2.50 MBytes  21.0 Mbits/sec    0   1.60 MBytes       
+2024-05-05 02:18:00,981 - INFO - [  5]  15.00-16.00  sec  2.50 MBytes  21.0 Mbits/sec    0   1.88 MBytes       
+2024-05-05 02:18:00,981 - INFO - [  5]  16.00-17.00  sec  2.50 MBytes  21.0 Mbits/sec    0   2.22 MBytes       
+2024-05-05 02:18:00,982 - INFO - [  5]  17.00-18.00  sec  2.50 MBytes  21.0 Mbits/sec    0   2.60 MBytes       
+2024-05-05 02:18:00,982 - INFO - [  5]  18.00-19.00  sec  1.25 MBytes  10.5 Mbits/sec    0   2.97 MBytes       
+2024-05-05 02:18:00,982 - INFO - [  5]  19.00-20.00  sec  0.00 Bytes  0.00 Mbits/sec    0   3.35 MBytes       
+2024-05-05 02:18:00,983 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-05-05 02:18:00,983 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-05-05 02:18:00,984 - INFO - [  5]   0.00-20.00  sec  32.1 MBytes  13.4 Mbits/sec    0             sender
+2024-05-05 02:18:00,985 - INFO - [  5]   0.00-22.43  sec  23.3 MBytes  8.70 Mbits/sec                  receiver
+2024-05-05 02:18:00,985 - INFO - 
+2024-05-05 02:18:00,986 - INFO - iperf Done.
+2024-05-05 02:18:05,991 - INFO - Executing Mininet command: h6 iperf3 -c 10.0.10.1 -t 20 -i 1 -f mM -P 1 > iperf/failover.log &
+2024-05-05 02:18:05,991 - INFO - Command h6 iperf3 -c 10.0.10.1 -t 20 -i 1 -f mM -P 1 > iperf/failover.log & successful
+2024-05-05 02:18:11,007 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2024-05-05 02:18:11,008 - INFO - 00:00:00:00:00:01
+2024-05-05 02:18:11,009 - INFO - 00:00:00:00:00:06
+2024-05-05 02:18:11,015 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2024-05-05 02:18:11,021 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2024-05-05 02:18:21,031 - INFO - Failover at time 10.0s
+2024-05-05 02:18:21,032 - INFO - Executing Mininet command: link s1 s3 down
+2024-05-05 02:18:21,033 - INFO - Command link s1 s3 down successful
+2024-05-05 02:18:31,856 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2024-05-05 02:18:31,864 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2024-05-05 02:18:42,849 - INFO - Failover iperf output
+2024-05-05 02:18:42,855 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log
+2024-05-05 02:18:53,846 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log
+2024-05-05 02:19:04,839 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log
+2024-05-05 02:19:14,850 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log

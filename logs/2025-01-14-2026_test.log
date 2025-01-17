@@ -1,0 +1,1822 @@
+2025-01-14 20:26:27,542 - INFO - Starting Pingall test...
+2025-01-14 20:26:27,706 - INFO - ONOS Docker container is already running.
+2025-01-14 20:26:27,710 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2025-01-14 20:26:27,766 - INFO - Authentication (password) successful!
+2025-01-14 20:26:27,881 - INFO - Activated org.onosproject.fwd
+2025-01-14 20:26:29,124 - INFO - Starting Mininet topology: linear,3,2
+2025-01-14 20:26:29,895 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1s1 h1s2 h1s3 h2s1 h2s2 h2s3 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1s1, s1) (h1s2, s2) (h1s3, s3) (h2s1, s1) (h2s2, s2) (h2s3, s3) (s2, s1) (s3, s2) 
+*** Configuring hosts
+h1s1 h1s2 h1s3 h2s1 h2s2 h2s3 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+2025-01-14 20:26:32,906 - INFO - Executing Mininet command: pingall
+2025-01-14 20:26:34,277 - INFO - *** Ping: testing ping reachability
+h1s1 -> h1s2 h1s3 h2s1 h2s2 h2s3 
+h1s2 -> h1s1 h1s3 h2s1 h2s2 h2s3 
+h1s3 -> h1s1 h1s2 h2s1 h2s2 h2s3 
+h2s1 -> h1s1 h1s2 h1s3 h2s2 h2s3 
+h2s2 -> h1s1 h1s2 h1s3 h2s1 h2s3 
+h2s3 -> h1s1 h1s2 h1s3 h2s1 h2s2 
+*** Results: 0% dropped (30/30 received)
+2025-01-14 20:26:35,205 - INFO - 
+*** Stopping 1 controllers
+c0 
+*** Stopping 8 links
+........
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 6 hosts
+h1s1 h1s2 h1s3 h2s1 h2s2 h2s3 
+*** Done
+2025-01-14 20:26:35,209 - INFO - Pingall Test Success
+2025-01-14 20:26:35,210 - INFO - Pingall test done
+2025-01-14 20:26:35,210 - INFO - Starting Path Functions test...
+2025-01-14 20:26:35,354 - INFO - ONOS Docker container is already running.
+2025-01-14 20:26:37,065 - INFO - Starting Mininet topology: DFGW
+2025-01-14 20:26:40,406 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (s1, s2) (s1, s3) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+2025-01-14 20:26:40,431 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2025-01-14 20:26:40,928 - INFO - Authentication (password) successful!
+2025-01-14 20:26:42,746 - INFO - Activated org.onosproject.fwd
+2025-01-14 20:26:47,757 - INFO - Executing Mininet command: pingall
+2025-01-14 20:26:49,036 - INFO - *** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+2025-01-14 20:26:49,079 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:26:49,079 - INFO - 00:00:00:00:00:01
+2025-01-14 20:26:49,079 - INFO - 00:00:00:00:00:02
+2025-01-14 20:26:49,080 - INFO - 00:00:00:00:00:03
+2025-01-14 20:26:49,081 - INFO - 00:00:00:00:00:04
+2025-01-14 20:26:49,082 - INFO - 00:00:00:00:00:05
+2025-01-14 20:26:49,083 - INFO - 00:00:00:00:00:06
+2025-01-14 20:26:49,103 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:02: ['00:00:00:00:00:01', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:26:49,119 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:03: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:26:49,134 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:04: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:26:49,146 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:05: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:26:49,169 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:26:49,192 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:01: ['00:00:00:00:00:02', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:26:49,208 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:03: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:26:49,230 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:04: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:26:49,263 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:05: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:26:49,337 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:06: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:26:49,354 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:01: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:26:49,372 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:02: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:26:49,396 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:04: ['00:00:00:00:00:03', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:26:49,412 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:05: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:26:49,425 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:06: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:26:49,434 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:01: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:26:49,444 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:02: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:26:49,454 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:03: ['00:00:00:00:00:04', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:26:49,480 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:05: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:26:49,495 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:06: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:26:49,505 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:01: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:26:49,523 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:02: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:26:49,533 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:03: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:26:49,545 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:04: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:26:49,551 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:06: ['00:00:00:00:00:05', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:26:49,565 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:26:49,577 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:02: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:26:49,592 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:03: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:26:49,604 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:04: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:26:49,616 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:05: ['00:00:00:00:00:06', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:26:50,890 - INFO - 
+*** Stopping 1 controllers
+c0 
+*** Stopping 9 links
+.........
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 6 hosts
+h1 h2 h3 h4 h5 h6 
+*** Done
+2025-01-14 20:26:50,891 - INFO - Path Functions Test Success
+2025-01-14 20:26:50,892 - INFO - Path Functions test done
+2025-01-14 20:26:50,894 - INFO - Starting Intent Functions test...
+2025-01-14 20:26:51,168 - INFO - ONOS Docker container is already running.
+2025-01-14 20:26:52,855 - INFO - Starting Mininet topology: DFGW
+2025-01-14 20:26:55,777 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (s1, s2) (s1, s3) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+2025-01-14 20:26:55,830 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2025-01-14 20:26:56,119 - INFO - Authentication (password) successful!
+2025-01-14 20:26:57,029 - INFO - Activated org.onosproject.fwd
+2025-01-14 20:27:00,036 - INFO - Executing Mininet command: pingall
+2025-01-14 20:27:00,869 - INFO - *** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+2025-01-14 20:27:00,910 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:27:00,914 - INFO - 00:00:00:00:00:01
+2025-01-14 20:27:00,915 - INFO - 00:00:00:00:00:02
+2025-01-14 20:27:00,917 - INFO - 00:00:00:00:00:03
+2025-01-14 20:27:00,918 - INFO - 00:00:00:00:00:04
+2025-01-14 20:27:00,920 - INFO - 00:00:00:00:00:05
+2025-01-14 20:27:00,923 - INFO - 00:00:00:00:00:06
+2025-01-14 20:27:00,949 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:02...
+2025-01-14 20:27:00,978 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:03...
+2025-01-14 20:27:01,042 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:04...
+2025-01-14 20:27:01,072 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:05...
+2025-01-14 20:27:01,104 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:06...
+2025-01-14 20:27:01,130 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:03...
+2025-01-14 20:27:01,164 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:04...
+2025-01-14 20:27:01,199 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:05...
+2025-01-14 20:27:01,234 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:06...
+2025-01-14 20:27:01,269 - INFO - Creating intent from 00:00:00:00:00:03 to 00:00:00:00:00:04...
+2025-01-14 20:27:01,303 - INFO - Creating intent from 00:00:00:00:00:03 to 00:00:00:00:00:05...
+2025-01-14 20:27:01,328 - INFO - Creating intent from 00:00:00:00:00:03 to 00:00:00:00:00:06...
+2025-01-14 20:27:01,386 - INFO - Creating intent from 00:00:00:00:00:04 to 00:00:00:00:00:05...
+2025-01-14 20:27:01,417 - INFO - Creating intent from 00:00:00:00:00:04 to 00:00:00:00:00:06...
+2025-01-14 20:27:01,450 - INFO - Creating intent from 00:00:00:00:00:05 to 00:00:00:00:00:06...
+2025-01-14 20:27:01,491 - INFO - List of intents:
+2025-01-14 20:27:01,494 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001f9
+2025-01-14 20:27:01,495 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001fe
+2025-01-14 20:27:01,496 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001db
+2025-01-14 20:27:01,497 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10011d
+2025-01-14 20:27:01,497 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10012c
+2025-01-14 20:27:01,497 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100113
+2025-01-14 20:27:01,498 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100127
+2025-01-14 20:27:01,498 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100150
+2025-01-14 20:27:01,499 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100136
+2025-01-14 20:27:01,499 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100122
+2025-01-14 20:27:01,500 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001d1
+2025-01-14 20:27:01,500 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100131
+2025-01-14 20:27:01,501 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100138
+2025-01-14 20:27:01,501 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001d6
+2025-01-14 20:27:01,502 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100137
+2025-01-14 20:27:01,502 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001ea
+2025-01-14 20:27:01,503 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100145
+2025-01-14 20:27:01,503 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001e5
+2025-01-14 20:27:01,504 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100118
+2025-01-14 20:27:01,505 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10010e
+2025-01-14 20:27:01,505 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10014b
+2025-01-14 20:27:01,506 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100203
+2025-01-14 20:27:01,506 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10014a
+2025-01-14 20:27:01,507 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001c7
+2025-01-14 20:27:01,507 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001cc
+2025-01-14 20:27:01,507 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001ef
+2025-01-14 20:27:01,508 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001bd
+2025-01-14 20:27:01,508 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001e0
+2025-01-14 20:27:01,509 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001c2
+2025-01-14 20:27:01,509 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001f4
+2025-01-14 20:27:01,510 - INFO - Starting to clear all intents.
+2025-01-14 20:27:01,543 - INFO - List of intents:
+2025-01-14 20:27:01,544 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001f9
+2025-01-14 20:27:01,545 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001fe
+2025-01-14 20:27:01,545 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001db
+2025-01-14 20:27:01,546 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10011d
+2025-01-14 20:27:01,548 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10012c
+2025-01-14 20:27:01,549 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100113
+2025-01-14 20:27:01,550 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100127
+2025-01-14 20:27:01,551 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100150
+2025-01-14 20:27:01,551 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100136
+2025-01-14 20:27:01,552 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100122
+2025-01-14 20:27:01,554 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001d1
+2025-01-14 20:27:01,554 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100131
+2025-01-14 20:27:01,554 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100138
+2025-01-14 20:27:01,555 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001d6
+2025-01-14 20:27:01,556 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100137
+2025-01-14 20:27:01,556 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001ea
+2025-01-14 20:27:01,557 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100145
+2025-01-14 20:27:01,557 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001e5
+2025-01-14 20:27:01,558 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100118
+2025-01-14 20:27:01,558 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10010e
+2025-01-14 20:27:01,559 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10014b
+2025-01-14 20:27:01,560 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100203
+2025-01-14 20:27:01,561 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10014a
+2025-01-14 20:27:01,561 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001c7
+2025-01-14 20:27:01,562 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001cc
+2025-01-14 20:27:01,562 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001ef
+2025-01-14 20:27:01,562 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001bd
+2025-01-14 20:27:01,563 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001e0
+2025-01-14 20:27:01,563 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001c2
+2025-01-14 20:27:01,564 - INFO - AppId: org.onosproject.ovsdb, Key: 0x1001f4
+2025-01-14 20:27:01,564 - INFO - Found 30 intents to clear.
+2025-01-14 20:27:01,565 - INFO - Clearing intent 1/30 - AppId: org.onosproject.ovsdb, Key: 0x1001f9
+2025-01-14 20:27:01,615 - INFO - Clearing intent 2/30 - AppId: org.onosproject.ovsdb, Key: 0x1001fe
+2025-01-14 20:27:01,748 - INFO - Clearing intent 3/30 - AppId: org.onosproject.ovsdb, Key: 0x1001db
+2025-01-14 20:27:01,833 - INFO - Clearing intent 4/30 - AppId: org.onosproject.ovsdb, Key: 0x10011d
+2025-01-14 20:27:01,909 - INFO - Clearing intent 5/30 - AppId: org.onosproject.ovsdb, Key: 0x10012c
+2025-01-14 20:27:02,077 - INFO - Clearing intent 6/30 - AppId: org.onosproject.ovsdb, Key: 0x100113
+2025-01-14 20:27:02,185 - INFO - Clearing intent 7/30 - AppId: org.onosproject.ovsdb, Key: 0x100127
+2025-01-14 20:27:02,266 - INFO - Clearing intent 8/30 - AppId: org.onosproject.ovsdb, Key: 0x100150
+2025-01-14 20:27:02,376 - INFO - Clearing intent 9/30 - AppId: org.onosproject.ovsdb, Key: 0x100136
+2025-01-14 20:27:02,448 - INFO - Clearing intent 10/30 - AppId: org.onosproject.ovsdb, Key: 0x100122
+2025-01-14 20:27:02,502 - INFO - Clearing intent 11/30 - AppId: org.onosproject.ovsdb, Key: 0x1001d1
+2025-01-14 20:27:02,576 - INFO - Clearing intent 12/30 - AppId: org.onosproject.ovsdb, Key: 0x100131
+2025-01-14 20:27:02,616 - INFO - Clearing intent 13/30 - AppId: org.onosproject.ovsdb, Key: 0x100138
+2025-01-14 20:27:02,725 - INFO - Clearing intent 14/30 - AppId: org.onosproject.ovsdb, Key: 0x1001d6
+2025-01-14 20:27:02,890 - INFO - Clearing intent 15/30 - AppId: org.onosproject.ovsdb, Key: 0x100137
+2025-01-14 20:27:02,934 - INFO - Clearing intent 16/30 - AppId: org.onosproject.ovsdb, Key: 0x1001ea
+2025-01-14 20:27:03,021 - INFO - Clearing intent 17/30 - AppId: org.onosproject.ovsdb, Key: 0x100145
+2025-01-14 20:27:03,074 - INFO - Clearing intent 18/30 - AppId: org.onosproject.ovsdb, Key: 0x1001e5
+2025-01-14 20:27:03,229 - INFO - Clearing intent 19/30 - AppId: org.onosproject.ovsdb, Key: 0x100118
+2025-01-14 20:27:03,292 - INFO - Clearing intent 20/30 - AppId: org.onosproject.ovsdb, Key: 0x10010e
+2025-01-14 20:27:03,362 - INFO - Clearing intent 21/30 - AppId: org.onosproject.ovsdb, Key: 0x10014b
+2025-01-14 20:27:03,421 - INFO - Clearing intent 22/30 - AppId: org.onosproject.ovsdb, Key: 0x100203
+2025-01-14 20:27:03,522 - INFO - Clearing intent 23/30 - AppId: org.onosproject.ovsdb, Key: 0x10014a
+2025-01-14 20:27:03,571 - INFO - Clearing intent 24/30 - AppId: org.onosproject.ovsdb, Key: 0x1001c7
+2025-01-14 20:27:03,662 - INFO - Clearing intent 25/30 - AppId: org.onosproject.ovsdb, Key: 0x1001cc
+2025-01-14 20:27:03,751 - INFO - Clearing intent 26/30 - AppId: org.onosproject.ovsdb, Key: 0x1001ef
+2025-01-14 20:27:03,840 - INFO - Clearing intent 27/30 - AppId: org.onosproject.ovsdb, Key: 0x1001bd
+2025-01-14 20:27:03,913 - INFO - Clearing intent 28/30 - AppId: org.onosproject.ovsdb, Key: 0x1001e0
+2025-01-14 20:27:03,990 - INFO - Clearing intent 29/30 - AppId: org.onosproject.ovsdb, Key: 0x1001c2
+2025-01-14 20:27:04,075 - INFO - Clearing intent 30/30 - AppId: org.onosproject.ovsdb, Key: 0x1001f4
+2025-01-14 20:27:05,192 - INFO - No intents found.
+2025-01-14 20:27:05,193 - INFO - All intents cleared successfully.
+2025-01-14 20:27:06,993 - INFO - 
+*** Stopping 1 controllers
+c0 
+*** Stopping 9 links
+.........
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 6 hosts
+h1 h2 h3 h4 h5 h6 
+*** Done
+2025-01-14 20:27:06,994 - INFO - Intent Functions test done
+2025-01-14 20:27:06,996 - INFO - Starting Basic Link Automation test...
+2025-01-14 20:27:07,223 - INFO - ONOS Docker container is already running.
+2025-01-14 20:27:09,125 - INFO - Starting Mininet topology: DFGW
+2025-01-14 20:27:11,762 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (s1, s2) (s1, s3) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+2025-01-14 20:27:11,763 - INFO - Test Case 1: Link Automation via Reactive Forwarding
+2025-01-14 20:27:11,801 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2025-01-14 20:27:11,887 - INFO - Authentication (password) successful!
+2025-01-14 20:27:12,820 - INFO - Activated org.onosproject.fwd
+2025-01-14 20:27:15,828 - INFO - Executing Mininet command: pingall
+2025-01-14 20:27:16,681 - INFO - *** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+2025-01-14 20:27:16,681 - INFO - Test Case 2: Link Automation via Host Intents
+2025-01-14 20:27:16,702 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2025-01-14 20:27:16,813 - INFO - Authentication (password) successful!
+2025-01-14 20:27:19,866 - INFO - Deactivated org.onosproject.fwd
+2025-01-14 20:27:19,868 - INFO - Starting to clear all intents.
+2025-01-14 20:27:19,911 - INFO - No intents found.
+2025-01-14 20:27:19,912 - INFO - All intents cleared successfully.
+2025-01-14 20:27:20,010 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:27:20,013 - INFO - 00:00:00:00:00:01
+2025-01-14 20:27:20,014 - INFO - 00:00:00:00:00:02
+2025-01-14 20:27:20,020 - INFO - 00:00:00:00:00:03
+2025-01-14 20:27:20,021 - INFO - 00:00:00:00:00:04
+2025-01-14 20:27:20,023 - INFO - 00:00:00:00:00:05
+2025-01-14 20:27:20,023 - INFO - 00:00:00:00:00:06
+2025-01-14 20:27:20,098 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:02...
+2025-01-14 20:27:20,156 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:03...
+2025-01-14 20:27:20,208 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:04...
+2025-01-14 20:27:20,263 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:05...
+2025-01-14 20:27:20,299 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:06...
+2025-01-14 20:27:20,321 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:03...
+2025-01-14 20:27:20,352 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:04...
+2025-01-14 20:27:20,388 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:05...
+2025-01-14 20:27:20,430 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:06...
+2025-01-14 20:27:20,490 - INFO - Creating intent from 00:00:00:00:00:03 to 00:00:00:00:00:04...
+2025-01-14 20:27:20,526 - INFO - Creating intent from 00:00:00:00:00:03 to 00:00:00:00:00:05...
+2025-01-14 20:27:20,564 - INFO - Creating intent from 00:00:00:00:00:03 to 00:00:00:00:00:06...
+2025-01-14 20:27:20,618 - INFO - Creating intent from 00:00:00:00:00:04 to 00:00:00:00:00:05...
+2025-01-14 20:27:20,689 - INFO - Creating intent from 00:00:00:00:00:04 to 00:00:00:00:00:06...
+2025-01-14 20:27:20,720 - INFO - Creating intent from 00:00:00:00:00:05 to 00:00:00:00:00:06...
+2025-01-14 20:27:23,808 - INFO - Executing Mininet command: pingall
+2025-01-14 20:27:24,312 - INFO - *** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+2025-01-14 20:27:26,269 - INFO - 
+*** Stopping 1 controllers
+c0 
+*** Stopping 9 links
+.........
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 6 hosts
+h1 h2 h3 h4 h5 h6 
+*** Done
+2025-01-14 20:27:26,284 - INFO - Basic Link Automation Test Success
+2025-01-14 20:27:26,289 - INFO - Basic Link Automation test done
+2025-01-14 20:27:26,290 - INFO - Starting Dynamic Path Automation test...
+2025-01-14 20:27:26,538 - INFO - ONOS Docker container is already running.
+2025-01-14 20:27:28,371 - INFO - Starting Mininet topology: DFGW
+2025-01-14 20:27:32,315 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (s1, s2) (s1, s3) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+2025-01-14 20:27:32,317 - INFO - Test Case: Dynamic Paths via Reactive Forwarding
+2025-01-14 20:27:32,342 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2025-01-14 20:27:32,582 - INFO - Authentication (password) successful!
+2025-01-14 20:27:36,154 - INFO - Activated org.onosproject.fwd
+2025-01-14 20:27:39,169 - INFO - Executing Mininet command: pingall
+2025-01-14 20:27:40,442 - INFO - *** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+2025-01-14 20:27:40,475 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:27:40,476 - INFO - 00:00:00:00:00:01
+2025-01-14 20:27:40,477 - INFO - 00:00:00:00:00:02
+2025-01-14 20:27:40,478 - INFO - 00:00:00:00:00:03
+2025-01-14 20:27:40,479 - INFO - 00:00:00:00:00:04
+2025-01-14 20:27:40,479 - INFO - 00:00:00:00:00:05
+2025-01-14 20:27:40,480 - INFO - 00:00:00:00:00:06
+2025-01-14 20:27:40,502 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:02: ['00:00:00:00:00:01', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:40,527 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:03: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:40,547 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:04: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:40,567 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:05: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:40,670 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:40,708 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:01: ['00:00:00:00:00:02', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:40,732 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:03: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:40,751 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:04: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:40,777 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:05: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:40,793 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:06: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:40,817 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:01: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:40,840 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:02: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:40,859 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:04: ['00:00:00:00:00:03', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:40,877 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:05: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:40,902 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:06: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:40,931 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:01: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:40,958 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:02: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:40,994 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:03: ['00:00:00:00:00:04', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:41,024 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:05: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:41,050 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:06: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:41,071 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:01: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:41,099 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:02: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:41,115 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:03: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:41,127 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:04: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:41,143 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:06: ['00:00:00:00:00:05', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:41,163 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:41,178 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:02: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:41,196 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:03: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:41,219 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:04: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:41,240 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:05: ['00:00:00:00:00:06', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:41,242 - INFO - Executing Mininet command: link s1 s2 down
+2025-01-14 20:27:44,248 - INFO - Executing Mininet command: pingall
+2025-01-14 20:27:44,751 - INFO - *** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+2025-01-14 20:27:44,799 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:27:44,799 - INFO - 00:00:00:00:00:01
+2025-01-14 20:27:44,800 - INFO - 00:00:00:00:00:02
+2025-01-14 20:27:44,800 - INFO - 00:00:00:00:00:03
+2025-01-14 20:27:44,803 - INFO - 00:00:00:00:00:04
+2025-01-14 20:27:44,805 - INFO - 00:00:00:00:00:05
+2025-01-14 20:27:44,809 - INFO - 00:00:00:00:00:06
+2025-01-14 20:27:44,836 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:02: ['00:00:00:00:00:01', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:44,857 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:03: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:44,887 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:04: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:44,904 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:05: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:44,967 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:44,986 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:01: ['00:00:00:00:00:02', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:44,997 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:03: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:45,019 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:04: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:45,041 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:05: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:45,060 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:06: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:45,069 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:01: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:45,092 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:02: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:45,108 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:04: ['00:00:00:00:00:03', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:45,136 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:05: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:45,153 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:06: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:45,176 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:01: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:45,220 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:02: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:45,242 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:03: ['00:00:00:00:00:04', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:45,269 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:05: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:45,290 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:06: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:45,312 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:01: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:45,331 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:02: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:45,341 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:03: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:45,365 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:04: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:45,415 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:06: ['00:00:00:00:00:05', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:45,499 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:45,515 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:02: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:45,535 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:03: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:45,550 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:04: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:45,571 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:05: ['00:00:00:00:00:06', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:45,573 - INFO - Paths are different after link s1 s2 down command
+2025-01-14 20:27:45,575 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:27:45,577 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:27:45,578 - INFO - Removed Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:27:45,579 - INFO - Removed Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:27:45,582 - INFO - Removed Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:27:45,584 - INFO - Removed Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:27:45,586 - INFO - Removed Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:27:45,587 - INFO - Removed Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:27:45,589 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:27:45,590 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:27:45,591 - INFO - Added Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:27:45,592 - INFO - Added Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:27:45,594 - INFO - Added Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:27:45,595 - INFO - Added Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:27:45,597 - INFO - Added Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:27:45,599 - INFO - Added Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:27:45,601 - INFO - Executing Mininet command: link s1 s2 up
+2025-01-14 20:27:48,606 - INFO - Executing Mininet command: pingall
+2025-01-14 20:27:49,090 - INFO - *** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+2025-01-14 20:27:49,118 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:27:49,120 - INFO - 00:00:00:00:00:01
+2025-01-14 20:27:49,121 - INFO - 00:00:00:00:00:02
+2025-01-14 20:27:49,121 - INFO - 00:00:00:00:00:03
+2025-01-14 20:27:49,122 - INFO - 00:00:00:00:00:04
+2025-01-14 20:27:49,122 - INFO - 00:00:00:00:00:05
+2025-01-14 20:27:49,123 - INFO - 00:00:00:00:00:06
+2025-01-14 20:27:49,141 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:02: ['00:00:00:00:00:01', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:49,197 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:03: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:49,221 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:04: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:49,251 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:05: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:49,270 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:49,298 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:01: ['00:00:00:00:00:02', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:49,320 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:03: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:49,354 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:04: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:49,394 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:05: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:49,433 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:06: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:49,461 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:01: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:49,478 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:02: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:49,492 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:04: ['00:00:00:00:00:03', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:49,513 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:05: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:49,531 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:06: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:49,547 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:01: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:49,557 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:02: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:49,583 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:03: ['00:00:00:00:00:04', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:49,606 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:05: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:49,623 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:06: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:49,677 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:01: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:49,698 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:02: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:49,718 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:03: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:49,733 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:04: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:49,757 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:06: ['00:00:00:00:00:05', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:27:49,778 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:27:49,802 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:02: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:27:49,821 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:03: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:27:49,843 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:04: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:27:49,858 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:05: ['00:00:00:00:00:06', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:27:49,862 - INFO - Paths are different after link s1 s2 up command
+2025-01-14 20:27:49,863 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:27:49,864 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:27:49,865 - INFO - Removed Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:27:49,866 - INFO - Removed Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:27:49,869 - INFO - Removed Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:27:49,869 - INFO - Removed Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:27:49,872 - INFO - Removed Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:27:49,873 - INFO - Removed Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:27:49,874 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:27:49,875 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:27:49,876 - INFO - Added Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:27:49,876 - INFO - Added Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:27:49,877 - INFO - Added Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:27:49,877 - INFO - Added Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:27:49,877 - INFO - Added Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:27:49,878 - INFO - Added Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:27:51,162 - INFO - 
+*** Stopping 1 controllers
+c0 
+*** Stopping 9 links
+.........
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 6 hosts
+h1 h2 h3 h4 h5 h6 
+*** Done
+2025-01-14 20:27:51,171 - INFO - Test Case: Dynamic Paths via Reactive Forwarding Success
+2025-01-14 20:27:51,173 - INFO - Dynamic Path Automation test done
+2025-01-14 20:27:51,177 - INFO - Starting Dynamic Path Automation test...
+2025-01-14 20:27:51,352 - INFO - ONOS Docker container is already running.
+2025-01-14 20:27:52,980 - INFO - Starting Mininet topology: DFGW
+2025-01-14 20:27:55,009 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (s1, s2) (s1, s3) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+2025-01-14 20:27:55,010 - INFO - Test Case: Dynamic Paths via Host Intents
+2025-01-14 20:27:55,031 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2025-01-14 20:27:55,117 - INFO - Authentication (password) successful!
+2025-01-14 20:27:56,022 - INFO - Activated org.onosproject.fwd
+2025-01-14 20:27:56,032 - INFO - Executing Mininet command: pingall
+2025-01-14 20:27:58,085 - INFO - *** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+2025-01-14 20:27:58,088 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2025-01-14 20:27:58,161 - INFO - Authentication (password) successful!
+2025-01-14 20:27:59,383 - INFO - Deactivated org.onosproject.fwd
+2025-01-14 20:27:59,390 - INFO - Starting to clear all intents.
+2025-01-14 20:27:59,424 - INFO - List of intents:
+2025-01-14 20:27:59,424 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10024a
+2025-01-14 20:27:59,427 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100221
+2025-01-14 20:27:59,429 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10023f
+2025-01-14 20:27:59,430 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100244
+2025-01-14 20:27:59,430 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100217
+2025-01-14 20:27:59,431 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10020d
+2025-01-14 20:27:59,431 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10023a
+2025-01-14 20:27:59,431 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100226
+2025-01-14 20:27:59,432 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10022b
+2025-01-14 20:27:59,433 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100249
+2025-01-14 20:27:59,434 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100235
+2025-01-14 20:27:59,435 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100212
+2025-01-14 20:27:59,435 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100230
+2025-01-14 20:27:59,437 - INFO - AppId: org.onosproject.ovsdb, Key: 0x10021c
+2025-01-14 20:27:59,438 - INFO - AppId: org.onosproject.ovsdb, Key: 0x100208
+2025-01-14 20:27:59,439 - INFO - Found 15 intents to clear.
+2025-01-14 20:27:59,440 - INFO - Clearing intent 1/15 - AppId: org.onosproject.ovsdb, Key: 0x10024a
+2025-01-14 20:27:59,484 - INFO - Clearing intent 2/15 - AppId: org.onosproject.ovsdb, Key: 0x100221
+2025-01-14 20:27:59,527 - INFO - Clearing intent 3/15 - AppId: org.onosproject.ovsdb, Key: 0x10023f
+2025-01-14 20:27:59,568 - INFO - Clearing intent 4/15 - AppId: org.onosproject.ovsdb, Key: 0x100244
+2025-01-14 20:27:59,619 - INFO - Clearing intent 5/15 - AppId: org.onosproject.ovsdb, Key: 0x100217
+2025-01-14 20:27:59,666 - INFO - Clearing intent 6/15 - AppId: org.onosproject.ovsdb, Key: 0x10020d
+2025-01-14 20:27:59,721 - INFO - Clearing intent 7/15 - AppId: org.onosproject.ovsdb, Key: 0x10023a
+2025-01-14 20:27:59,802 - INFO - Clearing intent 8/15 - AppId: org.onosproject.ovsdb, Key: 0x100226
+2025-01-14 20:27:59,857 - INFO - Clearing intent 9/15 - AppId: org.onosproject.ovsdb, Key: 0x10022b
+2025-01-14 20:27:59,896 - INFO - Clearing intent 10/15 - AppId: org.onosproject.ovsdb, Key: 0x100249
+2025-01-14 20:27:59,931 - INFO - Clearing intent 11/15 - AppId: org.onosproject.ovsdb, Key: 0x100235
+2025-01-14 20:27:59,969 - INFO - Clearing intent 12/15 - AppId: org.onosproject.ovsdb, Key: 0x100212
+2025-01-14 20:28:00,032 - INFO - Clearing intent 13/15 - AppId: org.onosproject.ovsdb, Key: 0x100230
+2025-01-14 20:28:00,117 - INFO - Clearing intent 14/15 - AppId: org.onosproject.ovsdb, Key: 0x10021c
+2025-01-14 20:28:00,193 - INFO - Clearing intent 15/15 - AppId: org.onosproject.ovsdb, Key: 0x100208
+2025-01-14 20:28:01,247 - INFO - No intents found.
+2025-01-14 20:28:01,248 - INFO - All intents cleared successfully.
+2025-01-14 20:28:01,258 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:28:01,259 - INFO - 00:00:00:00:00:01
+2025-01-14 20:28:01,260 - INFO - 00:00:00:00:00:02
+2025-01-14 20:28:01,260 - INFO - 00:00:00:00:00:03
+2025-01-14 20:28:01,261 - INFO - 00:00:00:00:00:04
+2025-01-14 20:28:01,261 - INFO - 00:00:00:00:00:05
+2025-01-14 20:28:01,261 - INFO - 00:00:00:00:00:06
+2025-01-14 20:28:01,270 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:02...
+2025-01-14 20:28:01,279 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:03...
+2025-01-14 20:28:01,293 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:04...
+2025-01-14 20:28:01,310 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:05...
+2025-01-14 20:28:01,323 - INFO - Creating intent from 00:00:00:00:00:01 to 00:00:00:00:00:06...
+2025-01-14 20:28:01,335 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:03...
+2025-01-14 20:28:01,347 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:04...
+2025-01-14 20:28:01,366 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:05...
+2025-01-14 20:28:01,375 - INFO - Creating intent from 00:00:00:00:00:02 to 00:00:00:00:00:06...
+2025-01-14 20:28:01,391 - INFO - Creating intent from 00:00:00:00:00:03 to 00:00:00:00:00:04...
+2025-01-14 20:28:01,403 - INFO - Creating intent from 00:00:00:00:00:03 to 00:00:00:00:00:05...
+2025-01-14 20:28:01,414 - INFO - Creating intent from 00:00:00:00:00:03 to 00:00:00:00:00:06...
+2025-01-14 20:28:01,430 - INFO - Creating intent from 00:00:00:00:00:04 to 00:00:00:00:00:05...
+2025-01-14 20:28:01,441 - INFO - Creating intent from 00:00:00:00:00:04 to 00:00:00:00:00:06...
+2025-01-14 20:28:01,451 - INFO - Creating intent from 00:00:00:00:00:05 to 00:00:00:00:00:06...
+2025-01-14 20:28:04,455 - INFO - Executing Mininet command: pingall
+2025-01-14 20:28:04,652 - INFO - *** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+2025-01-14 20:28:04,664 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:28:04,682 - INFO - 00:00:00:00:00:01
+2025-01-14 20:28:04,683 - INFO - 00:00:00:00:00:02
+2025-01-14 20:28:04,684 - INFO - 00:00:00:00:00:03
+2025-01-14 20:28:04,685 - INFO - 00:00:00:00:00:04
+2025-01-14 20:28:04,685 - INFO - 00:00:00:00:00:05
+2025-01-14 20:28:04,686 - INFO - 00:00:00:00:00:06
+2025-01-14 20:28:04,722 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:02: ['00:00:00:00:00:01', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:04,732 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:03: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:04,745 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:04: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:04,753 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:05: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:04,779 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:04,788 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:01: ['00:00:00:00:00:02', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:04,797 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:03: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:04,806 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:04: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:04,814 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:05: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:04,821 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:06: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:04,828 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:01: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:04,836 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:02: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:04,844 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:04: ['00:00:00:00:00:03', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:04,854 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:05: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:04,861 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:06: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:04,869 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:01: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:04,879 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:02: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:04,889 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:03: ['00:00:00:00:00:04', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:04,895 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:05: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:04,901 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:06: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:04,910 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:01: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:04,921 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:02: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:04,930 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:03: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:04,948 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:04: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:04,969 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:06: ['00:00:00:00:00:05', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:05,000 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:05,016 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:02: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:05,060 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:03: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:05,075 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:04: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:05,084 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:05: ['00:00:00:00:00:06', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:05,086 - INFO - Executing Mininet command: link s1 s2 down
+2025-01-14 20:28:08,091 - INFO - Executing Mininet command: pingall
+2025-01-14 20:28:08,286 - INFO - *** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+2025-01-14 20:28:08,304 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:28:08,304 - INFO - 00:00:00:00:00:01
+2025-01-14 20:28:08,305 - INFO - 00:00:00:00:00:02
+2025-01-14 20:28:08,306 - INFO - 00:00:00:00:00:03
+2025-01-14 20:28:08,307 - INFO - 00:00:00:00:00:04
+2025-01-14 20:28:08,309 - INFO - 00:00:00:00:00:05
+2025-01-14 20:28:08,310 - INFO - 00:00:00:00:00:06
+2025-01-14 20:28:08,320 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:02: ['00:00:00:00:00:01', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:08,331 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:03: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:08,340 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:04: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:08,357 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:05: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:08,368 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:08,382 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:01: ['00:00:00:00:00:02', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:08,397 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:03: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:08,407 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:04: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:08,418 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:05: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:08,427 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:06: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:08,440 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:01: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:08,446 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:02: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:08,456 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:04: ['00:00:00:00:00:03', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:08,463 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:05: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:08,476 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:06: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:08,500 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:01: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:08,517 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:02: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:08,528 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:03: ['00:00:00:00:00:04', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:08,545 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:05: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:08,558 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:06: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:08,572 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:01: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:08,585 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:02: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:08,597 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:03: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:08,614 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:04: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:08,626 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:06: ['00:00:00:00:00:05', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:08,643 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:08,652 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:02: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:08,673 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:03: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:08,684 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:04: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:08,700 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:05: ['00:00:00:00:00:06', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:08,700 - INFO - Paths are different after link s1 s2 down command
+2025-01-14 20:28:08,701 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:28:08,701 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:28:08,702 - INFO - Removed Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:28:08,702 - INFO - Removed Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:28:08,702 - INFO - Removed Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:28:08,703 - INFO - Removed Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:28:08,703 - INFO - Removed Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:28:08,703 - INFO - Removed Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:28:08,704 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:28:08,704 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:28:08,705 - INFO - Added Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:28:08,705 - INFO - Added Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:28:08,705 - INFO - Added Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:28:08,706 - INFO - Added Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:28:08,706 - INFO - Added Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:28:08,706 - INFO - Added Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:28:08,707 - INFO - Executing Mininet command: link s1 s2 up
+2025-01-14 20:28:11,710 - INFO - Executing Mininet command: pingall
+2025-01-14 20:28:11,983 - INFO - *** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 
+h2 -> h1 h3 h4 h5 h6 
+h3 -> h1 h2 h4 h5 h6 
+h4 -> h1 h2 h3 h5 h6 
+h5 -> h1 h2 h3 h4 h6 
+h6 -> h1 h2 h3 h4 h5 
+*** Results: 0% dropped (30/30 received)
+2025-01-14 20:28:12,073 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:28:12,075 - INFO - 00:00:00:00:00:01
+2025-01-14 20:28:12,075 - INFO - 00:00:00:00:00:02
+2025-01-14 20:28:12,075 - INFO - 00:00:00:00:00:03
+2025-01-14 20:28:12,076 - INFO - 00:00:00:00:00:04
+2025-01-14 20:28:12,076 - INFO - 00:00:00:00:00:05
+2025-01-14 20:28:12,076 - INFO - 00:00:00:00:00:06
+2025-01-14 20:28:12,086 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:02: ['00:00:00:00:00:01', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:12,100 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:03: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:12,117 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:04: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:12,126 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:05: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:12,141 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:12,175 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:01: ['00:00:00:00:00:02', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:12,190 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:03: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:12,208 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:04: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:12,224 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:05: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:12,236 - INFO - Path between 00:00:00:00:00:02 and 00:00:00:00:00:06: ['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:12,255 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:01: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:12,269 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:02: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:12,279 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:04: ['00:00:00:00:00:03', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:12,300 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:05: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:12,309 - INFO - Path between 00:00:00:00:00:03 and 00:00:00:00:00:06: ['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:12,336 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:01: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:12,352 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:02: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:12,363 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:03: ['00:00:00:00:00:04', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:12,373 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:05: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:12,381 - INFO - Path between 00:00:00:00:00:04 and 00:00:00:00:00:06: ['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:12,398 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:01: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:12,406 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:02: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:12,413 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:03: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:12,425 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:04: ['00:00:00:00:00:05', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:12,436 - INFO - Path between 00:00:00:00:00:05 and 00:00:00:00:00:06: ['00:00:00:00:00:05', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:28:12,448 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:28:12,461 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:02: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']
+2025-01-14 20:28:12,470 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:03: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']
+2025-01-14 20:28:12,492 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:04: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']
+2025-01-14 20:28:12,505 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:05: ['00:00:00:00:00:06', 'of:0000000000000003', '00:00:00:00:00:05']
+2025-01-14 20:28:12,506 - INFO - Paths are different after link s1 s2 up command
+2025-01-14 20:28:12,506 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:28:12,506 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:28:12,507 - INFO - Removed Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:28:12,508 - INFO - Removed Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000003', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:28:12,514 - INFO - Removed Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:28:12,514 - INFO - Removed Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:28:12,515 - INFO - Removed Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:28:12,516 - INFO - Removed Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:28:12,518 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:28:12,519 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:28:12,519 - INFO - Added Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:03']]
+2025-01-14 20:28:12,520 - INFO - Added Paths: [['00:00:00:00:00:02', 'of:0000000000000001', 'of:0000000000000002', '00:00:00:00:00:04']]
+2025-01-14 20:28:12,521 - INFO - Added Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:28:12,521 - INFO - Added Paths: [['00:00:00:00:00:03', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:28:12,523 - INFO - Added Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:28:12,524 - INFO - Added Paths: [['00:00:00:00:00:04', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:02']]
+2025-01-14 20:28:13,442 - INFO - 
+*** Stopping 1 controllers
+c0 
+*** Stopping 9 links
+.........
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 6 hosts
+h1 h2 h3 h4 h5 h6 
+*** Done
+2025-01-14 20:28:13,443 - INFO - Test Case: Dynamic Paths via Host Intents Success
+2025-01-14 20:28:13,444 - INFO - Dynamic Path Automation test done
+2025-01-14 20:28:13,445 - INFO - Starting Fault Tolerance test at 2025-01-14-2028
+2025-01-14 20:28:13,446 - INFO - iperf_time: 20s, trial_runs: 20
+2025-01-14 20:28:13,624 - INFO - ONOS Docker container is already running.
+2025-01-14 20:28:14,965 - INFO - Starting Mininet topology: DFGW
+2025-01-14 20:28:16,154 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (s1, s2) (s1, s3) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+2025-01-14 20:28:16,157 - INFO - Test Case: Fault Tolerance via Reactive Fwd
+2025-01-14 20:28:16,163 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2025-01-14 20:28:16,263 - INFO - Authentication (password) successful!
+2025-01-14 20:28:18,544 - INFO - Activated org.onosproject.fwd
+2025-01-14 20:28:21,551 - INFO - Executing Mininet command: h1 iperf -s &
+2025-01-14 20:28:21,552 - INFO - Command h1 iperf -s & successful
+2025-01-14 20:28:29,560 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log &
+2025-01-14 20:28:29,561 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log & successful
+2025-01-14 20:28:54,588 - INFO - Baseline iperf output
+2025-01-14 20:28:54,593 - INFO - ------------------------------------------------------------
+2025-01-14 20:28:54,594 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:28:54,594 - INFO - TCP window size:  128 KByte (default)
+2025-01-14 20:28:54,594 - INFO - ------------------------------------------------------------
+2025-01-14 20:28:54,595 - INFO - [  1] local 10.0.30.2 port 50172 connected with 10.0.10.1 port 5001
+2025-01-14 20:28:54,595 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:28:54,596 - INFO - [  1] 0.0000-1.0000 sec  0.138 MBytes  1.16 Mbits/sec
+2025-01-14 20:28:54,596 - INFO - [  1] 1.0000-2.0000 sec  0.120 MBytes  1.01 Mbits/sec
+2025-01-14 20:28:54,597 - INFO - [  1] 2.0000-3.0000 sec  2518 MBytes  21124 Mbits/sec
+2025-01-14 20:28:54,597 - INFO - [  1] 3.0000-4.0000 sec  2996 MBytes  25128 Mbits/sec
+2025-01-14 20:28:54,597 - INFO - [  1] 4.0000-5.0000 sec  3036 MBytes  25466 Mbits/sec
+2025-01-14 20:28:54,598 - INFO - [  1] 5.0000-6.0000 sec  3174 MBytes  26622 Mbits/sec
+2025-01-14 20:28:54,598 - INFO - [  1] 6.0000-7.0000 sec  3276 MBytes  27482 Mbits/sec
+2025-01-14 20:28:54,598 - INFO - [  1] 7.0000-8.0000 sec  2942 MBytes  24682 Mbits/sec
+2025-01-14 20:28:54,599 - INFO - [  1] 8.0000-9.0000 sec  3115 MBytes  26132 Mbits/sec
+2025-01-14 20:28:54,599 - INFO - [  1] 9.0000-10.0000 sec  3183 MBytes  26698 Mbits/sec
+2025-01-14 20:28:54,600 - INFO - [  1] 10.0000-11.0000 sec  2632 MBytes  22081 Mbits/sec
+2025-01-14 20:28:54,601 - INFO - [  1] 11.0000-12.0000 sec  2797 MBytes  23461 Mbits/sec
+2025-01-14 20:28:54,601 - INFO - [  1] 12.0000-13.0000 sec  3388 MBytes  28419 Mbits/sec
+2025-01-14 20:28:54,601 - INFO - [  1] 13.0000-14.0000 sec  2982 MBytes  25016 Mbits/sec
+2025-01-14 20:28:54,602 - INFO - [  1] 14.0000-15.0000 sec  3028 MBytes  25405 Mbits/sec
+2025-01-14 20:28:54,603 - INFO - [  1] 15.0000-16.0000 sec  3424 MBytes  28724 Mbits/sec
+2025-01-14 20:28:54,603 - INFO - [  1] 16.0000-17.0000 sec  3680 MBytes  30870 Mbits/sec
+2025-01-14 20:28:54,603 - INFO - [  1] 17.0000-18.0000 sec  3432 MBytes  28789 Mbits/sec
+2025-01-14 20:28:54,604 - INFO - [  1] 18.0000-19.0000 sec  3180 MBytes  26674 Mbits/sec
+2025-01-14 20:28:54,604 - INFO - [  1] 19.0000-20.0000 sec  3176 MBytes  26646 Mbits/sec
+2025-01-14 20:28:54,604 - INFO - [  1] 0.0000-20.0126 sec  55961 MBytes  23457 Mbits/sec
+2025-01-14 20:28:54,605 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log &
+2025-01-14 20:28:54,606 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log & successful
+2025-01-14 20:29:09,687 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:29:09,694 - INFO - 00:00:00:00:00:01
+2025-01-14 20:29:09,695 - INFO - 00:00:00:00:00:06
+2025-01-14 20:29:09,742 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:29:09,787 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:29:09,790 - INFO - Failover at time 10.0s
+2025-01-14 20:29:09,790 - INFO - Executing Mininet command: link s1 s3 down
+2025-01-14 20:29:09,792 - INFO - Command link s1 s3 down successful
+2025-01-14 20:29:14,823 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:29:14,834 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:29:14,834 - INFO - Failover iperf output
+2025-01-14 20:29:14,838 - INFO - ------------------------------------------------------------
+2025-01-14 20:29:14,839 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:29:14,839 - INFO - TCP window size:  578 KByte (default)
+2025-01-14 20:29:14,840 - INFO - ------------------------------------------------------------
+2025-01-14 20:29:14,841 - INFO - [  1] local 10.0.30.2 port 48158 connected with 10.0.10.1 port 5001
+2025-01-14 20:29:14,841 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:29:14,841 - INFO - [  1] 0.0000-1.0000 sec  3448 MBytes  28923 Mbits/sec
+2025-01-14 20:29:14,841 - INFO - [  1] 1.0000-2.0000 sec  2927 MBytes  24551 Mbits/sec
+2025-01-14 20:29:14,842 - INFO - [  1] 2.0000-3.0000 sec  3893 MBytes  32655 Mbits/sec
+2025-01-14 20:29:14,843 - INFO - [  1] 3.0000-4.0000 sec  2985 MBytes  25040 Mbits/sec
+2025-01-14 20:29:14,844 - INFO - [  1] 4.0000-5.0000 sec  2719 MBytes  22808 Mbits/sec
+2025-01-14 20:29:14,844 - INFO - [  1] 5.0000-6.0000 sec  2858 MBytes  23979 Mbits/sec
+2025-01-14 20:29:14,844 - INFO - [  1] 6.0000-7.0000 sec  3280 MBytes  27518 Mbits/sec
+2025-01-14 20:29:14,845 - INFO - [  1] 7.0000-8.0000 sec  2413 MBytes  20245 Mbits/sec
+2025-01-14 20:29:14,845 - INFO - [  1] 8.0000-9.0000 sec  1756 MBytes  14727 Mbits/sec
+2025-01-14 20:29:14,847 - INFO - [  1] 9.0000-10.0000 sec  1903 MBytes  15960 Mbits/sec
+2025-01-14 20:29:14,848 - INFO - [  1] 10.0000-11.0000 sec  2462 MBytes  20652 Mbits/sec
+2025-01-14 20:29:14,848 - INFO - [  1] 11.0000-12.0000 sec  2524 MBytes  21173 Mbits/sec
+2025-01-14 20:29:14,848 - INFO - [  1] 12.0000-13.0000 sec  3410 MBytes  28607 Mbits/sec
+2025-01-14 20:29:14,849 - INFO - [  1] 13.0000-14.0000 sec  3168 MBytes  26579 Mbits/sec
+2025-01-14 20:29:14,849 - INFO - [  1] 14.0000-15.0000 sec  2882 MBytes  24172 Mbits/sec
+2025-01-14 20:29:14,849 - INFO - [  1] 15.0000-16.0000 sec  2205 MBytes  18499 Mbits/sec
+2025-01-14 20:29:14,850 - INFO - [  1] 16.0000-17.0000 sec  2972 MBytes  24927 Mbits/sec
+2025-01-14 20:29:14,850 - INFO - [  1] 17.0000-18.0000 sec  3016 MBytes  25297 Mbits/sec
+2025-01-14 20:29:14,850 - INFO - [  1] 18.0000-19.0000 sec  2748 MBytes  23054 Mbits/sec
+2025-01-14 20:29:14,850 - INFO - [  1] 19.0000-20.0000 sec  2715 MBytes  22777 Mbits/sec
+2025-01-14 20:29:14,851 - INFO - [  1] 0.0000-20.0078 sec  56284 MBytes  23598 Mbits/sec
+2025-01-14 20:29:14,851 - INFO - Paths are different after link s1 s3 down command
+2025-01-14 20:29:14,851 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:29:14,852 - INFO - Added Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:29:14,852 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:29:14,852 - INFO - Removed Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:29:14,853 - INFO - Baseline Capacity: 55961.0 Mbytes, Baseline Throughput: 23457.0 Mbits/sec
+2025-01-14 20:29:14,854 - INFO - Failover Capacity: 56284.0 Mbytes, Failover Throughput: 23598.0 Mbits/sec
+2025-01-14 20:29:14,855 - INFO - Capacity Difference: -323.0 Mbytes, Throughput Difference: -141.0 Mbits/sec
+2025-01-14 20:29:14,855 - INFO - Fault Tolerance via Reactive Fwd Test Trial 1 Success
+2025-01-14 20:29:14,855 - INFO - Resetting link
+2025-01-14 20:29:14,856 - INFO - Executing Mininet command: link s1 s3 up
+2025-01-14 20:29:14,856 - INFO - Command link s1 s3 up successful
+2025-01-14 20:29:19,862 - INFO - Executing Mininet command: link s1 s2 down
+2025-01-14 20:29:19,862 - INFO - Command link s1 s2 down successful
+2025-01-14 20:29:24,867 - INFO - Executing Mininet command: link s1 s2 up
+2025-01-14 20:29:24,868 - INFO - Command link s1 s2 up successful
+2025-01-14 20:29:34,001 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log &
+2025-01-14 20:29:34,002 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log & successful
+2025-01-14 20:29:59,029 - INFO - Baseline iperf output
+2025-01-14 20:29:59,034 - INFO - ------------------------------------------------------------
+2025-01-14 20:29:59,034 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:29:59,035 - INFO - TCP window size:  578 KByte (default)
+2025-01-14 20:29:59,035 - INFO - ------------------------------------------------------------
+2025-01-14 20:29:59,035 - INFO - [  1] local 10.0.30.2 port 60262 connected with 10.0.10.1 port 5001
+2025-01-14 20:29:59,036 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:29:59,037 - INFO - [  1] 0.0000-1.0000 sec  3466 MBytes  29071 Mbits/sec
+2025-01-14 20:29:59,037 - INFO - [  1] 1.0000-2.0000 sec  3017 MBytes  25307 Mbits/sec
+2025-01-14 20:29:59,038 - INFO - [  1] 2.0000-3.0000 sec  2749 MBytes  23063 Mbits/sec
+2025-01-14 20:29:59,038 - INFO - [  1] 3.0000-4.0000 sec  3374 MBytes  28299 Mbits/sec
+2025-01-14 20:29:59,039 - INFO - [  1] 4.0000-5.0000 sec  3044 MBytes  25539 Mbits/sec
+2025-01-14 20:29:59,039 - INFO - [  1] 5.0000-6.0000 sec  2620 MBytes  21982 Mbits/sec
+2025-01-14 20:29:59,040 - INFO - [  1] 6.0000-7.0000 sec  3235 MBytes  27136 Mbits/sec
+2025-01-14 20:29:59,041 - INFO - [  1] 7.0000-8.0000 sec  2743 MBytes  23009 Mbits/sec
+2025-01-14 20:29:59,042 - INFO - [  1] 8.0000-9.0000 sec  3258 MBytes  27329 Mbits/sec
+2025-01-14 20:29:59,042 - INFO - [  1] 9.0000-10.0000 sec  2988 MBytes  25069 Mbits/sec
+2025-01-14 20:29:59,043 - INFO - [  1] 10.0000-11.0000 sec  3239 MBytes  27171 Mbits/sec
+2025-01-14 20:29:59,043 - INFO - [  1] 11.0000-12.0000 sec  2796 MBytes  23458 Mbits/sec
+2025-01-14 20:29:59,043 - INFO - [  1] 12.0000-13.0000 sec  3014 MBytes  25279 Mbits/sec
+2025-01-14 20:29:59,044 - INFO - [  1] 13.0000-14.0000 sec  3136 MBytes  26307 Mbits/sec
+2025-01-14 20:29:59,044 - INFO - [  1] 14.0000-15.0000 sec  3071 MBytes  25765 Mbits/sec
+2025-01-14 20:29:59,044 - INFO - [  1] 15.0000-16.0000 sec  3330 MBytes  27938 Mbits/sec
+2025-01-14 20:29:59,044 - INFO - [  1] 16.0000-17.0000 sec  2810 MBytes  23572 Mbits/sec
+2025-01-14 20:29:59,045 - INFO - [  1] 17.0000-18.0000 sec  2726 MBytes  22865 Mbits/sec
+2025-01-14 20:29:59,045 - INFO - [  1] 18.0000-19.0000 sec  2790 MBytes  23400 Mbits/sec
+2025-01-14 20:29:59,046 - INFO - [  1] 19.0000-20.0000 sec  2553 MBytes  21418 Mbits/sec
+2025-01-14 20:29:59,046 - INFO - [  1] 0.0000-20.0045 sec  59960 MBytes  25143 Mbits/sec
+2025-01-14 20:29:59,047 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log &
+2025-01-14 20:29:59,047 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log & successful
+2025-01-14 20:30:14,114 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:30:14,114 - INFO - 00:00:00:00:00:01
+2025-01-14 20:30:14,116 - INFO - 00:00:00:00:00:06
+2025-01-14 20:30:14,151 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:30:14,182 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:30:14,187 - INFO - Failover at time 10.0s
+2025-01-14 20:30:14,187 - INFO - Executing Mininet command: link s1 s3 down
+2025-01-14 20:30:14,189 - INFO - Command link s1 s3 down successful
+2025-01-14 20:30:19,235 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:30:19,248 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:30:19,251 - INFO - Failover iperf output
+2025-01-14 20:30:19,257 - INFO - ------------------------------------------------------------
+2025-01-14 20:30:19,257 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:30:19,257 - INFO - TCP window size: 85.3 KByte (default)
+2025-01-14 20:30:19,258 - INFO - ------------------------------------------------------------
+2025-01-14 20:30:19,258 - INFO - [  1] local 10.0.30.2 port 41266 connected with 10.0.10.1 port 5001
+2025-01-14 20:30:19,258 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:30:19,259 - INFO - [  1] 0.0000-1.0000 sec  3147 MBytes  26397 Mbits/sec
+2025-01-14 20:30:19,259 - INFO - [  1] 1.0000-2.0000 sec  3544 MBytes  29726 Mbits/sec
+2025-01-14 20:30:19,259 - INFO - [  1] 2.0000-3.0000 sec  3083 MBytes  25865 Mbits/sec
+2025-01-14 20:30:19,259 - INFO - [  1] 3.0000-4.0000 sec  2779 MBytes  23314 Mbits/sec
+2025-01-14 20:30:19,259 - INFO - [  1] 4.0000-5.0000 sec  3420 MBytes  28691 Mbits/sec
+2025-01-14 20:30:19,260 - INFO - [  1] 5.0000-6.0000 sec  3178 MBytes  26655 Mbits/sec
+2025-01-14 20:30:19,260 - INFO - [  1] 6.0000-7.0000 sec  3968 MBytes  33286 Mbits/sec
+2025-01-14 20:30:19,260 - INFO - [  1] 7.0000-8.0000 sec  3911 MBytes  32808 Mbits/sec
+2025-01-14 20:30:19,260 - INFO - [  1] 8.0000-9.0000 sec  3631 MBytes  30457 Mbits/sec
+2025-01-14 20:30:19,261 - INFO - [  1] 9.0000-10.0000 sec  4038 MBytes  33871 Mbits/sec
+2025-01-14 20:30:19,261 - INFO - [  1] 10.0000-11.0000 sec  3461 MBytes  29031 Mbits/sec
+2025-01-14 20:30:19,261 - INFO - [  1] 11.0000-12.0000 sec  4308 MBytes  36141 Mbits/sec
+2025-01-14 20:30:19,261 - INFO - [  1] 12.0000-13.0000 sec  3242 MBytes  27196 Mbits/sec
+2025-01-14 20:30:19,262 - INFO - [  1] 13.0000-14.0000 sec  3712 MBytes  31139 Mbits/sec
+2025-01-14 20:30:19,262 - INFO - [  1] 14.0000-15.0000 sec  3154 MBytes  26455 Mbits/sec
+2025-01-14 20:30:19,262 - INFO - [  1] 15.0000-16.0000 sec  1890 MBytes  15851 Mbits/sec
+2025-01-14 20:30:19,262 - INFO - [  1] 16.0000-17.0000 sec  2890 MBytes  24246 Mbits/sec
+2025-01-14 20:30:19,263 - INFO - [  1] 17.0000-18.0000 sec  3758 MBytes  31525 Mbits/sec
+2025-01-14 20:30:19,263 - INFO - [  1] 18.0000-19.0000 sec  3615 MBytes  30327 Mbits/sec
+2025-01-14 20:30:19,264 - INFO - [  1] 19.0000-20.0000 sec  2998 MBytes  25152 Mbits/sec
+2025-01-14 20:30:19,264 - INFO - [  1] 0.0000-20.0262 sec  67727 MBytes  28370 Mbits/sec
+2025-01-14 20:30:19,264 - INFO - Paths are different after link s1 s3 down command
+2025-01-14 20:30:19,264 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:30:19,265 - INFO - Added Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:30:19,265 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:30:19,266 - INFO - Removed Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:30:19,266 - INFO - Baseline Capacity: 59960.0 Mbytes, Baseline Throughput: 25143.0 Mbits/sec
+2025-01-14 20:30:19,266 - INFO - Failover Capacity: 67727.0 Mbytes, Failover Throughput: 28370.0 Mbits/sec
+2025-01-14 20:30:19,266 - INFO - Capacity Difference: -7767.0 Mbytes, Throughput Difference: -3227.0 Mbits/sec
+2025-01-14 20:30:19,267 - INFO - Fault Tolerance via Reactive Fwd Test Trial 2 Success
+2025-01-14 20:30:19,268 - INFO - Resetting link
+2025-01-14 20:30:19,269 - INFO - Executing Mininet command: link s1 s3 up
+2025-01-14 20:30:19,269 - INFO - Command link s1 s3 up successful
+2025-01-14 20:30:24,274 - INFO - Executing Mininet command: link s1 s2 down
+2025-01-14 20:30:24,275 - INFO - Command link s1 s2 down successful
+2025-01-14 20:30:29,281 - INFO - Executing Mininet command: link s1 s2 up
+2025-01-14 20:30:29,282 - INFO - Command link s1 s2 up successful
+2025-01-14 20:30:38,422 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log &
+2025-01-14 20:30:38,426 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log & successful
+2025-01-14 20:31:03,457 - INFO - Baseline iperf output
+2025-01-14 20:31:03,467 - INFO - ------------------------------------------------------------
+2025-01-14 20:31:03,468 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:31:03,468 - INFO - TCP window size:  170 KByte (default)
+2025-01-14 20:31:03,469 - INFO - ------------------------------------------------------------
+2025-01-14 20:31:03,469 - INFO - [  1] local 10.0.30.2 port 53760 connected with 10.0.10.1 port 5001
+2025-01-14 20:31:03,470 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:31:03,470 - INFO - [  1] 0.0000-1.0000 sec  3885 MBytes  32593 Mbits/sec
+2025-01-14 20:31:03,471 - INFO - [  1] 1.0000-2.0000 sec  3849 MBytes  32288 Mbits/sec
+2025-01-14 20:31:03,471 - INFO - [  1] 2.0000-3.0000 sec  2824 MBytes  23685 Mbits/sec
+2025-01-14 20:31:03,472 - INFO - [  1] 3.0000-4.0000 sec  3213 MBytes  26949 Mbits/sec
+2025-01-14 20:31:03,472 - INFO - [  1] 4.0000-5.0000 sec  3206 MBytes  26895 Mbits/sec
+2025-01-14 20:31:03,472 - INFO - [  1] 5.0000-6.0000 sec  2977 MBytes  24972 Mbits/sec
+2025-01-14 20:31:03,472 - INFO - [  1] 6.0000-7.0000 sec  3023 MBytes  25362 Mbits/sec
+2025-01-14 20:31:03,473 - INFO - [  1] 7.0000-8.0000 sec  3837 MBytes  32189 Mbits/sec
+2025-01-14 20:31:03,473 - INFO - [  1] 8.0000-9.0000 sec  3750 MBytes  31455 Mbits/sec
+2025-01-14 20:31:03,474 - INFO - [  1] 9.0000-10.0000 sec  3067 MBytes  25730 Mbits/sec
+2025-01-14 20:31:03,474 - INFO - [  1] 10.0000-11.0000 sec  3822 MBytes  32064 Mbits/sec
+2025-01-14 20:31:03,475 - INFO - [  1] 11.0000-12.0000 sec  3014 MBytes  25285 Mbits/sec
+2025-01-14 20:31:03,476 - INFO - [  1] 12.0000-13.0000 sec  3514 MBytes  29480 Mbits/sec
+2025-01-14 20:31:03,476 - INFO - [  1] 13.0000-14.0000 sec  2761 MBytes  23159 Mbits/sec
+2025-01-14 20:31:03,476 - INFO - [  1] 14.0000-15.0000 sec  3330 MBytes  27937 Mbits/sec
+2025-01-14 20:31:03,477 - INFO - [  1] 15.0000-16.0000 sec  3584 MBytes  30066 Mbits/sec
+2025-01-14 20:31:03,477 - INFO - [  1] 16.0000-17.0000 sec  2731 MBytes  22906 Mbits/sec
+2025-01-14 20:31:03,478 - INFO - [  1] 17.0000-18.0000 sec  2192 MBytes  18384 Mbits/sec
+2025-01-14 20:31:03,478 - INFO - [  1] 18.0000-19.0000 sec  3087 MBytes  25892 Mbits/sec
+2025-01-14 20:31:03,479 - INFO - [  1] 19.0000-20.0000 sec  3305 MBytes  27726 Mbits/sec
+2025-01-14 20:31:03,479 - INFO - [  1] 0.0000-20.0014 sec  64971 MBytes  27249 Mbits/sec
+2025-01-14 20:31:03,479 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log &
+2025-01-14 20:31:03,480 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log & successful
+2025-01-14 20:31:18,568 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:31:18,569 - INFO - 00:00:00:00:00:01
+2025-01-14 20:31:18,569 - INFO - 00:00:00:00:00:06
+2025-01-14 20:31:18,601 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:31:18,622 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:31:18,624 - INFO - Failover at time 10.0s
+2025-01-14 20:31:18,627 - INFO - Executing Mininet command: link s1 s3 down
+2025-01-14 20:31:18,629 - INFO - Command link s1 s3 down successful
+2025-01-14 20:31:23,649 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:31:23,662 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:31:23,662 - INFO - Failover iperf output
+2025-01-14 20:31:23,668 - INFO - ------------------------------------------------------------
+2025-01-14 20:31:23,669 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:31:23,671 - INFO - TCP window size:  578 KByte (default)
+2025-01-14 20:31:23,671 - INFO - ------------------------------------------------------------
+2025-01-14 20:31:23,671 - INFO - [  1] local 10.0.30.2 port 49780 connected with 10.0.10.1 port 5001
+2025-01-14 20:31:23,672 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:31:23,672 - INFO - [  1] 0.0000-1.0000 sec  3147 MBytes  26398 Mbits/sec
+2025-01-14 20:31:23,673 - INFO - [  1] 1.0000-2.0000 sec  2637 MBytes  22122 Mbits/sec
+2025-01-14 20:31:23,673 - INFO - [  1] 2.0000-3.0000 sec  2568 MBytes  21545 Mbits/sec
+2025-01-14 20:31:23,673 - INFO - [  1] 3.0000-4.0000 sec  2933 MBytes  24606 Mbits/sec
+2025-01-14 20:31:23,673 - INFO - [  1] 4.0000-5.0000 sec  2158 MBytes  18107 Mbits/sec
+2025-01-14 20:31:23,674 - INFO - [  1] 5.0000-6.0000 sec  3052 MBytes  25599 Mbits/sec
+2025-01-14 20:31:23,675 - INFO - [  1] 6.0000-7.0000 sec  2906 MBytes  24380 Mbits/sec
+2025-01-14 20:31:23,676 - INFO - [  1] 7.0000-8.0000 sec  2930 MBytes  24575 Mbits/sec
+2025-01-14 20:31:23,676 - INFO - [  1] 8.0000-9.0000 sec  3206 MBytes  26894 Mbits/sec
+2025-01-14 20:31:23,676 - INFO - [  1] 9.0000-10.0000 sec  3520 MBytes  29527 Mbits/sec
+2025-01-14 20:31:23,677 - INFO - [  1] 10.0000-11.0000 sec  2987 MBytes  25057 Mbits/sec
+2025-01-14 20:31:23,677 - INFO - [  1] 11.0000-12.0000 sec  3382 MBytes  28371 Mbits/sec
+2025-01-14 20:31:23,677 - INFO - [  1] 12.0000-13.0000 sec  2757 MBytes  23128 Mbits/sec
+2025-01-14 20:31:23,678 - INFO - [  1] 13.0000-14.0000 sec  3252 MBytes  27284 Mbits/sec
+2025-01-14 20:31:23,678 - INFO - [  1] 14.0000-15.0000 sec  2960 MBytes  24826 Mbits/sec
+2025-01-14 20:31:23,679 - INFO - [  1] 15.0000-16.0000 sec  2353 MBytes  19739 Mbits/sec
+2025-01-14 20:31:23,679 - INFO - [  1] 16.0000-17.0000 sec  2557 MBytes  21451 Mbits/sec
+2025-01-14 20:31:23,679 - INFO - [  1] 17.0000-18.0000 sec  2837 MBytes  23802 Mbits/sec
+2025-01-14 20:31:23,680 - INFO - [  1] 18.0000-19.0000 sec  3065 MBytes  25714 Mbits/sec
+2025-01-14 20:31:23,681 - INFO - [  1] 19.0000-20.0000 sec  2842 MBytes  23844 Mbits/sec
+2025-01-14 20:31:23,681 - INFO - [  1] 0.0000-20.0191 sec  58051 MBytes  24325 Mbits/sec
+2025-01-14 20:31:23,681 - INFO - Paths are different after link s1 s3 down command
+2025-01-14 20:31:23,682 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:31:23,683 - INFO - Added Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:31:23,683 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:31:23,683 - INFO - Removed Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:31:23,684 - INFO - Baseline Capacity: 64971.0 Mbytes, Baseline Throughput: 27249.0 Mbits/sec
+2025-01-14 20:31:23,685 - INFO - Failover Capacity: 58051.0 Mbytes, Failover Throughput: 24325.0 Mbits/sec
+2025-01-14 20:31:23,685 - INFO - Capacity Difference: 6920.0 Mbytes, Throughput Difference: 2924.0 Mbits/sec
+2025-01-14 20:31:23,685 - INFO - Fault Tolerance via Reactive Fwd Test Trial 3 Success
+2025-01-14 20:31:23,688 - INFO - Resetting link
+2025-01-14 20:31:23,689 - INFO - Executing Mininet command: link s1 s3 up
+2025-01-14 20:31:23,689 - INFO - Command link s1 s3 up successful
+2025-01-14 20:31:28,692 - INFO - Executing Mininet command: link s1 s2 down
+2025-01-14 20:31:28,693 - INFO - Command link s1 s2 down successful
+2025-01-14 20:31:33,694 - INFO - Executing Mininet command: link s1 s2 up
+2025-01-14 20:31:33,696 - INFO - Command link s1 s2 up successful
+2025-01-14 20:31:42,840 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log &
+2025-01-14 20:31:42,841 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log & successful
+2025-01-14 20:32:07,915 - INFO - Baseline iperf output
+2025-01-14 20:32:07,943 - INFO - ------------------------------------------------------------
+2025-01-14 20:32:07,944 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:32:07,945 - INFO - TCP window size:  578 KByte (default)
+2025-01-14 20:32:07,946 - INFO - ------------------------------------------------------------
+2025-01-14 20:32:07,947 - INFO - [  1] local 10.0.30.2 port 56806 connected with 10.0.10.1 port 5001
+2025-01-14 20:32:07,947 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:32:07,948 - INFO - [  1] 0.0000-1.0000 sec  3059 MBytes  25661 Mbits/sec
+2025-01-14 20:32:07,949 - INFO - [  1] 1.0000-2.0000 sec  4037 MBytes  33865 Mbits/sec
+2025-01-14 20:32:07,949 - INFO - [  1] 2.0000-3.0000 sec  2941 MBytes  24668 Mbits/sec
+2025-01-14 20:32:07,950 - INFO - [  1] 3.0000-4.0000 sec  3257 MBytes  27322 Mbits/sec
+2025-01-14 20:32:07,950 - INFO - [  1] 4.0000-5.0000 sec  4057 MBytes  34033 Mbits/sec
+2025-01-14 20:32:07,951 - INFO - [  1] 5.0000-6.0000 sec  3213 MBytes  26955 Mbits/sec
+2025-01-14 20:32:07,951 - INFO - [  1] 6.0000-7.0000 sec  3407 MBytes  28579 Mbits/sec
+2025-01-14 20:32:07,952 - INFO - [  1] 7.0000-8.0000 sec  3368 MBytes  28252 Mbits/sec
+2025-01-14 20:32:07,952 - INFO - [  1] 8.0000-9.0000 sec  3265 MBytes  27390 Mbits/sec
+2025-01-14 20:32:07,953 - INFO - [  1] 9.0000-10.0000 sec  2808 MBytes  23559 Mbits/sec
+2025-01-14 20:32:07,955 - INFO - [  1] 10.0000-11.0000 sec  2930 MBytes  24581 Mbits/sec
+2025-01-14 20:32:07,955 - INFO - [  1] 11.0000-12.0000 sec  2753 MBytes  23092 Mbits/sec
+2025-01-14 20:32:07,956 - INFO - [  1] 12.0000-13.0000 sec  2852 MBytes  23926 Mbits/sec
+2025-01-14 20:32:07,957 - INFO - [  1] 13.0000-14.0000 sec  3166 MBytes  26554 Mbits/sec
+2025-01-14 20:32:07,957 - INFO - [  1] 14.0000-15.0000 sec  2679 MBytes  22472 Mbits/sec
+2025-01-14 20:32:07,958 - INFO - [  1] 15.0000-16.0000 sec  2520 MBytes  21143 Mbits/sec
+2025-01-14 20:32:07,959 - INFO - [  1] 16.0000-17.0000 sec  3789 MBytes  31784 Mbits/sec
+2025-01-14 20:32:07,959 - INFO - [  1] 17.0000-18.0000 sec  1848 MBytes  15500 Mbits/sec
+2025-01-14 20:32:07,960 - INFO - [  1] 18.0000-19.0000 sec  3387 MBytes  28411 Mbits/sec
+2025-01-14 20:32:07,960 - INFO - [  1] 19.0000-20.0000 sec  3343 MBytes  28045 Mbits/sec
+2025-01-14 20:32:07,960 - INFO - [  1] 0.0000-20.0129 sec  62679 MBytes  26273 Mbits/sec
+2025-01-14 20:32:07,961 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log &
+2025-01-14 20:32:07,961 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log & successful
+2025-01-14 20:32:23,020 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:32:23,024 - INFO - 00:00:00:00:00:01
+2025-01-14 20:32:23,025 - INFO - 00:00:00:00:00:06
+2025-01-14 20:32:23,052 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:32:23,062 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:32:23,068 - INFO - Failover at time 10.0s
+2025-01-14 20:32:23,068 - INFO - Executing Mininet command: link s1 s3 down
+2025-01-14 20:32:23,068 - INFO - Command link s1 s3 down successful
+2025-01-14 20:32:28,080 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:32:28,088 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:32:28,089 - INFO - Failover iperf output
+2025-01-14 20:32:28,093 - INFO - ------------------------------------------------------------
+2025-01-14 20:32:28,093 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:32:28,094 - INFO - TCP window size: 85.3 KByte (default)
+2025-01-14 20:32:28,094 - INFO - ------------------------------------------------------------
+2025-01-14 20:32:28,094 - INFO - [  1] local 10.0.30.2 port 37846 connected with 10.0.10.1 port 5001
+2025-01-14 20:32:28,095 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:32:28,095 - INFO - [  1] 0.0000-1.0000 sec  2398 MBytes  20114 Mbits/sec
+2025-01-14 20:32:28,095 - INFO - [  1] 1.0000-2.0000 sec  2677 MBytes  22454 Mbits/sec
+2025-01-14 20:32:28,095 - INFO - [  1] 2.0000-3.0000 sec  3204 MBytes  26873 Mbits/sec
+2025-01-14 20:32:28,096 - INFO - [  1] 3.0000-4.0000 sec  3172 MBytes  26604 Mbits/sec
+2025-01-14 20:32:28,097 - INFO - [  1] 4.0000-5.0000 sec  2941 MBytes  24673 Mbits/sec
+2025-01-14 20:32:28,097 - INFO - [  1] 5.0000-6.0000 sec  2824 MBytes  23692 Mbits/sec
+2025-01-14 20:32:28,098 - INFO - [  1] 6.0000-7.0000 sec  3106 MBytes  26055 Mbits/sec
+2025-01-14 20:32:28,098 - INFO - [  1] 7.0000-8.0000 sec  3759 MBytes  31532 Mbits/sec
+2025-01-14 20:32:28,098 - INFO - [  1] 8.0000-9.0000 sec  2974 MBytes  24951 Mbits/sec
+2025-01-14 20:32:28,098 - INFO - [  1] 9.0000-10.0000 sec  3159 MBytes  26498 Mbits/sec
+2025-01-14 20:32:28,099 - INFO - [  1] 10.0000-11.0000 sec  3368 MBytes  28255 Mbits/sec
+2025-01-14 20:32:28,099 - INFO - [  1] 11.0000-12.0000 sec  2923 MBytes  24521 Mbits/sec
+2025-01-14 20:32:28,100 - INFO - [  1] 12.0000-13.0000 sec  2691 MBytes  22576 Mbits/sec
+2025-01-14 20:32:28,101 - INFO - [  1] 13.0000-14.0000 sec  2984 MBytes  25035 Mbits/sec
+2025-01-14 20:32:28,101 - INFO - [  1] 14.0000-15.0000 sec  3268 MBytes  27412 Mbits/sec
+2025-01-14 20:32:28,104 - INFO - [  1] 15.0000-16.0000 sec  2075 MBytes  17403 Mbits/sec
+2025-01-14 20:32:28,107 - INFO - [  1] 16.0000-17.0000 sec  2780 MBytes  23317 Mbits/sec
+2025-01-14 20:32:28,108 - INFO - [  1] 17.0000-18.0000 sec  3631 MBytes  30462 Mbits/sec
+2025-01-14 20:32:28,109 - INFO - [  1] 18.0000-19.0000 sec  3395 MBytes  28476 Mbits/sec
+2025-01-14 20:32:28,109 - INFO - [  1] 19.0000-20.0000 sec  3140 MBytes  26336 Mbits/sec
+2025-01-14 20:32:28,110 - INFO - [  1] 0.0000-20.0029 sec  60468 MBytes  25358 Mbits/sec
+2025-01-14 20:32:28,110 - INFO - Paths are different after link s1 s3 down command
+2025-01-14 20:32:28,111 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:32:28,111 - INFO - Added Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:32:28,112 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:32:28,112 - INFO - Removed Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:32:28,113 - INFO - Baseline Capacity: 62679.0 Mbytes, Baseline Throughput: 26273.0 Mbits/sec
+2025-01-14 20:32:28,114 - INFO - Failover Capacity: 60468.0 Mbytes, Failover Throughput: 25358.0 Mbits/sec
+2025-01-14 20:32:28,114 - INFO - Capacity Difference: 2211.0 Mbytes, Throughput Difference: 915.0 Mbits/sec
+2025-01-14 20:32:28,116 - INFO - Fault Tolerance via Reactive Fwd Test Trial 4 Success
+2025-01-14 20:32:28,119 - INFO - Resetting link
+2025-01-14 20:32:28,119 - INFO - Executing Mininet command: link s1 s3 up
+2025-01-14 20:32:28,120 - INFO - Command link s1 s3 up successful
+2025-01-14 20:32:33,126 - INFO - Executing Mininet command: link s1 s2 down
+2025-01-14 20:32:33,127 - INFO - Command link s1 s2 down successful
+2025-01-14 20:32:38,132 - INFO - Executing Mininet command: link s1 s2 up
+2025-01-14 20:32:38,133 - INFO - Command link s1 s2 up successful
+2025-01-14 20:32:47,144 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log &
+2025-01-14 20:32:47,144 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log & successful
+2025-01-14 20:33:12,176 - INFO - Baseline iperf output
+2025-01-14 20:33:12,180 - INFO - ------------------------------------------------------------
+2025-01-14 20:33:12,180 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:33:12,181 - INFO - TCP window size:  578 KByte (default)
+2025-01-14 20:33:12,181 - INFO - ------------------------------------------------------------
+2025-01-14 20:33:12,182 - INFO - [  1] local 10.0.30.2 port 55602 connected with 10.0.10.1 port 5001
+2025-01-14 20:33:12,182 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:33:12,183 - INFO - [  1] 0.0000-1.0000 sec  3606 MBytes  30249 Mbits/sec
+2025-01-14 20:33:12,183 - INFO - [  1] 1.0000-2.0000 sec  4838 MBytes  40585 Mbits/sec
+2025-01-14 20:33:12,184 - INFO - [  1] 2.0000-3.0000 sec  4929 MBytes  41346 Mbits/sec
+2025-01-14 20:33:12,184 - INFO - [  1] 3.0000-4.0000 sec  4762 MBytes  39950 Mbits/sec
+2025-01-14 20:33:12,184 - INFO - [  1] 4.0000-5.0000 sec  4438 MBytes  37224 Mbits/sec
+2025-01-14 20:33:12,185 - INFO - [  1] 5.0000-6.0000 sec  5449 MBytes  45708 Mbits/sec
+2025-01-14 20:33:12,185 - INFO - [  1] 6.0000-7.0000 sec  5738 MBytes  48136 Mbits/sec
+2025-01-14 20:33:12,186 - INFO - [  1] 7.0000-8.0000 sec  5834 MBytes  48942 Mbits/sec
+2025-01-14 20:33:12,186 - INFO - [  1] 8.0000-9.0000 sec  5722 MBytes  47996 Mbits/sec
+2025-01-14 20:33:12,186 - INFO - [  1] 9.0000-10.0000 sec  5807 MBytes  48710 Mbits/sec
+2025-01-14 20:33:12,186 - INFO - [  1] 10.0000-11.0000 sec  6231 MBytes  52268 Mbits/sec
+2025-01-14 20:33:12,187 - INFO - [  1] 11.0000-12.0000 sec  5736 MBytes  48115 Mbits/sec
+2025-01-14 20:33:12,187 - INFO - [  1] 12.0000-13.0000 sec  4808 MBytes  40329 Mbits/sec
+2025-01-14 20:33:12,188 - INFO - [  1] 13.0000-14.0000 sec  5377 MBytes  45104 Mbits/sec
+2025-01-14 20:33:12,188 - INFO - [  1] 14.0000-15.0000 sec  5869 MBytes  49235 Mbits/sec
+2025-01-14 20:33:12,188 - INFO - [  1] 15.0000-16.0000 sec  6306 MBytes  52903 Mbits/sec
+2025-01-14 20:33:12,189 - INFO - [  1] 16.0000-17.0000 sec  6461 MBytes  54200 Mbits/sec
+2025-01-14 20:33:12,189 - INFO - [  1] 17.0000-18.0000 sec  6423 MBytes  53883 Mbits/sec
+2025-01-14 20:33:12,189 - INFO - [  1] 18.0000-19.0000 sec  4832 MBytes  40532 Mbits/sec
+2025-01-14 20:33:12,189 - INFO - [  1] 19.0000-20.0000 sec  4303 MBytes  36096 Mbits/sec
+2025-01-14 20:33:12,190 - INFO - [  1] 0.0000-20.0085 sec  107469 MBytes  45057 Mbits/sec
+2025-01-14 20:33:12,190 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log &
+2025-01-14 20:33:12,191 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log & successful
+2025-01-14 20:33:27,246 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:33:27,246 - INFO - 00:00:00:00:00:01
+2025-01-14 20:33:27,248 - INFO - 00:00:00:00:00:06
+2025-01-14 20:33:27,262 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:33:27,271 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:33:27,272 - INFO - Failover at time 10.0s
+2025-01-14 20:33:27,273 - INFO - Executing Mininet command: link s1 s3 down
+2025-01-14 20:33:27,273 - INFO - Command link s1 s3 down successful
+2025-01-14 20:33:32,287 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:33:32,293 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:33:32,294 - INFO - Failover iperf output
+2025-01-14 20:33:32,296 - INFO - ------------------------------------------------------------
+2025-01-14 20:33:32,296 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:33:32,297 - INFO - TCP window size:  170 KByte (default)
+2025-01-14 20:33:32,297 - INFO - ------------------------------------------------------------
+2025-01-14 20:33:32,297 - INFO - [  1] local 10.0.30.2 port 49996 connected with 10.0.10.1 port 5001
+2025-01-14 20:33:32,298 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:33:32,298 - INFO - [  1] 0.0000-1.0000 sec  6542 MBytes  54874 Mbits/sec
+2025-01-14 20:33:32,298 - INFO - [  1] 1.0000-2.0000 sec  6887 MBytes  57769 Mbits/sec
+2025-01-14 20:33:32,299 - INFO - [  1] 2.0000-3.0000 sec  6734 MBytes  56486 Mbits/sec
+2025-01-14 20:33:32,299 - INFO - [  1] 3.0000-4.0000 sec  6753 MBytes  56651 Mbits/sec
+2025-01-14 20:33:32,299 - INFO - [  1] 4.0000-5.0000 sec  6682 MBytes  56054 Mbits/sec
+2025-01-14 20:33:32,300 - INFO - [  1] 5.0000-6.0000 sec  6063 MBytes  50862 Mbits/sec
+2025-01-14 20:33:32,301 - INFO - [  1] 6.0000-7.0000 sec  6560 MBytes  55030 Mbits/sec
+2025-01-14 20:33:32,301 - INFO - [  1] 7.0000-8.0000 sec  6790 MBytes  56959 Mbits/sec
+2025-01-14 20:33:32,301 - INFO - [  1] 8.0000-9.0000 sec  6589 MBytes  55275 Mbits/sec
+2025-01-14 20:33:32,301 - INFO - [  1] 9.0000-10.0000 sec  6139 MBytes  51498 Mbits/sec
+2025-01-14 20:33:32,302 - INFO - [  1] 10.0000-11.0000 sec  5795 MBytes  48612 Mbits/sec
+2025-01-14 20:33:32,302 - INFO - [  1] 11.0000-12.0000 sec  6204 MBytes  52042 Mbits/sec
+2025-01-14 20:33:32,302 - INFO - [  1] 12.0000-13.0000 sec  6132 MBytes  51435 Mbits/sec
+2025-01-14 20:33:32,302 - INFO - [  1] 13.0000-14.0000 sec  4814 MBytes  40385 Mbits/sec
+2025-01-14 20:33:32,303 - INFO - [  1] 14.0000-15.0000 sec  5784 MBytes  48517 Mbits/sec
+2025-01-14 20:33:32,304 - INFO - [  1] 15.0000-16.0000 sec  4016 MBytes  33686 Mbits/sec
+2025-01-14 20:33:32,304 - INFO - [  1] 16.0000-17.0000 sec  5232 MBytes  43890 Mbits/sec
+2025-01-14 20:33:32,305 - INFO - [  1] 17.0000-18.0000 sec  5022 MBytes  42129 Mbits/sec
+2025-01-14 20:33:32,305 - INFO - [  1] 18.0000-19.0000 sec  5176 MBytes  43415 Mbits/sec
+2025-01-14 20:33:32,305 - INFO - [  1] 19.0000-20.0000 sec  5115 MBytes  42907 Mbits/sec
+2025-01-14 20:33:32,306 - INFO - [  1] 0.0000-20.0042 sec  119028 MBytes  49913 Mbits/sec
+2025-01-14 20:33:32,306 - INFO - Paths are different after link s1 s3 down command
+2025-01-14 20:33:32,306 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:33:32,311 - INFO - Added Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:33:32,311 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:33:32,312 - INFO - Removed Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:33:32,313 - INFO - Baseline Capacity: 107469.0 Mbytes, Baseline Throughput: 45057.0 Mbits/sec
+2025-01-14 20:33:32,313 - INFO - Failover Capacity: 119028.0 Mbytes, Failover Throughput: 49913.0 Mbits/sec
+2025-01-14 20:33:32,313 - INFO - Capacity Difference: -11559.0 Mbytes, Throughput Difference: -4856.0 Mbits/sec
+2025-01-14 20:33:32,313 - INFO - Fault Tolerance via Reactive Fwd Test Trial 5 Success
+2025-01-14 20:33:32,314 - INFO - Resetting link
+2025-01-14 20:33:32,314 - INFO - Executing Mininet command: link s1 s3 up
+2025-01-14 20:33:32,315 - INFO - Command link s1 s3 up successful
+2025-01-14 20:33:37,316 - INFO - Executing Mininet command: link s1 s2 down
+2025-01-14 20:33:37,318 - INFO - Command link s1 s2 down successful
+2025-01-14 20:33:42,324 - INFO - Executing Mininet command: link s1 s2 up
+2025-01-14 20:33:42,325 - INFO - Command link s1 s2 up successful
+2025-01-14 20:33:51,335 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log &
+2025-01-14 20:33:51,335 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log & successful
+2025-01-14 20:34:16,360 - INFO - Baseline iperf output
+2025-01-14 20:34:16,364 - INFO - ------------------------------------------------------------
+2025-01-14 20:34:16,364 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:34:16,364 - INFO - TCP window size: 85.3 KByte (default)
+2025-01-14 20:34:16,364 - INFO - ------------------------------------------------------------
+2025-01-14 20:34:16,364 - INFO - [  1] local 10.0.30.2 port 59424 connected with 10.0.10.1 port 5001
+2025-01-14 20:34:16,365 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:34:16,366 - INFO - [  1] 0.0000-1.0000 sec  5197 MBytes  43592 Mbits/sec
+2025-01-14 20:34:16,366 - INFO - [  1] 1.0000-2.0000 sec  4833 MBytes  40545 Mbits/sec
+2025-01-14 20:34:16,367 - INFO - [  1] 2.0000-3.0000 sec  4388 MBytes  36813 Mbits/sec
+2025-01-14 20:34:16,367 - INFO - [  1] 3.0000-4.0000 sec  4217 MBytes  35376 Mbits/sec
+2025-01-14 20:34:16,369 - INFO - [  1] 4.0000-5.0000 sec  4310 MBytes  36152 Mbits/sec
+2025-01-14 20:34:16,369 - INFO - [  1] 5.0000-6.0000 sec  3904 MBytes  32752 Mbits/sec
+2025-01-14 20:34:16,369 - INFO - [  1] 6.0000-7.0000 sec  4169 MBytes  34969 Mbits/sec
+2025-01-14 20:34:16,370 - INFO - [  1] 7.0000-8.0000 sec  4226 MBytes  35450 Mbits/sec
+2025-01-14 20:34:16,370 - INFO - [  1] 8.0000-9.0000 sec  3872 MBytes  32479 Mbits/sec
+2025-01-14 20:34:16,370 - INFO - [  1] 9.0000-10.0000 sec  4568 MBytes  38319 Mbits/sec
+2025-01-14 20:34:16,371 - INFO - [  1] 10.0000-11.0000 sec  3251 MBytes  27269 Mbits/sec
+2025-01-14 20:34:16,371 - INFO - [  1] 11.0000-12.0000 sec  3740 MBytes  31377 Mbits/sec
+2025-01-14 20:34:16,371 - INFO - [  1] 12.0000-13.0000 sec  3940 MBytes  33048 Mbits/sec
+2025-01-14 20:34:16,371 - INFO - [  1] 13.0000-14.0000 sec  3752 MBytes  31473 Mbits/sec
+2025-01-14 20:34:16,371 - INFO - [  1] 14.0000-15.0000 sec  4839 MBytes  40592 Mbits/sec
+2025-01-14 20:34:16,372 - INFO - [  1] 15.0000-16.0000 sec  5316 MBytes  44593 Mbits/sec
+2025-01-14 20:34:16,372 - INFO - [  1] 16.0000-17.0000 sec  4843 MBytes  40627 Mbits/sec
+2025-01-14 20:34:16,372 - INFO - [  1] 17.0000-18.0000 sec  4006 MBytes  33603 Mbits/sec
+2025-01-14 20:34:16,372 - INFO - [  1] 18.0000-19.0000 sec  4819 MBytes  40427 Mbits/sec
+2025-01-14 20:34:16,372 - INFO - [  1] 19.0000-20.0000 sec  4484 MBytes  37615 Mbits/sec
+2025-01-14 20:34:16,373 - INFO - [  1] 0.0000-20.0084 sec  86674 MBytes  36338 Mbits/sec
+2025-01-14 20:34:16,373 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log &
+2025-01-14 20:34:16,374 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log & successful
+2025-01-14 20:34:31,408 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:34:31,409 - INFO - 00:00:00:00:00:01
+2025-01-14 20:34:31,410 - INFO - 00:00:00:00:00:06
+2025-01-14 20:34:31,424 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:34:31,435 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:34:31,435 - INFO - Failover at time 10.0s
+2025-01-14 20:34:31,436 - INFO - Executing Mininet command: link s1 s3 down
+2025-01-14 20:34:31,436 - INFO - Command link s1 s3 down successful
+2025-01-14 20:34:36,448 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:34:36,459 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:34:36,459 - INFO - Failover iperf output
+2025-01-14 20:34:36,464 - INFO - ------------------------------------------------------------
+2025-01-14 20:34:36,465 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:34:36,465 - INFO - TCP window size:  842 KByte (default)
+2025-01-14 20:34:36,465 - INFO - ------------------------------------------------------------
+2025-01-14 20:34:36,466 - INFO - [  1] local 10.0.30.2 port 47750 connected with 10.0.10.1 port 5001
+2025-01-14 20:34:36,466 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:34:36,467 - INFO - [  1] 0.0000-1.0000 sec  6261 MBytes  52519 Mbits/sec
+2025-01-14 20:34:36,468 - INFO - [  1] 1.0000-2.0000 sec  6563 MBytes  55058 Mbits/sec
+2025-01-14 20:34:36,468 - INFO - [  1] 2.0000-3.0000 sec  6463 MBytes  54217 Mbits/sec
+2025-01-14 20:34:36,468 - INFO - [  1] 3.0000-4.0000 sec  6295 MBytes  52803 Mbits/sec
+2025-01-14 20:34:36,469 - INFO - [  1] 4.0000-5.0000 sec  6693 MBytes  56145 Mbits/sec
+2025-01-14 20:34:36,470 - INFO - [  1] 5.0000-6.0000 sec  4980 MBytes  41774 Mbits/sec
+2025-01-14 20:34:36,470 - INFO - [  1] 6.0000-7.0000 sec  5040 MBytes  42283 Mbits/sec
+2025-01-14 20:34:36,470 - INFO - [  1] 7.0000-8.0000 sec  5456 MBytes  45769 Mbits/sec
+2025-01-14 20:34:36,471 - INFO - [  1] 8.0000-9.0000 sec  5936 MBytes  49794 Mbits/sec
+2025-01-14 20:34:36,471 - INFO - [  1] 9.0000-10.0000 sec  5834 MBytes  48937 Mbits/sec
+2025-01-14 20:34:36,471 - INFO - [  1] 10.0000-11.0000 sec  5686 MBytes  47700 Mbits/sec
+2025-01-14 20:34:36,471 - INFO - [  1] 11.0000-12.0000 sec  5660 MBytes  47483 Mbits/sec
+2025-01-14 20:34:36,472 - INFO - [  1] 12.0000-13.0000 sec  5716 MBytes  47951 Mbits/sec
+2025-01-14 20:34:36,472 - INFO - [  1] 13.0000-14.0000 sec  5866 MBytes  49207 Mbits/sec
+2025-01-14 20:34:36,472 - INFO - [  1] 14.0000-15.0000 sec  5777 MBytes  48462 Mbits/sec
+2025-01-14 20:34:36,473 - INFO - [  1] 15.0000-16.0000 sec  3805 MBytes  31916 Mbits/sec
+2025-01-14 20:34:36,473 - INFO - [  1] 16.0000-17.0000 sec  4987 MBytes  41836 Mbits/sec
+2025-01-14 20:34:36,473 - INFO - [  1] 17.0000-18.0000 sec  4929 MBytes  41346 Mbits/sec
+2025-01-14 20:34:36,474 - INFO - [  1] 18.0000-19.0000 sec  5100 MBytes  42779 Mbits/sec
+2025-01-14 20:34:36,474 - INFO - [  1] 19.0000-20.0000 sec  4982 MBytes  41793 Mbits/sec
+2025-01-14 20:34:36,474 - INFO - [  1] 0.0000-20.0053 sec  112030 MBytes  46976 Mbits/sec
+2025-01-14 20:34:36,474 - INFO - Paths are different after link s1 s3 down command
+2025-01-14 20:34:36,475 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:34:36,475 - INFO - Added Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:34:36,475 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:34:36,476 - INFO - Removed Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:34:36,478 - INFO - Baseline Capacity: 86674.0 Mbytes, Baseline Throughput: 36338.0 Mbits/sec
+2025-01-14 20:34:36,480 - INFO - Failover Capacity: 112030.0 Mbytes, Failover Throughput: 46976.0 Mbits/sec
+2025-01-14 20:34:36,481 - INFO - Capacity Difference: -25356.0 Mbytes, Throughput Difference: -10638.0 Mbits/sec
+2025-01-14 20:34:36,481 - INFO - Fault Tolerance via Reactive Fwd Test Trial 6 Success
+2025-01-14 20:34:36,482 - INFO - Resetting link
+2025-01-14 20:34:36,482 - INFO - Executing Mininet command: link s1 s3 up
+2025-01-14 20:34:36,482 - INFO - Command link s1 s3 up successful
+2025-01-14 20:34:41,487 - INFO - Executing Mininet command: link s1 s2 down
+2025-01-14 20:34:41,488 - INFO - Command link s1 s2 down successful
+2025-01-14 20:34:46,494 - INFO - Executing Mininet command: link s1 s2 up
+2025-01-14 20:34:46,495 - INFO - Command link s1 s2 up successful
+2025-01-14 20:34:55,504 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log &
+2025-01-14 20:34:55,505 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log & successful
+2025-01-14 20:35:20,530 - INFO - Baseline iperf output
+2025-01-14 20:35:20,534 - INFO - ------------------------------------------------------------
+2025-01-14 20:35:20,535 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:35:20,535 - INFO - TCP window size:  578 KByte (default)
+2025-01-14 20:35:20,536 - INFO - ------------------------------------------------------------
+2025-01-14 20:35:20,536 - INFO - [  1] local 10.0.30.2 port 53788 connected with 10.0.10.1 port 5001
+2025-01-14 20:35:20,538 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:35:20,539 - INFO - [  1] 0.0000-1.0000 sec  4657 MBytes  39065 Mbits/sec
+2025-01-14 20:35:20,539 - INFO - [  1] 1.0000-2.0000 sec  5218 MBytes  43776 Mbits/sec
+2025-01-14 20:35:20,539 - INFO - [  1] 2.0000-3.0000 sec  4747 MBytes  39822 Mbits/sec
+2025-01-14 20:35:20,540 - INFO - [  1] 3.0000-4.0000 sec  4677 MBytes  39230 Mbits/sec
+2025-01-14 20:35:20,540 - INFO - [  1] 4.0000-5.0000 sec  4593 MBytes  38532 Mbits/sec
+2025-01-14 20:35:20,540 - INFO - [  1] 5.0000-6.0000 sec  4888 MBytes  41007 Mbits/sec
+2025-01-14 20:35:20,541 - INFO - [  1] 6.0000-7.0000 sec  4780 MBytes  40100 Mbits/sec
+2025-01-14 20:35:20,541 - INFO - [  1] 7.0000-8.0000 sec  4624 MBytes  38788 Mbits/sec
+2025-01-14 20:35:20,541 - INFO - [  1] 8.0000-9.0000 sec  3812 MBytes  31978 Mbits/sec
+2025-01-14 20:35:20,541 - INFO - [  1] 9.0000-10.0000 sec  4683 MBytes  39284 Mbits/sec
+2025-01-14 20:35:20,542 - INFO - [  1] 10.0000-11.0000 sec  5433 MBytes  45572 Mbits/sec
+2025-01-14 20:35:20,542 - INFO - [  1] 11.0000-12.0000 sec  5500 MBytes  46134 Mbits/sec
+2025-01-14 20:35:20,542 - INFO - [  1] 12.0000-13.0000 sec  5322 MBytes  44640 Mbits/sec
+2025-01-14 20:35:20,542 - INFO - [  1] 13.0000-14.0000 sec  5250 MBytes  44040 Mbits/sec
+2025-01-14 20:35:20,543 - INFO - [  1] 14.0000-15.0000 sec  5743 MBytes  48178 Mbits/sec
+2025-01-14 20:35:20,543 - INFO - [  1] 15.0000-16.0000 sec  4921 MBytes  41277 Mbits/sec
+2025-01-14 20:35:20,543 - INFO - [  1] 16.0000-17.0000 sec  6127 MBytes  51396 Mbits/sec
+2025-01-14 20:35:20,543 - INFO - [  1] 17.0000-18.0000 sec  6015 MBytes  50457 Mbits/sec
+2025-01-14 20:35:20,544 - INFO - [  1] 18.0000-19.0000 sec  6002 MBytes  50346 Mbits/sec
+2025-01-14 20:35:20,544 - INFO - [  1] 19.0000-20.0000 sec  6246 MBytes  52399 Mbits/sec
+2025-01-14 20:35:20,544 - INFO - [  1] 0.0000-20.0151 sec  103238 MBytes  43269 Mbits/sec
+2025-01-14 20:35:20,544 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log &
+2025-01-14 20:35:20,545 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log & successful
+2025-01-14 20:35:35,569 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:35:35,570 - INFO - 00:00:00:00:00:01
+2025-01-14 20:35:35,571 - INFO - 00:00:00:00:00:06
+2025-01-14 20:35:35,580 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:35:35,588 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:35:35,588 - INFO - Failover at time 10.0s
+2025-01-14 20:35:35,589 - INFO - Executing Mininet command: link s1 s3 down
+2025-01-14 20:35:35,589 - INFO - Command link s1 s3 down successful
+2025-01-14 20:35:40,601 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:35:40,613 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:35:40,616 - INFO - Failover iperf output
+2025-01-14 20:35:40,622 - INFO - ------------------------------------------------------------
+2025-01-14 20:35:40,623 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:35:40,623 - INFO - TCP window size:  340 KByte (default)
+2025-01-14 20:35:40,624 - INFO - ------------------------------------------------------------
+2025-01-14 20:35:40,625 - INFO - [  1] local 10.0.30.2 port 45662 connected with 10.0.10.1 port 5001
+2025-01-14 20:35:40,625 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:35:40,625 - INFO - [  1] 0.0000-1.0000 sec  5547 MBytes  46532 Mbits/sec
+2025-01-14 20:35:40,626 - INFO - [  1] 1.0000-2.0000 sec  5902 MBytes  49512 Mbits/sec
+2025-01-14 20:35:40,626 - INFO - [  1] 2.0000-3.0000 sec  6530 MBytes  54782 Mbits/sec
+2025-01-14 20:35:40,627 - INFO - [  1] 3.0000-4.0000 sec  6598 MBytes  55351 Mbits/sec
+2025-01-14 20:35:40,628 - INFO - [  1] 4.0000-5.0000 sec  6572 MBytes  55130 Mbits/sec
+2025-01-14 20:35:40,628 - INFO - [  1] 5.0000-6.0000 sec  5632 MBytes  47246 Mbits/sec
+2025-01-14 20:35:40,628 - INFO - [  1] 6.0000-7.0000 sec  6672 MBytes  55973 Mbits/sec
+2025-01-14 20:35:40,629 - INFO - [  1] 7.0000-8.0000 sec  6449 MBytes  54099 Mbits/sec
+2025-01-14 20:35:40,629 - INFO - [  1] 8.0000-9.0000 sec  6759 MBytes  56697 Mbits/sec
+2025-01-14 20:35:40,629 - INFO - [  1] 9.0000-10.0000 sec  6422 MBytes  53871 Mbits/sec
+2025-01-14 20:35:40,631 - INFO - [  1] 10.0000-11.0000 sec  6014 MBytes  50453 Mbits/sec
+2025-01-14 20:35:40,631 - INFO - [  1] 11.0000-12.0000 sec  5862 MBytes  49173 Mbits/sec
+2025-01-14 20:35:40,632 - INFO - [  1] 12.0000-13.0000 sec  6035 MBytes  50626 Mbits/sec
+2025-01-14 20:35:40,632 - INFO - [  1] 13.0000-14.0000 sec  5936 MBytes  49795 Mbits/sec
+2025-01-14 20:35:40,633 - INFO - [  1] 14.0000-15.0000 sec  5975 MBytes  50125 Mbits/sec
+2025-01-14 20:35:40,633 - INFO - [  1] 15.0000-16.0000 sec  4119 MBytes  34552 Mbits/sec
+2025-01-14 20:35:40,634 - INFO - [  1] 16.0000-17.0000 sec  5338 MBytes  44779 Mbits/sec
+2025-01-14 20:35:40,634 - INFO - [  1] 17.0000-18.0000 sec  4929 MBytes  41347 Mbits/sec
+2025-01-14 20:35:40,635 - INFO - [  1] 18.0000-19.0000 sec  4610 MBytes  38675 Mbits/sec
+2025-01-14 20:35:40,635 - INFO - [  1] 19.0000-20.0000 sec  5221 MBytes  43800 Mbits/sec
+2025-01-14 20:35:40,636 - INFO - [  1] 0.0000-20.0082 sec  117125 MBytes  49106 Mbits/sec
+2025-01-14 20:35:40,636 - INFO - Paths are different after link s1 s3 down command
+2025-01-14 20:35:40,637 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:35:40,637 - INFO - Added Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:35:40,638 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:35:40,638 - INFO - Removed Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:35:40,639 - INFO - Baseline Capacity: 103238.0 Mbytes, Baseline Throughput: 43269.0 Mbits/sec
+2025-01-14 20:35:40,639 - INFO - Failover Capacity: 117125.0 Mbytes, Failover Throughput: 49106.0 Mbits/sec
+2025-01-14 20:35:40,640 - INFO - Capacity Difference: -13887.0 Mbytes, Throughput Difference: -5837.0 Mbits/sec
+2025-01-14 20:35:40,640 - INFO - Fault Tolerance via Reactive Fwd Test Trial 7 Success
+2025-01-14 20:35:40,641 - INFO - Resetting link
+2025-01-14 20:35:40,641 - INFO - Executing Mininet command: link s1 s3 up
+2025-01-14 20:35:40,642 - INFO - Command link s1 s3 up successful
+2025-01-14 20:35:45,647 - INFO - Executing Mininet command: link s1 s2 down
+2025-01-14 20:35:45,648 - INFO - Command link s1 s2 down successful
+2025-01-14 20:35:50,654 - INFO - Executing Mininet command: link s1 s2 up
+2025-01-14 20:35:50,655 - INFO - Command link s1 s2 up successful
+2025-01-14 20:35:59,662 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log &
+2025-01-14 20:35:59,664 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log & successful
+2025-01-14 20:36:24,675 - INFO - Baseline iperf output
+2025-01-14 20:36:24,678 - INFO - ------------------------------------------------------------
+2025-01-14 20:36:24,679 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:36:24,679 - INFO - TCP window size:  578 KByte (default)
+2025-01-14 20:36:24,680 - INFO - ------------------------------------------------------------
+2025-01-14 20:36:24,680 - INFO - [  1] local 10.0.30.2 port 57672 connected with 10.0.10.1 port 5001
+2025-01-14 20:36:24,680 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:36:24,681 - INFO - [  1] 0.0000-1.0000 sec  3819 MBytes  32038 Mbits/sec
+2025-01-14 20:36:24,681 - INFO - [  1] 1.0000-2.0000 sec  5369 MBytes  45042 Mbits/sec
+2025-01-14 20:36:24,682 - INFO - [  1] 2.0000-3.0000 sec  5661 MBytes  47489 Mbits/sec
+2025-01-14 20:36:24,682 - INFO - [  1] 3.0000-4.0000 sec  5582 MBytes  46824 Mbits/sec
+2025-01-14 20:36:24,682 - INFO - [  1] 4.0000-5.0000 sec  5219 MBytes  43780 Mbits/sec
+2025-01-14 20:36:24,683 - INFO - [  1] 5.0000-6.0000 sec  5065 MBytes  42485 Mbits/sec
+2025-01-14 20:36:24,683 - INFO - [  1] 6.0000-7.0000 sec  4381 MBytes  36752 Mbits/sec
+2025-01-14 20:36:24,684 - INFO - [  1] 7.0000-8.0000 sec  4674 MBytes  39206 Mbits/sec
+2025-01-14 20:36:24,684 - INFO - [  1] 8.0000-9.0000 sec  4756 MBytes  39892 Mbits/sec
+2025-01-14 20:36:24,685 - INFO - [  1] 9.0000-10.0000 sec  5064 MBytes  42484 Mbits/sec
+2025-01-14 20:36:24,685 - INFO - [  1] 10.0000-11.0000 sec  6328 MBytes  53079 Mbits/sec
+2025-01-14 20:36:24,685 - INFO - [  1] 11.0000-12.0000 sec  6027 MBytes  50559 Mbits/sec
+2025-01-14 20:36:24,686 - INFO - [  1] 12.0000-13.0000 sec  5975 MBytes  50125 Mbits/sec
+2025-01-14 20:36:24,686 - INFO - [  1] 13.0000-14.0000 sec  5265 MBytes  44169 Mbits/sec
+2025-01-14 20:36:24,687 - INFO - [  1] 14.0000-15.0000 sec  6624 MBytes  55567 Mbits/sec
+2025-01-14 20:36:24,687 - INFO - [  1] 15.0000-16.0000 sec  6516 MBytes  54659 Mbits/sec
+2025-01-14 20:36:24,688 - INFO - [  1] 16.0000-17.0000 sec  6498 MBytes  54512 Mbits/sec
+2025-01-14 20:36:24,688 - INFO - [  1] 17.0000-18.0000 sec  6498 MBytes  54512 Mbits/sec
+2025-01-14 20:36:24,688 - INFO - [  1] 18.0000-19.0000 sec  6404 MBytes  53724 Mbits/sec
+2025-01-14 20:36:24,688 - INFO - [  1] 19.0000-20.0000 sec  6498 MBytes  54505 Mbits/sec
+2025-01-14 20:36:24,689 - INFO - [  1] 0.0000-20.0061 sec  112224 MBytes  47056 Mbits/sec
+2025-01-14 20:36:24,689 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log &
+2025-01-14 20:36:24,689 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log & successful
+2025-01-14 20:36:39,720 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:36:39,721 - INFO - 00:00:00:00:00:01
+2025-01-14 20:36:39,722 - INFO - 00:00:00:00:00:06
+2025-01-14 20:36:39,733 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:36:39,738 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:36:39,739 - INFO - Failover at time 10.0s
+2025-01-14 20:36:39,740 - INFO - Executing Mininet command: link s1 s3 down
+2025-01-14 20:36:39,741 - INFO - Command link s1 s3 down successful
+2025-01-14 20:36:44,759 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:36:44,765 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:36:44,766 - INFO - Failover iperf output
+2025-01-14 20:36:44,770 - INFO - ------------------------------------------------------------
+2025-01-14 20:36:44,770 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:36:44,771 - INFO - TCP window size:  578 KByte (default)
+2025-01-14 20:36:44,771 - INFO - ------------------------------------------------------------
+2025-01-14 20:36:44,772 - INFO - [  1] local 10.0.30.2 port 44612 connected with 10.0.10.1 port 5001
+2025-01-14 20:36:44,772 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:36:44,773 - INFO - [  1] 0.0000-1.0000 sec  6715 MBytes  56328 Mbits/sec
+2025-01-14 20:36:44,773 - INFO - [  1] 1.0000-2.0000 sec  6428 MBytes  53920 Mbits/sec
+2025-01-14 20:36:44,773 - INFO - [  1] 2.0000-3.0000 sec  6748 MBytes  56607 Mbits/sec
+2025-01-14 20:36:44,774 - INFO - [  1] 3.0000-4.0000 sec  6849 MBytes  57457 Mbits/sec
+2025-01-14 20:36:44,774 - INFO - [  1] 4.0000-5.0000 sec  6679 MBytes  56029 Mbits/sec
+2025-01-14 20:36:44,775 - INFO - [  1] 5.0000-6.0000 sec  6922 MBytes  58065 Mbits/sec
+2025-01-14 20:36:44,775 - INFO - [  1] 6.0000-7.0000 sec  6869 MBytes  57618 Mbits/sec
+2025-01-14 20:36:44,776 - INFO - [  1] 7.0000-8.0000 sec  6940 MBytes  58220 Mbits/sec
+2025-01-14 20:36:44,776 - INFO - [  1] 8.0000-9.0000 sec  6939 MBytes  58210 Mbits/sec
+2025-01-14 20:36:44,777 - INFO - [  1] 9.0000-10.0000 sec  6892 MBytes  57818 Mbits/sec
+2025-01-14 20:36:44,778 - INFO - [  1] 10.0000-11.0000 sec  7081 MBytes  59397 Mbits/sec
+2025-01-14 20:36:44,778 - INFO - [  1] 11.0000-12.0000 sec  6734 MBytes  56493 Mbits/sec
+2025-01-14 20:36:44,778 - INFO - [  1] 12.0000-13.0000 sec  7010 MBytes  58803 Mbits/sec
+2025-01-14 20:36:44,778 - INFO - [  1] 13.0000-14.0000 sec  6884 MBytes  57746 Mbits/sec
+2025-01-14 20:36:44,779 - INFO - [  1] 14.0000-15.0000 sec  6945 MBytes  58261 Mbits/sec
+2025-01-14 20:36:44,779 - INFO - [  1] 15.0000-16.0000 sec  3894 MBytes  32665 Mbits/sec
+2025-01-14 20:36:44,780 - INFO - [  1] 16.0000-17.0000 sec  4428 MBytes  37146 Mbits/sec
+2025-01-14 20:36:44,780 - INFO - [  1] 17.0000-18.0000 sec  4711 MBytes  39519 Mbits/sec
+2025-01-14 20:36:44,781 - INFO - [  1] 18.0000-19.0000 sec  4562 MBytes  38271 Mbits/sec
+2025-01-14 20:36:44,781 - INFO - [  1] 19.0000-20.0000 sec  4637 MBytes  38898 Mbits/sec
+2025-01-14 20:36:44,782 - INFO - [  1] 0.0000-20.0021 sec  124868 MBytes  52368 Mbits/sec
+2025-01-14 20:36:44,782 - INFO - Paths are different after link s1 s3 down command
+2025-01-14 20:36:44,782 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:36:44,783 - INFO - Added Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:36:44,783 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:36:44,783 - INFO - Removed Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:36:44,784 - INFO - Baseline Capacity: 112224.0 Mbytes, Baseline Throughput: 47056.0 Mbits/sec
+2025-01-14 20:36:44,785 - INFO - Failover Capacity: 124868.0 Mbytes, Failover Throughput: 52368.0 Mbits/sec
+2025-01-14 20:36:44,785 - INFO - Capacity Difference: -12644.0 Mbytes, Throughput Difference: -5312.0 Mbits/sec
+2025-01-14 20:36:44,786 - INFO - Fault Tolerance via Reactive Fwd Test Trial 8 Success
+2025-01-14 20:36:44,786 - INFO - Resetting link
+2025-01-14 20:36:44,787 - INFO - Executing Mininet command: link s1 s3 up
+2025-01-14 20:36:44,787 - INFO - Command link s1 s3 up successful
+2025-01-14 20:36:49,789 - INFO - Executing Mininet command: link s1 s2 down
+2025-01-14 20:36:49,790 - INFO - Command link s1 s2 down successful
+2025-01-14 20:36:54,795 - INFO - Executing Mininet command: link s1 s2 up
+2025-01-14 20:36:54,796 - INFO - Command link s1 s2 up successful
+2025-01-14 20:37:03,800 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log &
+2025-01-14 20:37:03,800 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log & successful
+2025-01-14 20:37:28,819 - INFO - Baseline iperf output
+2025-01-14 20:37:28,824 - INFO - ------------------------------------------------------------
+2025-01-14 20:37:28,824 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:37:28,825 - INFO - TCP window size:  170 KByte (default)
+2025-01-14 20:37:28,825 - INFO - ------------------------------------------------------------
+2025-01-14 20:37:28,825 - INFO - [  1] local 10.0.30.2 port 45310 connected with 10.0.10.1 port 5001
+2025-01-14 20:37:28,826 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:37:28,827 - INFO - [  1] 0.0000-1.0000 sec  5081 MBytes  42623 Mbits/sec
+2025-01-14 20:37:28,827 - INFO - [  1] 1.0000-2.0000 sec  5588 MBytes  46872 Mbits/sec
+2025-01-14 20:37:28,828 - INFO - [  1] 2.0000-3.0000 sec  5502 MBytes  46156 Mbits/sec
+2025-01-14 20:37:28,828 - INFO - [  1] 3.0000-4.0000 sec  4816 MBytes  40398 Mbits/sec
+2025-01-14 20:37:28,829 - INFO - [  1] 4.0000-5.0000 sec  4246 MBytes  35619 Mbits/sec
+2025-01-14 20:37:28,829 - INFO - [  1] 5.0000-6.0000 sec  4978 MBytes  41762 Mbits/sec
+2025-01-14 20:37:28,829 - INFO - [  1] 6.0000-7.0000 sec  5287 MBytes  44348 Mbits/sec
+2025-01-14 20:37:28,830 - INFO - [  1] 7.0000-8.0000 sec  5082 MBytes  42630 Mbits/sec
+2025-01-14 20:37:28,830 - INFO - [  1] 8.0000-9.0000 sec  6112 MBytes  51274 Mbits/sec
+2025-01-14 20:37:28,830 - INFO - [  1] 9.0000-10.0000 sec  5997 MBytes  50304 Mbits/sec
+2025-01-14 20:37:28,830 - INFO - [  1] 10.0000-11.0000 sec  5641 MBytes  47319 Mbits/sec
+2025-01-14 20:37:28,831 - INFO - [  1] 11.0000-12.0000 sec  5860 MBytes  49160 Mbits/sec
+2025-01-14 20:37:28,831 - INFO - [  1] 12.0000-13.0000 sec  6531 MBytes  54785 Mbits/sec
+2025-01-14 20:37:28,832 - INFO - [  1] 13.0000-14.0000 sec  6452 MBytes  54120 Mbits/sec
+2025-01-14 20:37:28,833 - INFO - [  1] 14.0000-15.0000 sec  6776 MBytes  56837 Mbits/sec
+2025-01-14 20:37:28,833 - INFO - [  1] 15.0000-16.0000 sec  6469 MBytes  54268 Mbits/sec
+2025-01-14 20:37:28,833 - INFO - [  1] 16.0000-17.0000 sec  6891 MBytes  57803 Mbits/sec
+2025-01-14 20:37:28,834 - INFO - [  1] 17.0000-18.0000 sec  6691 MBytes  56128 Mbits/sec
+2025-01-14 20:37:28,834 - INFO - [  1] 18.0000-19.0000 sec  6654 MBytes  55816 Mbits/sec
+2025-01-14 20:37:28,834 - INFO - [  1] 19.0000-20.0000 sec  6681 MBytes  56045 Mbits/sec
+2025-01-14 20:37:28,835 - INFO - [  1] 0.0000-20.0105 sec  117334 MBytes  49188 Mbits/sec
+2025-01-14 20:37:28,836 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log &
+2025-01-14 20:37:28,836 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log & successful
+2025-01-14 20:37:43,869 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:37:43,869 - INFO - 00:00:00:00:00:01
+2025-01-14 20:37:43,869 - INFO - 00:00:00:00:00:06
+2025-01-14 20:37:43,879 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:37:43,890 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:37:43,891 - INFO - Failover at time 10.0s
+2025-01-14 20:37:43,893 - INFO - Executing Mininet command: link s1 s3 down
+2025-01-14 20:37:43,894 - INFO - Command link s1 s3 down successful
+2025-01-14 20:37:48,904 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:37:48,910 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:37:48,911 - INFO - Failover iperf output
+2025-01-14 20:37:48,914 - INFO - ------------------------------------------------------------
+2025-01-14 20:37:48,914 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:37:48,914 - INFO - TCP window size:  170 KByte (default)
+2025-01-14 20:37:48,915 - INFO - ------------------------------------------------------------
+2025-01-14 20:37:48,915 - INFO - [  1] local 10.0.30.2 port 35340 connected with 10.0.10.1 port 5001
+2025-01-14 20:37:48,915 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:37:48,916 - INFO - [  1] 0.0000-1.0000 sec  5660 MBytes  47477 Mbits/sec
+2025-01-14 20:37:48,916 - INFO - [  1] 1.0000-2.0000 sec  5920 MBytes  49665 Mbits/sec
+2025-01-14 20:37:48,916 - INFO - [  1] 2.0000-3.0000 sec  5870 MBytes  49245 Mbits/sec
+2025-01-14 20:37:48,916 - INFO - [  1] 3.0000-4.0000 sec  5818 MBytes  48809 Mbits/sec
+2025-01-14 20:37:48,916 - INFO - [  1] 4.0000-5.0000 sec  5748 MBytes  48214 Mbits/sec
+2025-01-14 20:37:48,917 - INFO - [  1] 5.0000-6.0000 sec  5702 MBytes  47834 Mbits/sec
+2025-01-14 20:37:48,917 - INFO - [  1] 6.0000-7.0000 sec  4823 MBytes  40461 Mbits/sec
+2025-01-14 20:37:48,917 - INFO - [  1] 7.0000-8.0000 sec  4743 MBytes  39790 Mbits/sec
+2025-01-14 20:37:48,918 - INFO - [  1] 8.0000-9.0000 sec  4683 MBytes  39283 Mbits/sec
+2025-01-14 20:37:48,918 - INFO - [  1] 9.0000-10.0000 sec  4872 MBytes  40867 Mbits/sec
+2025-01-14 20:37:48,918 - INFO - [  1] 10.0000-11.0000 sec  4659 MBytes  39083 Mbits/sec
+2025-01-14 20:37:48,919 - INFO - [  1] 11.0000-12.0000 sec  4583 MBytes  38442 Mbits/sec
+2025-01-14 20:37:48,920 - INFO - [  1] 12.0000-13.0000 sec  4631 MBytes  38851 Mbits/sec
+2025-01-14 20:37:48,921 - INFO - [  1] 13.0000-14.0000 sec  5375 MBytes  45088 Mbits/sec
+2025-01-14 20:37:48,922 - INFO - [  1] 14.0000-15.0000 sec  5934 MBytes  49779 Mbits/sec
+2025-01-14 20:37:48,922 - INFO - [  1] 15.0000-16.0000 sec  3701 MBytes  31047 Mbits/sec
+2025-01-14 20:37:48,922 - INFO - [  1] 16.0000-17.0000 sec  3646 MBytes  30582 Mbits/sec
+2025-01-14 20:37:48,923 - INFO - [  1] 17.0000-18.0000 sec  4906 MBytes  41157 Mbits/sec
+2025-01-14 20:37:48,923 - INFO - [  1] 18.0000-19.0000 sec  4965 MBytes  41649 Mbits/sec
+2025-01-14 20:37:48,923 - INFO - [  1] 19.0000-20.0000 sec  5062 MBytes  42459 Mbits/sec
+2025-01-14 20:37:48,923 - INFO - [  1] 0.0000-20.0052 sec  101302 MBytes  42478 Mbits/sec
+2025-01-14 20:37:48,923 - INFO - Paths are different after link s1 s3 down command
+2025-01-14 20:37:48,924 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:37:48,924 - INFO - Added Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:37:48,924 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:37:48,924 - INFO - Removed Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:37:48,925 - INFO - Baseline Capacity: 117334.0 Mbytes, Baseline Throughput: 49188.0 Mbits/sec
+2025-01-14 20:37:48,925 - INFO - Failover Capacity: 101302.0 Mbytes, Failover Throughput: 42478.0 Mbits/sec
+2025-01-14 20:37:48,925 - INFO - Capacity Difference: 16032.0 Mbytes, Throughput Difference: 6710.0 Mbits/sec
+2025-01-14 20:37:48,926 - INFO - Fault Tolerance via Reactive Fwd Test Trial 9 Success
+2025-01-14 20:37:48,926 - INFO - Resetting link
+2025-01-14 20:37:48,926 - INFO - Executing Mininet command: link s1 s3 up
+2025-01-14 20:37:48,926 - INFO - Command link s1 s3 up successful
+2025-01-14 20:37:53,931 - INFO - Executing Mininet command: link s1 s2 down
+2025-01-14 20:37:53,932 - INFO - Command link s1 s2 down successful
+2025-01-14 20:37:58,937 - INFO - Executing Mininet command: link s1 s2 up
+2025-01-14 20:37:58,938 - INFO - Command link s1 s2 up successful
+2025-01-14 20:38:07,948 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log &
+2025-01-14 20:38:07,948 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log & successful
+2025-01-14 20:38:32,975 - INFO - Baseline iperf output
+2025-01-14 20:38:32,979 - INFO - ------------------------------------------------------------
+2025-01-14 20:38:32,979 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:38:32,980 - INFO - TCP window size:  578 KByte (default)
+2025-01-14 20:38:32,980 - INFO - ------------------------------------------------------------
+2025-01-14 20:38:32,981 - INFO - [  1] local 10.0.30.2 port 38842 connected with 10.0.10.1 port 5001
+2025-01-14 20:38:32,981 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:38:32,981 - INFO - [  1] 0.0000-1.0000 sec  5245 MBytes  44000 Mbits/sec
+2025-01-14 20:38:32,982 - INFO - [  1] 1.0000-2.0000 sec  4572 MBytes  38357 Mbits/sec
+2025-01-14 20:38:32,982 - INFO - [  1] 2.0000-3.0000 sec  4923 MBytes  41297 Mbits/sec
+2025-01-14 20:38:32,982 - INFO - [  1] 3.0000-4.0000 sec  4864 MBytes  40799 Mbits/sec
+2025-01-14 20:38:32,983 - INFO - [  1] 4.0000-5.0000 sec  5797 MBytes  48626 Mbits/sec
+2025-01-14 20:38:32,983 - INFO - [  1] 5.0000-6.0000 sec  5733 MBytes  48089 Mbits/sec
+2025-01-14 20:38:32,983 - INFO - [  1] 6.0000-7.0000 sec  4950 MBytes  41522 Mbits/sec
+2025-01-14 20:38:32,984 - INFO - [  1] 7.0000-8.0000 sec  4478 MBytes  37561 Mbits/sec
+2025-01-14 20:38:32,984 - INFO - [  1] 8.0000-9.0000 sec  3605 MBytes  30242 Mbits/sec
+2025-01-14 20:38:32,984 - INFO - [  1] 9.0000-10.0000 sec  5680 MBytes  47651 Mbits/sec
+2025-01-14 20:38:32,985 - INFO - [  1] 10.0000-11.0000 sec  6278 MBytes  52661 Mbits/sec
+2025-01-14 20:38:32,985 - INFO - [  1] 11.0000-12.0000 sec  4672 MBytes  39188 Mbits/sec
+2025-01-14 20:38:32,985 - INFO - [  1] 12.0000-13.0000 sec  5507 MBytes  46193 Mbits/sec
+2025-01-14 20:38:32,986 - INFO - [  1] 13.0000-14.0000 sec  6678 MBytes  56023 Mbits/sec
+2025-01-14 20:38:32,986 - INFO - [  1] 14.0000-15.0000 sec  6696 MBytes  56168 Mbits/sec
+2025-01-14 20:38:32,986 - INFO - [  1] 15.0000-16.0000 sec  6499 MBytes  54519 Mbits/sec
+2025-01-14 20:38:32,986 - INFO - [  1] 16.0000-17.0000 sec  6908 MBytes  57947 Mbits/sec
+2025-01-14 20:38:32,987 - INFO - [  1] 17.0000-18.0000 sec  6740 MBytes  56541 Mbits/sec
+2025-01-14 20:38:32,987 - INFO - [  1] 18.0000-19.0000 sec  6704 MBytes  56236 Mbits/sec
+2025-01-14 20:38:32,987 - INFO - [  1] 19.0000-20.0000 sec  6214 MBytes  52131 Mbits/sec
+2025-01-14 20:38:32,987 - INFO - [  1] 0.0000-20.0120 sec  112743 MBytes  47259 Mbits/sec
+2025-01-14 20:38:32,988 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log &
+2025-01-14 20:38:32,988 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log & successful
+2025-01-14 20:38:48,009 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:38:48,010 - INFO - 00:00:00:00:00:01
+2025-01-14 20:38:48,011 - INFO - 00:00:00:00:00:06
+2025-01-14 20:38:48,021 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:38:48,029 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:38:48,030 - INFO - Failover at time 10.0s
+2025-01-14 20:38:48,030 - INFO - Executing Mininet command: link s1 s3 down
+2025-01-14 20:38:48,031 - INFO - Command link s1 s3 down successful
+2025-01-14 20:38:53,041 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:38:53,047 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:38:53,047 - INFO - Failover iperf output
+2025-01-14 20:38:53,051 - INFO - ------------------------------------------------------------
+2025-01-14 20:38:53,052 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:38:53,052 - INFO - TCP window size:  170 KByte (default)
+2025-01-14 20:38:53,053 - INFO - ------------------------------------------------------------
+2025-01-14 20:38:53,053 - INFO - [  1] local 10.0.30.2 port 54230 connected with 10.0.10.1 port 5001
+2025-01-14 20:38:53,054 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:38:53,055 - INFO - [  1] 0.0000-1.0000 sec  5286 MBytes  44344 Mbits/sec
+2025-01-14 20:38:53,055 - INFO - [  1] 1.0000-2.0000 sec  6107 MBytes  51226 Mbits/sec
+2025-01-14 20:38:53,055 - INFO - [  1] 2.0000-3.0000 sec  6479 MBytes  54350 Mbits/sec
+2025-01-14 20:38:53,056 - INFO - [  1] 3.0000-4.0000 sec  6398 MBytes  53675 Mbits/sec
+2025-01-14 20:38:53,056 - INFO - [  1] 4.0000-5.0000 sec  6356 MBytes  53320 Mbits/sec
+2025-01-14 20:38:53,056 - INFO - [  1] 5.0000-6.0000 sec  6745 MBytes  56584 Mbits/sec
+2025-01-14 20:38:53,057 - INFO - [  1] 6.0000-7.0000 sec  6487 MBytes  54417 Mbits/sec
+2025-01-14 20:38:53,057 - INFO - [  1] 7.0000-8.0000 sec  6770 MBytes  56793 Mbits/sec
+2025-01-14 20:38:53,057 - INFO - [  1] 8.0000-9.0000 sec  6614 MBytes  55480 Mbits/sec
+2025-01-14 20:38:53,058 - INFO - [  1] 9.0000-10.0000 sec  6688 MBytes  56102 Mbits/sec
+2025-01-14 20:38:53,062 - INFO - [  1] 10.0000-11.0000 sec  6418 MBytes  53839 Mbits/sec
+2025-01-14 20:38:53,063 - INFO - [  1] 11.0000-12.0000 sec  5944 MBytes  49861 Mbits/sec
+2025-01-14 20:38:53,063 - INFO - [  1] 12.0000-13.0000 sec  6744 MBytes  56577 Mbits/sec
+2025-01-14 20:38:53,064 - INFO - [  1] 13.0000-14.0000 sec  6681 MBytes  56042 Mbits/sec
+2025-01-14 20:38:53,065 - INFO - [  1] 14.0000-15.0000 sec  6778 MBytes  56855 Mbits/sec
+2025-01-14 20:38:53,065 - INFO - [  1] 15.0000-16.0000 sec  3631 MBytes  30458 Mbits/sec
+2025-01-14 20:38:53,066 - INFO - [  1] 16.0000-17.0000 sec  3876 MBytes  32511 Mbits/sec
+2025-01-14 20:38:53,066 - INFO - [  1] 17.0000-18.0000 sec  4247 MBytes  35629 Mbits/sec
+2025-01-14 20:38:53,066 - INFO - [  1] 18.0000-19.0000 sec  4297 MBytes  36044 Mbits/sec
+2025-01-14 20:38:53,066 - INFO - [  1] 19.0000-20.0000 sec  4401 MBytes  36920 Mbits/sec
+2025-01-14 20:38:53,067 - INFO - [  1] 0.0000-20.0086 sec  116948 MBytes  49030 Mbits/sec
+2025-01-14 20:38:53,067 - INFO - Paths are different after link s1 s3 down command
+2025-01-14 20:38:53,067 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:38:53,067 - INFO - Added Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:38:53,068 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:38:53,068 - INFO - Removed Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:38:53,069 - INFO - Baseline Capacity: 112743.0 Mbytes, Baseline Throughput: 47259.0 Mbits/sec
+2025-01-14 20:38:53,069 - INFO - Failover Capacity: 116948.0 Mbytes, Failover Throughput: 49030.0 Mbits/sec
+2025-01-14 20:38:53,069 - INFO - Capacity Difference: -4205.0 Mbytes, Throughput Difference: -1771.0 Mbits/sec
+2025-01-14 20:38:53,070 - INFO - Fault Tolerance via Reactive Fwd Test Trial 10 Success
+2025-01-14 20:38:53,070 - INFO - Resetting link
+2025-01-14 20:38:53,070 - INFO - Executing Mininet command: link s1 s3 up
+2025-01-14 20:38:53,071 - INFO - Command link s1 s3 up successful
+2025-01-14 20:38:58,073 - INFO - Executing Mininet command: link s1 s2 down
+2025-01-14 20:38:58,073 - INFO - Command link s1 s2 down successful
+2025-01-14 20:39:03,076 - INFO - Executing Mininet command: link s1 s2 up
+2025-01-14 20:39:03,077 - INFO - Command link s1 s2 up successful
+2025-01-14 20:39:12,087 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log &
+2025-01-14 20:39:12,087 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_baseline.log & successful
+2025-01-14 20:39:37,100 - INFO - Baseline iperf output
+2025-01-14 20:39:37,103 - INFO - ------------------------------------------------------------
+2025-01-14 20:39:37,103 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:39:37,104 - INFO - TCP window size:  170 KByte (default)
+2025-01-14 20:39:37,104 - INFO - ------------------------------------------------------------
+2025-01-14 20:39:37,104 - INFO - [  1] local 10.0.30.2 port 44724 connected with 10.0.10.1 port 5001
+2025-01-14 20:39:37,105 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:39:37,105 - INFO - [  1] 0.0000-1.0000 sec  4243 MBytes  35593 Mbits/sec
+2025-01-14 20:39:37,105 - INFO - [  1] 1.0000-2.0000 sec  5058 MBytes  42425 Mbits/sec
+2025-01-14 20:39:37,105 - INFO - [  1] 2.0000-3.0000 sec  5535 MBytes  46431 Mbits/sec
+2025-01-14 20:39:37,106 - INFO - [  1] 3.0000-4.0000 sec  5325 MBytes  44672 Mbits/sec
+2025-01-14 20:39:37,106 - INFO - [  1] 4.0000-5.0000 sec  5605 MBytes  47016 Mbits/sec
+2025-01-14 20:39:37,106 - INFO - [  1] 5.0000-6.0000 sec  5305 MBytes  44503 Mbits/sec
+2025-01-14 20:39:37,106 - INFO - [  1] 6.0000-7.0000 sec  5476 MBytes  45938 Mbits/sec
+2025-01-14 20:39:37,107 - INFO - [  1] 7.0000-8.0000 sec  5560 MBytes  46642 Mbits/sec
+2025-01-14 20:39:37,107 - INFO - [  1] 8.0000-9.0000 sec  4810 MBytes  40345 Mbits/sec
+2025-01-14 20:39:37,107 - INFO - [  1] 9.0000-10.0000 sec  5587 MBytes  46870 Mbits/sec
+2025-01-14 20:39:37,108 - INFO - [  1] 10.0000-11.0000 sec  5468 MBytes  45870 Mbits/sec
+2025-01-14 20:39:37,108 - INFO - [  1] 11.0000-12.0000 sec  5790 MBytes  48569 Mbits/sec
+2025-01-14 20:39:37,108 - INFO - [  1] 12.0000-13.0000 sec  6241 MBytes  52356 Mbits/sec
+2025-01-14 20:39:37,108 - INFO - [  1] 13.0000-14.0000 sec  6438 MBytes  54009 Mbits/sec
+2025-01-14 20:39:37,109 - INFO - [  1] 14.0000-15.0000 sec  6167 MBytes  51734 Mbits/sec
+2025-01-14 20:39:37,109 - INFO - [  1] 15.0000-16.0000 sec  5802 MBytes  48672 Mbits/sec
+2025-01-14 20:39:37,109 - INFO - [  1] 16.0000-17.0000 sec  6578 MBytes  55178 Mbits/sec
+2025-01-14 20:39:37,110 - INFO - [  1] 17.0000-18.0000 sec  6288 MBytes  52749 Mbits/sec
+2025-01-14 20:39:37,110 - INFO - [  1] 18.0000-19.0000 sec  6443 MBytes  54047 Mbits/sec
+2025-01-14 20:39:37,110 - INFO - [  1] 19.0000-20.0000 sec  6235 MBytes  52302 Mbits/sec
+2025-01-14 20:39:37,110 - INFO - [  1] 0.0000-20.0058 sec  113955 MBytes  47782 Mbits/sec
+2025-01-14 20:39:37,111 - INFO - Executing Mininet command: h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log &
+2025-01-14 20:39:37,111 - INFO - Command h6 iperf -c 10.0.10.1 -t 20 -i 1 -f mM > iperf/iperf_fwd_failover.log & successful
+2025-01-14 20:39:52,131 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2025-01-14 20:39:52,134 - INFO - 00:00:00:00:00:01
+2025-01-14 20:39:52,135 - INFO - 00:00:00:00:00:06
+2025-01-14 20:39:52,156 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:39:52,164 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:39:52,166 - INFO - Failover at time 10.0s
+2025-01-14 20:39:52,166 - INFO - Executing Mininet command: link s1 s3 down
+2025-01-14 20:39:52,167 - INFO - Command link s1 s3 down successful
+2025-01-14 20:39:57,177 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2025-01-14 20:39:57,183 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']
+2025-01-14 20:39:57,183 - INFO - Failover iperf output
+2025-01-14 20:39:57,186 - INFO - ------------------------------------------------------------
+2025-01-14 20:39:57,187 - INFO - Client connecting to 10.0.10.1, TCP port 5001
+2025-01-14 20:39:57,187 - INFO - TCP window size:  842 KByte (default)
+2025-01-14 20:39:57,188 - INFO - ------------------------------------------------------------
+2025-01-14 20:39:57,188 - INFO - [  1] local 10.0.30.2 port 56188 connected with 10.0.10.1 port 5001
+2025-01-14 20:39:57,189 - INFO - [ ID] Interval       Transfer     Bandwidth
+2025-01-14 20:39:57,189 - INFO - [  1] 0.0000-1.0000 sec  6631 MBytes  55625 Mbits/sec
+2025-01-14 20:39:57,189 - INFO - [  1] 1.0000-2.0000 sec  6712 MBytes  56303 Mbits/sec
+2025-01-14 20:39:57,189 - INFO - [  1] 2.0000-3.0000 sec  6680 MBytes  56032 Mbits/sec
+2025-01-14 20:39:57,190 - INFO - [  1] 3.0000-4.0000 sec  6666 MBytes  55914 Mbits/sec
+2025-01-14 20:39:57,190 - INFO - [  1] 4.0000-5.0000 sec  6702 MBytes  56221 Mbits/sec
+2025-01-14 20:39:57,190 - INFO - [  1] 5.0000-6.0000 sec  6702 MBytes  56216 Mbits/sec
+2025-01-14 20:39:57,190 - INFO - [  1] 6.0000-7.0000 sec  6956 MBytes  58354 Mbits/sec
+2025-01-14 20:39:57,191 - INFO - [  1] 7.0000-8.0000 sec  6883 MBytes  57738 Mbits/sec
+2025-01-14 20:39:57,191 - INFO - [  1] 8.0000-9.0000 sec  6931 MBytes  58142 Mbits/sec
+2025-01-14 20:39:57,192 - INFO - [  1] 9.0000-10.0000 sec  6980 MBytes  58556 Mbits/sec
+2025-01-14 20:39:57,192 - INFO - [  1] 10.0000-11.0000 sec  6904 MBytes  57911 Mbits/sec
+2025-01-14 20:39:57,192 - INFO - [  1] 11.0000-12.0000 sec  6808 MBytes  57106 Mbits/sec
+2025-01-14 20:39:57,193 - INFO - [  1] 12.0000-13.0000 sec  6404 MBytes  53719 Mbits/sec
+2025-01-14 20:39:57,193 - INFO - [  1] 13.0000-14.0000 sec  6144 MBytes  51538 Mbits/sec
+2025-01-14 20:39:57,193 - INFO - [  1] 14.0000-15.0000 sec  5814 MBytes  48775 Mbits/sec
+2025-01-14 20:39:57,194 - INFO - [  1] 15.0000-16.0000 sec  4424 MBytes  37110 Mbits/sec
+2025-01-14 20:39:57,194 - INFO - [  1] 16.0000-17.0000 sec  5564 MBytes  46672 Mbits/sec
+2025-01-14 20:39:57,194 - INFO - [  1] 17.0000-18.0000 sec  5352 MBytes  44896 Mbits/sec
+2025-01-14 20:39:57,195 - INFO - [  1] 18.0000-19.0000 sec  5522 MBytes  46323 Mbits/sec
+2025-01-14 20:39:57,195 - INFO - [  1] 19.0000-20.0000 sec  5240 MBytes  43958 Mbits/sec
+2025-01-14 20:39:57,196 - INFO - [  1] 0.0000-20.0013 sec  126017 MBytes  52852 Mbits/sec
+2025-01-14 20:39:57,196 - INFO - Paths are different after link s1 s3 down command
+2025-01-14 20:39:57,196 - INFO - Added Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:39:57,197 - INFO - Added Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000002', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:39:57,197 - INFO - Removed Paths: [['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']]
+2025-01-14 20:39:57,198 - INFO - Removed Paths: [['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']]
+2025-01-14 20:39:57,198 - INFO - Baseline Capacity: 113955.0 Mbytes, Baseline Throughput: 47782.0 Mbits/sec
+2025-01-14 20:39:57,198 - INFO - Failover Capacity: 126017.0 Mbytes, Failover Throughput: 52852.0 Mbits/sec
+2025-01-14 20:39:57,199 - INFO - Capacity Difference: -12062.0 Mbytes, Throughput Difference: -5070.0 Mbits/sec
+2025-01-14 20:39:57,200 - INFO - Fault Tolerance via Reactive Fwd Test Trial 11 Success
+2025-01-14 20:39:57,201 - INFO - Resetting link
+2025-01-14 20:39:57,202 - INFO - Executing Mininet command: link s1 s3 up
+2025-01-14 20:39:57,202 - INFO - Command link s1 s3 up successful
+2025-01-14 20:40:02,204 - INFO - Executing Mininet command: link s1 s2 down
+2025-01-14 20:40:02,205 - INFO - Command link s1 s2 down successful

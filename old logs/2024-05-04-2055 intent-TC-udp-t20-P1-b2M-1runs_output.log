@@ -1,0 +1,6 @@
+Baseline Output:
+[  5]   0.00-20.00  sec  4.77 MBytes  2.00 Mbits/sec  0.000 ms  0/3453 (0%)  sender
+[  5]   0.00-20.49  sec  4.77 MBytes  1.95 Mbits/sec  0.415 ms  0/3452 (0%)  receiver
+Failover Output:
+[  5]   0.00-20.00  sec  4.77 MBytes  2.00 Mbits/sec  0.000 ms  0/3453 (0%)  sender
+[  5]   0.00-20.09  sec  4.75 MBytes  1.98 Mbits/sec  0.704 ms  12/3453 (0.35%)  receiver

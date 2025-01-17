@@ -1,0 +1,25 @@
+sh echo "Deleting flow rules from s1, s2, and s3"
+sh ovs-ofctl -O OpenFlow14 del-flows s1
+sh ovs-ofctl -O OpenFlow14 del-flows s2
+sh ovs-ofctl -O OpenFlow14 del-flows s3
+sh echo "Delete old meters from s1"
+sh ovs-ofctl -O OpenFlow14 del-meter s1
+sh echo "Adding meter1 on s1 wtih 10000kbps drop"
+sh ovs-ofctl -O OpenFlow14 add-meter s1 "meter=1,kbps,bands=type=drop,rate=10000"
+sh ovs-ofctl -O OpenFlow14 add-meter s3 "meter=2,kbps,bands=type=drop,rate=10000"
+sh echo "Adding flowrules between h1 and h6 using s1 and s3"
+sh ovs-ofctl -O OpenFlow14 add-flow s1 in_port=1,actions=meter:1,output:4
+sh ovs-ofctl -O OpenFlow14 add-flow s1 in_port=4,actions=meter:1,output:1
+sh ovs-ofctl -O OpenFlow14 add-flow s3 in_port=3,actions=meter:2,output:2
+sh ovs-ofctl -O OpenFlow14 add-flow s3 in_port=2,actions=meter:2,output:3
+sh echo "Dump-flows s1"
+sh ovs-ofctl -O OpenFlow14 dump-flows s1
+sh echo "Dump-flows s2"
+sh ovs-ofctl -O OpenFlow14 dump-flows s2
+sh echo "Dump-flows s3"
+sh ovs-ofctl -O OpenFlow14 dump-flows s3
+sh echo "\nAdded flows between h1 and h6 with a 10Mbps meter"
+h1 iperf3 -s &
+h6 iperf3 -c 10.0.10.1 -b 0
+h6 iperf3 -c 10.0.10.1 -u -b 15Mbps
+

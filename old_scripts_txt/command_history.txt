@@ -1,0 +1,61 @@
+http://172.17.0.1:8181/onos/v1/docs/#/links
+
+sudo docker start onos
+
+ssh -p 8101 onos@172.17.0.1
+
+sudo mn --custom ~/mininet/custom/topokeo.py --topo topokeo --switch ovs,protocols=OpenFlow14 --controller=remote,ip=172.17.0.2 --mac
+
+
+#### onos@root >
+apps -s -a
+
+
+#### Multi-Point to Single-Point Intents
+
+sudo mn --switch ovs,protocols=OpenFlow14 --controller=remote,ip=172.17.0.2 --mac --topo=linear,2,3
+
+add-multi-to-single-intent -t IPV4 --ipSrc 10.0.0.0/24 --ipDst 10.0.0.0/24 of:0000000000000001/1 of:0000000000000001/2 of:0000000000000001/3 of:0000000000000001/4
+
+add-multi-to-single-intent -t IPV4 --ipSrc 10.0.0.0/24 --ipDst 10.0.0.0/24 of:0000000000000002/1 of:0000000000000002/2 of:0000000000000002/3 of:0000000000000002/4
+
+add-single-to-multi-intent -t IPV4 --ipSrc 10.0.0.0/24 --ipDst 10.0.0.0/24 of:0000000000000001/4 of:0000000000000001/1 of:0000000000000001/2 of:0000000000000001/3
+
+add-single-to-multi-intent -t IPV4 --ipSrc 10.0.0.0/24 --ipDst 10.0.0.0/24 of:0000000000000002/4 of:0000000000000002/1 of:0000000000000002/2 of:0000000000000002/3
+
+#### VLAN Intro
+sudo mn --custom ~/mininet/custom/topokeo.py --topo topokeo --switch ovs,protocols=OpenFlow14 --controller=remote,ip=172.17.0.2 --mac --custom vlanhost.py --host vlan,vlan=200
+
+add-host-intent -v 200 00:00:00:00:00:01/200 00:00:00:00:00:02/200
+
+### How to get a set of hosts on a vlan all to be able to talk to each other?
+
+### created custom topology of linear,2,3 with vlans 100 and 200
+sudo mn --switch ovs,protocols=OpenFlow14 --controller=remote,ip=172.17.0.2 --mac --custom mininet/custom/linear-2sw-3host-vlan.py --topo=custom_vlan
+
+### With reactive forwarding on, can only talk within vlans. But vlans aren't in flow rules so why is this a limitation?
+
+#### Adding/Deleteing Default Gateway on a Host
+xterm h1
+ip route add default via 10.0.10.2 dev h1-eth0
+ip route
+ip route del default
+
+#### Mininet Link Delay and BW
+sudo mn --switch ovs,protocols=OpenFlow14 --controller=remote,ip=172.17.0.2 --mac --custom ../../media/sf_onos-tacnet/custom/tacnet.py --topo=DFGW --link tc,bw=1,delay=10ms
+
+#### Curl Command
+curl -X GET -u onos:rocks --header 'Accept: application/json' 'http://172.17.0.1:8181/onos/v1/network/configuration' | jq
+
+curl -X GET -u onos:rocks --header 'Accept: application/json' 'http://172.17.0.1:8181/onos/v1/flows' | jq
+
+curl -X GET -u onos:rocks --header 'Accept: application/json' 'http://172.17.0.1:8181/onos/v1/hosts' | jq
+
+sh ovs-vsctl set interface s1-eth1 ingress_policing_rate=10000
+sh ovs-vsctl set interface s1-eth1 ingress_policing_burst=1000
+
+curl -X GET -u onos:rocks --header 'Accept: application/json' 'http://172.17.0.1:8181/onos/v1/flows/application/org.onosproject.fwd' | jq
+
+curl -X GET -u onos:rocks --header 'Accept: application/json' 'http://172.17.0.1:8181/onos/v1/flows/application/org.onosproject.fwd' | grep -E '"deviceId"|"treatment"|"selector"' | jq -c '.flows[] | { deviceId, treatment: [.treatment.instructions[]], selector: [.selector.criteria[]] }'
+
+curl -X GET --header 'Accept: application/json' 'http://172.17.0.1:8181/onos/v1/paths/00%3A00%3A00%3A00%3A00%3A01%2FNone/00%3A00%3A00%3A00%3A00%3A03%2FNone'

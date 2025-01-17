@@ -1,0 +1,7 @@
+2024-08-13 08:48:56,342 - INFO - All meters purged successfully.
+2024-08-13 08:48:56,359 - ERROR - Error while posting meters: 400
+2024-08-13 08:48:56,372 - ERROR - Error while posting meters: 400
+2024-08-13 08:48:56,382 - ERROR - Error while posting meters: 400
+2024-08-13 08:48:56,393 - INFO - All flow rules purged successfully for application keo.
+2024-08-13 08:48:56,419 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 4}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 2}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.20.1/32'}]}}]}
+2024-08-13 08:48:56,428 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 2}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 4}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.20.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}]}}]}

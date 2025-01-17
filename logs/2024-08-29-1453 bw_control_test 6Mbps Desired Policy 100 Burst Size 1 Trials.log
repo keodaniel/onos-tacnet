@@ -1,0 +1,135 @@
+2024-08-29 14:53:07,615 - INFO - Starting Bandwidth Control test at 2024-08-29-1453
+2024-08-29 14:53:07,791 - INFO - ONOS Docker container is already running.
+2024-08-29 14:53:09,024 - INFO - Starting Mininet topology: TC
+2024-08-29 14:53:10,213 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(s1, s2) (10.00Mbit 10ms delay) (10.00Mbit 10ms delay) (s1, s3) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(10.00Mbit 10ms delay) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (10.00Mbit 10ms delay) (5.00Mbit 10ms delay) 
+*** Starting CLI:
+2024-08-29 14:53:10,290 - INFO - Meter 4 on device of:0000000000000001 deleted successfully.
+2024-08-29 14:53:10,310 - INFO - Meter 5 on device of:0000000000000002 deleted successfully.
+2024-08-29 14:53:10,327 - INFO - Meter 4 on device of:0000000000000002 deleted successfully.
+2024-08-29 14:53:15,377 - INFO - All meters purged successfully.
+2024-08-29 14:53:15,390 - INFO - All flow rules purged successfully for application keo.
+2024-08-29 14:53:15,424 - INFO - Meter {'deviceId': 'of:0000000000000001', 'unit': 'KB_PER_SEC', 'burst': True, 'bands': [{'type': 'DROP', 'rate': 6000, 'burstSize': 100}]} posted successfully on device of:0000000000000001
+2024-08-29 14:53:15,455 - INFO - Meter {'deviceId': 'of:0000000000000002', 'unit': 'KB_PER_SEC', 'burst': True, 'bands': [{'type': 'DROP', 'rate': 3000, 'burstSize': 100}]} posted successfully on device of:0000000000000002
+2024-08-29 14:53:15,472 - INFO - Meter {'deviceId': 'of:0000000000000002', 'unit': 'KB_PER_SEC', 'burst': True, 'bands': [{'type': 'DROP', 'rate': 3000, 'burstSize': 100}]} posted successfully on device of:0000000000000002
+2024-08-29 14:53:15,496 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 4}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 2}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.20.1/32'}]}}]}
+2024-08-29 14:53:15,506 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 2}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 4}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.20.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}]}}]}
+2024-08-29 14:53:15,519 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000002', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 1}, {'type': 'METER', 'meterId': '5'}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 4}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.20.1/32'}]}}]}
+2024-08-29 14:53:15,529 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000002', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 4}, {'type': 'METER', 'meterId': '5'}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 1}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.20.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}]}}]}
+2024-08-29 14:53:15,543 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 3}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 2}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.20.1/32'}, {'type': 'IP_PROTO', 'protocol': 17}]}}]}
+2024-08-29 14:53:15,555 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 2}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 3}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.20.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}, {'type': 'IP_PROTO', 'protocol': 17}]}}]}
+2024-08-29 14:53:15,564 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000001', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 3}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 4}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.20.1/32'}, {'type': 'IP_PROTO', 'protocol': 17}]}}]}
+2024-08-29 14:53:15,573 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000001', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 4}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 3}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.20.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}, {'type': 'IP_PROTO', 'protocol': 17}]}}]}
+2024-08-29 14:53:15,583 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000002', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 1}, {'type': 'METER', 'meterId': '4'}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 3}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.20.1/32'}, {'type': 'IP_PROTO', 'protocol': 17}]}}]}
+2024-08-29 14:53:15,599 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000002', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 3}, {'type': 'METER', 'meterId': '4'}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 1}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.20.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}, {'type': 'IP_PROTO', 'protocol': 17}]}}]}
+2024-08-29 14:53:15,609 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 3}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 2}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.10.1/32'}]}}]}
+2024-08-29 14:53:15,618 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000003', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 2}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 3}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.10.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}]}}]}
+2024-08-29 14:53:15,630 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000001', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 1}, {'type': 'METER', 'meterId': '4'}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 4}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.30.2/32'}, {'type': 'IPV4_DST', 'ip': '10.0.10.1/32'}]}}]}
+2024-08-29 14:53:15,641 - INFO - Flow rules posted successfully for flow rule {'flows': [{'priority': 10, 'timeout': 0, 'isPermanent': 'true', 'deviceId': 'of:0000000000000001', 'treatment': {'instructions': [{'type': 'OUTPUT', 'port': 4}, {'type': 'METER', 'meterId': '4'}]}, 'selector': {'criteria': [{'type': 'IN_PORT', 'port': 1}, {'ethType': '0x800', 'type': 'ETH_TYPE'}, {'type': 'IPV4_SRC', 'ip': '10.0.10.1/32'}, {'type': 'IPV4_DST', 'ip': '10.0.30.2/32'}]}}]}
+2024-08-29 14:53:20,650 - INFO - Executing Mininet command: h6 iperf3 -s &
+2024-08-29 14:53:20,650 - INFO - Command h6 iperf3 -s & successful
+2024-08-29 14:53:30,658 - INFO - Executing Mininet command: h3 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw1.log &
+2024-08-29 14:53:30,659 - INFO - Command h3 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw1.log & successful
+2024-08-29 14:53:35,663 - INFO - h3 to h6 direct iperf output
+2024-08-29 14:53:35,665 - INFO - Sleeping 10 seconds before retrying to read iperf/bw1.log
+2024-08-29 14:53:45,678 - INFO - Found iperf Done.
+2024-08-29 14:53:45,679 - INFO - Connecting to host 10.0.30.2, port 5201
+2024-08-29 14:53:45,679 - INFO - [  5] local 10.0.20.1 port 51160 connected to 10.0.30.2 port 5201
+2024-08-29 14:53:45,681 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-08-29 14:53:45,683 - INFO - [  5]   0.00-1.00   sec   471 KBytes  3.86 Mbits/sec   31   7.07 KBytes       
+2024-08-29 14:53:45,684 - INFO - [  5]   1.00-2.00   sec   318 KBytes  2.61 Mbits/sec   10   9.90 KBytes       
+2024-08-29 14:53:45,685 - INFO - [  5]   2.00-3.00   sec   382 KBytes  3.13 Mbits/sec   14   9.90 KBytes       
+2024-08-29 14:53:45,685 - INFO - [  5]   3.00-4.00   sec   318 KBytes  2.61 Mbits/sec   13   7.07 KBytes       
+2024-08-29 14:53:45,686 - INFO - [  5]   4.00-5.00   sec   318 KBytes  2.61 Mbits/sec   11   7.07 KBytes       
+2024-08-29 14:53:45,687 - INFO - [  5]   5.00-6.00   sec   382 KBytes  3.13 Mbits/sec   10   8.48 KBytes       
+2024-08-29 14:53:45,687 - INFO - [  5]   6.00-7.00   sec   318 KBytes  2.61 Mbits/sec   15   12.7 KBytes       
+2024-08-29 14:53:45,690 - INFO - [  5]   7.00-8.00   sec   318 KBytes  2.61 Mbits/sec   18   11.3 KBytes       
+2024-08-29 14:53:45,690 - INFO - [  5]   8.00-9.00   sec   382 KBytes  3.12 Mbits/sec   16   8.48 KBytes       
+2024-08-29 14:53:45,691 - INFO - [  5]   9.00-10.00  sec   318 KBytes  2.61 Mbits/sec   16   5.66 KBytes       
+2024-08-29 14:53:45,691 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-08-29 14:53:45,692 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-08-29 14:53:45,692 - INFO - [  5]   0.00-10.00  sec  3.44 MBytes  2.89 Mbits/sec  154             sender
+2024-08-29 14:53:45,692 - INFO - [  5]   0.00-10.60  sec  3.34 MBytes  2.64 Mbits/sec                  receiver
+2024-08-29 14:53:45,693 - INFO - 
+2024-08-29 14:53:45,693 - INFO - iperf Done.
+2024-08-29 14:53:45,694 - INFO - Executing Mininet command: h3 iperf3 -c 10.0.30.2 -u -b 10Mbps > iperf/bw2.log &
+2024-08-29 14:53:45,694 - INFO - Command h3 iperf3 -c 10.0.30.2 -u -b 10Mbps > iperf/bw2.log & successful
+2024-08-29 14:53:50,700 - INFO - h3 to h6 indirect UDP iperf output
+2024-08-29 14:53:50,707 - INFO - Sleeping 10 seconds before retrying to read iperf/bw2.log
+2024-08-29 14:54:00,719 - INFO - Found iperf Done.
+2024-08-29 14:54:00,720 - INFO - Connecting to host 10.0.30.2, port 5201
+2024-08-29 14:54:00,721 - INFO - [  5] local 10.0.20.1 port 38642 connected to 10.0.30.2 port 5201
+2024-08-29 14:54:00,721 - INFO - [ ID] Interval           Transfer     Bitrate         Total Datagrams
+2024-08-29 14:54:00,722 - INFO - [  5]   0.00-1.00   sec  1.18 MBytes  9.90 Mbits/sec  858  
+2024-08-29 14:54:00,723 - INFO - [  5]   1.00-2.00   sec  1.20 MBytes  10.1 Mbits/sec  868  
+2024-08-29 14:54:00,724 - INFO - [  5]   2.00-3.00   sec  1.19 MBytes  10.0 Mbits/sec  864  
+2024-08-29 14:54:00,725 - INFO - [  5]   3.00-4.00   sec  1.19 MBytes  10.0 Mbits/sec  863  
+2024-08-29 14:54:00,726 - INFO - [  5]   4.00-5.00   sec  1.19 MBytes  10.0 Mbits/sec  864  
+2024-08-29 14:54:00,727 - INFO - [  5]   5.00-6.00   sec  1.19 MBytes  10.0 Mbits/sec  863  
+2024-08-29 14:54:00,727 - INFO - [  5]   6.00-7.01   sec  1.19 MBytes  9.93 Mbits/sec  862  
+2024-08-29 14:54:00,728 - INFO - [  5]   7.01-8.00   sec  1.19 MBytes  10.1 Mbits/sec  864  
+2024-08-29 14:54:00,728 - INFO - [  5]   8.00-9.00   sec  1.19 MBytes  10.0 Mbits/sec  863  
+2024-08-29 14:54:00,728 - INFO - [  5]   9.00-10.00  sec  1.19 MBytes  9.99 Mbits/sec  863  
+2024-08-29 14:54:00,729 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-08-29 14:54:00,729 - INFO - [ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+2024-08-29 14:54:00,729 - INFO - [  5]   0.00-10.00  sec  11.9 MBytes  10.0 Mbits/sec  0.000 ms  0/8632 (0%)  sender
+2024-08-29 14:54:00,729 - INFO - [  5]   0.00-10.06  sec  3.49 MBytes  2.91 Mbits/sec  1.221 ms  6103/8627 (71%)  receiver
+2024-08-29 14:54:00,730 - INFO - 
+2024-08-29 14:54:00,730 - INFO - iperf Done.
+2024-08-29 14:54:00,730 - INFO - Executing Mininet command: h1 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw3.log &
+2024-08-29 14:54:00,731 - INFO - Command h1 iperf3 -c 10.0.30.2 -b 10Mbps > iperf/bw3.log & successful
+2024-08-29 14:54:05,734 - INFO - h1 to h6 direct iperf output
+2024-08-29 14:54:05,738 - INFO - Sleeping 10 seconds before retrying to read iperf/bw3.log
+2024-08-29 14:54:15,750 - INFO - Found iperf Done.
+2024-08-29 14:54:15,751 - INFO - Connecting to host 10.0.30.2, port 5201
+2024-08-29 14:54:15,751 - INFO - [  5] local 10.0.10.1 port 58486 connected to 10.0.30.2 port 5201
+2024-08-29 14:54:15,751 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-08-29 14:54:15,751 - INFO - [  5]   0.00-1.00   sec   798 KBytes  6.52 Mbits/sec   13   14.1 KBytes       
+2024-08-29 14:54:15,752 - INFO - [  5]   1.00-2.00   sec   636 KBytes  5.22 Mbits/sec   12   14.1 KBytes       
+2024-08-29 14:54:15,752 - INFO - [  5]   2.00-3.00   sec   700 KBytes  5.74 Mbits/sec   11   14.1 KBytes       
+2024-08-29 14:54:15,752 - INFO - [  5]   3.00-4.00   sec   636 KBytes  5.21 Mbits/sec   11   12.7 KBytes       
+2024-08-29 14:54:15,753 - INFO - [  5]   4.00-5.00   sec   700 KBytes  5.73 Mbits/sec    9   12.7 KBytes       
+2024-08-29 14:54:15,753 - INFO - [  5]   5.00-6.00   sec   636 KBytes  5.21 Mbits/sec   11   14.1 KBytes       
+2024-08-29 14:54:15,753 - INFO - [  5]   6.00-7.00   sec   700 KBytes  5.74 Mbits/sec   10   18.4 KBytes       
+2024-08-29 14:54:15,753 - INFO - [  5]   7.00-8.00   sec   636 KBytes  5.21 Mbits/sec   10   17.0 KBytes       
+2024-08-29 14:54:15,754 - INFO - [  5]   8.00-9.00   sec   700 KBytes  5.73 Mbits/sec   12   15.6 KBytes       
+2024-08-29 14:54:15,754 - INFO - [  5]   9.00-10.00  sec   636 KBytes  5.22 Mbits/sec    9   14.1 KBytes       
+2024-08-29 14:54:15,754 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-08-29 14:54:15,754 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-08-29 14:54:15,755 - INFO - [  5]   0.00-10.00  sec  6.62 MBytes  5.55 Mbits/sec  108             sender
+2024-08-29 14:54:15,755 - INFO - [  5]   0.00-11.54  sec  6.52 MBytes  4.74 Mbits/sec                  receiver
+2024-08-29 14:54:15,755 - INFO - 
+2024-08-29 14:54:15,755 - INFO - iperf Done.
+2024-08-29 14:54:15,755 - INFO - Bandwidth Control Test Trial 1 Success
+2024-08-29 14:54:15,767 - INFO - {'id': '4', 'life': 57, 'packets': 5029, 'bytes': 7345981, 'referenceCount': 2, 'unit': 'KB_PER_SEC', 'burst': True, 'deviceId': 'of:0000000000000001', 'appId': 'org.onosproject.rest', 'state': 'ADDED', 'bands': [{'type': 'DROP', 'rate': 6000, 'packets': 0, 'bytes': 0, 'burstSize': 100}]}
+2024-08-29 14:54:15,769 - INFO - {'id': '5', 'life': 57, 'packets': 11356, 'bytes': 16778475, 'referenceCount': 2, 'unit': 'KB_PER_SEC', 'burst': True, 'deviceId': 'of:0000000000000002', 'appId': 'org.onosproject.rest', 'state': 'ADDED', 'bands': [{'type': 'DROP', 'rate': 3000, 'packets': 0, 'bytes': 0, 'burstSize': 100}]}
+2024-08-29 14:54:15,771 - INFO - {'id': '4', 'life': 57, 'packets': 0, 'bytes': 0, 'referenceCount': 2, 'unit': 'KB_PER_SEC', 'burst': True, 'deviceId': 'of:0000000000000002', 'appId': 'org.onosproject.rest', 'state': 'ADDED', 'bands': [{'type': 'DROP', 'rate': 3000, 'packets': 0, 'bytes': 0, 'burstSize': 100}]}
+2024-08-29 14:54:16,592 - INFO - [2] 8137
+
+*** Stopping 1 controllers
+c0 
+*** Stopping 9 links
+.........
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 6 hosts
+h1 h2 h3 h4 h5 h6 
+*** Done
+2024-08-29 14:54:16,622 - INFO - Bandwidth Control test done, elapsed time: 0:01:09.007585

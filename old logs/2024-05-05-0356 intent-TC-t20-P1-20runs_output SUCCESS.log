@@ -1,0 +1,82 @@
+Baseline Output:
+[  5]   0.00-20.00  sec  33.2 MBytes  13.9 Mbits/sec    0             sender
+[  5]   0.00-23.27  sec  23.6 MBytes  8.51 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  32.2 MBytes  13.5 Mbits/sec    0             sender
+[  5]   0.00-22.63  sec  23.3 MBytes  8.65 Mbits/sec                  receiver
+[  5]   0.00-20.98  sec   143 KBytes  0.06 Mbits/sec    8             sender
+[  5]   0.00-45.96  sec  72.1 KBytes  0.01 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  33.3 MBytes  14.0 Mbits/sec    0             sender
+[  5]   0.00-23.26  sec  23.8 MBytes  8.57 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  33.2 MBytes  13.9 Mbits/sec    0             sender
+[  5]   0.00-22.41  sec  23.4 MBytes  8.75 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  32.2 MBytes  13.5 Mbits/sec    0             sender
+[  5]   0.00-20.00  sec  0.00 Bytes  0.00 Mbits/sec                  receiver
+[  5]   0.00-20.98  sec   792 KBytes  0.31 Mbits/sec    0             sender
+[  5]   0.00-37.99  sec   225 KBytes  0.05 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  33.2 MBytes  13.9 Mbits/sec    0             sender
+[  5]   0.00-22.43  sec  23.4 MBytes  8.77 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  33.2 MBytes  13.9 Mbits/sec    0             sender
+[  5]   0.00-22.66  sec  23.4 MBytes  8.67 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  33.2 MBytes  13.9 Mbits/sec    0             sender
+[  5]   0.00-20.00  sec  0.00 Bytes  0.00 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  31.6 MBytes  13.3 Mbits/sec    0             sender
+[  5]   0.00-22.41  sec  22.7 MBytes  8.49 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  31.9 MBytes  13.4 Mbits/sec    0             sender
+[  5]   0.00-20.00  sec  0.00 Bytes  0.00 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  30.8 MBytes  12.9 Mbits/sec    0             sender
+[  5]   0.00-20.00  sec  0.00 Bytes  0.00 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  33.2 MBytes  13.9 Mbits/sec    0             sender
+[  5]   0.00-22.65  sec  23.5 MBytes  8.69 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  33.0 MBytes  13.8 Mbits/sec    0             sender
+[  5]   0.00-22.41  sec  23.5 MBytes  8.81 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  33.2 MBytes  13.9 Mbits/sec    0             sender
+[  5]   0.00-22.41  sec  23.4 MBytes  8.77 Mbits/sec                  receiver
+[  5]   0.00-21.00  sec   587 KBytes  0.23 Mbits/sec    1             sender
+[  5]   0.00-33.96  sec   214 KBytes  0.05 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  33.2 MBytes  13.9 Mbits/sec    0             sender
+[  5]   0.00-25.58  sec  24.1 MBytes  7.91 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  33.3 MBytes  14.0 Mbits/sec    0             sender
+[  5]   0.00-22.43  sec  23.4 MBytes  8.76 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  33.2 MBytes  13.9 Mbits/sec    0             sender
+[  5]   0.00-22.65  sec  23.4 MBytes  8.67 Mbits/sec                  receiver
+Failover Output:
+[  5]   0.00-20.00  sec  25.8 MBytes  10.8 Mbits/sec  1162             sender
+[  5]   0.00-22.16  sec  21.0 MBytes  7.93 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  25.7 MBytes  10.8 Mbits/sec  1162             sender
+[  5]   0.00-22.15  sec  20.4 MBytes  7.72 Mbits/sec                  receiver
+[  5]   0.00-20.99  sec   225 KBytes  0.09 Mbits/sec    2             sender
+[  5]   0.00-49.98  sec  17.0 KBytes  0.00 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  26.9 MBytes  11.3 Mbits/sec  1158             sender
+[  5]   0.00-22.15  sec  21.0 MBytes  7.94 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  25.8 MBytes  10.8 Mbits/sec  1166             sender
+[  5]   0.00-22.16  sec  20.9 MBytes  7.91 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  24.4 MBytes  10.2 Mbits/sec  1170             sender
+[  5]   0.00-51.00  sec  18.5 MBytes  3.04 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  25.7 MBytes  10.8 Mbits/sec  1163             sender
+[  5]   0.00-22.12  sec  20.6 MBytes  7.83 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  26.9 MBytes  11.3 Mbits/sec  1166             sender
+[  5]   0.00-22.15  sec  21.0 MBytes  7.95 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  26.9 MBytes  11.3 Mbits/sec  1170             sender
+[  5]   0.00-22.15  sec  21.0 MBytes  7.95 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  26.9 MBytes  11.3 Mbits/sec  1178             sender
+[  5]   0.00-22.16  sec  21.0 MBytes  7.95 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  23.2 MBytes  9.72 Mbits/sec  1132             sender
+[  5]   0.00-22.01  sec  18.0 MBytes  6.87 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  25.8 MBytes  10.8 Mbits/sec  1164             sender
+[  5]   0.00-22.16  sec  21.0 MBytes  7.93 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  25.7 MBytes  10.8 Mbits/sec  1166             sender
+[  5]   0.00-22.09  sec  20.5 MBytes  7.78 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  26.6 MBytes  11.2 Mbits/sec  1158             sender
+[  5]   0.00-22.57  sec  20.6 MBytes  7.65 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  25.7 MBytes  10.8 Mbits/sec  1160             sender
+[  5]   0.00-22.15  sec  20.7 MBytes  7.84 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  26.9 MBytes  11.3 Mbits/sec  1191             sender
+[  5]   0.00-22.17  sec  20.8 MBytes  7.89 Mbits/sec                  receiver
+[  5]   0.00-20.98  sec  99.0 KBytes  0.04 Mbits/sec    0             sender
+[  5]   0.00-34.98  sec  0.00 Bytes  0.00 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  23.2 MBytes  9.72 Mbits/sec  734             sender
+[  5]   0.00-24.72  sec  19.3 MBytes  6.56 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  26.9 MBytes  11.3 Mbits/sec  1168             sender
+[  5]   0.00-22.17  sec  21.0 MBytes  7.93 Mbits/sec                  receiver
+[  5]   0.00-20.00  sec  26.7 MBytes  11.2 Mbits/sec  1119             sender
+[  5]   0.00-39.84  sec  20.9 MBytes  4.39 Mbits/sec                  receiver

@@ -1,0 +1,47 @@
+2024-05-05 13:22:10,255 - INFO - Starting iPerf3 test at 2024-05-05-1322
+2024-05-05 13:22:10,255 - INFO - TCP iperf_time: 20s, trial_runs: 20, parallel_connections: 3, bitrate: Default
+2024-05-05 13:22:10,424 - INFO - Starting ONOS Docker container.
+2024-05-05 13:22:10,521 - INFO - Waiting for ONOS
+2024-05-05 13:23:11,633 - INFO - Test Case: Fault Tolerance via Reactive Fwd
+2024-05-05 13:23:12,906 - INFO - Starting Mininet topology: TC
+2024-05-05 13:23:14,282 - INFO - *** Creating network
+*** Adding controller
+Unable to contact the remote controller at 172.17.0.2:6653
+Unable to contact the remote controller at 172.17.0.2:6633
+Setting remote controller to 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(s1, s2) (10.00Mbit 10ms delay) (10.00Mbit 10ms delay) (s1, s3) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(10.00Mbit 10ms delay) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (10.00Mbit 10ms delay) (5.00Mbit 10ms delay) 
+*** Starting CLI:
+2024-05-05 13:23:14,316 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2024-05-05 13:23:14,857 - INFO - Authentication (password) successful!
+2024-05-05 13:23:20,289 - INFO - Executing Mininet command: h1 iperf3 -s &
+2024-05-05 13:23:20,290 - INFO - Command h1 iperf3 -s & successful
+2024-05-05 13:23:30,297 - INFO - Executing Mininet command: h6 iperf3 -c 10.0.10.1 -t 20 -i 1 -f mM -P 3 > iperf/baseline.log &
+2024-05-05 13:23:30,298 - INFO - Command h6 iperf3 -c 10.0.10.1 -t 20 -i 1 -f mM -P 3 > iperf/baseline.log & successful
+2024-05-05 13:23:55,324 - INFO - Baseline iperf output
+2024-05-05 13:23:55,327 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 13:24:05,341 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 13:24:15,349 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 13:24:25,360 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 13:24:35,365 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 13:24:45,370 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 13:24:55,380 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 13:25:05,389 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 13:25:15,402 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 13:25:25,414 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 13:25:35,428 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log
+2024-05-05 13:25:45,442 - INFO - Sleeping 10 seconds before retrying to read iperf/baseline.log

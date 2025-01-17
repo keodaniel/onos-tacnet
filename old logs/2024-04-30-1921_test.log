@@ -1,0 +1,174 @@
+2024-04-30 19:21:33,859 - INFO - Starting iPerf3 test at 2024-04-30-1921
+2024-04-30 19:21:33,860 - INFO - iperf_time: 20s, trial_runs: 20, parallel_connections: 3
+2024-04-30 19:21:33,955 - INFO - ONOS Docker container is already running.
+2024-04-30 19:21:33,955 - INFO - Test Case: Fault Tolerance via Reactive Fwd
+2024-04-30 19:21:35,127 - INFO - Starting Mininet topology: TC
+2024-04-30 19:21:35,896 - INFO - *** Creating network
+*** Adding controller
+Connecting to remote controller at 172.17.0.2:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(s1, s2) (10.00Mbit 10ms delay) (10.00Mbit 10ms delay) (s1, s3) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (s2, s3) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...(50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(10.00Mbit 10ms delay) (50.00Mbit 10ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (10.00Mbit 10ms delay) (5.00Mbit 10ms delay) 
+*** Starting CLI:
+2024-04-30 19:21:35,900 - INFO - Connected (version 2.0, client APACHE-SSHD-2.5.1)
+2024-04-30 19:21:35,954 - INFO - Authentication (password) successful!
+2024-04-30 19:21:36,042 - INFO - Activated org.onosproject.fwd
+2024-04-30 19:21:39,046 - INFO - Executing Mininet command: h1 iperf3 -s &
+2024-04-30 19:21:39,047 - INFO - Command h1 iperf3 -s & successful
+2024-04-30 19:21:47,060 - INFO - Executing Mininet command: h6 iperf3 -c 10.0.10.1 -t 20 -i 1 -f mM -P 3 > iperf/baseline.log &
+2024-04-30 19:21:47,061 - INFO - Command h6 iperf3 -c 10.0.10.1 -t 20 -i 1 -f mM -P 3 > iperf/baseline.log & successful
+2024-04-30 19:22:12,087 - INFO - Baseline iperf output
+2024-04-30 19:22:12,091 - INFO - Connecting to host 10.0.10.1, port 5201
+2024-04-30 19:22:12,091 - INFO - [  5] local 10.0.30.2 port 42614 connected to 10.0.10.1 port 5201
+2024-04-30 19:22:12,091 - INFO - [  7] local 10.0.30.2 port 42622 connected to 10.0.10.1 port 5201
+2024-04-30 19:22:12,091 - INFO - [  9] local 10.0.30.2 port 42636 connected to 10.0.10.1 port 5201
+2024-04-30 19:22:12,092 - INFO - [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+2024-04-30 19:22:12,092 - INFO - [  5]   0.00-1.00   sec   735 KBytes  6.02 Mbits/sec    0   82.0 KBytes       
+2024-04-30 19:22:12,092 - INFO - [  7]   0.00-1.00   sec   735 KBytes  6.02 Mbits/sec    0   80.6 KBytes       
+2024-04-30 19:22:12,092 - INFO - [  9]   0.00-1.00   sec   771 KBytes  6.31 Mbits/sec    0   77.8 KBytes       
+2024-04-30 19:22:12,093 - INFO - [SUM]   0.00-1.00   sec  2.19 MBytes  18.4 Mbits/sec    0             
+2024-04-30 19:22:12,093 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,093 - INFO - [  5]   1.00-2.00   sec   382 KBytes  3.13 Mbits/sec    0   99.0 KBytes       
+2024-04-30 19:22:12,094 - INFO - [  7]   1.00-2.00   sec   382 KBytes  3.13 Mbits/sec    0   97.6 KBytes       
+2024-04-30 19:22:12,094 - INFO - [  9]   1.00-2.00   sec   382 KBytes  3.13 Mbits/sec    0   93.3 KBytes       
+2024-04-30 19:22:12,094 - INFO - [SUM]   1.00-2.00   sec  1.12 MBytes  9.38 Mbits/sec    0             
+2024-04-30 19:22:12,094 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,094 - INFO - [  5]   2.00-3.00   sec   509 KBytes  4.17 Mbits/sec    0    115 KBytes       
+2024-04-30 19:22:12,094 - INFO - [  7]   2.00-3.00   sec   509 KBytes  4.17 Mbits/sec    0    113 KBytes       
+2024-04-30 19:22:12,095 - INFO - [  9]   2.00-3.00   sec   509 KBytes  4.17 Mbits/sec    0    113 KBytes       
+2024-04-30 19:22:12,095 - INFO - [SUM]   2.00-3.00   sec  1.49 MBytes  12.5 Mbits/sec    0             
+2024-04-30 19:22:12,095 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,095 - INFO - [  5]   3.00-4.00   sec   255 KBytes  2.09 Mbits/sec    0    132 KBytes       
+2024-04-30 19:22:12,095 - INFO - [  7]   3.00-4.00   sec   255 KBytes  2.09 Mbits/sec    0    124 KBytes       
+2024-04-30 19:22:12,095 - INFO - [  9]   3.00-4.00   sec   255 KBytes  2.09 Mbits/sec    0    126 KBytes       
+2024-04-30 19:22:12,095 - INFO - [SUM]   3.00-4.00   sec   764 KBytes  6.26 Mbits/sec    0             
+2024-04-30 19:22:12,096 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,096 - INFO - [  5]   4.00-5.00   sec   636 KBytes  5.22 Mbits/sec    0    147 KBytes       
+2024-04-30 19:22:12,096 - INFO - [  7]   4.00-5.00   sec   318 KBytes  2.61 Mbits/sec    0    144 KBytes       
+2024-04-30 19:22:12,096 - INFO - [  9]   4.00-5.00   sec   318 KBytes  2.61 Mbits/sec    0    139 KBytes       
+2024-04-30 19:22:12,096 - INFO - [SUM]   4.00-5.00   sec  1.24 MBytes  10.4 Mbits/sec    0             
+2024-04-30 19:22:12,096 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,097 - INFO - [  5]   5.00-6.00   sec   318 KBytes  2.61 Mbits/sec    0    170 KBytes       
+2024-04-30 19:22:12,097 - INFO - [  7]   5.00-6.00   sec   700 KBytes  5.73 Mbits/sec    0    160 KBytes       
+2024-04-30 19:22:12,097 - INFO - [  9]   5.00-6.00   sec   318 KBytes  2.61 Mbits/sec    0    160 KBytes       
+2024-04-30 19:22:12,097 - INFO - [SUM]   5.00-6.00   sec  1.30 MBytes  10.9 Mbits/sec    0             
+2024-04-30 19:22:12,097 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,098 - INFO - [  5]   6.00-7.00   sec   827 KBytes  6.78 Mbits/sec    0    223 KBytes       
+2024-04-30 19:22:12,098 - INFO - [  7]   6.00-7.00   sec   382 KBytes  3.13 Mbits/sec    0    204 KBytes       
+2024-04-30 19:22:12,098 - INFO - [  9]   6.00-7.00   sec   827 KBytes  6.78 Mbits/sec    0    208 KBytes       
+2024-04-30 19:22:12,098 - INFO - [SUM]   6.00-7.00   sec  1.99 MBytes  16.7 Mbits/sec    0             
+2024-04-30 19:22:12,098 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,098 - INFO - [  5]   7.00-8.00   sec   573 KBytes  4.69 Mbits/sec    0    280 KBytes       
+2024-04-30 19:22:12,099 - INFO - [  7]   7.00-8.00   sec   509 KBytes  4.17 Mbits/sec    0    277 KBytes       
+2024-04-30 19:22:12,099 - INFO - [  9]   7.00-8.00   sec   509 KBytes  4.17 Mbits/sec    0    288 KBytes       
+2024-04-30 19:22:12,099 - INFO - [SUM]   7.00-8.00   sec  1.55 MBytes  13.0 Mbits/sec    0             
+2024-04-30 19:22:12,099 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,099 - INFO - [  5]   8.00-9.00   sec   700 KBytes  5.74 Mbits/sec    0    389 KBytes       
+2024-04-30 19:22:12,099 - INFO - [  7]   8.00-9.00   sec   636 KBytes  5.21 Mbits/sec    0    362 KBytes       
+2024-04-30 19:22:12,099 - INFO - [  9]   8.00-9.00   sec   636 KBytes  5.21 Mbits/sec    0    358 KBytes       
+2024-04-30 19:22:12,100 - INFO - [SUM]   8.00-9.00   sec  1.93 MBytes  16.2 Mbits/sec    0             
+2024-04-30 19:22:12,100 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,100 - INFO - [  5]   9.00-10.00  sec   891 KBytes  7.30 Mbits/sec    0    494 KBytes       
+2024-04-30 19:22:12,100 - INFO - [  7]   9.00-10.00  sec  1.68 MBytes  14.1 Mbits/sec    0    479 KBytes       
+2024-04-30 19:22:12,100 - INFO - [  9]   9.00-10.00  sec   764 KBytes  6.25 Mbits/sec    0    451 KBytes       
+2024-04-30 19:22:12,100 - INFO - [SUM]   9.00-10.00  sec  3.29 MBytes  27.6 Mbits/sec    0             
+2024-04-30 19:22:12,100 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,101 - INFO - [  5]  10.00-11.01  sec  1.12 MBytes  9.32 Mbits/sec    0    621 KBytes       
+2024-04-30 19:22:12,101 - INFO - [  7]  10.00-11.01  sec  0.00 Bytes  0.00 Mbits/sec    0    551 KBytes       
+2024-04-30 19:22:12,101 - INFO - [  9]  10.00-11.01  sec  1018 KBytes  8.29 Mbits/sec    0    591 KBytes       
+2024-04-30 19:22:12,101 - INFO - [SUM]  10.00-11.01  sec  2.11 MBytes  17.6 Mbits/sec    0             
+2024-04-30 19:22:12,102 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,102 - INFO - [  5]  11.01-12.02  sec  0.00 Bytes  0.00 Mbits/sec    0    684 KBytes       
+2024-04-30 19:22:12,102 - INFO - [  7]  11.01-12.02  sec  1.24 MBytes  10.3 Mbits/sec    0    755 KBytes       
+2024-04-30 19:22:12,102 - INFO - [  9]  11.01-12.02  sec  1.25 MBytes  10.4 Mbits/sec    0    727 KBytes       
+2024-04-30 19:22:12,102 - INFO - [SUM]  11.01-12.02  sec  2.49 MBytes  20.7 Mbits/sec    0             
+2024-04-30 19:22:12,102 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,103 - INFO - [  5]  12.02-13.00  sec  2.50 MBytes  21.3 Mbits/sec    0    957 KBytes       
+2024-04-30 19:22:12,103 - INFO - [  7]  12.02-13.00  sec  0.00 Bytes  0.00 Mbits/sec    0    775 KBytes       
+2024-04-30 19:22:12,103 - INFO - [  9]  12.02-13.00  sec  0.00 Bytes  0.00 Mbits/sec    0    850 KBytes       
+2024-04-30 19:22:12,103 - INFO - [SUM]  12.02-13.00  sec  2.50 MBytes  21.3 Mbits/sec    0             
+2024-04-30 19:22:12,103 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,103 - INFO - [  5]  13.00-14.00  sec  0.00 Bytes  0.00 Mbits/sec    0   1003 KBytes       
+2024-04-30 19:22:12,104 - INFO - [  7]  13.00-14.00  sec  2.50 MBytes  20.9 Mbits/sec    0   1.10 MBytes       
+2024-04-30 19:22:12,104 - INFO - [  9]  13.00-14.00  sec  1.25 MBytes  10.5 Mbits/sec    0    983 KBytes       
+2024-04-30 19:22:12,104 - INFO - [SUM]  13.00-14.00  sec  3.75 MBytes  31.4 Mbits/sec    0             
+2024-04-30 19:22:12,104 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,104 - INFO - [  5]  14.00-15.00  sec  1.25 MBytes  10.5 Mbits/sec    0   1.20 MBytes       
+2024-04-30 19:22:12,104 - INFO - [  7]  14.00-15.00  sec  0.00 Bytes  0.00 Mbits/sec    0   1.13 MBytes       
+2024-04-30 19:22:12,104 - INFO - [  9]  14.00-15.00  sec  1.25 MBytes  10.5 Mbits/sec    0   1.23 MBytes       
+2024-04-30 19:22:12,105 - INFO - [SUM]  14.00-15.00  sec  2.50 MBytes  21.0 Mbits/sec    0             
+2024-04-30 19:22:12,105 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,105 - INFO - [  5]  15.00-16.00  sec  1.25 MBytes  10.5 Mbits/sec    0   1.44 MBytes       
+2024-04-30 19:22:12,105 - INFO - [  7]  15.00-16.00  sec  1.25 MBytes  10.5 Mbits/sec   11   1.34 MBytes       
+2024-04-30 19:22:12,105 - INFO - [  9]  15.00-16.00  sec  0.00 Bytes  0.00 Mbits/sec    0   1.26 MBytes       
+2024-04-30 19:22:12,106 - INFO - [SUM]  15.00-16.00  sec  2.50 MBytes  21.0 Mbits/sec   11             
+2024-04-30 19:22:12,106 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,106 - INFO - [  5]  16.00-17.00  sec  0.00 Bytes  0.00 Mbits/sec   12   1.41 MBytes       
+2024-04-30 19:22:12,106 - INFO - [  7]  16.00-17.00  sec  0.00 Bytes  0.00 Mbits/sec  120   1.07 MBytes       
+2024-04-30 19:22:12,106 - INFO - [  9]  16.00-17.00  sec  0.00 Bytes  0.00 Mbits/sec  201    906 KBytes       
+2024-04-30 19:22:12,107 - INFO - [SUM]  16.00-17.00  sec  0.00 Bytes  0.00 Mbits/sec  333             
+2024-04-30 19:22:12,107 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,107 - INFO - [  5]  17.00-18.00  sec  0.00 Bytes  0.00 Mbits/sec  264   1.01 MBytes       
+2024-04-30 19:22:12,107 - INFO - [  7]  17.00-18.00  sec  0.00 Bytes  0.00 Mbits/sec   20   1.03 MBytes       
+2024-04-30 19:22:12,107 - INFO - [  9]  17.00-18.00  sec  0.00 Bytes  0.00 Mbits/sec   75    906 KBytes       
+2024-04-30 19:22:12,108 - INFO - [SUM]  17.00-18.00  sec  0.00 Bytes  0.00 Mbits/sec  359             
+2024-04-30 19:22:12,108 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,108 - INFO - [  5]  18.00-19.00  sec  0.00 Bytes  0.00 Mbits/sec   82    980 KBytes       
+2024-04-30 19:22:12,108 - INFO - [  7]  18.00-19.00  sec  0.00 Bytes  0.00 Mbits/sec  199    905 KBytes       
+2024-04-30 19:22:12,109 - INFO - [  9]  18.00-19.00  sec  0.00 Bytes  0.00 Mbits/sec   24    874 KBytes       
+2024-04-30 19:22:12,109 - INFO - [SUM]  18.00-19.00  sec  0.00 Bytes  0.00 Mbits/sec  305             
+2024-04-30 19:22:12,110 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,110 - INFO - [  5]  19.00-20.00  sec  0.00 Bytes  0.00 Mbits/sec   31    932 KBytes       
+2024-04-30 19:22:12,110 - INFO - [  7]  19.00-20.00  sec  0.00 Bytes  0.00 Mbits/sec    3    901 KBytes       
+2024-04-30 19:22:12,110 - INFO - [  9]  19.00-20.00  sec  1.25 MBytes  10.5 Mbits/sec  140    682 KBytes       
+2024-04-30 19:22:12,111 - INFO - [SUM]  19.00-20.00  sec  1.25 MBytes  10.5 Mbits/sec  174             
+2024-04-30 19:22:12,111 - INFO - - - - - - - - - - - - - - - - - - - - - - - - - -
+2024-04-30 19:22:12,111 - INFO - [ ID] Interval           Transfer     Bitrate         Retr
+2024-04-30 19:22:12,111 - INFO - [  5]   0.00-20.00  sec  11.8 MBytes  4.95 Mbits/sec  389             sender
+2024-04-30 19:22:12,111 - INFO - [  5]   0.00-22.00  sec  6.47 MBytes  2.47 Mbits/sec                  receiver
+2024-04-30 19:22:12,112 - INFO - [  7]   0.00-20.00  sec  11.0 MBytes  4.61 Mbits/sec  353             sender
+2024-04-30 19:22:12,112 - INFO - [  7]   0.00-22.00  sec  6.06 MBytes  2.31 Mbits/sec                  receiver
+2024-04-30 19:22:12,113 - INFO - [  9]   0.00-20.00  sec  11.2 MBytes  4.68 Mbits/sec  440             sender
+2024-04-30 19:22:12,114 - INFO - [  9]   0.00-22.00  sec  6.38 MBytes  2.43 Mbits/sec                  receiver
+2024-04-30 19:22:12,114 - INFO - [SUM]   0.00-20.00  sec  34.0 MBytes  14.2 Mbits/sec  1182             sender
+2024-04-30 19:22:12,114 - INFO - [SUM]   0.00-22.00  sec  18.9 MBytes  7.21 Mbits/sec                  receiver
+2024-04-30 19:22:12,114 - INFO - 
+2024-04-30 19:22:12,115 - INFO - iperf Done.
+2024-04-30 19:22:15,121 - INFO - Executing Mininet command: h6 iperf3 -c 10.0.10.1 -t 20 -i 1 -f mM -P 3 > iperf/failover.log &
+2024-04-30 19:22:15,122 - INFO - Command h6 iperf3 -c 10.0.10.1 -t 20 -i 1 -f mM -P 3 > iperf/failover.log & successful
+2024-04-30 19:22:20,134 - INFO - MAC addresses of hosts connected to the ONOS controller (sorted):
+2024-04-30 19:22:20,134 - INFO - 00:00:00:00:00:01
+2024-04-30 19:22:20,134 - INFO - 00:00:00:00:00:06
+2024-04-30 19:22:20,141 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000003', '00:00:00:00:00:06']
+2024-04-30 19:22:20,147 - INFO - Path between 00:00:00:00:00:06 and 00:00:00:00:00:01: ['00:00:00:00:00:06', 'of:0000000000000003', 'of:0000000000000001', '00:00:00:00:00:01']
+2024-04-30 19:22:30,155 - INFO - Failover at time 10.0s
+2024-04-30 19:22:30,156 - INFO - Executing Mininet command: link s1 s3 down
+2024-04-30 19:22:30,156 - INFO - Command link s1 s3 down successful
+2024-04-30 19:22:38,641 - INFO - Path between 00:00:00:00:00:01 and 00:00:00:00:00:06: ['00:00:00:00:00:01', 'of:0000000000000001', 'of:0000000000000002', 'of:0000000000000003', '00:00:00:00:00:06']
+2024-04-30 19:22:49,617 - INFO - Failover iperf output
+2024-04-30 19:22:49,629 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log
+2024-04-30 19:23:00,634 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log
+2024-04-30 19:23:11,624 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log
+2024-04-30 19:23:22,621 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log
+2024-04-30 19:23:32,633 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log
+2024-04-30 19:23:43,624 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log
+2024-04-30 19:23:54,623 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log
+2024-04-30 19:24:05,623 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log
+2024-04-30 19:24:16,640 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log
+2024-04-30 19:24:27,623 - INFO - Sleeping 10 seconds before retrying to read iperf/failover.log
+2024-04-30 19:24:38,621 - ERROR - Error reading log file: iperf/failover.log
+2024-04-30 19:24:38,622 - ERROR - Error during iPerf3 test: 'NoneType' object is not iterable
+2024-04-30 19:24:38,622 - INFO - End of Log

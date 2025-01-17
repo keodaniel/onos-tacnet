@@ -1,0 +1,18 @@
+Baseline Output:
+[  5]   0.00-20.00  sec  12.2 MBytes  5.11 Mbits/sec  489             sender
+[  5]   0.00-21.88  sec  7.16 MBytes  2.74 Mbits/sec                  receiver
+[  7]   0.00-20.00  sec  12.6 MBytes  5.29 Mbits/sec  491             sender
+[  7]   0.00-21.88  sec  7.28 MBytes  2.79 Mbits/sec                  receiver
+[  9]   0.00-20.00  sec  10.2 MBytes  4.28 Mbits/sec  408             sender
+[  9]   0.00-21.88  sec  7.20 MBytes  2.76 Mbits/sec                  receiver
+[SUM]   0.00-20.00  sec  35.0 MBytes  14.7 Mbits/sec  1388             sender
+[SUM]   0.00-21.88  sec  21.6 MBytes  8.30 Mbits/sec                  receiver
+Failover Output:
+[  5]   0.00-20.00  sec  11.4 MBytes  4.77 Mbits/sec  549             sender
+[  5]   0.00-22.05  sec  6.61 MBytes  2.52 Mbits/sec                  receiver
+[  7]   0.00-20.00  sec  11.5 MBytes  4.82 Mbits/sec  767             sender
+[  7]   0.00-22.05  sec  8.28 MBytes  3.15 Mbits/sec                  receiver
+[  9]   0.00-20.00  sec  10.2 MBytes  4.27 Mbits/sec   15             sender
+[  9]   0.00-22.05  sec  5.55 MBytes  2.11 Mbits/sec                  receiver
+[SUM]   0.00-20.00  sec  33.0 MBytes  13.9 Mbits/sec  1331             sender
+[SUM]   0.00-22.05  sec  20.4 MBytes  7.78 Mbits/sec                  receiver

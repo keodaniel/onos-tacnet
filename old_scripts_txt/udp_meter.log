@@ -1,0 +1,109 @@
+Dump-flows s1
+OFPST_FLOW reply (OF1.4) (xid=0x2):
+ cookie=0x10000ea6f4b8e, duration=0.624s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=40000,arp actions=CONTROLLER:65535,clear_actions
+ cookie=0x100007a585b6f, duration=0.622s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=40000,dl_type=0x8942 actions=CONTROLLER:65535,clear_actions
+ cookie=0x100009465555a, duration=0.618s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=40000,dl_type=0x88cc actions=CONTROLLER:65535,clear_actions
+ cookie=0x0, duration=0.504s, table=0, n_packets=0, n_bytes=0, arp,arp_spa=10.0.10.1 actions=NORMAL
+ cookie=0x0, duration=0.460s, table=0, n_packets=0, n_bytes=0, arp,arp_tpa=10.0.10.1 actions=NORMAL
+ cookie=0x0, duration=0.203s, table=0, n_packets=0, n_bytes=0, ip,in_port=4,nw_src=10.0.30.2,nw_dst=10.0.20.1 actions=meter:1,output:3
+ cookie=0x0, duration=0.174s, table=0, n_packets=0, n_bytes=0, ip,in_port=3,nw_src=10.0.20.1,nw_dst=10.0.30.2 actions=meter:1,output:4
+ cookie=0x0, duration=0.054s, table=0, n_packets=0, n_bytes=0, ip,in_port=4,nw_src=10.0.30.2,nw_dst=10.0.10.1 actions=meter:3,output:1
+ cookie=0x0, duration=0.023s, table=0, n_packets=0, n_bytes=0, ip,in_port=1,nw_src=10.0.10.1,nw_dst=10.0.30.2 actions=meter:3,output:4
+ cookie=0xb100007f77fe75, duration=0.624s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=10,udp,in_port=4,nw_src=10.0.30.2,nw_dst=10.0.20.1 actions=output:3
+ cookie=0xb10000a79504bc, duration=0.624s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=10,udp,in_port=3,nw_src=10.0.20.1,nw_dst=10.0.30.2 actions=output:4
+Dump-flows s2
+OFPST_FLOW reply (OF1.4) (xid=0x2):
+ cookie=0x10000c70edd85, duration=0.632s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=40000,arp actions=CONTROLLER:65535,clear_actions
+ cookie=0x1000002bbd8d4, duration=0.626s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=40000,dl_type=0x88cc actions=CONTROLLER:65535,clear_actions
+ cookie=0x10000dc56d70b, duration=0.626s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=40000,dl_type=0x8942 actions=CONTROLLER:65535,clear_actions
+ cookie=0x0, duration=0.513s, table=0, n_packets=0, n_bytes=0, arp,arp_spa=10.0.20.1 actions=NORMAL
+ cookie=0x0, duration=0.467s, table=0, n_packets=0, n_bytes=0, arp,arp_tpa=10.0.20.1 actions=NORMAL
+ cookie=0x0, duration=0.408s, table=0, n_packets=0, n_bytes=0, udp,in_port=4,nw_src=10.0.30.2,nw_dst=10.0.20.1 actions=meter:2,output:1
+ cookie=0x0, duration=0.388s, table=0, n_packets=0, n_bytes=0, udp,in_port=1,nw_src=10.0.20.1,nw_dst=10.0.30.2 actions=meter:2,output:4
+ cookie=0x0, duration=0.170s, table=0, n_packets=0, n_bytes=0, ip,in_port=3,nw_src=10.0.30.2,nw_dst=10.0.20.1 actions=meter:1,output:1
+ cookie=0x0, duration=0.148s, table=0, n_packets=0, n_bytes=0, ip,in_port=1,nw_src=10.0.20.1,nw_dst=10.0.30.2 actions=meter:1,output:3
+Dump-flows s3
+OFPST_FLOW reply (OF1.4) (xid=0x2):
+ cookie=0x10000a6288ee9, duration=0.643s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=40000,arp actions=CONTROLLER:65535,clear_actions
+ cookie=0x10000646f55aa, duration=0.639s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=40000,dl_type=0x88cc actions=CONTROLLER:65535,clear_actions
+ cookie=0x10000464e5575, duration=0.639s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=40000,dl_type=0x8942 actions=CONTROLLER:65535,clear_actions
+ cookie=0x0, duration=0.525s, table=0, n_packets=0, n_bytes=0, arp,arp_spa=10.0.30.2 actions=NORMAL
+ cookie=0x0, duration=0.476s, table=0, n_packets=0, n_bytes=0, arp,arp_tpa=10.0.30.2 actions=NORMAL
+ cookie=0xb10000420d7c7a, duration=0.641s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=10,udp,in_port=2,nw_src=10.0.30.2,nw_dst=10.0.20.1 actions=output:3
+ cookie=0xb100003e6857df, duration=0.642s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=10,udp,in_port=3,nw_src=10.0.20.1,nw_dst=10.0.30.2 actions=output:2
+ cookie=0x0, duration=0.464s, table=0, n_packets=0, n_bytes=0, udp,in_port=2,nw_src=10.0.30.2,nw_dst=10.0.20.1 actions=meter:2,output:4
+ cookie=0x0, duration=0.448s, table=0, n_packets=0, n_bytes=0, udp,in_port=4,nw_src=10.0.20.1,nw_dst=10.0.30.2 actions=meter:2,output:2
+ cookie=0xb10000a4233046, duration=0.644s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=10,ip,in_port=2,nw_src=10.0.30.2,nw_dst=10.0.20.1 actions=output:4
+ cookie=0xb1000080acef2f, duration=0.644s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=10,ip,in_port=4,nw_src=10.0.20.1,nw_dst=10.0.30.2 actions=output:2
+ cookie=0xb100000546a085, duration=0.642s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=10,ip,in_port=3,nw_src=10.0.10.1,nw_dst=10.0.30.2 actions=output:2
+ cookie=0xb100009ee3e332, duration=0.642s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=10,ip,in_port=2,nw_src=10.0.30.2,nw_dst=10.0.10.1 actions=output:3
+ cookie=0x0, duration=0.369s, table=0, n_packets=0, n_bytes=0, ip,in_port=2,nw_src=10.0.30.2,nw_dst=10.0.20.1 actions=meter:1,output:3
+ cookie=0x0, duration=0.274s, table=0, n_packets=0, n_bytes=0, ip,in_port=3,nw_src=10.0.20.1,nw_dst=10.0.30.2 actions=meter:1,output:2
+ cookie=0x0, duration=0.154s, table=0, n_packets=0, n_bytes=0, ip,in_port=2,nw_src=10.0.30.2,nw_dst=10.0.10.1 actions=meter:3,output:3
+ cookie=0x0, duration=0.121s, table=0, n_packets=0, n_bytes=0, ip,in_port=3,nw_src=10.0.10.1,nw_dst=10.0.30.2 actions=meter:3,output:2
+OFPST_METER reply (OF1.4) (xid=0x2):
+meter:1 flow_count:2 packet_in_count:0 byte_in_count:0 duration:0.604s bands:
+0: packet_count:0 byte_count:0
+
+meter:2 flow_count:2 packet_in_count:0 byte_in_count:0 duration:0.598s bands:
+0: packet_count:0 byte_count:0
+
+meter:3 flow_count:2 packet_in_count:0 byte_in_count:0 duration:0.591s bands:
+0: packet_count:0 byte_count:0
+Connecting to host 10.0.30.2, port 5201
+[  5] local 10.0.20.1 port 51076 connected to 10.0.30.2 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.98   sec  99.0 KBytes   409 Kbits/sec    7   17.0 KBytes       
+[  5]   2.01-3.97   sec   156 KBytes   647 Kbits/sec    0   39.6 KBytes       
+[  5]   3.97-4.97   sec  0.00 Bytes  0.00 bits/sec    0   39.6 KBytes       
+[  5]   4.97-5.97   sec  0.00 Bytes  0.00 bits/sec    0   49.5 KBytes       
+[  5]   5.97-6.97   sec  0.00 Bytes  0.00 bits/sec    0   49.5 KBytes       
+[  5]   6.97-7.00   sec   128 KBytes  37.9 Mbits/sec    0   59.4 KBytes       
+[  5]   7.00-8.97   sec  0.00 Bytes  0.00 bits/sec    0   59.4 KBytes       
+[  5]   8.97-9.97   sec  0.00 Bytes  0.00 bits/sec    0   59.4 KBytes       
+[  5]   9.97-10.97  sec  0.00 Bytes  0.00 bits/sec    0   62.2 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.97  sec   383 KBytes   286 Kbits/sec    7             sender
+[  5]   0.00-15.08  sec   126 KBytes  68.4 Kbits/sec                  receiver
+
+iperf Done.
+Connecting to host 10.0.30.2, port 5201
+[  5] local 10.0.20.1 port 58034 connected to 10.0.30.2 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  1.18 MBytes  9.90 Mbits/sec  855  
+[  5]   1.00-2.00   sec  1.20 MBytes  10.1 Mbits/sec  871  
+[  5]   2.00-3.00   sec  1.19 MBytes  10.0 Mbits/sec  864  
+[  5]   3.00-4.00   sec  1.19 MBytes  9.99 Mbits/sec  863  
+[  5]   4.00-5.00   sec  1.19 MBytes  10.0 Mbits/sec  863  
+[  5]   5.00-6.00   sec  1.19 MBytes  10.0 Mbits/sec  864  
+[  5]   6.00-7.00   sec  1.19 MBytes  10.0 Mbits/sec  863  
+[  5]   7.00-8.00   sec  1.19 MBytes  10.0 Mbits/sec  863  
+[  5]   8.00-9.00   sec  1.19 MBytes  9.99 Mbits/sec  863  
+[  5]   9.00-10.00  sec  1.19 MBytes  10.0 Mbits/sec  864  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec  11.9 MBytes  10.0 Mbits/sec  0.000 ms  0/8633 (0%)  sender
+[  5]   0.00-10.07  sec  1.91 MBytes  1.59 Mbits/sec  2.139 ms  7249/8633 (84%)  receiver
+
+iperf Done.
+Connecting to host 10.0.30.2, port 5201
+[  5] local 10.0.10.1 port 46704 connected to 10.0.30.2 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  1.10 MBytes  9.19 Mbits/sec  149   15.6 KBytes       
+[  5]   1.00-2.00   sec   384 KBytes  3.14 Mbits/sec   62   9.90 KBytes       
+[  5]   2.00-3.00   sec   384 KBytes  3.15 Mbits/sec   18   7.07 KBytes       
+[  5]   3.00-4.00   sec   384 KBytes  3.15 Mbits/sec    8   11.3 KBytes       
+[  5]   4.00-5.00   sec   256 KBytes  2.10 Mbits/sec   13   11.3 KBytes       
+[  5]   5.00-6.00   sec   384 KBytes  3.15 Mbits/sec   17   9.90 KBytes       
+[  5]   6.00-7.00   sec   384 KBytes  3.15 Mbits/sec   12   8.48 KBytes       
+[  5]   7.00-8.00   sec   384 KBytes  3.15 Mbits/sec   13   7.07 KBytes       
+[  5]   8.00-9.00   sec   256 KBytes  2.10 Mbits/sec   14   8.48 KBytes       
+[  5]   9.00-10.00  sec   384 KBytes  3.15 Mbits/sec   10   9.90 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.00  sec  4.22 MBytes  3.54 Mbits/sec  316             sender
+[  5]   0.00-10.04  sec  3.74 MBytes  3.13 Mbits/sec                  receiver
+
+iperf Done.
+OFPST_METER reply (OF1.4) (xid=0x2):
