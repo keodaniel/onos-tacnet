@@ -8,6 +8,7 @@ Implementation of ONOS as an SDN Controller with Mininet emulating networks in t
 
 # Prerequisites
 - Ubuntu VM (Recommend 22.04 LTS+)
+- iperf3
 
 # Setting Up ONOS and Mininet
 ## Install, Run, and Configure ONOS
@@ -33,10 +34,11 @@ Login to ONOS (Username: ```onos```  Password: ```rocks```)
 ```
 ssh -p 8101 onos@172.17.0.1
 ```
-Enable OpenFlow on ONOS (And any other ONOS applications you may want, like ReactiveForwarding)
+Enable OpenFlow on ONOS, Proxy ARP, and Reactive Forwarding
 ```
 app activate org.onosproject.openflow
 app activate org.onosproject.fwd
+app activate org.onosproject.proxyarp
 ```
 To view the GUI visit http://172.17.0.2:8181/onos/ui or http://localhost:8181/onos/ui
 
@@ -90,27 +92,50 @@ sudo docker start onos
 ```
 
 ### 2. Test Basic Working Functionality
+Python script to test basic functions with Mininet and ONOS before beginning experiments:
+- **Pingall** starts a linear,3,2 topology on Mininet, activates Reactive Forwarding, and conducts a pingall test to show basic connectivity.
+- **Intents** conducts a pingall test for ONOS to collect all host information, then generates and deletes HostIntents in ONOS to show basic ONOS REST API interaction.
+- **Path** conducts a pingall test then collects and records the paths taken between each host pair.
+- **Basic Link Automation** conducts pingall test using Reactive Forwarding or Host Intents
+- **Dynamic Paths** tests whether link failover will cause link automation tool to create new path
+
 ```
 python3 functions_test.py
 ```
 
-### 3. Other Tests
-Fault Tolerance
+#### Troubleshooting Note
+*HostIntents can be somewhat tempermental with ONOS. Try restarting ONOS Docker container and/or trying manually adding HostIntents using ```add-host-intents``` command.*
+
+### 3. Fault Tolerance Experiment
+Conducts 20 trials of 20 seconds iPerf3 tests, where link failure is induced and path is rerouted by selected link automation tool. 
+
+iperf3 output logs can be graphed in post to data visualize the fault tolerance of the link automation tool. 
+
+Various network use scenarios are represented by utilizing iperf3 options.
+
+*Script may take hours to run due to conducting 20 trials. Recommend changing trial runs variable or just ending script early and viewing log files*
 ```
 python3 fault_tolerance_test.py
 ```
 
-Implementing Bandwidth Meters with Flowrules
+### 4. Implementing Bandwidth Meters with Flowrules
 ```
 python3 bandwidth_control_test.py
 ```
 
-Implementing VLANs
+### 5. Implementing VLANs
 ```
 python3 vlan_test.py
 ```
 
-Implementing VLANs with Metered Flowrules
+### 6. Implementing VLANs with Metered Flowrules / Quality of Service
 ```
 python3 qos_test.py
 ```
+
+### 7. Manual Testing
+Example mininet command
+```
+sudo mn --switch ovs,protocols=OpenFlow14 --controller remote,ip=172.17.0.2 --mac --custom ~/onos-tacnet/custom/tacnet.py --topo=VLAN
+```
+Create a python file to 
