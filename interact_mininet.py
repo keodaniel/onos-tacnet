@@ -61,7 +61,6 @@ class MininetProcess:
             while True:
                 stderr_line = self.process.stderr.readline()
                 stderr_data += stderr_line
-                logging.info(stderr_line.decode('utf-8'))
 
                 stderr_str = stderr_data.decode('utf-8')
                 if expected_keyword in stderr_str:

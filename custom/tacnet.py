@@ -3,7 +3,6 @@ from mininet.node import Controller
 from mininet.node import Host
 from mininet.topo import Topo
 from mininet.link import TCLink
-# from vlanhost import VLANHost
 from functools import partial
 
 topos = {
@@ -109,7 +108,7 @@ class DFGateway( Topo ):
         self.addLink(s2, s3)
 
 class TC( Topo ):
-    """in progress"""
+    """Traffic Control (TC) Links between units"""
 
     def build( self ):
         "Create custom topo."
@@ -171,7 +170,7 @@ class Bandwidth( Topo ):
 
 
 class Vlan( Topo ):
-    """in progress"""
+    """VLAN Host with assigned VLANs"""
 
     def build( self ):
         "Create custom topo."

@@ -241,6 +241,12 @@ def main():
     print("Choose testcase: fwd, intent")
     testcase = input()
 
+    datestring = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
+    if not os.path.exists('logs'):
+        os.makedirs('logs')
+    filename = f"{datestring} {test}-{connections}-{testcase}"
+    logging.basicConfig(filename=f'logs/{filename}.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
     if test == "TCP":
         if connections == "Single":
             tcp_1(testcase)
@@ -256,12 +262,6 @@ def main():
             video_1(testcase)
         elif connections == "Multi":
             video_2(testcase)
-
-    datestring = datetime.datetime.now().strftime("%Y-%m-%d-%H%M")
-    if not os.path.exists('logs'):
-        os.makedirs('logs')
-    filename = f"{datestring} {test}-{connections}-{testcase}"
-    logging.basicConfig(filename=f'logs/{filename}.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 if __name__ == "__main__":
     main()
