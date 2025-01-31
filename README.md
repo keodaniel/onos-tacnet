@@ -8,7 +8,8 @@ Implementation of ONOS as an SDN Controller with Mininet emulating networks in t
 
 # Prerequisites
 - Ubuntu VM (Recommend 22.04 LTS+)
-- iperf3
+- iperf3 ```sudo apt-get install iperf3```
+- vlan ```sudo apt-get install vlan```
 
 # Setting Up ONOS and Mininet
 ## Install, Run, and Configure ONOS

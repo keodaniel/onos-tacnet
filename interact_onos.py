@@ -427,7 +427,7 @@ def purge_flow_rules(appid):
     if response.ok:
         logging.info(f"All flow rules purged successfully for application {appid}.")
     else:
-        logging.error(f"Error while purging flow rules: {response.status_code}")
+        logging.error(f"Error while purging flow rules: {response.status_code} - {response.text}")
 
 def post_meters(device, meters):
     # Define variables
