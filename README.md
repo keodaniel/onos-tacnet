@@ -10,6 +10,8 @@ Implementation of ONOS as an SDN Controller with Mininet emulating networks in t
 - Ubuntu VM (Recommend 22.04 LTS+)
 - iperf3 ```sudo apt-get install iperf3```
 - vlan ```sudo apt-get install vlan```
+- python3 ```sudo apt-get install python3```
+- venv ```sudo apt-get install python3.12-venv```
 
 # Setting Up ONOS and Mininet
 ## Install, Run, and Configure ONOS
@@ -104,9 +106,6 @@ Python script to test basic functions with Mininet and ONOS before beginning exp
 python3 functions_test.py
 ```
 
-#### Troubleshooting Note
-*HostIntents can be somewhat tempermental with ONOS. Try restarting ONOS Docker container and/or trying manually adding HostIntents using ```add-host-intents``` command.*
-
 ### 3. Fault Tolerance Experiment
 Conducts 20 trials of 20 seconds iPerf3 tests, where link failure is induced and path is rerouted by selected link automation tool. 
 
@@ -140,3 +139,5 @@ Example mininet command
 sudo mn --switch ovs,protocols=OpenFlow14 --controller remote,ip=172.17.0.2 --mac --custom ~/onos-tacnet/custom/tacnet.py --topo=VLAN
 ```
 
+### Troubleshooting Tips
+ONOS sometimes has unexpected issues or unresolved bugs, whether it be HostIntents not providing link connectivity, or meters being installed with letters for MeterIDs which cannot be deleted or purged. When all else fails, you can try restarting your Docker container ```sudo docker restart onos```, clear ONOS's data and cache directory. ```onos:shutdown -c -r```
