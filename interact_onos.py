@@ -330,7 +330,7 @@ def post_flow_rules(flow_rules, appid):
     if response.ok:
         logging.info(f"Flow rules posted successfully for flow rule {flow_rules}")
     else:
-        logging.error(f"Error while posting flow rules: {response.status_code}")
+        logging.error(f"Error while posting flow rules: {response.status_code} - {response.text}")
         
 def create_flow_rules(appId, priority, device_id, in_port, out_port, src_ip, dst_ip, ethType = "0x800", ip_proto=None, meter_id=None, push_vlan=None, match_vlan=None):
     flow_rules = {
@@ -427,7 +427,7 @@ def purge_flow_rules(appid):
     if response.ok:
         logging.info(f"All flow rules purged successfully for application {appid}.")
     else:
-        logging.error(f"Error while purging flow rules: {response.status_code}")
+        logging.error(f"Error while purging flow rules: {response.status_code} - {response.text}")
 
 def post_meters(device, meters):
     # Define variables
@@ -494,8 +494,6 @@ def meter_data(device, rate, burst=None):
             ]
         }
 
-    
-
 def get_meters(log=False):
     # Define variables
     ONOS_USER = "onos"
@@ -559,7 +557,8 @@ def delete_meter(meter_id, device):
     if response.ok:
         logging.info(f"Meter {meter_id} on device {device} deleted successfully.")
     else:
-        logging.error(f"Error while deleting meter: {response.status_code}")
+        logging.error(f"Error while deleting meter: {response.status_code} - {response.text}")
+        logging.info(f"Check http://172.17.0.1:8181/onos/v1/meters/ for meter ids that are not numeric. This is an issue with ONOS. SSH into ONOS and run 'shutdown -c -r' and retry.")
 
 def purge_meters():
     count = 10

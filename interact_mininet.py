@@ -3,6 +3,7 @@
 import subprocess
 import logging
 from time import sleep
+import os
 
 class MininetProcess:
     def __init__(self, topology):
@@ -11,7 +12,8 @@ class MininetProcess:
 
     def start_mininet(self):
         try:
-            topology_file = "../../media/sf_onos-tacnet/custom/tacnet.py"
+            script_dir = os.path.dirname(__file__)
+            topology_file = os.path.join(script_dir, 'custom/tacnet.py')
             
             # Clean up Mininet before starting a new topology
             subprocess.run(["sudo", "mn", "-c"], capture_output=True, text=True, check=False)
@@ -65,6 +67,9 @@ class MininetProcess:
                     output = stderr_str.rstrip('\n')  # Remove the last newline character
                     logging.info(output)
                     return output
+                elif "Exception" in stderr_str:
+                    logging.error("Error in Mininet stderr")
+                    return None
 
         except Exception as e:
             logging.error(f"Error reading Mininet display (stderr): {e}")

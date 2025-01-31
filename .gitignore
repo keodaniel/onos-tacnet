@@ -3,3 +3,5 @@ for_these*
 plots*
 logs
 *.log
+venv
+__pycache__
