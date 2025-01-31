@@ -86,7 +86,7 @@ Activate virtual environment
 ```
 source venv/bin/activate
 ```
-Proceed to running python tests
+Proceed to running python tests, and view the results under the ```logs``` directory
 
 ## Running Tests
 ### 1. Start ONOS Docker Container
@@ -106,7 +106,22 @@ Python script to test basic functions with Mininet and ONOS before beginning exp
 python3 functions_test.py
 ```
 
-### 3. Fault Tolerance Experiment
+### 3. Implementing Bandwidth Meters with Flowrules
+```
+python3 bandwidth_control_test.py
+```
+
+### 4. Implementing VLANs
+```
+python3 vlan_test.py
+```
+
+### 5. Implementing VLANs with Metered Flowrules / Quality of Service
+```
+python3 qos_test.py
+```
+
+### 6. Fault Tolerance Experiment
 Conducts 20 trials of 20 seconds iPerf3 tests, where link failure is induced and path is rerouted by selected link automation tool. 
 
 iperf3 output logs can be graphed in post to data visualize the fault tolerance of the link automation tool. 
@@ -114,23 +129,9 @@ iperf3 output logs can be graphed in post to data visualize the fault tolerance 
 Various network use scenarios are represented by utilizing iperf3 options.
 
 *Script may take hours to run due to conducting 20 trials. Recommend changing trial runs variable or just ending script early and viewing log files*
+*Plotting script not finished yet*
 ```
 python3 fault_tolerance_test.py
-```
-
-### 4. Implementing Bandwidth Meters with Flowrules
-```
-python3 bandwidth_control_test.py
-```
-
-### 5. Implementing VLANs
-```
-python3 vlan_test.py
-```
-
-### 6. Implementing VLANs with Metered Flowrules / Quality of Service
-```
-python3 qos_test.py
 ```
 
 ### 7. Manual Testing
