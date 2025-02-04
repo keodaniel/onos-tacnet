@@ -69,16 +69,34 @@ def intent_functions_test(topo="linear,3,2"):
         toggle_fwd("activate")
         sleep(sleep_time)
         mininet_process.send_command("pingall")
-        cmd_output = mininet_process.read_stderr("*** Results")
+        fwd_cmd_output = mininet_process.read_stderr("*** Results")
 
+        toggle_fwd("deactivate")
         # HTTP request ONOS for hosts, HTTP post HostIntents, then HTTP delete request all Intents
         create_host_intents(get_mac_addresses())
         get_intents()
+
+        # Pingall using host intents        
+        sleep(sleep_time)
+        mininet_process.send_command("pingall")
+        intent_cmd_output = mininet_process.read_stderr("*** Results")
+
         clear_all_intents()
 
         # Closing actions
         mininet_process.process.stdin.close()
         remaining_output = mininet_process.read_stderr("Done")
+
+        # Logging success/failure
+        if "0% dropped" in intent_cmd_output:
+            logging.info(f"{test_name} Test Success")
+            print(f"{test_name} Test Success")
+        else:
+            logging.error(f"{test_name} Test Fail")
+            print(f"{test_name} Test Fail")
+        for lines in intent_cmd_output.encode().split(b'\n'):
+            if "Results" in lines.decode():
+                print(lines.decode())
 
     except Exception as e:
         logging.error(f"Error during {test_name} test: {e}")
