@@ -74,13 +74,15 @@ Unable to contact the remote controller at 172.17.0.2:6633
 To fix this you need to enable org.onosproject.openflow
 
 # Python Experiment Scripts
+Clone this repository
+
 ## Setup Python
 Set Up Python Virtual Environment in order to run python tests.
 This script creates the virtual environment and installs the required package dependencies. 
 
 You may want to read the bash code comments if you've never used virtual environments before.
 ```
-./setup_python_virtual_environment.sh
+./setup_venv.sh
 ```
 Activate virtual environment
 ```
